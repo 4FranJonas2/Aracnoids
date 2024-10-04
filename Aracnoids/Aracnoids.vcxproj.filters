@@ -23,5 +23,8 @@
     <ClInclude Include="src\game_play\game_play.h">
       <Filter>game_play</Filter>
     </ClInclude>
+    <ClInclude Include="src\game_settings\settings.h">
+      <Filter>game_settings</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
