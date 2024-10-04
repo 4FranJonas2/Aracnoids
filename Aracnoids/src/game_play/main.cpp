@@ -1,10 +1,7 @@
 #include <iostream>
-#include "raylib.h"
+#include "game_play.h"
 
-using namespace std;
-
-int main()
+void main()
 {
-
-	return 0;
+	Aracnoids();	
 }
