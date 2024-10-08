@@ -1,5 +1,5 @@
 #pragma once
-#include "../game_settings/settings.h"
+#include "../entities/player.h"
 
 void Aracnoids();
 

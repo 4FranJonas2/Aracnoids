@@ -18,12 +18,21 @@
     <ClCompile Include="src\game_play\game_play.cpp">
       <Filter>game_play</Filter>
     </ClCompile>
+    <ClCompile Include="src\entities\player.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\game_play\game_play.h">
       <Filter>game_play</Filter>
     </ClInclude>
-    <ClInclude Include="src\game_settings\settings.h">
+    <ClInclude Include="src\game_settings\constants.h">
+      <Filter>game_settings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entities\player.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game_settings\utils.h">
       <Filter>game_settings</Filter>
     </ClInclude>
   </ItemGroup>

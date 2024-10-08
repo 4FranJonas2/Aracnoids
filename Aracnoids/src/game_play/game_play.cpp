@@ -1,6 +1,6 @@
 #include <iostream>
 #include "game_play.h"
-#include "raylib.h"
+
 
 void Aracnoids()
 {
@@ -8,7 +8,9 @@ void Aracnoids()
 
 	while (!WindowShouldClose())
 	{
-
+		Input();
+		Update();
+		Draw();
 	}
 
 	Close();
