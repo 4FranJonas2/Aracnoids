@@ -5,8 +5,8 @@ void Aracnoids();
 
 void Init(Player& player, Rectangle& gameArena);
 
-void Input();
+void Input(Player& player);
 
-void Update();
+void Update(Player& player);
 
-void Draw();
+void Draw(Player& player, Rectangle& gameArena);
