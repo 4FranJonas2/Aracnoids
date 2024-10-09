@@ -4,7 +4,12 @@
 
 void Aracnoids()
 {
-	Init();
+	SCENEMANAGMENT scene;
+	Rectangle gameArena;
+	Player player;
+
+
+	Init(player,gameArena);
 
 	while (!WindowShouldClose())
 	{
@@ -16,25 +21,33 @@ void Aracnoids()
 	Close();
 }
 
-void Init()
+void Init(Player& player, Rectangle& gameArena)
 {
 	srand(time(NULL));
-	InitWindow(screenWidth, screenHeight, " PONG by Francisco Jonas ");
+	InitWindow(screenWidth, screenHeight, " Aracnoids by Francisco Jonas ");
+	gamePlayer::CreatePlayer(player);
+	arena::createGameArena(gameArena);
+
 }
 
-void Input()
+void Input(Player& player)
 {
 
 }
 
-void Update()
+void Update(Player& player)
 {
-
+	/*switch (switch_on)
+	{
+	default:
+		break;
+	}*/
 }
 
-void Draw()
+void Draw(Player& player, Rectangle& gameArena)
 {
-
+	gamePlayer::DrawPlayer(player);
+	arena::drawArena(gameArena);
 }
 
 static void Close()

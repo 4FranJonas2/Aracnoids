@@ -21,6 +21,9 @@
     <ClCompile Include="src\entities\player.cpp">
       <Filter>entities</Filter>
     </ClCompile>
+    <ClCompile Include="src\entities\game_field.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\game_play\game_play.h">
@@ -34,6 +37,9 @@
     </ClInclude>
     <ClInclude Include="src\game_settings\utils.h">
       <Filter>game_settings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entities\game_field.h">
+      <Filter>entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
