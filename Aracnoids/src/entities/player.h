@@ -1,9 +1,9 @@
 #pragma once
-#include "game_field.h"
+#include "mouse.h"
 
 namespace gamePlayer
 {
-	Player CreatePlayer(Player& player);
+	Player CreatePlayer(Player player);
 
 	void InputPlayer(Player& player);
 	void UpdatePlayer(Player& player);

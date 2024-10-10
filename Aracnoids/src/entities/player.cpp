@@ -2,7 +2,7 @@
 
 namespace gamePlayer
 {
-	Player CreatePlayer(Player& player)
+	Player CreatePlayer(Player player)
 	{
 		player.playerDir = DIRECTION::STOP;
 		player.color = RED;

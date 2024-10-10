@@ -36,3 +36,7 @@ struct Player
 	Color color;
 };
 
+struct Mouse
+{
+	Vector2 mousePos;
+};

@@ -3,7 +3,7 @@
 
 void Aracnoids();
 
-void Init(Player& player, Rectangle& gameArena);
+void Init(Player player, Rectangle gameArena);
 
 void Input(Player& player);
 

@@ -7,25 +7,26 @@ void Aracnoids()
 	SCENEMANAGMENT scene;
 	Rectangle gameArena;
 	Player player;
+	Mouse gameMouse;
 
 
 	Init(player,gameArena);
 
 	while (!WindowShouldClose())
 	{
-		Input();
-		Update();
-		Draw();
+		Input(player);
+		Update(player);
+		Draw(player, gameArena);
 	}
 
 	Close();
 }
 
-void Init(Player& player, Rectangle& gameArena)
+void Init(Player player, Rectangle gameArena)
 {
 	srand(time(NULL));
 	InitWindow(screenWidth, screenHeight, " Aracnoids by Francisco Jonas ");
-	gamePlayer::CreatePlayer(player);
+	player = gamePlayer::CreatePlayer(player);
 	arena::createGameArena(gameArena);
 
 }
