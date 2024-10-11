@@ -1,9 +1,9 @@
 #pragma once
-#include "../entities/player.h"
+#include "gameMenus.h"
 
 void Aracnoids();
 
-void Init(Player player, Rectangle gameArena);
+void Init(Player& player, Rectangle& gameArena, Mouse& gameMouse);
 
 void Input(Player& player);
 

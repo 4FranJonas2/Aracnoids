@@ -8,9 +8,14 @@ void Aracnoids()
 	Rectangle gameArena;
 	Player player;
 	Mouse gameMouse;
+	Menu mainMenu;
+	Menu credits;
+	Menu pauseMenu;
+	Menu winScreen;
+	Menu loseScreen;
+	Menu exitScreen;
 
-
-	Init(player,gameArena);
+	Init(player,gameArena,gameMouse);
 
 	while (!WindowShouldClose())
 	{
@@ -22,12 +27,13 @@ void Aracnoids()
 	Close();
 }
 
-void Init(Player player, Rectangle gameArena)
+void Init(Player& player, Rectangle& gameArena, Mouse& gameMouse)
 {
 	srand(time(NULL));
 	InitWindow(screenWidth, screenHeight, " Aracnoids by Francisco Jonas ");
 	player = gamePlayer::CreatePlayer(player);
-	arena::createGameArena(gameArena);
+	gameArena = arena::createGameArena(gameArena);
+	gameMouse = mouse::CreateMouse(gameMouse);
 
 }
 

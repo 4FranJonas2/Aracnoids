@@ -8,6 +8,7 @@ enum class SCENEMANAGMENT
 	MAINMENU,
 	CREDITS,
 	GAME,
+	RESETGAME,
 	WINSCRREN,
 	LOSESCREEN,
 	PAUSE,
@@ -39,4 +40,18 @@ struct Player
 struct Mouse
 {
 	Vector2 mousePos;
+};
+
+struct Button
+{
+	Vector2 buttonPos;
+	Vector2 buttonSize;
+};
+
+struct Menu
+{
+	Button firstButton;
+	Button secondButton;
+	Button thirdButton;
+	Button backButton;
 };

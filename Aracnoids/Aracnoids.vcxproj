@@ -22,6 +22,7 @@
     <ClCompile Include="src\entities\game_field.cpp" />
     <ClCompile Include="src\entities\mouse.cpp" />
     <ClCompile Include="src\entities\player.cpp" />
+    <ClCompile Include="src\game_play\gameMenus.cpp" />
     <ClCompile Include="src\game_play\game_play.cpp" />
     <ClCompile Include="src\game_play\main.cpp" />
   </ItemGroup>
@@ -29,6 +30,7 @@
     <ClInclude Include="src\entities\game_field.h" />
     <ClInclude Include="src\entities\mouse.h" />
     <ClInclude Include="src\entities\player.h" />
+    <ClInclude Include="src\game_play\gameMenus.h" />
     <ClInclude Include="src\game_play\game_play.h" />
     <ClInclude Include="src\game_settings\constants.h" />
     <ClInclude Include="src\game_settings\utils.h" />

@@ -11,3 +11,10 @@ const float arenaMarkBoard = 100.0f;
 const float playerSpeed = 450.0f;
 const float playerPosX = screenWidth / 2;
 const float playerPosY = screenHeight /2;
+
+//menu settings
+//mainMenu settings
+
+//credits settings
+
+//exit
