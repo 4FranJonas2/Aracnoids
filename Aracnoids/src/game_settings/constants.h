@@ -14,6 +14,7 @@ const float playerPosY = screenHeight /2;
 
 //menu settings
 //mainMenu settings
+const float 
 
 //credits settings
 

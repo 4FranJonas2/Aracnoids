@@ -1,0 +1,176 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  game_field.cpp
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(4,6): error C2236: unexpected token 'enum class'. Did you forget a ';'?
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(20,1): error C2011: 'Rectangle': 'struct' type redefinition
+  (compiling source file 'src/entities/game_field.cpp')
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(35,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(5,12): error C2027: use of undefined type 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(7,3): error C2027: use of undefined type 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(8,3): error C2027: use of undefined type 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(9,3): error C2027: use of undefined type 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(10,3): error C2027: use of undefined type 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(13,7): error C2027: use of undefined type 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(16,22): error C2027: use of undefined type 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(16,39): error C2027: use of undefined type 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(16,56): error C2027: use of undefined type 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(16,74): error C2027: use of undefined type 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(16,3): error C2660: 'DrawRectangleLines': function does not take 2 arguments
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(1246,12):
+  see declaration of 'DrawRectangleLines'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(16,3):
+  while trying to match the argument list '()'
+  
+  mouse.cpp
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(4,6): error C2236: unexpected token 'enum class'. Did you forget a ';'?
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(20,1): error C2011: 'Rectangle': 'struct' type redefinition
+  (compiling source file 'src/entities/mouse.cpp')
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(35,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\mouse.cpp(7,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\mouse.cpp(8,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  player.cpp
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(4,6): error C2236: unexpected token 'enum class'. Did you forget a ';'?
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(20,1): error C2011: 'Rectangle': 'struct' type redefinition
+  (compiling source file 'src/entities/player.cpp')
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(35,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(41,3): error C2660: 'DrawRectangle': function does not take 3 arguments
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(1239,12):
+  see declaration of 'DrawRectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(41,3):
+  while trying to match the argument list '(float, float, Color)'
+  
+  gameMenus.cpp
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(4,6): error C2236: unexpected token 'enum class'. Did you forget a ';'?
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(20,1): error C2011: 'Rectangle': 'struct' type redefinition
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(35,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(33,47): error C3861: 'isOverButon': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(38,47): error C3861: 'isOverButon': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(43,47): error C3861: 'isOverButon': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(51,47): error C3861: 'isOverButon': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(59,47): error C3861: 'isOverButon': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(64,47): error C3861: 'isOverButon': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(69,47): error C3861: 'isOverButon': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(77,47): error C3861: 'isOverButon': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(82,47): error C3861: 'isOverButon': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(90,47): error C3861: 'isOverButon': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(95,47): error C3861: 'isOverButon': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(108,67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(108,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(108,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(108,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  game_play.cpp
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(4,6): error C2236: unexpected token 'enum class'. Did you forget a ';'?
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(20,1): error C2011: 'Rectangle': 'struct' type redefinition
+  (compiling source file 'src/game_play/game_play.cpp')
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(35,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(8,12): error C2079: 'gameArena' uses undefined struct 'Rectangle'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(18,2): error C2664: 'void Init(Player &,Rectangle &,Mouse &)': cannot convert argument 2 from 'int' to 'Rectangle &'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,6):
+  see declaration of 'Init'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(18,2):
+  while trying to match the argument list '(Player, int, Mouse)'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(24,3): error C2664: 'void Draw(Player &,Rectangle &)': cannot convert argument 2 from 'int' to 'Rectangle &'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(12,6):
+  see declaration of 'Draw'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(24,3):
+  while trying to match the argument list '(Player, int)'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(27,2): error C3861: 'Close': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(32,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(33,26): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(33,13): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(35,21): error C2027: use of undefined type 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(57,9): error C2664: 'void arena::drawArena(Rectangle)': cannot convert argument 1 from 'Rectangle' to 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(57,19):
+  use of undefined type 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.h(7,7):
+  see declaration of 'arena::drawArena'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(57,9):
+  while trying to match the argument list '(Rectangle)'
+  
+  main.cpp
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(4,6): error C2236: unexpected token 'enum class'. Did you forget a ';'?
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(20,1): error C2011: 'Rectangle': 'struct' type redefinition
+  (compiling source file 'src/game_play/main.cpp')
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(35,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\main.cpp(5,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Generating Code...

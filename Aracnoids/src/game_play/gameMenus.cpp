@@ -98,8 +98,16 @@ namespace gameMenu
 		}
 	}
 
+	void DrawMainMenu()
+	{
 
+	}
 
+	void DrawButton(Vector2 buttonPos, Vector2 buttonSize, Color color)
+	{
+		DrawRectangle(buttonPos.x, buttonPos.y, buttonSize.x, buttonSize.y, color);
+		
+	}
 	bool isOverButon(Mouse mouse, Vector2 buttonPos, Vector2 buttonDimension)
 	{
 		if (mouse.mousePos.x >= buttonPos.x &&

@@ -46,6 +46,8 @@ struct Button
 {
 	Vector2 buttonPos;
 	Vector2 buttonSize;
+	Vector2 buttonCenterPos;
+	char buttonText = ' ';
 };
 
 struct Menu
