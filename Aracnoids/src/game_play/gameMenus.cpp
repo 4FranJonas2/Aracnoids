@@ -81,6 +81,13 @@ namespace gameMenu
 		{
 			scene = SCENEMANAGMENT::GAME;
 		}
+		if (IsKeyPressed(KEY_ESCAPE))
+		{
+			if (IsKeyReleased(KEY_ESCAPE))
+			{
+				scene = SCENEMANAGMENT::GAME;
+			}
+		}
 		// RESET BUTTON
 		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, pauseMenu.secondButton.buttonPos, pauseMenu.secondButton.buttonSize))
 		{
@@ -143,11 +150,12 @@ namespace gameMenu
 
 	}
 
+
+
 	void DrawButton(Vector2 buttonPos, Vector2 buttonSize, Color color)
 	{
 		DrawRectangle(buttonPos.x, buttonPos.y, buttonSize.x, buttonSize.y, color);
 	}
-
 	bool isOverButon(Mouse mouse, Vector2 buttonPos, Vector2 buttonDimension)
 	{
 		if (mouse.mousePos.x >= buttonPos.x &&
