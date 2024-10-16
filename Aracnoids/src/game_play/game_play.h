@@ -3,10 +3,13 @@
 
 void Aracnoids();
 
-void Init(Player& player, Rectangle& gameArena, Mouse& gameMouse, SCENEMANAGMENT scene);
+void Init(Player& player, Rectangle& gameArena, Mouse& gameMouse, SCENEMANAGMENT& scene);
 
-void Input(Player& player, SCENEMANAGMENT& scene);
+void Input(Player& player, SCENEMANAGMENT& scene, Mouse gameMouse, Menu mainMenu,
+	Menu credits, Menu pauseMenu, Menu winLoseScreen, Menu exitScreen);
 
-void Update(Player& player, SCENEMANAGMENT& scene);
+void Update(Player& player, SCENEMANAGMENT& scene, Mouse gameMouse, Menu mainMenu,
+	Menu credits, Menu pauseMenu, Menu winLoseScreen, Menu exitScreen);
 
-void Draw(Player& player, Rectangle& gameArena, SCENEMANAGMENT scene);
+void Draw(Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, Mouse gameMouse, Menu mainMenu,
+	Menu credits, Menu pauseMenu, Menu winLoseScreen, Menu exitScreen);
