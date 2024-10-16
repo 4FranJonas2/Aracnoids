@@ -66,9 +66,12 @@ namespace gameMenu
 	void InputCredits(Menu credits, Mouse gameMouse, SCENEMANAGMENT& scene)
 	{
 		// BACK BUTTON
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, credits.firstButton.buttonPos, credits.firstButton.buttonSize))
+		if (IsKeyPressed(KEY_ESCAPE))
 		{
-			scene = SCENEMANAGMENT::MAINMENU;
+			if (IsKeyReleased(KEY_ESCAPE))
+			{
+				scene = SCENEMANAGMENT::MAINMENU;
+			}
 		}
 	}
 	void InputPauseMenu(Menu pauseMenu, Mouse gameMouse, SCENEMANAGMENT& scene)
@@ -116,15 +119,28 @@ namespace gameMenu
 		}
 	}
 
-	void DrawMainMenu(Menu mainMenu)
+	void DrawMainMenuorPause(Menu mainMenu, SCENEMANAGMENT scene)
 	{
+		
 		DrawButton(mainMenu.firstButton.buttonPos, mainMenu.firstButton.buttonSize, WHITE);
 		DrawButton(mainMenu.secondButton.buttonPos, mainMenu.secondButton.buttonSize, WHITE);
 		DrawButton(mainMenu.thirdButton.buttonPos, mainMenu.thirdButton.buttonSize, WHITE);
 
-		DrawText("PLAY", mainMenu.firstButton.buttonPos.x, mainMenu.firstButton.buttonPos.y, fontSize, BLACK);
-		DrawText("CREDITS", mainMenu.secondButton.buttonPos.x, mainMenu.secondButton.buttonPos.y, fontSize, BLACK);
-		DrawText("EXIT", mainMenu.thirdButton.buttonPos.x, mainMenu.thirdButton.buttonPos.y, fontSize, BLACK);
+		if (scene == SCENEMANAGMENT::MAINMENU)
+		{
+			DrawText("ARACNOIDS", titleTextPosX, titleTextPosY, fontSize, RED);
+			DrawText("PLAY", playTextPosX, playTextPosY, fontSize, RED);
+			DrawText("CREDITS",creditsTextButtonPosX, creditsTextButtonPosY, fontSize, RED);
+			DrawText("EXIT", exitTextButtonPosX, exitTextButtonPosY, fontSize, RED);
+		}
+		else
+		{
+			DrawText("PAUSE", titleTextPosX, titleTextPosY, fontSize, RED);
+			DrawText("RESUME", mainMenu.firstButton.buttonPos.x, mainMenu.firstButton.buttonPos.y, fontSize, RED);
+			DrawText("RESTART", mainMenu.secondButton.buttonPos.x, mainMenu.secondButton.buttonPos.y, fontSize, RED);
+			DrawText("MENU", mainMenu.thirdButton.buttonPos.x, mainMenu.thirdButton.buttonPos.y, fontSize, RED);
+		}
+
 	}
 
 	void DrawButton(Vector2 buttonPos, Vector2 buttonSize, Color color)

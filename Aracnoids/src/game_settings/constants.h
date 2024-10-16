@@ -30,12 +30,14 @@ const float auxButtonPosY_2 = (screenHeight / 5) * 3;
 const float auxButtonPosY_3 = (screenHeight / 5) * 4;
 const float auxButtonPosY_4 = (screenHeight / 5) * 5;
 //text main menu
+const int titleTextPosX = auxButtonPosX;
+const int titleTextPosY = auxButtonPosY_1;
 const int playTextPosX = auxButtonPosX;
-const int playTextPosY = auxButtonPosY_1;
-const int creditsTextPosX = auxButtonPosX;
-const int creditsTextPosY = auxButtonPosY_2;
-const int exitTextPosX = auxButtonPosX;
-const int exitTextPosY = auxButtonPosY_3;
+const int playTextPosY = auxButtonPosY_2;
+const int creditsTextButtonPosX = auxButtonPosX;
+const int creditsTextButtonPosY = auxButtonPosY_3;
+const int exitTextButtonPosX = auxButtonPosX;
+const int exitTextButtonPosY = auxButtonPosY_4;
 
 //CREDITS settings-----------------------------------
 const int auxCreditsTextPosX = screenWidth / 3;
