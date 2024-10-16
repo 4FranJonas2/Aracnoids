@@ -13,7 +13,8 @@ enum class SCENEMANAGMENT
 	LOSESCREEN,
 	PAUSE,
 	BACK,
-	EXIT
+	EXIT,
+	LEAVESIM
 };
 
 struct Rectangle

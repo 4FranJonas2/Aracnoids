@@ -15,9 +15,9 @@ void Aracnoids()
 	Menu loseScreen;
 	Menu exitScreen;
 
-	Init(player,gameArena,gameMouse);
+	Init(player, gameArena, gameMouse);
 
-	while (!WindowShouldClose())
+	while (!WindowShouldClose() && scene == SCENEMANAGMENT::LEAVESIM)
 	{
 		Input(player);
 		Update(player);

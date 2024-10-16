@@ -117,7 +117,7 @@ namespace gameMenu
 		// EXIT BUTTON
 		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, exitScreen.firstButton.buttonPos, exitScreen.firstButton.buttonSize))
 		{
-			//end simulation
+			scene = SCENEMANAGMENT::LEAVESIM;
 		}
 		// GOBACK BUTTON
 		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, exitScreen.secondButton.buttonPos, exitScreen.secondButton.buttonSize))
