@@ -42,6 +42,12 @@ struct Mouse
 	Vector2 mousePos;
 };
 
+struct Text
+{
+	Vector2 textPos;
+	int fontSize;
+};
+
 struct Button
 {
 	Vector2 buttonPos;
@@ -55,4 +61,5 @@ struct Menu
 	Button secondButton;
 	Button thirdButton;
 	Button backButton;
+	Text buttonText;
 };
