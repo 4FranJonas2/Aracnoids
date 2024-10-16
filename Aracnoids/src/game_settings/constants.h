@@ -45,7 +45,10 @@ const int creditsText3PosY = (screenHeight / 7) * 3;
 const int creditsText4PosY = (screenHeight / 7) * 4;
 const int creditsText5PosY = (screenHeight / 7) * 5;
 const int creditsText6PosY = (screenHeight / 7) * 6;
+
 const int creditsText7PosY = (screenHeight / 7) * 7;
+const int backButtonPosX = screenWidth / 5;
+const int backButtonPosY = screenWidth / 5;
 
 //EXIT-----------------------------------------------
 //question text1

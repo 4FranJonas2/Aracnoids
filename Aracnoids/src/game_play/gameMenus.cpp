@@ -36,21 +36,9 @@ namespace gameMenu
 
 		return mainMenu;
 	}
-	Menu CreateCredits(Menu credits)
-	{
-		return credits;
-	}
-	Menu CreatePauseMenu(Menu pauseMenu)
-	{
-		return pauseMenu;
-	}
-	Menu CreateWinScreen(Menu winScreen)
+	Menu CreateWinLoseScreen(Menu winScreen)
 	{
 		return winScreen;
-	}
-	Menu CreateLoseScreen(Menu loseScreen)
-	{
-		return loseScreen;
 	}
 	Menu CreateExitScreen(Menu exitScreen)
 	{
