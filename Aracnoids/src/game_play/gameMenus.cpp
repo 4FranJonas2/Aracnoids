@@ -4,6 +4,36 @@ namespace gameMenu
 {
 	Menu CreateMainMenu(Menu mainMenu)
 	{
+		//PLAY BUTTON
+		mainMenu.firstButton.buttonPos.x = auxButtonPosX;
+		mainMenu.firstButton.buttonPos.y = auxButtonPosY_1;
+
+		mainMenu.firstButton.buttonSize.x = buttonWidth;
+		mainMenu.firstButton.buttonSize.y = buttonHeiht;
+		
+		mainMenu.firstButton.buttonCenterPos.x = buttonCenterX;
+		mainMenu.firstButton.buttonCenterPos.y = buttonCenterY;
+		
+		//CREDITS BUTTON
+		mainMenu.secondButton.buttonPos.x = auxButtonPosX;
+		mainMenu.secondButton.buttonPos.y = auxButtonPosY_1;
+
+		mainMenu.secondButton.buttonSize.x = buttonWidth;
+		mainMenu.secondButton.buttonSize.y = buttonHeiht;
+
+		mainMenu.secondButton.buttonCenterPos.x = buttonCenterX;
+		mainMenu.secondButton.buttonCenterPos.y = buttonCenterY;
+
+		//EXIT BUTTON
+		mainMenu.thirdButton.buttonPos.x = auxButtonPosX;
+		mainMenu.thirdButton.buttonPos.y = auxButtonPosY_1;
+
+		mainMenu.thirdButton.buttonSize.x = buttonWidth;
+		mainMenu.thirdButton.buttonSize.y = buttonHeiht;
+
+		mainMenu.thirdButton.buttonCenterPos.x = buttonCenterX;
+		mainMenu.thirdButton.buttonCenterPos.y = buttonCenterY;
+
 		return mainMenu;
 	}
 	Menu CreateCredits(Menu credits)
@@ -98,16 +128,22 @@ namespace gameMenu
 		}
 	}
 
-	void DrawMainMenu()
+	void DrawMainMenu(Menu mainMenu)
 	{
+		DrawButton(mainMenu.firstButton.buttonPos, mainMenu.firstButton.buttonSize, WHITE);
+		DrawButton(mainMenu.secondButton.buttonPos, mainMenu.secondButton.buttonSize, WHITE);
+		DrawButton(mainMenu.thirdButton.buttonPos, mainMenu.thirdButton.buttonSize, WHITE);
 
+		DrawText("PLAY", mainMenu.firstButton.buttonPos.x, mainMenu.firstButton.buttonPos.y, fontSize, BLACK);
+		DrawText("CREDITS", mainMenu.secondButton.buttonPos.x, mainMenu.secondButton.buttonPos.y, fontSize, BLACK);
+		DrawText("EXIT", mainMenu.thirdButton.buttonPos.x, mainMenu.thirdButton.buttonPos.y, fontSize, BLACK);
 	}
 
 	void DrawButton(Vector2 buttonPos, Vector2 buttonSize, Color color)
 	{
 		DrawRectangle(buttonPos.x, buttonPos.y, buttonSize.x, buttonSize.y, color);
-		
 	}
+
 	bool isOverButon(Mouse mouse, Vector2 buttonPos, Vector2 buttonDimension)
 	{
 		if (mouse.mousePos.x >= buttonPos.x &&
