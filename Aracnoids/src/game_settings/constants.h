@@ -1,27 +1,28 @@
 #pragma once
 #include "raylib.h"
 
-//arena settings
+//ARENA settings
 const float screenWidth = 1024.0f;
 const float screenHeight = 768.0f;
 const float auxFloat = 100.0f;
 const float arenaMarkBoard = 100.0f;
 
-//player settings
+//PLAYER settings
 const float playerSpeed = 450.0f;
 const float playerPosX = screenWidth / 2;
 const float playerPosY = screenHeight /2;
 
-//menu settings POS
-//button size
+//MENU settings POS
+//BUTTON SIZE
 const float buttonWidth = 60.0f;
 const float buttonHeiht = 30.0f;
 const int fontSize = 5;
-//button center
+//BUTTON CENTER
 const float buttonCenterX = buttonWidth / 2;
 const float buttonCenterY = buttonHeiht / 2;
-// 
-//mainMenu settings
+
+//MAINMENU settings---------------------------------
+//PAUSE MENU settings------------------------------------------
 //button default pos
 const float auxButtonPosX = screenWidth / 2;
 const float auxButtonPosY_1 = (screenHeight / 5) * 2;
@@ -36,7 +37,7 @@ const int creditsTextPosY = auxButtonPosY_2;
 const int exitTextPosX = auxButtonPosX;
 const int exitTextPosY = auxButtonPosY_3;
 
-//credits settings
+//CREDITS settings-----------------------------------
 const int auxCreditsTextPosX = screenWidth / 3;
 const int creditsText1PosY = (screenHeight / 7) ;
 const int creditsText2PosY = (screenHeight / 7) * 2;
@@ -46,8 +47,8 @@ const int creditsText5PosY = (screenHeight / 7) * 5;
 const int creditsText6PosY = (screenHeight / 7) * 6;
 const int creditsText7PosY = (screenHeight / 7) * 7;
 
-//exit
-//question text
+//EXIT-----------------------------------------------
+//question text1
 const int auxExitTextPosX = screenWidth / 3;
 const int exitText1PosY = (screenHeight / 7);
 //button YES NO exit
@@ -58,3 +59,15 @@ const float auxExitButtonPosX_2 = (screenWidth / 5) * 4;
 const int auxExitText2PosY = (screenHeight / 7) * 2;
 const int exitText3PosX = auxExitButtonPosX_1;
 const int exitText1PosX = auxExitButtonPosX_2;
+
+//WIN/LOSE SCREEN------------------------------------------
+//TO MENU and RESTART button
+//WIN LOSE title
+const int auxWinLoseTextPosX = auxButtonPosX;
+const int winLoseTextPosY = auxButtonPosY_1;
+const int restartTextPosY = auxButtonPosY_2;
+const int toMenuTextPosY = auxButtonPosY_3;
+
+const float auxButtonPosX = screenWidth / 2;
+const float restartButtonPosY_3 = (screenHeight / 5) * 4;
+const float toMenuButtonPosY_4 = (screenHeight / 5) * 5;
