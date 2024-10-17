@@ -4,7 +4,7 @@ namespace mouse
 {
 	Mouse CreateMouse(Mouse gameMouse)
 	{
-		gameMouse.mousePos.x = GetMouseX();
+		gameMouse.mousePos.x =(float) GetMouseX();
 		gameMouse.mousePos.y = GetMouseY();
 
 		return gameMouse;

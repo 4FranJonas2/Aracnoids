@@ -1,11 +1,13 @@
+
+#pragma once
 #include <iostream>
 #include "game_play.h"
-
+#include "game_settings/utils.h"
 
 void Aracnoids()
 {
 	SCENEMANAGMENT scene;
-	Rectangle gameArena;
+	RectangleGame gameArena;
 	Player player;
 	Mouse gameMouse;
 	Menu mainMenu;
@@ -26,7 +28,7 @@ void Aracnoids()
 	Close();
 }
 
-void Init(Player& player, Rectangle& gameArena, Mouse& gameMouse, SCENEMANAGMENT& scene)
+void Init(Player& player, RectangleGame& gameArena, Mouse& gameMouse, SCENEMANAGMENT& scene)
 {
 	switch (scene)
 	{
@@ -127,7 +129,7 @@ void Update(Player& player, SCENEMANAGMENT& scene, Mouse gameMouse, Menu mainMen
 		break;
 	}
 }
-void Draw(Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, 
+void Draw(Player& player, RectangleGame& gameArena, SCENEMANAGMENT scene, 
 	Mouse gameMouse, Menu mainMenu, Menu credits, Menu pauseMenu, Menu winLoseScreen, Menu exitScreen)
 {
 	switch (scene)

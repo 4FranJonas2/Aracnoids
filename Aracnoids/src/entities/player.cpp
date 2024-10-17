@@ -5,14 +5,14 @@ namespace gamePlayer
 	Player CreatePlayer(Player player)
 	{
 		player.playerDir = DIRECTION::STOP;
-		player.color = RED;
+		player.playerColor = RED;
 
 		player.playerPos.x = playerPosX;
 		player.playerPos.y = playerPosY;
 		player.playerRec.pos.x = screenWidth/2;
 		player.playerRec.pos.y = screenHeight/2;
-		player.playerRec.size.x = screenWidth / 2;
-		player.playerRec.size.y = screenHeight / 2;
+		player.playerRec.size.x = 20.0f;
+		player.playerRec.size.y = 10.0f;
 
 		return player;
 	}
@@ -38,7 +38,7 @@ namespace gamePlayer
 	}
 	void DrawPlayer(Player player)
 	{
-		DrawRectangle(player.playerPos.x, player.playerPos.y, player.playerRec.size.x, player.playerRec.size.y, player.color);
+		DrawRectangleV(player.playerPos, player.playerRec.size, player.playerColor);
 	}
 
 	void StopMovement(Player& player)

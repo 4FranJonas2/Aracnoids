@@ -17,7 +17,7 @@ enum class SCENEMANAGMENT
 	LEAVESIM
 };
 
-struct Rectangle
+struct RectangleGame
 {
 	Vector2 size;
 	Vector2 pos;
@@ -33,9 +33,9 @@ enum class DIRECTION
 struct Player
 {
 	DIRECTION playerDir;
-	Rectangle playerRec;
+	RectangleGame playerRec;
 	Vector2 playerPos;
-	Color color;
+	Color playerColor;
 };
 
 struct Mouse
@@ -51,9 +51,9 @@ struct Text
 
 struct Button
 {
-	Vector2 buttonPos;
-	Vector2 buttonSize;
-	Vector2 buttonCenterPos;
+	Vector2 buttonPos{ 0.0f,0.0f };
+	Vector2 buttonSize{ 0.0f,0.0f };
+	Vector2 buttonCenterPos{ 0.0f,0.0f };
 };
 
 struct Menu
