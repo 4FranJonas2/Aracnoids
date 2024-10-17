@@ -38,7 +38,7 @@ namespace gamePlayer
 	}
 	void DrawPlayer(Player player)
 	{
-		DrawRectangle(player.playerPos.x, player.playerPos.y, player.playerRec.x, player.playerRec.y, player.color);
+		DrawRectangle(player.playerPos.x, player.playerPos.y, player.playerRec.size.x, player.playerRec.size.y, player.color);
 	}
 
 	void StopMovement(Player& player)

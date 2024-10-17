@@ -13,3 +13,4 @@ void Update(Player& player, SCENEMANAGMENT& scene, Mouse gameMouse, Menu mainMen
 
 void Draw(Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, Mouse gameMouse, Menu mainMenu,
 	Menu credits, Menu pauseMenu, Menu winLoseScreen, Menu exitScreen);
+static void Close();

@@ -1,15 +1,75 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
   game_field.cpp
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(4,6): error C2236: unexpected token 'enum class'. Did you forget a ';'?
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(27,41): error C2220: the following warning is treated as an error
   (compiling source file 'src/entities/game_field.cpp')
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(20,1): error C2011: 'Rectangle': 'struct' type redefinition
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(27,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(28,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(29,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(30,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(31,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(43,44): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(44,44): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(45,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(46,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(47,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(48,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(49,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(51,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(52,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(53,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(57,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(58,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(64,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(61,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(62,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/game_field.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(21,1): error C2011: 'Rectangle': 'struct' type redefinition
   (compiling source file 'src/entities/game_field.cpp')
   C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
   see declaration of 'Rectangle'
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(35,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(36,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
   (compiling source file 'src/entities/game_field.cpp')
   
 C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(5,12): error C2027: use of undefined type 'Rectangle'
@@ -59,29 +119,149 @@ C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\A
   while trying to match the argument list '()'
   
   mouse.cpp
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(4,6): error C2236: unexpected token 'enum class'. Did you forget a ';'?
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(27,41): error C2220: the following warning is treated as an error
   (compiling source file 'src/entities/mouse.cpp')
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(20,1): error C2011: 'Rectangle': 'struct' type redefinition
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(27,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(28,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(29,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(30,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(31,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(43,44): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(44,44): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(45,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(46,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(47,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(48,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(49,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(51,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(52,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(53,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(57,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(58,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(64,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(61,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(62,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/mouse.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(21,1): error C2011: 'Rectangle': 'struct' type redefinition
   (compiling source file 'src/entities/mouse.cpp')
   C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
   see declaration of 'Rectangle'
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(35,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(36,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
   (compiling source file 'src/entities/mouse.cpp')
   
 C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\mouse.cpp(7,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\mouse.cpp(8,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   player.cpp
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(4,6): error C2236: unexpected token 'enum class'. Did you forget a ';'?
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(27,41): error C2220: the following warning is treated as an error
   (compiling source file 'src/entities/player.cpp')
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(20,1): error C2011: 'Rectangle': 'struct' type redefinition
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(27,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(28,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(29,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(30,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(31,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(43,44): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(44,44): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(45,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(46,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(47,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(48,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(49,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(51,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(52,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(53,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(57,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(58,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(64,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(61,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(62,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/entities/player.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(21,1): error C2011: 'Rectangle': 'struct' type redefinition
   (compiling source file 'src/entities/player.cpp')
   C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
   see declaration of 'Rectangle'
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(35,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(36,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
   (compiling source file 'src/entities/player.cpp')
   
 C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(41,3): error C2660: 'DrawRectangle': function does not take 3 arguments
@@ -91,85 +271,260 @@ C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\A
   while trying to match the argument list '(float, float, Color)'
   
   gameMenus.cpp
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(4,6): error C2236: unexpected token 'enum class'. Did you forget a ';'?
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(27,41): error C2220: the following warning is treated as an error
   (compiling source file 'src/game_play/gameMenus.cpp')
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(20,1): error C2011: 'Rectangle': 'struct' type redefinition
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(27,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(28,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(29,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(30,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(31,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(43,44): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(44,44): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(45,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(46,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(47,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(48,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(49,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(51,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(52,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(53,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(57,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(58,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(64,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(61,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(62,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(21,1): error C2011: 'Rectangle': 'struct' type redefinition
   (compiling source file 'src/game_play/gameMenus.cpp')
   C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
   see declaration of 'Rectangle'
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(35,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(36,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
   (compiling source file 'src/game_play/gameMenus.cpp')
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(33,47): error C3861: 'isOverButon': identifier not found
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(38,47): error C3861: 'isOverButon': identifier not found
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(43,47): error C3861: 'isOverButon': identifier not found
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(51,47): error C3861: 'isOverButon': identifier not found
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(59,47): error C3861: 'isOverButon': identifier not found
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(64,47): error C3861: 'isOverButon': identifier not found
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(69,47): error C3861: 'isOverButon': identifier not found
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(77,47): error C3861: 'isOverButon': identifier not found
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(82,47): error C3861: 'isOverButon': identifier not found
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(90,47): error C3861: 'isOverButon': identifier not found
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(95,47): error C3861: 'isOverButon': identifier not found
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(108,67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(108,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(108,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(108,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(146,87): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(146,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(147,90): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(147,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(148,85): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(148,51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(157,67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(157,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(157,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(157,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   game_play.cpp
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(4,6): error C2236: unexpected token 'enum class'. Did you forget a ';'?
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(27,41): error C2220: the following warning is treated as an error
   (compiling source file 'src/game_play/game_play.cpp')
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(20,1): error C2011: 'Rectangle': 'struct' type redefinition
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(27,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(28,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(29,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(30,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(31,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(43,44): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(44,44): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(45,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(46,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(47,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(48,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(49,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(51,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(52,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(53,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(57,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(58,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(64,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(61,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(62,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(21,1): error C2011: 'Rectangle': 'struct' type redefinition
   (compiling source file 'src/game_play/game_play.cpp')
   C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
   see declaration of 'Rectangle'
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(35,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(36,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
   (compiling source file 'src/game_play/game_play.cpp')
   
 C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(8,12): error C2079: 'gameArena' uses undefined struct 'Rectangle'
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(18,2): error C2664: 'void Init(Player &,Rectangle &,Mouse &)': cannot convert argument 2 from 'int' to 'Rectangle &'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(17,2): error C2664: 'void Init(Player &,Rectangle &,Mouse &,SCENEMANAGMENT &)': cannot convert argument 2 from 'int' to 'Rectangle &'
   C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,6):
   see declaration of 'Init'
-  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(18,2):
-  while trying to match the argument list '(Player, int, Mouse)'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(17,2):
+  while trying to match the argument list '(Player, int, Mouse, SCENEMANAGMENT)'
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(24,3): error C2664: 'void Draw(Player &,Rectangle &)': cannot convert argument 2 from 'int' to 'Rectangle &'
-  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(12,6):
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(23,3): error C2664: 'void Draw(Player &,Rectangle &,SCENEMANAGMENT,Mouse,Menu,Menu,Menu,Menu,Menu)': cannot convert argument 2 from 'int' to 'Rectangle &'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,6):
   see declaration of 'Draw'
-  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(24,3):
-  while trying to match the argument list '(Player, int)'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(23,3):
+  while trying to match the argument list '(Player, int, SCENEMANAGMENT, Mouse, Menu, Menu, Menu, Menu, Menu)'
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(27,2): error C3861: 'Close': identifier not found
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(32,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(33,26): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(33,13): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(35,21): error C2027: use of undefined type 'Rectangle'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(34,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(35,27): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(35,14): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(37,22): error C2027: use of undefined type 'Rectangle'
   C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
   see declaration of 'Rectangle'
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(57,9): error C2664: 'void arena::drawArena(Rectangle)': cannot convert argument 1 from 'Rectangle' to 'Rectangle'
-  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(57,19):
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(138,13): warning C4551: function call missing argument list
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(144,10): error C2664: 'void arena::drawArena(Rectangle)': cannot convert argument 1 from 'Rectangle' to 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(144,20):
   use of undefined type 'Rectangle'
   C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
   see declaration of 'Rectangle'
   C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.h(7,7):
   see declaration of 'arena::drawArena'
-  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(57,9):
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(144,10):
   while trying to match the argument list '(Rectangle)'
   
   main.cpp
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(4,6): error C2236: unexpected token 'enum class'. Did you forget a ';'?
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(27,41): error C2220: the following warning is treated as an error
   (compiling source file 'src/game_play/main.cpp')
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(20,1): error C2011: 'Rectangle': 'struct' type redefinition
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(27,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(28,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(29,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(30,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(31,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(43,44): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(44,44): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(45,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(46,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(47,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(48,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(49,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(51,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(52,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(53,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(57,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(58,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(64,49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(61,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\Constants.h(62,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(21,1): error C2011: 'Rectangle': 'struct' type redefinition
   (compiling source file 'src/game_play/main.cpp')
   C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
   see declaration of 'Rectangle'
   
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(35,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_settings\utils.h(36,12): error C2079: 'Player::playerRec' uses undefined struct 'Rectangle'
   (compiling source file 'src/game_play/main.cpp')
   
 C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\main.cpp(5,1): warning C4326: return type of 'main' should be 'int' instead of 'void'

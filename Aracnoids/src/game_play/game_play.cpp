@@ -105,6 +105,7 @@ void Update(Player& player, SCENEMANAGMENT& scene, Mouse gameMouse, Menu mainMen
 	case SCENEMANAGMENT::INITSIM:
 		break;
 	case SCENEMANAGMENT::MAINMENU:
+		
 		break;
 	case SCENEMANAGMENT::CREDITS:
 		break;
@@ -134,6 +135,7 @@ void Draw(Player& player, Rectangle& gameArena, SCENEMANAGMENT scene,
 	case SCENEMANAGMENT::INITSIM:
 		break;
 	case SCENEMANAGMENT::MAINMENU:
+		gameMenu::DrawMainMenuorPause;
 		break;
 	case SCENEMANAGMENT::CREDITS:
 		break;

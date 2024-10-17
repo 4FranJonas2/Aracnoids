@@ -73,6 +73,5 @@ const int winLoseTextPosY = auxButtonPosY_1;
 const int restartTextPosY = auxButtonPosY_2;
 const int toMenuTextPosY = auxButtonPosY_3;
 
-const float auxButtonPosX = screenWidth / 2;
 const float restartButtonPosY_3 = (screenHeight / 5) * 4;
 const float toMenuButtonPosY_4 = (screenHeight / 5) * 5;
