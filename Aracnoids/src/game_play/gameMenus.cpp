@@ -63,7 +63,7 @@ namespace gameMenu
 			scene = SCENEMANAGMENT::EXIT;
 		}
 	}
-	void InputCredits(Menu credits, Mouse gameMouse, SCENEMANAGMENT& scene)
+	void InputCredits(SCENEMANAGMENT& scene)
 	{
 		// BACK BUTTON
 		if (IsKeyPressed(KEY_ESCAPE))
@@ -99,15 +99,15 @@ namespace gameMenu
 			scene = SCENEMANAGMENT::EXIT;
 		}
 	}
-	void InputWinLoseScreen(Menu winScreen, Mouse gameMouse, SCENEMANAGMENT& scene)
+	void InputWinLoseScreen(Menu winLoseScreen, Mouse gameMouse, SCENEMANAGMENT& scene)
 	{
 		// RESUME BUTTON
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, winScreen.firstButton.buttonPos, winScreen.firstButton.buttonSize))
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, winLoseScreen.firstButton.buttonPos, winLoseScreen.firstButton.buttonSize))
 		{
 			scene = SCENEMANAGMENT::RESETGAME;
 		}
 		// RESET BUTTON
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, winScreen.secondButton.buttonPos, winScreen.secondButton.buttonSize))
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, winLoseScreen.secondButton.buttonPos, winLoseScreen.secondButton.buttonSize))
 		{
 			scene = SCENEMANAGMENT::MAINMENU;
 		}
@@ -135,26 +135,30 @@ namespace gameMenu
 
 		if (scene == SCENEMANAGMENT::MAINMENU)
 		{
-			DrawText("ARACNOIDS", titleTextPosX, titleTextPosY, fontSize, RED);
-			DrawText("PLAY", playTextPosX, playTextPosY, fontSize, RED);
-			DrawText("CREDITS",creditsTextButtonPosX, creditsTextButtonPosY, fontSize, RED);
-			DrawText("EXIT", exitTextButtonPosX, exitTextButtonPosY, fontSize, RED);
+			PrintText("ARACNOIDS", titleTextPosX, titleTextPosY, RED);
+			PrintText("PLAY", playTextPosX, playTextPosY, RED);
+			PrintText("CREDITS", creditsTextButtonPosX, creditsTextButtonPosY, RED);
+			PrintText("EXIT", exitTextButtonPosX, exitTextButtonPosY, RED);
 		}
+
 		else
 		{
-			DrawText("PAUSE", titleTextPosX, titleTextPosY, fontSize, RED);
-			DrawText("RESUME", mainMenu.firstButton.buttonPos.x, mainMenu.firstButton.buttonPos.y, fontSize, RED);
-			DrawText("RESTART", mainMenu.secondButton.buttonPos.x, mainMenu.secondButton.buttonPos.y, fontSize, RED);
-			DrawText("MENU", mainMenu.thirdButton.buttonPos.x, mainMenu.thirdButton.buttonPos.y, fontSize, RED);
+			PrintText("PAUSE", titleTextPosX, titleTextPosY, RED);
+			PrintText("RESUME", mainMenu.firstButton.buttonPos.x, mainMenu.firstButton.buttonPos.y, RED);
+			PrintText("RESTART", mainMenu.secondButton.buttonPos.x, mainMenu.secondButton.buttonPos.y, RED);
+			PrintText("MENU", mainMenu.thirdButton.buttonPos.x, mainMenu.thirdButton.buttonPos.y, RED);
 		}
 
 	}
 
-
+	void PrintText(const char *text, float posX, float posY, Color color)
+	{
+		DrawText(text, static_cast<int>(posX), static_cast<int>(posY), fontSize, color);
+	}
 
 	void DrawButton(Vector2 buttonPos, Vector2 buttonSize, Color color)
 	{
-		DrawRectangle(buttonPos.x, buttonPos.y, buttonSize.x, buttonSize.y, color);
+		DrawRectangle(static_cast<int>(buttonPos.x), static_cast<int>(buttonPos.y), static_cast<int>(buttonSize.x), static_cast<int>(buttonSize.y), color);
 	}
 	bool isOverButon(Mouse mouse, Vector2 buttonPos, Vector2 buttonDimension)
 	{

@@ -9,8 +9,8 @@ const float arenaMarkBoard = 100.0f;
 
 //PLAYER settings
 const float playerSpeed = 450.0f;
-const float playerPosX =(float) screenWidth / 2.0f;
-const float playerPosY =(float) screenHeight /2.0f;
+const float playerPosX = screenWidth / 2.0f;
+const float playerPosY = screenHeight / 2.0f;
 
 //MENU settings POS
 //BUTTON SIZE
@@ -18,8 +18,8 @@ const float buttonWidth = 60.0f;
 const float buttonHeiht = 30.0f;
 const int fontSize = 5;
 //BUTTON CENTER
-const float buttonCenterX = (float)(buttonWidth / 2.0f);
-const float buttonCenterY = (float)(buttonHeiht / 2.0f);
+const float buttonCenterX = buttonWidth / 2.0f;
+const float buttonCenterY = buttonHeiht / 2.0f;
 
 //MAINMENU settings---------------------------------
 //PAUSE MENU settings------------------------------------------
@@ -41,13 +41,13 @@ const float exitTextButtonPosY = auxButtonPosY_4;
 
 //CREDITS settings-----------------------------------
 const float auxCreditsTextPosX = screenWidth / 3;
-const float creditsText1PosY = (screenHeight / 7) ;
+const float creditsText1PosY = (screenHeight / 7);
 const float creditsText2PosY = (screenHeight / 7) * 2;
 const float creditsText3PosY = (screenHeight / 7) * 3;
 const float creditsText4PosY = (screenHeight / 7) * 4;
 const float creditsText5PosY = (screenHeight / 7) * 5;
 const float creditsText6PosY = (screenHeight / 7) * 6;
-	 
+
 const float creditsText7PosY = (screenHeight / 7) * 7;
 const float backButtonPosX = screenWidth / 5;
 const float backButtonPosY = screenWidth / 5;

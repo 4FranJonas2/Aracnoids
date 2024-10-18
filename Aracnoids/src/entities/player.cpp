@@ -32,10 +32,12 @@ namespace gamePlayer
 
 		StopMovement(player);
 	}
+
 	void UpdatePlayer(Player& player)
 	{
-		
+		player.playerColor = WHITE;
 	}
+
 	void DrawPlayer(Player player)
 	{
 		DrawRectangleV(player.playerPos, player.playerRec.size, player.playerColor);

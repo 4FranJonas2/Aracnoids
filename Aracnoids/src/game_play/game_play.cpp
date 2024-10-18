@@ -33,8 +33,8 @@ void Init(Player& player, RectangleGame& gameArena, Mouse& gameMouse, SCENEMANAG
 	switch (scene)
 	{
 	case SCENEMANAGMENT::NONE:
-		srand(time(NULL));
-		InitWindow(screenWidth, screenHeight, " Aracnoids by Francisco Jonas ");
+		//srand(time(0));
+		InitWindow(static_cast<int>(screenWidth), static_cast<int>(screenHeight), " Aracnoids by Francisco Jonas ");
 		player = gamePlayer::CreatePlayer(player);
 		gameArena = arena::createGameArena(gameArena);
 		gameMouse = mouse::CreateMouse(gameMouse);
@@ -51,9 +51,7 @@ void Init(Player& player, RectangleGame& gameArena, Mouse& gameMouse, SCENEMANAG
 		break;
 	case SCENEMANAGMENT::RESETGAME:	
 		break;
-	case SCENEMANAGMENT::WINSCRREN:	
-		break;
-	case SCENEMANAGMENT::LOSESCREEN:	
+	case SCENEMANAGMENT::WINLOSESCRREN:
 		break;
 	case SCENEMANAGMENT::BACK:	
 		break;
@@ -73,28 +71,40 @@ void Input(Player& player, SCENEMANAGMENT& scene,Mouse gameMouse, Menu mainMenu,
 	{
 	case SCENEMANAGMENT::INITSIM:
 		break;
+
 	case SCENEMANAGMENT::MAINMENU:
 		gameMenu::InputMainMenu(mainMenu,gameMouse,scene);
 		break;
+
 	case SCENEMANAGMENT::CREDITS:
-		gameMenu::InputCredits(credits, gameMouse, scene);
+		gameMenu::InputCredits(scene);
 		break;
+
 	case SCENEMANAGMENT::GAME:
 		gamePlayer::InputPlayer(player);
-
 		break;
+
 	case SCENEMANAGMENT::RESETGAME:
 		break;
-	case SCENEMANAGMENT::WINSCRREN:
+
+	case SCENEMANAGMENT::WINLOSESCRREN:
+		gameMenu::InputWinLoseScreen(winLoseScreen, gameMouse, scene);
 		break;
-	case SCENEMANAGMENT::LOSESCREEN:
+
+	case SCENEMANAGMENT::PAUSE:
+
 		break;
+
 	case SCENEMANAGMENT::BACK:
 		break;
+
 	case SCENEMANAGMENT::EXIT:
+		gameMenu::InputExitScreen(exitScreen, gameMouse, scene);
 		break;
+
 	case SCENEMANAGMENT::LEAVESIM:
 		break;
+
 	default:
 		break;
 	}
@@ -115,9 +125,7 @@ void Update(Player& player, SCENEMANAGMENT& scene, Mouse gameMouse, Menu mainMen
 		break;
 	case SCENEMANAGMENT::RESETGAME:
 		break;
-	case SCENEMANAGMENT::WINSCRREN:
-		break;
-	case SCENEMANAGMENT::LOSESCREEN:
+	case SCENEMANAGMENT::WINLOSESCRREN:
 		break;
 	case SCENEMANAGMENT::BACK:
 		break;
@@ -137,7 +145,7 @@ void Draw(Player& player, RectangleGame& gameArena, SCENEMANAGMENT scene,
 	case SCENEMANAGMENT::INITSIM:
 		break;
 	case SCENEMANAGMENT::MAINMENU:
-		gameMenu::DrawMainMenuorPause;
+		gameMenu::DrawMainMenuorPause(mainMenu,scene);
 		break;
 	case SCENEMANAGMENT::CREDITS:
 		break;
@@ -148,9 +156,7 @@ void Draw(Player& player, RectangleGame& gameArena, SCENEMANAGMENT scene,
 		break;
 	case SCENEMANAGMENT::RESETGAME:
 		break;
-	case SCENEMANAGMENT::WINSCRREN:
-		break;
-	case SCENEMANAGMENT::LOSESCREEN:
+	case SCENEMANAGMENT::WINLOSESCRREN:
 		break;
 	case SCENEMANAGMENT::BACK:
 		break;
