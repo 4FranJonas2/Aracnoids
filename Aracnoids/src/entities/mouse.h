@@ -4,4 +4,5 @@
 namespace mouse
 {
 	Mouse CreateMouse(Mouse gameMouse);
+	void UpdateMousePos(Mouse& gameMouse);
 }
