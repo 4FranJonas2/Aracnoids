@@ -1,21 +1,22 @@
 #pragma once
 #include "game_field.h"
+#include "game_settings/constants.h"
 
 namespace arena
 {
-	RectangleGame createGameArena(RectangleGame& gameArena)
+	Rectangle createGameArena(Rectangle& gameArena)
 	{
-		gameArena.pos.x = 0.0f;
-		gameArena.pos.y = 0.0f;
-		gameArena.size.x = screenWidth;
-		gameArena.size.y = screenHeight;
+		gameArena.x = 0.0f;
+		gameArena.y = 0.0f;
+		gameArena.width = screenWidth;
+		gameArena.height = screenHeight;
 	}
 
-	void drawArena(RectangleGame gameArena)
+	void drawArena(Rectangle gameArena)
 	{
 		//DrawRectangle(gameArena.pos.x, gameArena.pos.y, gameArena.size.x, gameArena.size.y, RED);
 		//DrawRectangleLines(gameArena.pos.x, gameArena.pos.y, gameArena.size.x, gameArena.size.y, RED);
-		Rectangle draw = { gameArena.pos.x,gameArena.pos.y,gameArena.size.x,gameArena.size.y};
+		Rectangle draw = { gameArena.x,gameArena.y,gameArena.width,gameArena.height};
 		DrawRectangleLinesEx(draw, 2.0, RED);
 	}
 }

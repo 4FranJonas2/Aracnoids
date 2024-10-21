@@ -1,8 +1,9 @@
 #pragma once
-#include "game_settings/utils.h"
+#include "raylib.h"
+//#include "game_settings/utils.h"
 
 namespace arena
 {
-	RectangleGame createGameArena(RectangleGame& gameArena);
-	void drawArena(RectangleGame gameArena);
+	Rectangle createGameArena(Rectangle& gameArena);
+	void drawArena(Rectangle gameArena);
 }

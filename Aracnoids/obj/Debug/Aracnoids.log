@@ -4,21 +4,462 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v17
   mouse.cpp
   player.cpp
   gameMenus.cpp
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(8,22): error C2653: 'DIRECTION': is not a class or namespace name
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(8,33): error C2065: 'STOP': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(11,24): error C2065: 'playerPosX': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(12,24): error C2065: 'playerPosY': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(13,20): error C2039: 'pos': is not a member of 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(13,28): error C2065: 'screenWidth': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(14,20): error C2039: 'pos': is not a member of 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(14,28): error C2065: 'screenHeight': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(15,20): error C2039: 'size': is not a member of 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(16,20): error C2039: 'size': is not a member of 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(44,53): error C2039: 'size': is not a member of 'Rectangle'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(244,16):
+  see declaration of 'Rectangle'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(44,3): error C2660: 'DrawRectangleV': function does not take 2 arguments
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\libs\raylib-5.0_win32_msvc16\include\raylib.h(1240,12):
+  see declaration of 'DrawRectangleV'
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(44,3):
+  while trying to match the argument list '(Vector2, Color)'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(51,23): error C2653: 'DIRECTION': is not a class or namespace name
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\player.cpp(51,34): error C2065: 'STOP': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(8,21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(8,7): error C2146: syntax error: missing ';' before identifier 'CreateMainMenu'
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(9,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(9,2): error C2086: 'int gameMenu::Menu': redefinition
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(8,2):
+  see declaration of 'gameMenu::Menu'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(9,7): error C2146: syntax error: missing ';' before identifier 'CreateWinLoseScreen'
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(10,23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(10,2): error C2086: 'int gameMenu::Menu': redefinition
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(8,2):
+  see declaration of 'gameMenu::Menu'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(10,7): error C2146: syntax error: missing ';' before identifier 'CreateExitScreen'
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(12,7): error C2182: 'InputMainMenu': this use of 'void' is not valid
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(12,26): error C2146: syntax error: missing ')' before identifier 'mainMenu'
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(13,7): error C2182: 'InputCredits': this use of 'void' is not valid
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(13,21): error C2065: 'SCENEMANAGMENT': undeclared identifier
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(13,37): error C2065: 'scene': undeclared identifier
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(14,7): error C2182: 'InputPauseMenu': this use of 'void' is not valid
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(14,27): error C2146: syntax error: missing ')' before identifier 'pauseMenu'
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(15,7): error C2182: 'InputWinLoseScreen': this use of 'void' is not valid
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(15,31): error C2146: syntax error: missing ')' before identifier 'winLoseScreen'
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(16,7): error C2182: 'InputExitScreen': this use of 'void' is not valid
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(16,28): error C2146: syntax error: missing ')' before identifier 'exitScreen'
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(18,7): error C2182: 'DrawMainMenuorPause': this use of 'void' is not valid
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(18,32): error C2146: syntax error: missing ')' before identifier 'mainMenu'
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(20,59): error C2061: syntax error: identifier 'Color'
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(21,7): error C2182: 'DrawButton': this use of 'void' is not valid
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(21,18): error C2065: 'Vector2': undeclared identifier
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(21,26): error C2146: syntax error: missing ')' before identifier 'buttonPos'
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(22,19): error C2065: 'Mouse': undeclared identifier
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(22,25): error C2146: syntax error: missing ')' before identifier 'mouse'
+  (compiling source file 'src/game_play/gameMenus.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(6,21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(6,2): error C2086: 'int gameMenu::Menu': redefinition
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(8,2):
+  see declaration of 'gameMenu::Menu'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(6,7): error C2146: syntax error: missing ';' before identifier 'CreateMainMenu'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(7,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(7,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(40,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(40,2): error C2086: 'int gameMenu::Menu': redefinition
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(8,2):
+  see declaration of 'gameMenu::Menu'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(40,7): error C2146: syntax error: missing ';' before identifier 'CreateWinLoseScreen'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(41,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(41,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(44,23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(44,2): error C2086: 'int gameMenu::Menu': redefinition
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(8,2):
+  see declaration of 'gameMenu::Menu'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(44,7): error C2146: syntax error: missing ';' before identifier 'CreateExitScreen'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(45,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(45,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(49,7): error C2182: 'InputMainMenu': this use of 'void' is not valid
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(49,7): error C2374: 'gameMenu::InputMainMenu': redefinition; multiple initialization
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(12,7):
+  see declaration of 'gameMenu::InputMainMenu'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(49,26): error C2146: syntax error: missing ')' before identifier 'mainMenu'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(50,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(50,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(67,7): error C2182: 'InputCredits': this use of 'void' is not valid
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(67,7): error C2374: 'gameMenu::InputCredits': redefinition; multiple initialization
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(13,7):
+  see declaration of 'gameMenu::InputCredits'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(67,20): error C2065: 'SCENEMANAGMENT': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(67,36): error C2065: 'scene': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(68,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(68,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(78,7): error C2182: 'InputPauseMenu': this use of 'void' is not valid
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(78,7): error C2374: 'gameMenu::InputPauseMenu': redefinition; multiple initialization
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(14,7):
+  see declaration of 'gameMenu::InputPauseMenu'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(78,27): error C2146: syntax error: missing ')' before identifier 'pauseMenu'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(79,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(79,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(103,7): error C2182: 'InputWinLoseScreen': this use of 'void' is not valid
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(103,7): error C2374: 'gameMenu::InputWinLoseScreen': redefinition; multiple initialization
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(15,7):
+  see declaration of 'gameMenu::InputWinLoseScreen'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(103,31): error C2146: syntax error: missing ')' before identifier 'winLoseScreen'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(104,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(104,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(116,7): error C2182: 'InputExitScreen': this use of 'void' is not valid
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(116,7): error C2374: 'gameMenu::InputExitScreen': redefinition; multiple initialization
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(16,7):
+  see declaration of 'gameMenu::InputExitScreen'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(116,28): error C2146: syntax error: missing ')' before identifier 'exitScreen'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(117,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(117,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(130,7): error C2182: 'DrawMainMenuorPause': this use of 'void' is not valid
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(130,7): error C2374: 'gameMenu::DrawMainMenuorPause': redefinition; multiple initialization
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(18,7):
+  see declaration of 'gameMenu::DrawMainMenuorPause'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(130,32): error C2146: syntax error: missing ')' before identifier 'mainMenu'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(131,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(131,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(155,59): error C2061: syntax error: identifier 'Color'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(157,66): error C2065: 'fontSize': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(157,76): error C2065: 'color': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(157,3): error C3861: 'DrawText': identifier not found
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(160,7): error C2182: 'DrawButton': this use of 'void' is not valid
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(160,7): error C2374: 'gameMenu::DrawButton': redefinition; multiple initialization
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(21,7):
+  see declaration of 'gameMenu::DrawButton'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(160,18): error C2065: 'Vector2': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(160,26): error C2146: syntax error: missing ')' before identifier 'buttonPos'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(161,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(161,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(164,7): error C2374: 'gameMenu::isOverButon': redefinition; multiple initialization
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.h(22,7):
+  see declaration of 'gameMenu::isOverButon'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(164,19): error C2065: 'Mouse': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(164,25): error C2146: syntax error: missing ')' before identifier 'mouse'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(165,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\gameMenus.cpp(165,2): error C2447: '{': missing function header (old-style formal list?)
   game_play.cpp
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(81,57): error C2220: the following warning is treated as an error
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(81,57): warning C4100: 'exitScreen': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(81,37): warning C4100: 'winLoseScreen': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(81,21): warning C4100: 'pauseMenu': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(81,7): warning C4100: 'credits': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,74): warning C4100: 'mainMenu': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,58): warning C4100: 'gameMouse': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(99,89): warning C4100: 'exitScreen': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(99,69): warning C4100: 'winLoseScreen': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(99,53): warning C4100: 'pauseMenu': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(99,39): warning C4100: 'credits': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(99,8): warning C4100: 'gameMouse': unreferenced formal parameter
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,6): error C2182: 'Init': this use of 'void' is not valid
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,11): error C2065: 'Player': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,19): error C2065: 'player': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,27): error C2065: 'RectangleGame': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,42): error C2065: 'gameArena': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,53): error C2065: 'Mouse': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,60): error C2065: 'gameMouse': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,71): error C2065: 'SCENEMANAGMENT': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,87): error C2065: 'scene': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,6): error C2182: 'Input': this use of 'void' is not valid
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,12): error C2065: 'Player': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,20): error C2065: 'player': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,28): error C2065: 'SCENEMANAGMENT': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,44): error C2065: 'scene': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,51): error C2065: 'Mouse': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,57): error C2146: syntax error: missing ')' before identifier 'gameMouse'
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,6): error C2182: 'Update': this use of 'void' is not valid
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,13): error C2065: 'Player': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,21): error C2065: 'player': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,29): error C2065: 'SCENEMANAGMENT': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,45): error C2065: 'scene': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,52): error C2065: 'Mouse': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,58): error C2146: syntax error: missing ')' before identifier 'gameMouse'
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,6): error C2182: 'Draw': this use of 'void' is not valid
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,11): error C2065: 'Player': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,19): error C2065: 'player': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,27): error C2065: 'RectangleGame': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,42): error C2065: 'gameArena': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,53): error C2065: 'SCENEMANAGMENT': undeclared identifier
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,68): error C2146: syntax error: missing ')' before identifier 'scene'
+  (compiling source file 'src/game_play/game_play.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(12,2): error C2065: 'Player': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(12,9): error C2146: syntax error: missing ';' before identifier 'player'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(12,9): error C2065: 'player': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(13,2): error C2065: 'Mouse': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(13,8): error C2146: syntax error: missing ';' before identifier 'gameMouse'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(13,8): error C2065: 'gameMouse': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(20,7): error C2065: 'player': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(20,26): error C2065: 'gameMouse': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(24,9): error C2065: 'player': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(24,24): error C2065: 'gameMouse': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(25,10): error C2065: 'player': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(25,25): error C2065: 'gameMouse': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(26,8): error C2065: 'player': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(26,34): error C2065: 'gameMouse': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(32,6): error C2182: 'Init': this use of 'void' is not valid
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(32,6): error C2374: 'Init': redefinition; multiple initialization
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,6):
+  see declaration of 'Init'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(32,11): error C2065: 'Player': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(32,19): error C2065: 'player': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(32,42): error C2065: 'gameArena': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(32,27): error C2275: 'RectangleGame': expected an expression instead of a type
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(32,53): error C2065: 'Mouse': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(32,60): error C2065: 'gameMouse': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(32,87): error C2065: 'scene': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(32,71): error C2275: 'SCENEMANAGMENT': expected an expression instead of a type
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(33,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(34,2): error C2059: syntax error: 'switch'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(35,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(35,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(47,1): error C2059: syntax error: '}'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(47,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(50,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(50,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,6): error C2182: 'Update': this use of 'void' is not valid
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,6): error C2374: 'Update': redefinition; multiple initialization
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,6):
+  see declaration of 'Update'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,13): error C2065: 'Player': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,21): error C2065: 'player': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,45): error C2065: 'scene': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,29): error C2275: 'SCENEMANAGMENT': expected an expression instead of a type
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,52): error C2065: 'Mouse': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,58): error C2146: syntax error: missing ')' before identifier 'gameMouse'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(82,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(82,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,6): error C2182: 'Draw': this use of 'void' is not valid
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,6): error C2374: 'Draw': redefinition; multiple initialization
+  C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,6):
+  see declaration of 'Draw'
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,11): error C2065: 'Player': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,19): error C2065: 'player': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,42): error C2065: 'gameArena': undeclared identifier
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,27): error C2275: 'RectangleGame': expected an expression instead of a type
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,53): error C2275: 'SCENEMANAGMENT': expected an expression instead of a type
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,68): error C2146: syntax error: missing ')' before identifier 'scene'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(100,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(100,1): error C2447: '{': missing function header (old-style formal list?)
   main.cpp
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\main.cpp(5,1): error C2220: the following warning is treated as an error
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,6): error C2182: 'Init': this use of 'void' is not valid
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,11): error C2065: 'Player': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,19): error C2065: 'player': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,27): error C2065: 'RectangleGame': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,42): error C2065: 'gameArena': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,53): error C2065: 'Mouse': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,60): error C2065: 'gameMouse': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,71): error C2065: 'SCENEMANAGMENT': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(6,87): error C2065: 'scene': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,6): error C2182: 'Input': this use of 'void' is not valid
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,12): error C2065: 'Player': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,20): error C2065: 'player': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,28): error C2065: 'SCENEMANAGMENT': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,44): error C2065: 'scene': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,51): error C2065: 'Mouse': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(8,57): error C2146: syntax error: missing ')' before identifier 'gameMouse'
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,6): error C2182: 'Update': this use of 'void' is not valid
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,13): error C2065: 'Player': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,21): error C2065: 'player': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,29): error C2065: 'SCENEMANAGMENT': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,45): error C2065: 'scene': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,52): error C2065: 'Mouse': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(11,58): error C2146: syntax error: missing ')' before identifier 'gameMouse'
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,6): error C2182: 'Draw': this use of 'void' is not valid
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,11): error C2065: 'Player': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,19): error C2065: 'player': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,27): error C2065: 'RectangleGame': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,42): error C2065: 'gameArena': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,53): error C2065: 'SCENEMANAGMENT': undeclared identifier
+  (compiling source file 'src/game_play/main.cpp')
+  
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.h(14,68): error C2146: syntax error: missing ')' before identifier 'scene'
+  (compiling source file 'src/game_play/main.cpp')
+  
 C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\main.cpp(5,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
   Generating Code...
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(12,1): error C4716: 'arena::createGameArena': must return a value
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(13,1): error C4716: 'arena::createGameArena': must return a value
