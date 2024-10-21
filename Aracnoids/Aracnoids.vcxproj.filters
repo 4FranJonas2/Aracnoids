@@ -41,7 +41,7 @@
     <ClInclude Include="src\entities\player.h">
       <Filter>entities</Filter>
     </ClInclude>
-    <ClInclude Include="src\game_settings\utils.h">
+    <ClInclude Include="src\game_settings\scene_manage.h">
       <Filter>game_settings</Filter>
     </ClInclude>
     <ClInclude Include="src\entities\game_field.h">

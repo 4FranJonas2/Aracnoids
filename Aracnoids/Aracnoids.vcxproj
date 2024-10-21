@@ -33,7 +33,7 @@
     <ClInclude Include="src\game_play\gameMenus.h" />
     <ClInclude Include="src\game_play\game_play.h" />
     <ClInclude Include="src\game_settings\constants.h" />
-    <ClInclude Include="src\game_settings\utils.h" />
+    <ClInclude Include="src\game_settings\scene_manage.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
