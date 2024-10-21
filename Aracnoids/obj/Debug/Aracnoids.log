@@ -1,22 +1,24 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: El directorio Intermediate no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Intermediate.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
   game_field.cpp
+  mouse.cpp
+  player.cpp
+  gameMenus.cpp
   game_play.cpp
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(108,57): error C2220: la siguiente advertencia se trata como un error
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(108,57): warning C4100: 'exitScreen': parámetro formal sin referencia
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(108,37): warning C4100: 'winLoseScreen': parámetro formal sin referencia
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(108,21): warning C4100: 'pauseMenu': parámetro formal sin referencia
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(108,7): warning C4100: 'credits': parámetro formal sin referencia
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(107,74): warning C4100: 'mainMenu': parámetro formal sin referencia
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(107,58): warning C4100: 'gameMouse': parámetro formal sin referencia
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(107,21): warning C4100: 'player': parámetro formal sin referencia
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(134,89): warning C4100: 'exitScreen': parámetro formal sin referencia
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(134,69): warning C4100: 'winLoseScreen': parámetro formal sin referencia
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(134,53): warning C4100: 'pauseMenu': parámetro formal sin referencia
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(134,39): warning C4100: 'credits': parámetro formal sin referencia
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\game_play.cpp(134,8): warning C4100: 'gameMouse': parámetro formal sin referencia
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,57): error C2220: the following warning is treated as an error
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,57): warning C4100: 'exitScreen': unreferenced formal parameter
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,37): warning C4100: 'winLoseScreen': unreferenced formal parameter
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,21): warning C4100: 'pauseMenu': unreferenced formal parameter
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,7): warning C4100: 'credits': unreferenced formal parameter
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(79,74): warning C4100: 'mainMenu': unreferenced formal parameter
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(79,58): warning C4100: 'gameMouse': unreferenced formal parameter
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,89): warning C4100: 'exitScreen': unreferenced formal parameter
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,69): warning C4100: 'winLoseScreen': unreferenced formal parameter
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,53): warning C4100: 'pauseMenu': unreferenced formal parameter
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,39): warning C4100: 'credits': unreferenced formal parameter
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,8): warning C4100: 'gameMouse': unreferenced formal parameter
   main.cpp
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\main.cpp(5,1): error C2220: la siguiente advertencia se trata como un error
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\game_play\main.cpp(5,1): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
-  Generando código...
-C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\src\entities\game_field.cpp(12,1): error C4716: 'arena::createGameArena': debe devolver un valor
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\main.cpp(5,1): error C2220: the following warning is treated as an error
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\main.cpp(5,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Generating Code...
+C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(12,1): error C4716: 'arena::createGameArena': must return a value
