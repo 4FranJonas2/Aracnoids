@@ -1,5 +1,5 @@
 #pragma once
-#include "Constants.h"
+//#include "Constants.h"
 
 enum class SCENEMANAGMENT
 {
@@ -20,26 +20,6 @@ struct RectangleGame
 {
 	Vector2 size;
 	Vector2 pos;
-};
-
-enum class DIRECTION
-{
-	STOP = 1,
-	MOVING,
-	DERIVA
-};
-
-struct Player
-{
-	DIRECTION playerDir;
-	RectangleGame playerRec;
-	Vector2 playerPos;
-	Color playerColor;
-};
-
-struct Mouse
-{
-	Vector2 mousePos;
 };
 
 struct Text
