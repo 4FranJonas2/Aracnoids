@@ -1,7 +1,8 @@
-
 #pragma once
 #include <iostream>
+
 #include "game_play.h"
+#include "entities/mouse.h"
 #include "game_settings/utils.h"
 
 void Aracnoids()
