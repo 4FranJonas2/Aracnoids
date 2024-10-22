@@ -1,23 +1,11 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  game_field.cpp
-  player.cpp
-  gameMenus.cpp
-  game_play.cpp
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,97): error C2220: the following warning is treated as an error
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,97): warning C4100: 'exitScreen': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,67): warning C4100: 'winLoseScreen': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,41): warning C4100: 'pauseMenu': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(80,17): warning C4100: 'credits': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(79,103): warning C4100: 'mainAndPauseMenu': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(79,77): warning C4100: 'gameMouse': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,97): warning C4100: 'exitScreen': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,67): warning C4100: 'winLoseScreen': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,41): warning C4100: 'pauseMenu': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(98,17): warning C4100: 'credits': unreferenced formal parameter
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\game_play.cpp(97,96): warning C4100: 'gameMouse': unreferenced formal parameter
   main.cpp
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\main.cpp(5,1): error C2220: the following warning is treated as an error
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\game_play\main.cpp(5,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  Generating Code...
-C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\src\entities\game_field.cpp(13,1): error C4716: 'arena::createGameArena': must return a value
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+raylib.lib(rcore.obj) : warning LNK4099: PDB '' was not found with 'raylib.lib(rcore.obj)' or at ''; linking object as if no debug info
+raylib.lib(rglfw.obj) : warning LNK4099: PDB '' was not found with 'raylib.lib(rglfw.obj)' or at ''; linking object as if no debug info
+raylib.lib(rshapes.obj) : warning LNK4099: PDB '' was not found with 'raylib.lib(rshapes.obj)' or at ''; linking object as if no debug info
+raylib.lib(rtext.obj) : warning LNK4099: PDB '' was not found with 'raylib.lib(rtext.obj)' or at ''; linking object as if no debug info
+raylib.lib(rtextures.obj) : warning LNK4099: PDB '' was not found with 'raylib.lib(rtextures.obj)' or at ''; linking object as if no debug info
+raylib.lib(utils.obj) : warning LNK4099: PDB '' was not found with 'raylib.lib(utils.obj)' or at ''; linking object as if no debug info
+  Aracnoids.vcxproj -> C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\bin\Debug\Aracnoids.exe

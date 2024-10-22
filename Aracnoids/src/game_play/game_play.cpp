@@ -12,7 +12,6 @@ void Aracnoids()
 	mouse::Mouse gameMouse;
 	gameMenu::Menu mainAndPauseMenu;
 	gameMenu::Menu credits;
-	gameMenu::Menu pauseMenu;
 	gameMenu::Menu winLoseScreen;
 	gameMenu::Menu exitScreen;
 
@@ -20,9 +19,9 @@ void Aracnoids()
 
 	while (!WindowShouldClose() && scene == SCENEMANAGMENT::LEAVESIM)
 	{
-		Input(player, scene, gameMouse, mainAndPauseMenu, pauseMenu, winLoseScreen, exitScreen);
-		Update(player, scene, gameMouse, mainAndPauseMenu, credits, pauseMenu, winLoseScreen, exitScreen);
-		Draw(player, gameArena, scene, gameMouse, mainAndPauseMenu, credits, pauseMenu, winLoseScreen, exitScreen);
+		Input(player, scene, gameMouse, mainAndPauseMenu, winLoseScreen, exitScreen);
+		Update(player, scene);
+		Draw(player, gameArena, scene, mainAndPauseMenu, credits, winLoseScreen, exitScreen);
 	}
 
 	Close();
@@ -45,7 +44,7 @@ void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMo
 
 }
 void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene,mouse ::Mouse gameMouse, gameMenu::Menu mainAndPauseMenu,
-	gameMenu::Menu pauseMenu,gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen)
+	gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen)
 {
 	switch (scene)
 	{
@@ -66,7 +65,7 @@ void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene,mouse ::Mouse gameM
 		break;
 
 	case SCENEMANAGMENT::PAUSE:
-		gameMenu::InputPauseMenu(pauseMenu, gameMouse, scene);
+		gameMenu::InputPauseMenu(mainAndPauseMenu, gameMouse, scene);
 		break;
 
 	case SCENEMANAGMENT::EXIT:
@@ -76,8 +75,7 @@ void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene,mouse ::Mouse gameM
 		break;
 	}
 }
-void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse gameMouse, gameMenu::Menu mainAndPauseMenu,
-	gameMenu::Menu credits, gameMenu::Menu pauseMenu, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen)
+void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene)
 {
 	switch (scene)
 	{
@@ -85,7 +83,7 @@ void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse game
 		gamePlayer::UpdatePlayer(player);
 		break;
 	case SCENEMANAGMENT::RESETGAME:
-
+		
 		break;
 	case SCENEMANAGMENT::WINLOSESCRREN:
 		break;
@@ -94,32 +92,29 @@ void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse game
 		break;
 	}
 }
-void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, mouse::Mouse gameMouse, gameMenu::Menu mainAndPauseMenu,
-	gameMenu::Menu credits, gameMenu::Menu pauseMenu, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen)
+void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, gameMenu::Menu mainAndPauseMenu,
+	gameMenu::Menu credits, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen)
 {
 	switch (scene)
 	{
-	case SCENEMANAGMENT::INITSIM:
-		break;
 	case SCENEMANAGMENT::MAINMENU:
 		gameMenu::DrawMainMenuorPause(mainAndPauseMenu,scene);
 		break;
 	case SCENEMANAGMENT::CREDITS:
+		gameMenu::DrawCredits(credits);
 		break;
 	case SCENEMANAGMENT::GAME:
 		gamePlayer::DrawPlayer(player);
 		arena::drawArena(gameArena);
-
-		break;
-	case SCENEMANAGMENT::RESETGAME:
 		break;
 	case SCENEMANAGMENT::WINLOSESCRREN:
+		gameMenu::DrawWinLoseScreen(winLoseScreen);
 		break;
-	case SCENEMANAGMENT::BACK:
+	case SCENEMANAGMENT::PAUSE:
+		gameMenu::DrawMainMenuorPause(mainAndPauseMenu, scene);
 		break;
 	case SCENEMANAGMENT::EXIT:
-		break;
-	case SCENEMANAGMENT::LEAVESIM:
+		gameMenu::DrawExitMenu(exitScreen);
 		break;
 	default:
 		break;

@@ -10,6 +10,8 @@ namespace arena
 		gameArena.y = 0.0f;
 		gameArena.width = screenWidth;
 		gameArena.height = screenHeight;
+
+		return gameArena;
 	}
 
 	void drawArena(Rectangle gameArena)

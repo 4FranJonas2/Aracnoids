@@ -139,10 +139,10 @@ namespace gameMenu
 			}
 		}
 	}
-	void InputPauseMenu(Menu pauseMenu, mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
+	void InputPauseMenu(Menu mainAndPauseMenu, mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
 	{
 		// RESUME BUTTON
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, pauseMenu.firstButton.buttonPos, pauseMenu.firstButton.buttonSize))
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainAndPauseMenu.firstButton.buttonPos, mainAndPauseMenu.firstButton.buttonSize))
 		{
 			scene = SCENEMANAGMENT::GAME;
 		}
@@ -154,12 +154,12 @@ namespace gameMenu
 			}
 		}
 		// RESET BUTTON
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, pauseMenu.secondButton.buttonPos, pauseMenu.secondButton.buttonSize))
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize))
 		{
 			scene = SCENEMANAGMENT::CREDITS;
 		}
 		// BACKMENU BUTTON
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, pauseMenu.thirdButton.buttonPos, pauseMenu.thirdButton.buttonSize))
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize))
 		{
 			scene = SCENEMANAGMENT::EXIT;
 		}
@@ -191,6 +191,11 @@ namespace gameMenu
 		}
 	}
 
+	/*gameMenu::Menu mainAndPauseMenu;
+	gameMenu::Menu credits;
+	gameMenu::Menu winLoseScreen;
+	gameMenu::Menu exitScreen;*/
+
 	void DrawMainMenuorPause(Menu mainAndPauseMenu, SCENEMANAGMENT scene)
 	{
 		
@@ -214,6 +219,18 @@ namespace gameMenu
 			PrintText("MENU", mainAndPauseMenu.thirdButton.buttonPos.x, mainAndPauseMenu.thirdButton.buttonPos.y, RED);
 		}
 
+	}
+	void DrawCredits(Menu credits)
+	{
+		credits.backButton.buttonPos.x = 0.0f;
+	}
+	void DrawExitMenu(Menu exitScreen)
+	{
+		exitScreen.firstButton.buttonPos.x = 0.0f;
+	}
+	void DrawWinLoseScreen(Menu winLoseScreen)
+	{
+		winLoseScreen.firstButton.buttonPos.x = 0.0f;
 	}
 
 	void PrintText(const char *text, float posX, float posY, Color color)
