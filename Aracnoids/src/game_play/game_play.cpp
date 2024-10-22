@@ -6,7 +6,7 @@
 
 void Aracnoids()
 {
-	SCENEMANAGMENT scene;
+	SCENEMANAGMENT scene = SCENEMANAGMENT::NONE;
 	Rectangle gameArena;
 	gamePlayer:: Player player;
 	mouse::Mouse gameMouse;
@@ -15,9 +15,9 @@ void Aracnoids()
 	gameMenu::Menu winLoseScreen;
 	gameMenu::Menu exitScreen;
 
-	Init(player, gameArena, gameMouse, scene);
+	Init(player, gameArena, gameMouse, scene, mainAndPauseMenu, winLoseScreen, exitScreen);
 
-	while (!WindowShouldClose() && scene == SCENEMANAGMENT::LEAVESIM)
+	while (!WindowShouldClose())
 	{
 		Input(player, scene, gameMouse, mainAndPauseMenu, winLoseScreen, exitScreen);
 		Update(player, scene);
@@ -27,7 +27,8 @@ void Aracnoids()
 	Close();
 }
 
-void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMouse, SCENEMANAGMENT& scene)
+void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMouse, SCENEMANAGMENT& scene, gameMenu::Menu& mainAndPauseMenu,
+	gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen)
 {
 	switch (scene)
 	{
@@ -37,6 +38,10 @@ void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMo
 		player = gamePlayer::CreatePlayer(player);
 		gameArena = arena::createGameArena(gameArena);
 		gameMouse = mouse::CreateMouse(gameMouse);
+		mainAndPauseMenu = gameMenu::CreateMainMenu(mainAndPauseMenu);
+		winLoseScreen = gameMenu::CreateWinLoseScreen(winLoseScreen);
+		exitScreen = gameMenu::CreateExitScreen(exitScreen);
+
 		scene = SCENEMANAGMENT::MAINMENU;
 	default:
 		break;
@@ -95,6 +100,8 @@ void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene)
 void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, gameMenu::Menu mainAndPauseMenu,
 	gameMenu::Menu credits, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen)
 {
+	BeginDrawing();
+
 	switch (scene)
 	{
 	case SCENEMANAGMENT::MAINMENU:
@@ -119,9 +126,11 @@ void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene
 	default:
 		break;
 	}
+
+	EndDrawing();
 }
 
-static void Close()
+ void Close()
 {
 	CloseWindow();
 }

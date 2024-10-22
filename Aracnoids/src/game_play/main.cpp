@@ -3,5 +3,7 @@
 
 int main()
 {
-	Aracnoids();	
+	Aracnoids();
+
+	return 0;
 }

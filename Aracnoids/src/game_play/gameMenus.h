@@ -27,7 +27,7 @@ namespace gameMenu
 		Button secondButton;
 		Button thirdButton;
 		Button backButton;
-		Text buttonText;
+		Text buttonText{ 0.0f,0.0f,5 };
 	};
 
 	Menu CreateMainMenu(Menu mainAndPauseMenu);
