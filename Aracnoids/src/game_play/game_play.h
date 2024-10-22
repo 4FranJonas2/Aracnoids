@@ -1,5 +1,11 @@
 #pragma once
 //#include "gameMenus.h"
+#include "entities/player.h"
+#include "entities/game_field.h"
+#include "gameMenus.h"
+#include "entities/mouse.h"
+#include "game_settings/scene_manage.h"
+#include "game_settings/constants.h"
 
 void Aracnoids();
 

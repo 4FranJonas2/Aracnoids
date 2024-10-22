@@ -1,6 +1,6 @@
 #pragma once
 #include "player.h"
-
+#include "game_settings/constants.h"
 namespace gamePlayer
 {
 	//PLAYER settings
@@ -46,7 +46,7 @@ namespace gamePlayer
 
 	void DrawPlayer(Player player)
 	{
-		//DrawRectangleV(player.playerPos, Rectangle playerRec, player.playerColor);
+		DrawRectangle(static_cast<int> (player.playerPos.x), static_cast<int> (player.playerPos.y), static_cast<int> (player.playerRec.width), static_cast<int> (player.playerRec.height), player.playerColor);
 	}
 
 	void StopMovement(Player& player)
