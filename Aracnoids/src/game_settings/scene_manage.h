@@ -1,5 +1,4 @@
 #pragma once
-//#include "Constants.h"
 
 enum class SCENEMANAGMENT
 {
@@ -15,11 +14,3 @@ enum class SCENEMANAGMENT
 	EXIT,
 	LEAVESIM
 };
-
-//struct RectangleGame
-//{
-//	Vector2 size;
-//	Vector2 pos;
-//};
-
-

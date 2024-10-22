@@ -3,39 +3,102 @@
 
 namespace gameMenu
 {
-	Menu CreateMainMenu(Menu mainMenu)
+	//BUTTON SIZE
+	const float buttonWidth = 60.0f;
+	const float buttonHeiht = 30.0f;
+	const int fontSize = 5;
+	//BUTTON CENTER
+	const float buttonCenterX = buttonWidth / 2.0f;
+	const float buttonCenterY = buttonHeiht / 2.0f;
+
+	//MAINMENU settings---------------------------------
+	//PAUSE MENU settings------------------------------------------
+	//button default pos
+	const float auxButtonPosX = static_cast<float>(screenWidth) / 2.0f;
+	const float auxButtonPosY_1 = ((screenHeight / 5.0f) * 2.0f);
+	const float auxButtonPosY_2 = ((screenHeight / 5.0f) * 3.0f);
+	const float auxButtonPosY_3 = ((screenHeight / 5.0f) * 4.0f);
+	const float auxButtonPosY_4 = ((screenHeight / 5.0f) * 5.0f);
+	//text main menu
+	const float titleTextPosX = auxButtonPosX;
+	const float titleTextPosY = auxButtonPosY_1;
+	const float playTextPosX = auxButtonPosX;
+	const float playTextPosY = auxButtonPosY_2;
+	const float creditsTextButtonPosX = auxButtonPosX;
+	const float creditsTextButtonPosY = auxButtonPosY_3;
+	const float exitTextButtonPosX = auxButtonPosX;
+	const float exitTextButtonPosY = auxButtonPosY_4;
+
+	//CREDITS settings-----------------------------------
+	const float auxCreditsTextPosX = screenWidth / 3;
+	const float creditsText1PosY = (screenHeight / 7);
+	const float creditsText2PosY = (screenHeight / 7) * 2;
+	const float creditsText3PosY = (screenHeight / 7) * 3;
+	const float creditsText4PosY = (screenHeight / 7) * 4;
+	const float creditsText5PosY = (screenHeight / 7) * 5;
+	const float creditsText6PosY = (screenHeight / 7) * 6;
+
+	const float creditsText7PosY = (screenHeight / 7) * 7;
+	const float backButtonPosX = screenWidth / 5;
+	const float backButtonPosY = screenWidth / 5;
+
+	//EXIT-----------------------------------------------
+	//question text1
+	const float auxExitTextPosX = screenWidth / 3;
+	const float exitText1PosY = (screenHeight / 7);
+	//button YES NO exit
+	const float auxExitButtonPosY = (screenHeight / 5) * 4;
+	const float auxExitButtonPosX_1 = (screenWidth / 5) * 2;
+	const float auxExitButtonPosX_2 = (screenWidth / 5) * 4;
+	//text YES NO exit
+	const float auxExitText2PosY = (screenHeight / 7) * 2;
+	const float exitText3PosX = auxExitButtonPosX_1;
+	const float exitText1PosX = auxExitButtonPosX_2;
+
+	//WIN/LOSE SCREEN------------------------------------------
+	//TO MENU and RESTART button
+	//WIN LOSE title
+	const float auxWinLoseTextPosX = auxButtonPosX;
+	const float winLoseTextPosY = auxButtonPosY_1;
+	const float restartTextPosY = auxButtonPosY_2;
+	const float toMenuTextPosY = auxButtonPosY_3;
+
+	const float restartButtonPosY_3 = (screenHeight / 5) * 4;
+	const float toMenuButtonPosY_4 = (screenHeight / 5) * 5;
+
+	Menu CreateMainMenu(Menu mainAndPauseMenu)
 	{
 		//PLAY BUTTON
-		mainMenu.firstButton.buttonPos.x = auxButtonPosX;
-		mainMenu.firstButton.buttonPos.y = auxButtonPosY_1;
+		mainAndPauseMenu.firstButton.buttonPos.x = auxButtonPosX;
+		mainAndPauseMenu.firstButton.buttonPos.y = auxButtonPosY_1;
 
-		mainMenu.firstButton.buttonSize.x = buttonWidth;
-		mainMenu.firstButton.buttonSize.y = buttonHeiht;
+		mainAndPauseMenu.firstButton.buttonSize.x = buttonWidth;
+		mainAndPauseMenu.firstButton.buttonSize.y = buttonHeiht;
 		
-		mainMenu.firstButton.buttonCenterPos.x = buttonCenterX;
-		mainMenu.firstButton.buttonCenterPos.y = buttonCenterY;
+		mainAndPauseMenu.firstButton.buttonCenterPos.x = buttonCenterX;
+		mainAndPauseMenu.firstButton.buttonCenterPos.y = buttonCenterY;
 		
 		//CREDITS BUTTON
-		mainMenu.secondButton.buttonPos.x = auxButtonPosX;
-		mainMenu.secondButton.buttonPos.y = auxButtonPosY_1;
+		mainAndPauseMenu.secondButton.buttonPos.x = auxButtonPosX;
+		mainAndPauseMenu.secondButton.buttonPos.y = auxButtonPosY_1;
 
-		mainMenu.secondButton.buttonSize.x = buttonWidth;
-		mainMenu.secondButton.buttonSize.y = buttonHeiht;
+		mainAndPauseMenu.secondButton.buttonSize.x = buttonWidth;
+		mainAndPauseMenu.secondButton.buttonSize.y = buttonHeiht;
 
-		mainMenu.secondButton.buttonCenterPos.x = buttonCenterX;
-		mainMenu.secondButton.buttonCenterPos.y = buttonCenterY;
+		mainAndPauseMenu.secondButton.buttonCenterPos.x = buttonCenterX;
+		mainAndPauseMenu.secondButton.buttonCenterPos.y = buttonCenterY;
 
 		//EXIT BUTTON
-		mainMenu.thirdButton.buttonPos.x = auxButtonPosX;
-		mainMenu.thirdButton.buttonPos.y = auxButtonPosY_1;
+		mainAndPauseMenu.thirdButton.buttonPos.x = auxButtonPosX;
+		mainAndPauseMenu.thirdButton.buttonPos.y = auxButtonPosY_1;
 
-		mainMenu.thirdButton.buttonSize.x = buttonWidth;
-		mainMenu.thirdButton.buttonSize.y = buttonHeiht;
+		mainAndPauseMenu.thirdButton.buttonSize.x = buttonWidth;
+		mainAndPauseMenu.thirdButton.buttonSize.y = buttonHeiht;
 
-		mainMenu.thirdButton.buttonCenterPos.x = buttonCenterX;
-		mainMenu.thirdButton.buttonCenterPos.y = buttonCenterY;
+		mainAndPauseMenu.thirdButton.buttonCenterPos.x = buttonCenterX;
+		mainAndPauseMenu.thirdButton.buttonCenterPos.y = buttonCenterY;
 
-		return mainMenu;
+		return mainAndPauseMenu;
 	}
 	Menu CreateWinLoseScreen(Menu winScreen)
 	{
@@ -46,20 +109,20 @@ namespace gameMenu
 		return exitScreen;
 	}
 
-	void InputMainMenu(Menu mainMenu, Mouse gameMouse, SCENEMANAGMENT& scene)
+	void InputMainMenu(Menu mainAndPauseMenu, mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
 	{
 		// PLAY BUTTON
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainMenu.firstButton.buttonPos, mainMenu.firstButton.buttonSize))
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainAndPauseMenu.firstButton.buttonPos, mainAndPauseMenu.firstButton.buttonSize))
 		{
 			scene = SCENEMANAGMENT::GAME;
 		}
 		// CREDITS BUTTON
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainMenu.secondButton.buttonPos, mainMenu.secondButton.buttonSize))
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize))
 		{
 			scene = SCENEMANAGMENT::CREDITS;
 		}
 		// EXIT BUTTON
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainMenu.thirdButton.buttonPos, mainMenu.thirdButton.buttonSize))
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize))
 		{
 			scene = SCENEMANAGMENT::EXIT;
 		}
@@ -75,7 +138,7 @@ namespace gameMenu
 			}
 		}
 	}
-	void InputPauseMenu(Menu pauseMenu, Mouse gameMouse, SCENEMANAGMENT& scene)
+	void InputPauseMenu(Menu pauseMenu, mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
 	{
 		// RESUME BUTTON
 		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, pauseMenu.firstButton.buttonPos, pauseMenu.firstButton.buttonSize))
@@ -100,7 +163,7 @@ namespace gameMenu
 			scene = SCENEMANAGMENT::EXIT;
 		}
 	}
-	void InputWinLoseScreen(Menu winLoseScreen, Mouse gameMouse, SCENEMANAGMENT& scene)
+	void InputWinLoseScreen(Menu winLoseScreen, mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
 	{
 		// RESUME BUTTON
 		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, winLoseScreen.firstButton.buttonPos, winLoseScreen.firstButton.buttonSize))
@@ -113,7 +176,7 @@ namespace gameMenu
 			scene = SCENEMANAGMENT::MAINMENU;
 		}
 	}
-	void InputExitScreen(Menu exitScreen, Mouse gameMouse, SCENEMANAGMENT& scene)
+	void InputExitScreen(Menu exitScreen, mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
 	{
 		// EXIT BUTTON
 		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, exitScreen.firstButton.buttonPos, exitScreen.firstButton.buttonSize))
@@ -127,12 +190,12 @@ namespace gameMenu
 		}
 	}
 
-	void DrawMainMenuorPause(Menu mainMenu, SCENEMANAGMENT scene)
+	void DrawMainMenuorPause(Menu mainAndPauseMenu, SCENEMANAGMENT scene)
 	{
 		
-		DrawButton(mainMenu.firstButton.buttonPos, mainMenu.firstButton.buttonSize, WHITE);
-		DrawButton(mainMenu.secondButton.buttonPos, mainMenu.secondButton.buttonSize, WHITE);
-		DrawButton(mainMenu.thirdButton.buttonPos, mainMenu.thirdButton.buttonSize, WHITE);
+		DrawButton(mainAndPauseMenu.firstButton.buttonPos, mainAndPauseMenu.firstButton.buttonSize, WHITE);
+		DrawButton(mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize, WHITE);
+		DrawButton(mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize, WHITE);
 
 		if (scene == SCENEMANAGMENT::MAINMENU)
 		{
@@ -145,9 +208,9 @@ namespace gameMenu
 		else
 		{
 			PrintText("PAUSE", titleTextPosX, titleTextPosY, RED);
-			PrintText("RESUME", mainMenu.firstButton.buttonPos.x, mainMenu.firstButton.buttonPos.y, RED);
-			PrintText("RESTART", mainMenu.secondButton.buttonPos.x, mainMenu.secondButton.buttonPos.y, RED);
-			PrintText("MENU", mainMenu.thirdButton.buttonPos.x, mainMenu.thirdButton.buttonPos.y, RED);
+			PrintText("RESUME", mainAndPauseMenu.firstButton.buttonPos.x, mainAndPauseMenu.firstButton.buttonPos.y, RED);
+			PrintText("RESTART", mainAndPauseMenu.secondButton.buttonPos.x, mainAndPauseMenu.secondButton.buttonPos.y, RED);
+			PrintText("MENU", mainAndPauseMenu.thirdButton.buttonPos.x, mainAndPauseMenu.thirdButton.buttonPos.y, RED);
 		}
 
 	}
@@ -161,7 +224,7 @@ namespace gameMenu
 	{
 		DrawRectangle(static_cast<int>(buttonPos.x), static_cast<int>(buttonPos.y), static_cast<int>(buttonSize.x), static_cast<int>(buttonSize.y), color);
 	}
-	bool isOverButon(Mouse mouse, Vector2 buttonPos, Vector2 buttonDimension)
+	bool isOverButon(mouse::Mouse mouse, Vector2 buttonPos, Vector2 buttonDimension)
 	{
 		if (mouse.mousePos.x >= buttonPos.x &&
 			mouse.mousePos.x <= buttonPos.x + buttonDimension.x &&

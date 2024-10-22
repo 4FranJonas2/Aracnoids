@@ -1,6 +1,7 @@
 #pragma once
 #include "raylib.h"
 #include "game_settings/scene_manage.h"
+#include "entities/mouse.h"
 //#include "../entities/player.h"
 
 
@@ -29,19 +30,19 @@ namespace gameMenu
 		Text buttonText;
 	};
 
-	Menu CreateMainMenu(Menu mainMenu);
+	Menu CreateMainMenu(Menu mainAndPauseMenu);
 	Menu CreateWinLoseScreen(Menu winScreen);
 	Menu CreateExitScreen(Menu exitScreen);
 	
-	void InputMainMenu(Menu mainMenu, Mouse gameMouse, SCENEMANAGMENT& scene);
+	void InputMainMenu(Menu mainAndPauseMenu, mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
 	void InputCredits( SCENEMANAGMENT& scene);
-	void InputPauseMenu(Menu pauseMenu, Mouse gameMouse, SCENEMANAGMENT& scene);
-	void InputWinLoseScreen(Menu winLoseScreen, Mouse gameMouse, SCENEMANAGMENT& scene);
-	void InputExitScreen(Menu exitScreen, Mouse gameMouse, SCENEMANAGMENT& scene);
+	void InputPauseMenu(Menu pauseMenu, mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
+	void InputWinLoseScreen(Menu winLoseScreen, mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
+	void InputExitScreen(Menu exitScreen, mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
 
-	void DrawMainMenuorPause(Menu mainMenu, SCENEMANAGMENT scene);
+	void DrawMainMenuorPause(Menu mainAndPauseMenu, SCENEMANAGMENT scene);
 
 	void PrintText(const char* text, float posX, float posY, Color color);
 	void DrawButton(Vector2 buttonPos, Vector2 buttonSize, Color color);
-	bool isOverButon(Mouse mouse, Vector2 buttonPos, Vector2 buttonDimension);
+	bool isOverButon(mouse::Mouse mouse, Vector2 buttonPos, Vector2 buttonDimension);
 }

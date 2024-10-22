@@ -3,14 +3,14 @@
 
 void Aracnoids();
 
-void Init(Player& player, RectangleGame& gameArena, Mouse& gameMouse, SCENEMANAGMENT& scene);
+void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMouse, SCENEMANAGMENT& scene);
 
-void Input(Player& player, SCENEMANAGMENT& scene, Mouse gameMouse, Menu mainMenu,
-	 Menu pauseMenu, Menu winLoseScreen, Menu exitScreen);
+void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse gameMouse, gameMenu::Menu mainAndPauseMenu,
+	gameMenu::Menu pauseMenu, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen);
 
-void Update(Player& player, SCENEMANAGMENT& scene, Mouse gameMouse, Menu mainMenu,
-	Menu credits, Menu pauseMenu, Menu winLoseScreen, Menu exitScreen);
+void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse gameMouse, gameMenu::Menu mainAndPauseMenu,
+	gameMenu::Menu credits, gameMenu::Menu pauseMenu, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen);
 
-void Draw(Player& player, RectangleGame& gameArena, SCENEMANAGMENT scene, Mouse gameMouse, Menu mainMenu,
-	Menu credits, Menu pauseMenu, Menu winLoseScreen, Menu exitScreen);
+void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, mouse::Mouse gameMouse, gameMenu::Menu mainAndPauseMenu,
+	gameMenu::Menu credits, gameMenu::Menu pauseMenu, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen);
 static void Close();

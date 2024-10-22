@@ -1,35 +1,39 @@
 #pragma once
 #include <iostream>
-
 #include "game_play.h"
+
+#include "entities/player.h"
+#include "entities/game_field.h"
+#include "gameMenus.h"
 #include "entities/mouse.h"
-#include "game_settings/utils.h"
+#include "game_settings/scene_manage.h"
+#include "game_settings/constants.h"
 
 void Aracnoids()
 {
 	SCENEMANAGMENT scene;
-	RectangleGame gameArena;
-	Player player;
-	Mouse gameMouse;
-	Menu mainMenu;
-	Menu credits;
-	Menu pauseMenu;
-	Menu winLoseScreen;
-	Menu exitScreen;
+	Rectangle gameArena;
+	gamePlayer:: Player player;
+	mouse::Mouse gameMouse;
+	gameMenu::Menu mainAndPauseMenu;
+	gameMenu::Menu credits;
+	gameMenu::Menu pauseMenu;
+	gameMenu::Menu winLoseScreen;
+	gameMenu::Menu exitScreen;
 
 	Init(player, gameArena, gameMouse, scene);
 
 	while (!WindowShouldClose() && scene == SCENEMANAGMENT::LEAVESIM)
 	{
-		Input(player, scene, gameMouse, mainMenu, pauseMenu, winLoseScreen, exitScreen);
-		Update(player, scene, gameMouse, mainMenu, credits, pauseMenu, winLoseScreen, exitScreen);
-		Draw(player, gameArena, scene, gameMouse, mainMenu, credits, pauseMenu, winLoseScreen, exitScreen);
+		Input(player, scene, gameMouse, mainAndPauseMenu, pauseMenu, winLoseScreen, exitScreen);
+		Update(player, scene, gameMouse, mainAndPauseMenu, credits, pauseMenu, winLoseScreen, exitScreen);
+		Draw(player, gameArena, scene, gameMouse, mainAndPauseMenu, credits, pauseMenu, winLoseScreen, exitScreen);
 	}
 
 	Close();
 }
 
-void Init(Player& player, RectangleGame& gameArena, Mouse& gameMouse, SCENEMANAGMENT& scene)
+void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMouse, SCENEMANAGMENT& scene)
 {
 	switch (scene)
 	{
@@ -45,13 +49,13 @@ void Init(Player& player, RectangleGame& gameArena, Mouse& gameMouse, SCENEMANAG
 	}
 
 }
-void Input(Player& player, SCENEMANAGMENT& scene,Mouse gameMouse, Menu mainMenu, 
-				Menu pauseMenu, Menu winLoseScreen, Menu exitScreen)
+void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene,mouse ::Mouse gameMouse, gameMenu::Menu mainAndPauseMenu,
+	gameMenu::Menu pauseMenu,gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen)
 {
 	switch (scene)
 	{
 	case SCENEMANAGMENT::MAINMENU:
-		gameMenu::InputMainMenu(mainMenu,gameMouse,scene);
+		gameMenu::InputMainMenu(mainAndPauseMenu,gameMouse,scene);
 		break;
 
 	case SCENEMANAGMENT::CREDITS:
@@ -77,8 +81,8 @@ void Input(Player& player, SCENEMANAGMENT& scene,Mouse gameMouse, Menu mainMenu,
 		break;
 	}
 }
-void Update(Player& player, SCENEMANAGMENT& scene, Mouse gameMouse, Menu mainMenu,
-	Menu credits, Menu pauseMenu, Menu winLoseScreen, Menu exitScreen)
+void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse gameMouse, gameMenu::Menu mainAndPauseMenu,
+	gameMenu::Menu credits, gameMenu::Menu pauseMenu, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen)
 {
 	switch (scene)
 	{
@@ -95,15 +99,15 @@ void Update(Player& player, SCENEMANAGMENT& scene, Mouse gameMouse, Menu mainMen
 		break;
 	}
 }
-void Draw(Player& player, RectangleGame& gameArena, SCENEMANAGMENT scene, 
-	Mouse gameMouse, Menu mainMenu, Menu credits, Menu pauseMenu, Menu winLoseScreen, Menu exitScreen)
+void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, mouse::Mouse gameMouse, gameMenu::Menu mainAndPauseMenu,
+	gameMenu::Menu credits, gameMenu::Menu pauseMenu, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen)
 {
 	switch (scene)
 	{
 	case SCENEMANAGMENT::INITSIM:
 		break;
 	case SCENEMANAGMENT::MAINMENU:
-		gameMenu::DrawMainMenuorPause(mainMenu,scene);
+		gameMenu::DrawMainMenuorPause(mainAndPauseMenu,scene);
 		break;
 	case SCENEMANAGMENT::CREDITS:
 		break;

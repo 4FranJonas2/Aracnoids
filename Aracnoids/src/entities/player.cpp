@@ -3,17 +3,22 @@
 
 namespace gamePlayer
 {
+	//PLAYER settings
+	const float playerSpeed = 450.0f;
+	const float playerPosX = screenWidth / 2.0f;
+	const float playerPosY = screenHeight / 2.0f;
+
 	Player CreatePlayer(Player player)
 	{
-		player.playerDir = DIRECTION::STOP;
+		player.playerDir = PLAYERDIRECTION::STOP;
 		player.playerColor = RED;
 
 		player.playerPos.x = playerPosX;
 		player.playerPos.y = playerPosY;
-		player.playerRec.pos.x = screenWidth/2;
-		player.playerRec.pos.y = screenHeight/2;
-		player.playerRec.size.x = 20.0f;
-		player.playerRec.size.y = 10.0f;
+		player.playerRec.x = screenWidth/2;
+		player.playerRec.y = screenHeight/2;
+		player.playerRec.width = 20.0f;
+		player.playerRec.height = 10.0f;
 
 		return player;
 	}
@@ -41,14 +46,14 @@ namespace gamePlayer
 
 	void DrawPlayer(Player player)
 	{
-		DrawRectangleV(player.playerPos, player.playerRec.size, player.playerColor);
+		//DrawRectangleV(player.playerPos, Rectangle playerRec, player.playerColor);
 	}
 
 	void StopMovement(Player& player)
 	{
 		if (IsKeyUp(KEY_W))
 		{
-			player.playerDir = DIRECTION::STOP;
+			player.playerDir = PLAYERDIRECTION::STOP;
 		}
 	}
 }
