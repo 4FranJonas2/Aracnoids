@@ -5,30 +5,33 @@
 namespace gameMenu
 {
 	//BUTTON SIZE
-	const float buttonWidth = 200.0f;
-	const float buttonHeiht = 60.0f;
-	const int fontSize = 25;
+	const float buttonWidth = 150.0f;
+	const float buttonHeiht = 40.0f;
+	const int textFontSize = 25;
+	const int titleFontSize = 50;
+	const float auxXCorrect = 75.0f;
+	const float auxTitleXCorrect = 65.0f;
 	//BUTTON CENTER
-	const float buttonCenterX = buttonWidth / 2.0f;
-	const float buttonCenterY = buttonHeiht / 2.0f;
+	const float buttonCenterX = (buttonWidth / 4.0f) + 10.0f;
+	const float buttonCenterY = buttonHeiht / 4.0f;
 
 	//MAINMENU settings---------------------------------
 	//PAUSE MENU settings------------------------------------------
 	//button default pos
-	const float auxButtonPosX = static_cast<float>(screenWidth) / 2.0f;
-	const float auxButtonPosY_1 = ((screenHeight / 5.0f) * 2.0f);
-	const float auxButtonPosY_2 = ((screenHeight / 5.0f) * 3.0f);
-	const float auxButtonPosY_3 = ((screenHeight / 5.0f) * 4.0f);
-	const float auxButtonPosY_4 = ((screenHeight / 5.0f) * 5.0f);
+	const float auxButtonPosX = midScreenWidth - auxXCorrect;
+	const float auxButtonPosY_1 = screenHeightDiv6 * 1.0f;
+	const float auxButtonPosY_2 = screenHeightDiv6 * 2.0f;
+	const float auxButtonPosY_3 = screenHeightDiv6 * 3.0f;
+	const float auxButtonPosY_4 = screenHeightDiv6 * 4.0f;
 	//text main menu
 	const float titleTextPosX = auxButtonPosX;
 	const float titleTextPosY = auxButtonPosY_1;
-	const float playTextPosX = auxButtonPosX;
-	const float playTextPosY = auxButtonPosY_2;
-	const float creditsTextButtonPosX = auxButtonPosX;
-	const float creditsTextButtonPosY = auxButtonPosY_3;
-	const float exitTextButtonPosX = auxButtonPosX;
-	const float exitTextButtonPosY = auxButtonPosY_4;
+	const float playTextPosX = auxButtonPosX + buttonCenterX;
+	const float playTextPosY = auxButtonPosY_2 + buttonCenterY;
+	const float creditsTextButtonPosX = auxButtonPosX + buttonCenterX / 2;
+	const float creditsTextButtonPosY = auxButtonPosY_3 + buttonCenterY;
+	const float exitTextButtonPosX = auxButtonPosX + buttonCenterX;
+	const float exitTextButtonPosY = auxButtonPosY_4 + buttonCenterY;
 
 	//CREDITS settings-----------------------------------
 	const float auxCreditsTextPosX = screenWidth / 3;
@@ -64,24 +67,15 @@ namespace gameMenu
 	const float restartTextPosY = auxButtonPosY_2;
 	const float toMenuTextPosY = auxButtonPosY_3;
 
-	const float restartButtonPosY_3 = (screenHeight / 5) * 4;
-	const float toMenuButtonPosY_4 = (screenHeight / 5) * 5;
+	//use auxbuttonpos for X position
+	const float restartButtonPosY_3 = screenHeightDiv6 * 4;
+	const float toMenuButtonPosY_4 = screenHeightDiv6 * 5;
 
 	Menu CreateMainMenu(Menu mainAndPauseMenu)
 	{
 		//PLAY BUTTON
-		mainAndPauseMenu.firstButton.buttonPos.x = auxButtonPosX;
-		mainAndPauseMenu.firstButton.buttonPos.y = auxButtonPosY_1;
-
-		mainAndPauseMenu.firstButton.buttonSize.x = buttonWidth;
-		mainAndPauseMenu.firstButton.buttonSize.y = buttonHeiht;
-		
-		mainAndPauseMenu.firstButton.buttonCenterPos.x = buttonCenterX;
-		mainAndPauseMenu.firstButton.buttonCenterPos.y = buttonCenterY;
-		
-		//CREDITS BUTTON
 		mainAndPauseMenu.secondButton.buttonPos.x = auxButtonPosX;
-		mainAndPauseMenu.secondButton.buttonPos.y = auxButtonPosY_1;
+		mainAndPauseMenu.secondButton.buttonPos.y = auxButtonPosY_2;
 
 		mainAndPauseMenu.secondButton.buttonSize.x = buttonWidth;
 		mainAndPauseMenu.secondButton.buttonSize.y = buttonHeiht;
@@ -89,15 +83,25 @@ namespace gameMenu
 		mainAndPauseMenu.secondButton.buttonCenterPos.x = buttonCenterX;
 		mainAndPauseMenu.secondButton.buttonCenterPos.y = buttonCenterY;
 
-		//EXIT BUTTON
+		//CREDITS BUTTON
 		mainAndPauseMenu.thirdButton.buttonPos.x = auxButtonPosX;
-		mainAndPauseMenu.thirdButton.buttonPos.y = auxButtonPosY_1;
+		mainAndPauseMenu.thirdButton.buttonPos.y = auxButtonPosY_3;
 
 		mainAndPauseMenu.thirdButton.buttonSize.x = buttonWidth;
 		mainAndPauseMenu.thirdButton.buttonSize.y = buttonHeiht;
 
 		mainAndPauseMenu.thirdButton.buttonCenterPos.x = buttonCenterX;
 		mainAndPauseMenu.thirdButton.buttonCenterPos.y = buttonCenterY;
+
+		//EXIT BUTTON
+		mainAndPauseMenu.fourthButton.buttonPos.x = auxButtonPosX;
+		mainAndPauseMenu.fourthButton.buttonPos.y = auxButtonPosY_4;
+
+		mainAndPauseMenu.fourthButton.buttonSize.x = buttonWidth;
+		mainAndPauseMenu.fourthButton.buttonSize.y = buttonHeiht;
+
+		mainAndPauseMenu.fourthButton.buttonCenterPos.x = buttonCenterX;
+		mainAndPauseMenu.fourthButton.buttonCenterPos.y = buttonCenterY;
 
 		return mainAndPauseMenu;
 	}
@@ -198,31 +202,31 @@ namespace gameMenu
 
 	void DrawMainMenuorPause(Menu mainAndPauseMenu, SCENEMANAGMENT scene)
 	{
-		
-		DrawButton(mainAndPauseMenu.firstButton.buttonPos, mainAndPauseMenu.firstButton.buttonSize, WHITE);
-		DrawButton(mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize, WHITE);
-		DrawButton(mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize, WHITE);
+
+		DrawButton(mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize, RAYWHITE);
+		DrawButton(mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize, RAYWHITE);
+		DrawButton(mainAndPauseMenu.fourthButton.buttonPos, mainAndPauseMenu.fourthButton.buttonSize, RAYWHITE);
 
 		if (scene == SCENEMANAGMENT::MAINMENU)
 		{
-			PrintText("ARACNOIDS", titleTextPosX, titleTextPosY, RED);
-			PrintText("PLAY", playTextPosX, playTextPosY, RED);
-			PrintText("CREDITS", creditsTextButtonPosX, creditsTextButtonPosY, RED);
-			PrintText("EXIT", exitTextButtonPosX, exitTextButtonPosY, RED);
+			PrintText("ARACNOIDS", (titleTextPosX - auxTitleXCorrect), titleTextPosY, titleFontSize, RED);
+			PrintText("PLAY", playTextPosX, playTextPosY, textFontSize, RED);
+			PrintText("CREDITS", creditsTextButtonPosX, creditsTextButtonPosY, textFontSize, RED);
+			PrintText("EXIT", exitTextButtonPosX, exitTextButtonPosY, textFontSize, RED);
 		}
 
 		else
 		{
-			PrintText("PAUSE", titleTextPosX, titleTextPosY, RED);
-			PrintText("RESUME", mainAndPauseMenu.firstButton.buttonPos.x, mainAndPauseMenu.firstButton.buttonPos.y, RED);
-			PrintText("RESTART", mainAndPauseMenu.secondButton.buttonPos.x, mainAndPauseMenu.secondButton.buttonPos.y, RED);
-			PrintText("MENU", mainAndPauseMenu.thirdButton.buttonPos.x, mainAndPauseMenu.thirdButton.buttonPos.y, RED);
+			PrintText("PAUSE", titleTextPosX, titleTextPosY, textFontSize, RED);
+			PrintText("RESUME", mainAndPauseMenu.firstButton.buttonPos.x, mainAndPauseMenu.firstButton.buttonPos.y, textFontSize, RED);
+			PrintText("RESTART", mainAndPauseMenu.secondButton.buttonPos.x, mainAndPauseMenu.secondButton.buttonPos.y, textFontSize, RED);
+			PrintText("MENU", mainAndPauseMenu.thirdButton.buttonPos.x, mainAndPauseMenu.thirdButton.buttonPos.y, textFontSize, RED);
 		}
 
 	}
 	void DrawCredits(Menu credits)
 	{
-		credits.backButton.buttonPos.x = 0.0f;
+		credits.fourthButton.buttonPos.x = 0.0f;
 	}
 	void DrawExitMenu(Menu exitScreen)
 	{
@@ -233,7 +237,7 @@ namespace gameMenu
 		winLoseScreen.firstButton.buttonPos.x = 0.0f;
 	}
 
-	void PrintText(const char *text, float posX, float posY, Color color)
+	void PrintText(const char* text, float posX, float posY, int fontSize, Color color)
 	{
 		DrawText(text, static_cast<int>(posX), static_cast<int>(posY), fontSize, color);
 	}

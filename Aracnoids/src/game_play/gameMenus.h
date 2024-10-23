@@ -26,7 +26,7 @@ namespace gameMenu
 		Button firstButton;
 		Button secondButton;
 		Button thirdButton;
-		Button backButton;
+		Button fourthButton;
 		Text buttonText{ 0.0f,0.0f,5 };
 	};
 
@@ -45,7 +45,7 @@ namespace gameMenu
 	void DrawExitMenu(Menu exitScreen);
 	void DrawWinLoseScreen(Menu winLoseScreen);
 
-	void PrintText(const char* text, float posX, float posY, Color color);
+	void PrintText(const char* text, float posX, float posY, int fontSize, Color color);
 	void DrawButton(Vector2 buttonPos, Vector2 buttonSize, Color color);
 	bool isOverButon(mouse::Mouse mouse, Vector2 buttonPos, Vector2 buttonDimension);
 }
