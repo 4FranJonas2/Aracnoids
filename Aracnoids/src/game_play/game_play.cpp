@@ -4,7 +4,7 @@
 
 
 
-void Aracnoids()
+void RunGame()
 {
 	SCENEMANAGMENT scene = SCENEMANAGMENT::NONE;
 	Rectangle gameArena;
@@ -34,7 +34,7 @@ void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMo
 	{
 	case SCENEMANAGMENT::NONE:
 		//srand(time(0));
-		InitWindow(static_cast<int>(screenWidth), static_cast<int>(screenHeight), " Aracnoids by Francisco Jonas ");
+		InitWindow(static_cast<int>(screenWidth), static_cast<int>(screenHeight), " RunGame by Francisco Jonas ");
 		player = gamePlayer::CreatePlayer(player);
 		gameArena = arena::createGameArena(gameArena);
 		gameMouse = mouse::CreateMouse(gameMouse);

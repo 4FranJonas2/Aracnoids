@@ -1,2 +1,4 @@
-﻿  game_play.cpp
-  Aracnoids.vcxproj -> C:\Users\Fran\OneDrive\Escritorio\Fran\ImageCampus\2024\Desarrollo I\Aracnoids\Aracnoids\bin\Debug\Aracnoids.exe
+﻿  gameMenus.cpp
+raylib.lib(rcore.obj) : warning LNK4099: no se encontró PDB '' con 'raylib.lib(rcore.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+raylib.lib(rtextures.obj) : warning LNK4099: no se encontró PDB '' con 'raylib.lib(rtextures.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+  Aracnoids.vcxproj -> C:\Users\Aula 1\Desktop\Aracnoids\Aracnoids\bin\Debug\Aracnoids.exe

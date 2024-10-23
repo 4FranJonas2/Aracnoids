@@ -5,9 +5,9 @@
 namespace gameMenu
 {
 	//BUTTON SIZE
-	const float buttonWidth = 60.0f;
-	const float buttonHeiht = 30.0f;
-	const int fontSize = 5;
+	const float buttonWidth = 200.0f;
+	const float buttonHeiht = 60.0f;
+	const int fontSize = 25;
 	//BUTTON CENTER
 	const float buttonCenterX = buttonWidth / 2.0f;
 	const float buttonCenterY = buttonHeiht / 2.0f;

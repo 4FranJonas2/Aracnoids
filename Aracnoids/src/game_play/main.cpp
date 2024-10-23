@@ -3,7 +3,6 @@
 
 int main()
 {
-	Aracnoids();
-
+	RunGame();
 	return 0;
 }

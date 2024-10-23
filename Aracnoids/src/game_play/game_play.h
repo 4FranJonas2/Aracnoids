@@ -7,7 +7,7 @@
 #include "game_settings/scene_manage.h"
 #include "game_settings/constants.h"
 
-void Aracnoids();
+void RunGame();
 
 void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMouse, SCENEMANAGMENT& scene, gameMenu::Menu& mainAndPauseMenu,
 	gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen);
