@@ -20,8 +20,8 @@ void RunGame()
 	while (!WindowShouldClose())
 	{
 		Input(player, scene, gameMouse, mainAndPauseMenu, winLoseScreen, exitScreen);
-		Update(player, scene);
-		Draw(player, gameArena, scene, mainAndPauseMenu, credits, winLoseScreen, exitScreen);
+		Update(player, scene, gameMouse);
+		Draw(player, gameArena, scene, mainAndPauseMenu, credits, winLoseScreen, exitScreen, gameMouse);
 	}
 
 	Close();
@@ -48,8 +48,8 @@ void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMo
 	}
 
 }
-void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene,mouse ::Mouse gameMouse, gameMenu::Menu mainAndPauseMenu,
-	gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen)
+void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene,mouse ::Mouse gameMouse, gameMenu::Menu& mainAndPauseMenu,
+	gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen)
 {
 	switch (scene)
 	{
@@ -80,8 +80,10 @@ void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene,mouse ::Mouse gameM
 		break;
 	}
 }
-void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene)
+void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse& gameMouse)
 {
+	mouse::UpdateMousePos(gameMouse);
+
 	switch (scene)
 	{
 	case SCENEMANAGMENT::GAME:
@@ -98,14 +100,14 @@ void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene)
 	}
 }
 void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, gameMenu::Menu mainAndPauseMenu,
-	gameMenu::Menu credits, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen)
+	gameMenu::Menu credits, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen, mouse::Mouse gameMouse)
 {
 	BeginDrawing();
 
 	switch (scene)
 	{
 	case SCENEMANAGMENT::MAINMENU:
-		gameMenu::DrawMainMenuorPause(mainAndPauseMenu,scene);
+		gameMenu::DrawMainMenuorPause(mainAndPauseMenu,scene, gameMouse);
 		break;
 	case SCENEMANAGMENT::CREDITS:
 		gameMenu::DrawCredits(credits);
@@ -118,7 +120,7 @@ void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene
 		gameMenu::DrawWinLoseScreen(winLoseScreen);
 		break;
 	case SCENEMANAGMENT::PAUSE:
-		gameMenu::DrawMainMenuorPause(mainAndPauseMenu, scene);
+		gameMenu::DrawMainMenuorPause(mainAndPauseMenu, scene, gameMouse);
 		break;
 	case SCENEMANAGMENT::EXIT:
 		gameMenu::DrawExitMenu(exitScreen);

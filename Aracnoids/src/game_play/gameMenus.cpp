@@ -117,17 +117,20 @@ namespace gameMenu
 	void InputMainMenu(Menu mainAndPauseMenu, mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
 	{
 		// PLAY BUTTON
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainAndPauseMenu.firstButton.buttonPos, mainAndPauseMenu.firstButton.buttonSize))
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, 
+			mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize))
 		{
 			scene = SCENEMANAGMENT::GAME;
 		}
 		// CREDITS BUTTON
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize))
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, 
+			mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize))
 		{
 			scene = SCENEMANAGMENT::CREDITS;
 		}
 		// EXIT BUTTON
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize))
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, 
+			mainAndPauseMenu.fourthButton.buttonPos, mainAndPauseMenu.fourthButton.buttonSize))
 		{
 			scene = SCENEMANAGMENT::EXIT;
 		}
@@ -200,13 +203,23 @@ namespace gameMenu
 	gameMenu::Menu winLoseScreen;
 	gameMenu::Menu exitScreen;*/
 
-	void DrawMainMenuorPause(Menu mainAndPauseMenu, SCENEMANAGMENT scene)
+	void DrawMainMenuorPause(Menu mainAndPauseMenu, SCENEMANAGMENT scene, mouse::Mouse gameMouse)
 	{
-
-		DrawButton(mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize, RAYWHITE);
-		DrawButton(mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize, RAYWHITE);
-		DrawButton(mainAndPauseMenu.fourthButton.buttonPos, mainAndPauseMenu.fourthButton.buttonSize, RAYWHITE);
-
+		if (isOverButon(gameMouse,mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize))
+			DrawButton(mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize, RAYWHITE);
+		else
+			DrawButton(mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize, WHITE);
+		
+		if (isOverButon(gameMouse, mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize))
+			DrawButton(mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize, RAYWHITE);
+		else
+			DrawButton(mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize, WHITE);
+		
+		if (isOverButon(gameMouse, mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize))
+			DrawButton(mainAndPauseMenu.fourthButton.buttonPos, mainAndPauseMenu.fourthButton.buttonSize, RAYWHITE);
+		else
+			DrawButton(mainAndPauseMenu.fourthButton.buttonPos, mainAndPauseMenu.fourthButton.buttonSize, WHITE);
+		
 		if (scene == SCENEMANAGMENT::MAINMENU)
 		{
 			PrintText("ARACNOIDS", (titleTextPosX - auxTitleXCorrect), titleTextPosY, titleFontSize, RED);

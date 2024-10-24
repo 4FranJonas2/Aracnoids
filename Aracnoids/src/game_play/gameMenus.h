@@ -40,7 +40,7 @@ namespace gameMenu
 	void InputWinLoseScreen(Menu winLoseScreen, mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
 	void InputExitScreen(Menu exitScreen, mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
 
-	void DrawMainMenuorPause(Menu mainAndPauseMenu, SCENEMANAGMENT scene);
+	void DrawMainMenuorPause(Menu mainAndPauseMenu, SCENEMANAGMENT scene, mouse::Mouse gameMouse);
 	void DrawCredits(Menu credits);
 	void DrawExitMenu(Menu exitScreen);
 	void DrawWinLoseScreen(Menu winLoseScreen);
