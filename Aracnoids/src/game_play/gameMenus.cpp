@@ -206,17 +206,17 @@ namespace gameMenu
 	void DrawMainMenuorPause(Menu mainAndPauseMenu, SCENEMANAGMENT scene, mouse::Mouse gameMouse)
 	{
 		if (isOverButon(gameMouse,mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize))
-			DrawButton(mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize, RAYWHITE);
-		else
+			DrawButton(mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize, LIGHTGRAY);
+		else 
 			DrawButton(mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize, WHITE);
 		
-		if (isOverButon(gameMouse, mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize))
-			DrawButton(mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize, RAYWHITE);
+		 if (isOverButon(gameMouse, mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize))
+			DrawButton(mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize, LIGHTGRAY);
 		else
 			DrawButton(mainAndPauseMenu.thirdButton.buttonPos, mainAndPauseMenu.thirdButton.buttonSize, WHITE);
 		
-		if (isOverButon(gameMouse, mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize))
-			DrawButton(mainAndPauseMenu.fourthButton.buttonPos, mainAndPauseMenu.fourthButton.buttonSize, RAYWHITE);
+		if (isOverButon(gameMouse, mainAndPauseMenu.fourthButton.buttonPos, mainAndPauseMenu.fourthButton.buttonSize))
+			DrawButton(mainAndPauseMenu.fourthButton.buttonPos, mainAndPauseMenu.fourthButton.buttonSize, LIGHTGRAY);
 		else
 			DrawButton(mainAndPauseMenu.fourthButton.buttonPos, mainAndPauseMenu.fourthButton.buttonSize, WHITE);
 		
@@ -230,7 +230,7 @@ namespace gameMenu
 
 		else
 		{
-			PrintText("PAUSE", titleTextPosX, titleTextPosY, textFontSize, RED);
+			PrintText("PAUSE",(titleTextPosX - auxTitleXCorrect), titleTextPosY, titleFontSize, RED);
 			PrintText("RESUME", mainAndPauseMenu.firstButton.buttonPos.x, mainAndPauseMenu.firstButton.buttonPos.y, textFontSize, RED);
 			PrintText("RESTART", mainAndPauseMenu.secondButton.buttonPos.x, mainAndPauseMenu.secondButton.buttonPos.y, textFontSize, RED);
 			PrintText("MENU", mainAndPauseMenu.thirdButton.buttonPos.x, mainAndPauseMenu.thirdButton.buttonPos.y, textFontSize, RED);
@@ -239,11 +239,11 @@ namespace gameMenu
 	}
 	void DrawCredits(Menu credits)
 	{
-		credits.fourthButton.buttonPos.x = 0.0f;
+		PrintText("CREdits here", credits.firstButton.buttonPos.x, credits.firstButton.buttonPos.y, textFontSize, RED);
 	}
 	void DrawExitMenu(Menu exitScreen)
 	{
-		exitScreen.firstButton.buttonPos.x = 0.0f;
+		
 	}
 	void DrawWinLoseScreen(Menu winLoseScreen)
 	{
