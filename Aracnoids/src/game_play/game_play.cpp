@@ -2,8 +2,6 @@
 #include <iostream>
 #include "game_play.h"
 
-
-
 void RunGame()
 {
 	SCENEMANAGMENT scene = SCENEMANAGMENT::NONE;
@@ -103,7 +101,7 @@ void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene
 	gameMenu::Menu credits, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen, mouse::Mouse gameMouse)
 {
 	BeginDrawing();
-
+	ClearBackground(BLACK);
 	switch (scene)
 	{
 	case SCENEMANAGMENT::MAINMENU:

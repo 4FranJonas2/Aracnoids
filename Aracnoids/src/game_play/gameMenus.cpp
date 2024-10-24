@@ -1,7 +1,7 @@
 #pragma once
 #include "gameMenus.h"
 #include "game_settings/constants.h"
-
+#include <iostream>
 namespace gameMenu
 {
 	//BUTTON SIZE
@@ -243,7 +243,7 @@ namespace gameMenu
 	}
 	void DrawExitMenu(Menu exitScreen)
 	{
-		
+		PrintText("EXIT here", exitScreen.firstButton.buttonPos.x, exitScreen.firstButton.buttonPos.y, textFontSize, RED);
 	}
 	void DrawWinLoseScreen(Menu winLoseScreen)
 	{
