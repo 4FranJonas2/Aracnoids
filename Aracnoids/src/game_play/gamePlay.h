@@ -1,7 +1,7 @@
 #pragma once
 
 #include "entities/player.h"
-#include "entities/game_field.h"
+#include "entities/gameField.h"
 #include "gameMenus.h"
 #include "entities/mouse.h"
 #include "game_settings/scene_manage.h"
