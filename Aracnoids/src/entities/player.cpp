@@ -59,12 +59,9 @@ namespace gamePlayer
 		player.dirNormalizado = Vector2Normalize(player.direction);
 
 		//get angle
-		player.angle = atan2(player.direction.x, player.direction.y);
 
+		player.rotation = GetMousePosRespectFromPlayer(player, gameMouse.mousePos);
 
-
-		player.rotation += player.angle * player.rotationSpeed * GetFrameTime();
-		//move
 		player.playerPos.x += player.dirNormalizado.x * GetFrameTime() * player.speed;
 		player.playerPos.y += player.dirNormalizado.y * GetFrameTime() * player.speed;
 
@@ -74,10 +71,8 @@ namespace gamePlayer
 
 	void DrawPlayer(Player player)
 	{
-
 		DrawCircleLines(static_cast<int> (player.playerPos.x), static_cast<int> (player.playerPos.y), player.radius, RED);
 		DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
-		//DrawRectangle(static_cast<int> (player.playerPos.x), static_cast<int> (player.playerPos.y), static_cast<int> (player.playerRec.width), static_cast<int> (player.playerRec.height), player.playerColor);
 	}
 
 	void StopMovement(Player& player)
@@ -88,22 +83,18 @@ namespace gamePlayer
 		}
 	}
 
-	/*float GetPolarX()
-	{
-		float R = 0.0f;
-		Vector2 mousePos = GetMousePosition();
-
-		R = sqrtf((mousePos.x * mousePos.x) + (mousePos.y * mousePos.y));
-
-		return R;
-	}
-
 	float GetMousePosRespectFromPlayer(Player player, Vector2 mouse)
 	{
+
 		float dx = mouse.x - player.playerPos.x;
 		float dy = mouse.y - player.playerPos.y;
-		float distance = std::sqrt(dx * dx + dy * dy);
+		
+		 //angulo(?) en radianes
+			float theta = std::atan2(dy, dx);
 
-		return distance;
-	}*/
+		//Convertimos el ángulo a grados
+			float thetaGrados = theta * (180.0f / PI);
+
+		return thetaGrados;
+	}
 }

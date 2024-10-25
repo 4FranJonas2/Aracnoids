@@ -34,4 +34,5 @@ namespace gamePlayer
 	void DrawPlayer(Player player);
 
 	void StopMovement(Player& player);
+	float GetMousePosRespectFromPlayer(Player player, Vector2 mouse);
 }
