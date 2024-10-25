@@ -1,4 +1,3 @@
-#pragma once
 #include "player.h"
 #include "game_settings/constants.h"
 #include "raymath.h"

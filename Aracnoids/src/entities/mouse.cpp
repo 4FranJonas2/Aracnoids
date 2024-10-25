@@ -1,4 +1,3 @@
-#pragma once
 #include "mouse.h"
 
 namespace mouse

@@ -1,4 +1,3 @@
-#pragma once
 #include "gameMenus.h"
 #include "game_settings/constants.h"
 #include <iostream>
