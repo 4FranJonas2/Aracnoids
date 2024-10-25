@@ -1,6 +1,5 @@
 #include "gameMenus.h"
-#include "game_settings/constants.h"
-#include <iostream>
+
 namespace gameMenu
 {
 	//BUTTON SIZE
@@ -196,11 +195,6 @@ namespace gameMenu
 			scene = SCENEMANAGMENT::MAINMENU;
 		}
 	}
-
-	/*gameMenu::Menu mainAndPauseMenu;
-	gameMenu::Menu credits;
-	gameMenu::Menu winLoseScreen;
-	gameMenu::Menu exitScreen;*/
 
 	void DrawMainMenuorPause(Menu mainAndPauseMenu, SCENEMANAGMENT scene, mouse::Mouse gameMouse)
 	{

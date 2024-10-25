@@ -1,5 +1,4 @@
 #pragma once
-#include "raylib.h"
 
 //ARENA settings
 const float screenWidth = 1024.0f;

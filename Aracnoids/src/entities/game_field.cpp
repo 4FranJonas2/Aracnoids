@@ -1,4 +1,5 @@
 #include "game_field.h"
+
 #include "game_settings/constants.h"
 
 namespace arena

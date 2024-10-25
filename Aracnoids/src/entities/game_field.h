@@ -1,6 +1,6 @@
 #pragma once
+
 #include "raylib.h"
-//#include "game_settings/utils.h"
 
 namespace arena
 {

@@ -1,15 +1,16 @@
 #include "player.h"
+
+#include "cmath"
+
 #include "game_settings/constants.h"
 #include "raymath.h"
 
-#include "cmath"
 namespace gamePlayer
 {
 	//PLAYER settings
 	const float playerSpeed = 450.0f;
 	const float playerPosX = screenWidth / 2.0f;
 	const float playerPosY = screenHeight / 2.0f;
-
 
 	Player CreatePlayer(Player player)
 	{
@@ -33,7 +34,6 @@ namespace gamePlayer
 	}
 
 	//PLAYER PLAY
-
 	void InputPlayer(Player& player)
 	{
 		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))

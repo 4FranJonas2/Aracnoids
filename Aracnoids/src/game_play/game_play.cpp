@@ -1,4 +1,3 @@
-#include <iostream>
 #include "game_play.h"
 
 void RunGame()

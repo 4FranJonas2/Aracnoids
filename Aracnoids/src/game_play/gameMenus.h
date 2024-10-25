@@ -1,10 +1,11 @@
 #pragma once
+#include <iostream>
+
 #include "raylib.h"
+
+#include "game_settings/constants.h"
 #include "game_settings/scene_manage.h"
 #include "entities/mouse.h"
-//#include "../entities/player.h"
-
-
 
 namespace gameMenu
 {
