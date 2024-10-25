@@ -35,6 +35,7 @@ namespace gamePlayer
 		player.rotationSpeed = 100.0f;
 		player.radius = 10.0f;
 		player.speed = 100.0f;
+		player.aceleration = { 0.0f,0.0f };
 
 		return player;
 	}
@@ -56,20 +57,35 @@ namespace gamePlayer
 
 	void UpdatePlayer(Player& player,mouse::Mouse gameMouse)
 	{
-
-
-		//player set to thrust in direction to te mouse pos
-		player.direction = Vector2Subtract(gameMouse.mousePos, player.playerPos);
-
-		player.dirNormalizado = Vector2Normalize(player.direction);
-
+		//float moduleVectorDir;
+		//player set to thrust in direction to te mouse pos and normalize the vector
 		//get angle
-
 		player.rotation = GetMousePosRespectFromPlayer(player, gameMouse.mousePos);
 
-		player.playerPos.x += player.dirNormalizado.x * GetFrameTime() * player.speed;
-		player.playerPos.y += player.dirNormalizado.y * GetFrameTime() * player.speed;
+		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+		{
+			//moduleVectorDir = GetModule(player.direction);
+			gameMouse.mousePos.x = static_cast <float> (GetMouseX());
+			gameMouse.mousePos.y = static_cast <float> (GetMouseY());
 
+			player.direction = Vector2Subtract(gameMouse.mousePos, player.playerPos);
+			player.dirNormalizado = Vector2Normalize(player.direction);
+
+			player.dirNormalizado = Vector2Divide(player.direction, player.dirNormalizado);
+
+			
+			player.aceleration = Vector2Add (player.aceleration, player.dirNormalizado);
+			
+
+
+			///player.aceleration.x += player.dirNormalizado.x;
+			//player.aceleration.y += player.dirNormalizado.y;
+		}
+		//movemment
+		player.playerPos.x += player.aceleration.x * GetFrameTime();
+		player.playerPos.y += player.aceleration.y * GetFrameTime();
+
+		//future sprite
 		player.playerRec.x = player.playerPos.x;
 		player.playerRec.y = player.playerPos.y;
 	}
@@ -78,6 +94,8 @@ namespace gamePlayer
 	{
 		DrawCircleLines(static_cast<int> (player.playerPos.x), static_cast<int> (player.playerPos.y), player.radius, RED);
 		DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
+
+
 	}
 
 	void StopMovement(Player& player)
@@ -97,9 +115,16 @@ namespace gamePlayer
 		 //angulo(?) en radianes
 			float theta = std::atan2(dy, dx);
 
-		//Convertimos el ángulo a grados
+		//Convierto el ángulo a grados
 			float thetaGrados = theta * (180.0f / PI);
 
 		return thetaGrados;
 	}
+
+	/*float GetModule(Vector2 direction)
+	{
+		float moduleVector = sqrtf((direction.x * direction.x) + (direction.y * direction.y));
+		
+		return moduleVector;
+	}*/
 }

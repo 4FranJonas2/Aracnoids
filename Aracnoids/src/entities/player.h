@@ -25,6 +25,7 @@ namespace gamePlayer
 		float radius;
 		float speed;
 		float angle;
+		Vector2 aceleration;
 	};
 
 	Player CreatePlayer(Player player);
