@@ -85,7 +85,7 @@ void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse& gam
 	switch (scene)
 	{
 	case SCENEMANAGMENT::GAME:
-		gamePlayer::UpdatePlayer(player);
+		gamePlayer::UpdatePlayer(player, gameMouse);
 		break;
 	case SCENEMANAGMENT::RESETGAME:
 		

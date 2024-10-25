@@ -2,6 +2,7 @@
 #include "player.h"
 #include "game_settings/constants.h"
 #include "raymath.h"
+
 #include "cmath"
 namespace gamePlayer
 {
@@ -48,26 +49,22 @@ namespace gamePlayer
 		StopMovement(player);
 	}
 
-	void UpdatePlayer(Player& player)
+	void UpdatePlayer(Player& player,mouse::Mouse gameMouse)
 	{
-		//player rotation
-		//player.rotation += player.rotationSpeed * GetFrameTime();
+
 
 		//player set to thrust in direction to te mouse pos
-		player.direction = Vector2Subtract(GetMousePosition(), player.playerPos);
+		player.direction = Vector2Subtract(gameMouse.mousePos, player.playerPos);
 
-		//player.direction.x = GetMouseX() - player.playerPos.x;
-		//player.direction.y = GetMouseY() - player.playerPos.y;
+		player.dirNormalizado = Vector2Normalize(player.direction);
 
-		 player.dirNormalizado = Vector2Normalize(player.direction);
-
-		 //get angle
-		 player.angle = atan2(player.direction.x, player.direction.y);
+		//get angle
+		player.angle = atan2(player.direction.x, player.direction.y);
 
 
 
-		 player.rotation += player.angle * player.rotationSpeed * GetFrameTime();
-		 //move
+		player.rotation += player.angle * player.rotationSpeed * GetFrameTime();
+		//move
 		player.playerPos.x += player.dirNormalizado.x * GetFrameTime() * player.speed;
 		player.playerPos.y += player.dirNormalizado.y * GetFrameTime() * player.speed;
 
@@ -90,4 +87,23 @@ namespace gamePlayer
 			player.playerDir = PLAYERDIRECTION::STOP;
 		}
 	}
+
+	/*float GetPolarX()
+	{
+		float R = 0.0f;
+		Vector2 mousePos = GetMousePosition();
+
+		R = sqrtf((mousePos.x * mousePos.x) + (mousePos.y * mousePos.y));
+
+		return R;
+	}
+
+	float GetMousePosRespectFromPlayer(Player player, Vector2 mouse)
+	{
+		float dx = mouse.x - player.playerPos.x;
+		float dy = mouse.y - player.playerPos.y;
+		float distance = std::sqrt(dx * dx + dy * dy);
+
+		return distance;
+	}*/
 }

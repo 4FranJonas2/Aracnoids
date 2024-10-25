@@ -1,6 +1,6 @@
 #pragma once
 #include"raylib.h"
-//#include "mouse.h"
+#include "mouse.h"
 
 namespace gamePlayer
 {
@@ -30,8 +30,8 @@ namespace gamePlayer
 	Player CreatePlayer(Player player);
 
 	void InputPlayer(Player& player);
-	void UpdatePlayer(Player& player);
+	void UpdatePlayer(Player& player, mouse::Mouse gameMouse);
 	void DrawPlayer(Player player);
-	
+
 	void StopMovement(Player& player);
 }
