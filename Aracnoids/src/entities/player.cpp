@@ -44,9 +44,9 @@ namespace gamePlayer
 	//PLAYER PLAY
 	void InputPlayer(Player& player)
 	{
-		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+		if (IsMouseButtonPressed(MOUSE_BUTTON_MIDDLE))
 		{
-			///shoot
+			player.matchStart = true;
 		}
 		if (IsMouseButtonDown(MOUSE_BUTTON_RIGHT))
 		{
@@ -64,29 +64,21 @@ namespace gamePlayer
 			//player set to thrust in direction to te mouse pos and normalize the vector
 			//get angle
 			player.rotation = GetMousePosRespectFromPlayer(player, gameMouse.mousePos);
-			player.direction = Vector2Subtract(gameMouse.mousePos, player.playerPos);
+			
+			player.direction.x = gameMouse.mousePos.x - player.playerPos.x;
+			player.direction.y = gameMouse.mousePos.y - player.playerPos.y;
 
 			if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonDown(MOUSE_BUTTON_LEFT))
 			{
-				player.dirNormalizado = Vector2Divide(player.direction, player.dirNormalizado);
-				//moduleVectorDir = GetModule(player.direction);
-				//gameMouse.mousePos.x = static_cast <float> (GetMouseX());
-				//gameMouse.mousePos.y = static_cast <float> (GetMouseY());
-
-				//player.dirNormalizado = Vector2Normalize(player.direction);
-
+				player.dirNormalizado = Vector2Normalize(player.direction);
 
 
 				player.aceleration = Vector2Add(player.aceleration, player.dirNormalizado);
-
-
-
-				///player.aceleration.x += player.dirNormalizado.x;
-				//player.aceleration.y += player.dirNormalizado.y;
+				
 			}
 			//movemment
-			player.playerPos.x += player.aceleration.x * GetFrameTime();
-			player.playerPos.y += player.aceleration.y * GetFrameTime();
+			player.playerPos.x += player.aceleration.x * GetFrameTime() * player.speed;
+			player.playerPos.y += player.aceleration.y * GetFrameTime() * player.speed;
 
 			//future sprite
 			player.playerRec.x = player.playerPos.x;
@@ -100,7 +92,7 @@ namespace gamePlayer
 		DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
 		if (player.matchStart == false)
 		{
-			DrawText("PRess middle mouse button to start", 250, midScreenHeight, 30, RED);
+			DrawText("PRess middle mouse button to start", 250, 500, 30,LIGHTGRAY);
 		}
 	}
 
