@@ -36,6 +36,7 @@ namespace gamePlayer
 		player.radius = 10.0f;
 		player.speed = 100.0f;
 		player.aceleration = { 0.0f,0.0f };
+		player.matchStart = false;
 
 		return player;
 	}
@@ -55,47 +56,52 @@ namespace gamePlayer
 		StopMovement(player);
 	}
 
-	void UpdatePlayer(Player& player,mouse::Mouse gameMouse)
+	void UpdatePlayer(Player& player, mouse::Mouse& gameMouse)
 	{
-		//float moduleVectorDir;
-		//player set to thrust in direction to te mouse pos and normalize the vector
-		//get angle
-		player.rotation = GetMousePosRespectFromPlayer(player, gameMouse.mousePos);
-
-		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+		if (player.matchStart == true)
 		{
-			//moduleVectorDir = GetModule(player.direction);
-			gameMouse.mousePos.x = static_cast <float> (GetMouseX());
-			gameMouse.mousePos.y = static_cast <float> (GetMouseY());
-
+			//float moduleVectorDir;
+			//player set to thrust in direction to te mouse pos and normalize the vector
+			//get angle
+			player.rotation = GetMousePosRespectFromPlayer(player, gameMouse.mousePos);
 			player.direction = Vector2Subtract(gameMouse.mousePos, player.playerPos);
-			player.dirNormalizado = Vector2Normalize(player.direction);
 
-			player.dirNormalizado = Vector2Divide(player.direction, player.dirNormalizado);
+			if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+			{
+				player.dirNormalizado = Vector2Divide(player.direction, player.dirNormalizado);
+				//moduleVectorDir = GetModule(player.direction);
+				//gameMouse.mousePos.x = static_cast <float> (GetMouseX());
+				//gameMouse.mousePos.y = static_cast <float> (GetMouseY());
 
-			
-			player.aceleration = Vector2Add (player.aceleration, player.dirNormalizado);
-			
+				//player.dirNormalizado = Vector2Normalize(player.direction);
 
 
-			///player.aceleration.x += player.dirNormalizado.x;
-			//player.aceleration.y += player.dirNormalizado.y;
+
+				player.aceleration = Vector2Add(player.aceleration, player.dirNormalizado);
+
+
+
+				///player.aceleration.x += player.dirNormalizado.x;
+				//player.aceleration.y += player.dirNormalizado.y;
+			}
+			//movemment
+			player.playerPos.x += player.aceleration.x * GetFrameTime();
+			player.playerPos.y += player.aceleration.y * GetFrameTime();
+
+			//future sprite
+			player.playerRec.x = player.playerPos.x;
+			player.playerRec.y = player.playerPos.y;
 		}
-		//movemment
-		player.playerPos.x += player.aceleration.x * GetFrameTime();
-		player.playerPos.y += player.aceleration.y * GetFrameTime();
-
-		//future sprite
-		player.playerRec.x = player.playerPos.x;
-		player.playerRec.y = player.playerPos.y;
 	}
 
 	void DrawPlayer(Player player)
 	{
 		DrawCircleLines(static_cast<int> (player.playerPos.x), static_cast<int> (player.playerPos.y), player.radius, RED);
 		DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
-
-
+		if (player.matchStart == false)
+		{
+			DrawText("PRess middle mouse button to start", 250, midScreenHeight, 30, RED);
+		}
 	}
 
 	void StopMovement(Player& player)
@@ -111,12 +117,12 @@ namespace gamePlayer
 
 		float dx = mouse.x - player.playerPos.x;
 		float dy = mouse.y - player.playerPos.y;
-		
-		 //angulo(?) en radianes
-			float theta = std::atan2(dy, dx);
+
+		//angulo(?) en radianes
+		float theta = std::atan2(dy, dx);
 
 		//Convierto el ángulo a grados
-			float thetaGrados = theta * (180.0f / PI);
+		float thetaGrados = theta * (180.0f / PI);
 
 		return thetaGrados;
 	}
@@ -124,7 +130,7 @@ namespace gamePlayer
 	/*float GetModule(Vector2 direction)
 	{
 		float moduleVector = sqrtf((direction.x * direction.x) + (direction.y * direction.y));
-		
+
 		return moduleVector;
 	}*/
 }

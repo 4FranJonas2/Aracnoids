@@ -26,12 +26,13 @@ namespace gamePlayer
 		float speed;
 		float angle;
 		Vector2 aceleration;
+		bool matchStart;
 	};
 
 	Player CreatePlayer(Player player);
 
 	void InputPlayer(Player& player);
-	void UpdatePlayer(Player& player, mouse::Mouse gameMouse);
+	void UpdatePlayer(Player& player, mouse::Mouse& gameMouse);
 	void DrawPlayer(Player player);
 
 	void StopMovement(Player& player);
