@@ -9,3 +9,8 @@ const float screenHeightDiv6 = screenHeight / 6;
 const float auxFloat = 100.0f;
 const float arenaMarkBoard = 100.0f;
 
+struct Circle
+{
+	Vector2 circlePos;
+	float radius;
+};
