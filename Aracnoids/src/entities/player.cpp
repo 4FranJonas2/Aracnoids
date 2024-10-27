@@ -22,9 +22,11 @@ namespace gamePlayer
 	{
 		player.playerDir = PLAYERDIRECTION::STOP;
 		player.playerColor = RED;
-
 		player.playerPos.x = playerPosX;
 		player.playerPos.y = playerPosY;
+		player.playerHitBox.circlePos.x = player.playerPos.x;
+		player.playerHitBox.circlePos.y = player.playerPos.y;
+		player.playerHitBox.radius = player.radius;
 		player.playerRec.x = playerPosX;
 		player.playerRec.y = playerPosY;
 		player.playerRec.width = 20.0f;
@@ -88,11 +90,12 @@ namespace gamePlayer
 				}
 
 			}
+
 			//movemment
 			player.playerPos.x += player.aceleration.x * GetFrameTime() * player.speed;
 			player.playerPos.y += player.aceleration.y * GetFrameTime() * player.speed;
 
-			//future sprite
+			//future sprite updated pos
 			player.playerRec.x = player.playerPos.x;
 			player.playerRec.y = player.playerPos.y;
 		}
@@ -100,7 +103,7 @@ namespace gamePlayer
 
 	void DrawPlayer(Player player)
 	{
-		DrawCircleLines(static_cast<int> (player.playerPos.x), static_cast<int> (player.playerPos.y), player.radius, RED);
+		DrawCircleLines(static_cast<int> (player.playerHitBox.circlePos.x), static_cast<int> (player.playerHitBox.circlePos.y), player.playerHitBox.radius, RED);
 		DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
 		if (player.matchStart == false)
 		{
@@ -130,11 +133,4 @@ namespace gamePlayer
 
 		return thetaGrados;
 	}
-
-	/*float GetModule(Vector2 direction)
-	{
-		float moduleVector = sqrtf((direction.x * direction.x) + (direction.y * direction.y));
-
-		return moduleVector;
-	}*/
 }

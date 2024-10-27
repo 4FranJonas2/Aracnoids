@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mouse.h"
+#include "game_settings/constants.h"
 
 namespace gamePlayer
 {
@@ -15,6 +16,7 @@ namespace gamePlayer
 	{
 		PLAYERDIRECTION playerDir;
 		Rectangle playerRec;
+		Circle playerHitBox;
 		Vector2 playerPos;
 		Vector2 pivot;
 		Vector2 direction;
