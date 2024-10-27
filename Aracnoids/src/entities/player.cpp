@@ -21,12 +21,8 @@ namespace gamePlayer
 	Player CreatePlayer(Player player)
 	{
 		player.playerDir = PLAYERDIRECTION::STOP;
-		player.playerColor = RED;
 		player.playerPos.x = playerPosX;
 		player.playerPos.y = playerPosY;
-		player.playerHitBox.circlePos.x = player.playerPos.x;
-		player.playerHitBox.circlePos.y = player.playerPos.y;
-		player.playerHitBox.radius = player.radius;
 		player.playerRec.x = playerPosX;
 		player.playerRec.y = playerPosY;
 		player.playerRec.width = 20.0f;
@@ -40,6 +36,9 @@ namespace gamePlayer
 		player.aceleration = { 0.0f,0.0f };
 		player.matchStart = false;
 
+		player.playerHitBox.circlePos.x = player.playerPos.x;
+		player.playerHitBox.circlePos.y = player.playerPos.y;
+		player.playerHitBox.radius = player.radius;
 		return player;
 	}
 
@@ -77,7 +76,6 @@ namespace gamePlayer
 			{
 				player.dirNormalizado = Vector2Normalize(player.direction);
 
-
 				player.aceleration = Vector2Add(player.aceleration, player.dirNormalizado);
 				
 				// Limitar la aceleración máxima
@@ -88,7 +86,6 @@ namespace gamePlayer
 					// Ajustar la aceleración al máximo permitido
 					player.aceleration = Vector2Scale(Vector2Normalize(player.aceleration), maxAceleracion);
 				}
-
 			}
 
 			//movemment
@@ -98,6 +95,9 @@ namespace gamePlayer
 			//future sprite updated pos
 			player.playerRec.x = player.playerPos.x;
 			player.playerRec.y = player.playerPos.y;
+
+			player.playerHitBox.circlePos.x = player.playerPos.x;
+			player.playerHitBox.circlePos.y = player.playerPos.y;
 		}
 	}
 
