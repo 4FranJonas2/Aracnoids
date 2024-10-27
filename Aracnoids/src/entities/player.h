@@ -21,13 +21,14 @@ namespace gamePlayer
 		Vector2 pivot;
 		Vector2 direction;
 		Vector2 dirNormalizado;
+		Vector2 aceleration;
 		Color playerColor;
 		float rotation;
 		float rotationSpeed;
 		float radius;
-		float speed;
+		float impulse;
+		float velocity;
 		float angle;
-		Vector2 aceleration;
 		bool matchStart;
 	};
 

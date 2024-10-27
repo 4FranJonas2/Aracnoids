@@ -1,5 +1,7 @@
 #include "player.h"
 
+#include <iostream>
+
 #include "cmath"
 
 #include "game_settings/constants.h"
@@ -32,10 +34,10 @@ namespace gamePlayer
 		player.rotation = 0.0f;
 		player.rotationSpeed = 100.0f;
 		player.radius = 10.0f;
-		player.speed = 150.0f;
+		player.velocity = 200.0f;
+		player.impulse = 0.2f;
 		player.aceleration = { 0.0f,0.0f };
 		player.matchStart = false;
-
 		player.playerHitBox.circlePos.x = player.playerPos.x;
 		player.playerHitBox.circlePos.y = player.playerPos.y;
 		player.playerHitBox.radius = player.radius;
@@ -59,38 +61,40 @@ namespace gamePlayer
 
 	void UpdatePlayer(Player& player, mouse::Mouse& gameMouse)
 	{
+
 		if (player.matchStart == true)
 		{
-			float maxAceleracion = 1.0f;
-			//float moduleVectorDir;
-			//player set to thrust in direction to te mouse pos and normalize the vector
 			//get angle
 			player.rotation = GetMousePosRespectFromPlayer(player, gameMouse.mousePos);
-			
+
+			//player set to thrust in direction to te mouse pos and normalize the vector
 			player.direction = Vector2Subtract(GetMousePosition(), player.playerPos);
 
 			player.direction.x = gameMouse.mousePos.x - player.playerPos.x;
 			player.direction.y = gameMouse.mousePos.y - player.playerPos.y;
 
-			if ( IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+			if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
 			{
 				player.dirNormalizado = Vector2Normalize(player.direction);
 
-				player.aceleration = Vector2Add(player.aceleration, player.dirNormalizado);
-				
-				// Limitar la aceleración máxima
-				float acelMagnitud = Vector2Length(player.aceleration);
+				Vector2 impulse = Vector2Scale(player.dirNormalizado, player.impulse);
+				player.aceleration = Vector2Add(player.aceleration, impulse);
 
-				if (acelMagnitud > maxAceleracion)
-				{
-					// Ajustar la aceleración al máximo permitido
-					player.aceleration = Vector2Scale(Vector2Normalize(player.aceleration), maxAceleracion);
-				}
+				// Limitar la aceleración máxima
+				Vector2 minVel = { -player.velocity,-player.velocity };
+				Vector2 maxVel = { player.velocity,player.velocity };
+
+				player.aceleration = Vector2Clamp(player.aceleration, minVel, maxVel);
 			}
 
 			//movemment
-			player.playerPos.x += player.aceleration.x * GetFrameTime() * player.speed;
-			player.playerPos.y += player.aceleration.y * GetFrameTime() * player.speed;
+			player.playerPos.x += player.aceleration.x * GetFrameTime();
+			player.playerPos.y += player.aceleration.y * GetFrameTime();
+
+#ifdef _DEBUG
+			std::cout << "aceleracion: " << player.aceleration.x << " / " << player.aceleration.y << std::endl;
+#endif // _DEBUG
+
 
 			//future sprite updated pos
 			player.playerRec.x = player.playerPos.x;
@@ -103,11 +107,14 @@ namespace gamePlayer
 
 	void DrawPlayer(Player player)
 	{
+#ifdef _DEBUG
 		DrawCircleLines(static_cast<int> (player.playerHitBox.circlePos.x), static_cast<int> (player.playerHitBox.circlePos.y), player.playerHitBox.radius, RED);
+#endif // _DEBUG
+
 		DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
 		if (player.matchStart == false)
 		{
-			DrawText("PRess middle mouse button to start", 250, 500, 30,LIGHTGRAY);
+			DrawText("PRess middle mouse button to start", 250, 500, 30, LIGHTGRAY);
 		}
 	}
 
