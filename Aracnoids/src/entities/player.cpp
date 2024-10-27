@@ -34,7 +34,7 @@ namespace gamePlayer
 		player.rotation = 0.0f;
 		player.rotationSpeed = 100.0f;
 		player.radius = 10.0f;
-		player.speed = 100.0f;
+		player.speed = 150.0f;
 		player.aceleration = { 0.0f,0.0f };
 		player.matchStart = false;
 
@@ -60,21 +60,33 @@ namespace gamePlayer
 	{
 		if (player.matchStart == true)
 		{
+			float maxAceleracion = 1.0f;
 			//float moduleVectorDir;
 			//player set to thrust in direction to te mouse pos and normalize the vector
 			//get angle
 			player.rotation = GetMousePosRespectFromPlayer(player, gameMouse.mousePos);
 			
+			player.direction = Vector2Subtract(GetMousePosition(), player.playerPos);
+
 			player.direction.x = gameMouse.mousePos.x - player.playerPos.x;
 			player.direction.y = gameMouse.mousePos.y - player.playerPos.y;
 
-			if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+			if ( IsMouseButtonDown(MOUSE_BUTTON_LEFT))
 			{
 				player.dirNormalizado = Vector2Normalize(player.direction);
 
 
 				player.aceleration = Vector2Add(player.aceleration, player.dirNormalizado);
 				
+				// Limitar la aceleración máxima
+				float acelMagnitud = Vector2Length(player.aceleration);
+
+				if (acelMagnitud > maxAceleracion)
+				{
+					// Ajustar la aceleración al máximo permitido
+					player.aceleration = Vector2Scale(Vector2Normalize(player.aceleration), maxAceleracion);
+				}
+
 			}
 			//movemment
 			player.playerPos.x += player.aceleration.x * GetFrameTime() * player.speed;
