@@ -103,7 +103,18 @@ namespace gamePlayer
 
 			player.playerHitBox.circlePos.x = player.playerPos.x;
 			player.playerHitBox.circlePos.y = player.playerPos.y;
-		}
+
+			//chekeo de limites horizontales
+			if (player.playerPos.x < -player.radius)
+				player.playerPos.x = screenWidth + player.radius;
+			if (player.playerPos.x > screenWidth + player.radius)
+				player.playerPos.x = -player.radius;
+			//chekeo de limites verticales
+			if (player.playerPos.y < -player.radius)
+				player.playerPos.y = screenHeight + player.radius;
+			if (player.playerPos.y > screenHeight + player.radius)
+				player.playerPos.y = -player.radius;
+		}		
 	}
 
 	void DrawPlayer(Player player)
@@ -111,12 +122,39 @@ namespace gamePlayer
 #ifdef _DEBUG
 		DrawCircleLines(static_cast<int> (player.playerHitBox.circlePos.x), static_cast<int> (player.playerHitBox.circlePos.y), player.playerHitBox.radius, RED);
 #endif // _DEBUG
-
 		DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
+
+		if (player.playerPos.x < player.radius)
+		{
+			player.playerPos.x = player.playerPos.x + screenWidth;
+
+			DrawCircleLines(static_cast<int> (player.playerHitBox.circlePos.x), static_cast<int> (player.playerHitBox.circlePos.y), player.playerHitBox.radius, RED);
+			DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
+		}
+		if (player.playerPos.x > screenWidth )
+		{
+			player.playerPos.x = player.playerPos.x - screenWidth;
+			DrawCircleLines(static_cast<int> (player.playerHitBox.circlePos.x), static_cast<int> (player.playerHitBox.circlePos.y), player.playerHitBox.radius, RED);
+			DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
+		}
+		if (player.playerPos.y < player.radius)
+		{
+			player.playerPos.y = player.playerPos.y + screenHeight + player.radius;
+			DrawCircleLines(static_cast<int> (player.playerHitBox.circlePos.x), static_cast<int> (player.playerHitBox.circlePos.y), player.playerHitBox.radius, RED);
+			DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
+		}
+		if (player.playerPos.y > screenHeight + player.radius)
+		{
+			player.playerPos.y = player.playerPos.y - screenHeight;
+			DrawCircleLines(static_cast<int> (player.playerHitBox.circlePos.x), static_cast<int> (player.playerHitBox.circlePos.y), player.playerHitBox.radius, RED);
+			DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
+		}
+
 		if (player.matchStart == false)
 		{
 			DrawText("PRess middle mouse button to start", 250, 500, 30, LIGHTGRAY);
 		}
+
 	}
 
 	void StopMovement(Player& player)
