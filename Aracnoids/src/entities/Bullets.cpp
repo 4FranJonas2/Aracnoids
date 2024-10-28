@@ -90,12 +90,5 @@ namespace playerBullet
 			}
 		}
 	}
-
-	/*float GetMousePosRespectFromBullet(Bullet bullet, Vector2 mouse)
-	{
-		return 0.0f;
-	}*/
-
-	
 }
 
