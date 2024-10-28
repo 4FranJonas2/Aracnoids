@@ -95,7 +95,7 @@ namespace gameBullet
 
 					bullet[i].radius = 10.0f;
 					bullet[i].impulse = player.impulse;
-					bullet[i].maxTimeAlive = 3.0;
+					bullet[i].maxTimeAlive = 2.0;
 					bullet[i].isBulletAlive = true;
 					bullet[i].bulletTimeAlive = clock();
 
@@ -136,6 +136,19 @@ namespace gameBullet
 				bullet[i].bulletHitBox.circlePos.x = bullet[i].bulletPos.x;
 				bullet[i].bulletHitBox.circlePos.y = bullet[i].bulletPos.y;
 			}
+
+			bullet[i].bulletPos = Vector2Add(bullet[i].bulletPos, Vector2Scale(bullet[i].velocity, GetFrameTime()));
+
+			//chekeo de limites horizontales
+			if (bullet[i].bulletPos.x < -bullet[i].radius)
+				bullet[i].bulletPos.x = screenWidth + bullet[i].radius;
+			if (bullet[i].bulletPos.x > screenWidth +bullet[i].radius)
+				bullet[i].bulletPos.x = -bullet[i].radius;
+			//chekeo de limites verticales
+			if (bullet[i].bulletPos.y < -bullet[i].radius)
+				bullet[i].bulletPos.y = screenWidth + bullet[i].radius;
+			if (bullet[i].bulletPos.y > screenHeight +bullet[i].radius)
+				bullet[i].bulletPos.y = -bullet[i].radius;
 		}
 	}
 
@@ -148,6 +161,32 @@ namespace gameBullet
 				DrawCircleLines(static_cast<int> (bullet[i].bulletHitBox.circlePos.x),
 					static_cast<int> (bullet[i].bulletHitBox.circlePos.y), bullet[i].bulletHitBox.radius, RED);
 				DrawRectanglePro(bullet[i].bulletRec, bullet[i].pivot, bullet[i].rotation, WHITE);
+								
+				if (bullet[i].bulletPos.x < bullet[i].radius)
+				{
+					bullet[i].bulletPos.x = bullet[i].bulletPos.x + screenWidth;
+
+					DrawCircleLines(static_cast<int> (bullet[i].bulletHitBox.circlePos.x), static_cast<int> (bullet[i].bulletHitBox.circlePos.y), bullet[i].bulletHitBox.radius, RED);
+					DrawRectanglePro(bullet[i].bulletRec, bullet[i].pivot, bullet[i].rotation, WHITE);
+				}
+				if (bullet[i].bulletPos.x > screenWidth)
+				{
+					bullet[i].bulletPos.x = bullet[i].bulletPos.x - screenWidth;
+					DrawCircleLines(static_cast<int> (bullet[i].bulletHitBox.circlePos.x), static_cast<int> (bullet[i].bulletHitBox.circlePos.y), bullet[i].bulletHitBox.radius, RED);
+					DrawRectanglePro(bullet[i].bulletRec, bullet[i].pivot, bullet[i].rotation, WHITE);
+				}
+				if (bullet[i].bulletPos.y < bullet[i].radius)
+				{
+					bullet[i].bulletPos.y = bullet[i].bulletPos.y + screenHeight;
+					DrawCircleLines(static_cast<int> (bullet[i].bulletHitBox.circlePos.x), static_cast<int> (bullet[i].bulletHitBox.circlePos.y), bullet[i].bulletHitBox.radius, RED);
+					DrawRectanglePro(bullet[i].bulletRec, bullet[i].pivot, bullet[i].rotation, WHITE);
+				}
+				if (bullet[i].bulletPos.y > screenHeight)
+				{
+					bullet[i].bulletPos.y = bullet[i].bulletPos.y - screenHeight;
+					DrawCircleLines(static_cast<int> (bullet[i].bulletHitBox.circlePos.x), static_cast<int> (bullet[i].bulletHitBox.circlePos.y), bullet[i].bulletHitBox.radius, RED);
+					DrawRectanglePro(bullet[i].bulletRec, bullet[i].pivot, bullet[i].rotation, WHITE);
+				}
 			}
 		}
 	}
