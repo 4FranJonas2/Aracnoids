@@ -1,7 +1,9 @@
 #pragma once
 
 #include "raylib.h"
+#include "raymath.h"
 #include "ctime"
+
 
 #include "mouse.h"
 #include "player.h"
@@ -23,22 +25,18 @@ namespace gameBullet
 		float rotationSpeed;
 		float radius;
 		float impulse;
-		float velocity;
+		Vector2 velocity;
 		float angle;
 		Vector2 aceleration;
 		double maxTimeAlive;
 		bool isBulletAlive;
 	};
 
-	struct Magazine
-	{
-		int maxBullets;
-		Bullet magazine[100];
-	};
+	Bullet CreateBullet( gamePlayer::Player player);
 
-	Bullet CreateBullet(Bullet bullet, gamePlayer::Player player);
-
-	void InitBullets(Magazine& playerBullets, Bullet bullet, gamePlayer::Player player);
-	void UpdateBullet(Magazine& playerBullets, Bullet bullet, gamePlayer::Player player);
-	void DrawBullet(Magazine playerBullets);
+	void InitBullets(Bullet bullet[], gamePlayer::Player player);
+	void InputBullets(Bullet bullet[], gamePlayer::Player player, mouse::Mouse gameMouse);
+	void UpdateBullet(Bullet bullet[]);
+	void DrawBullet(Bullet bullet[]);
+	float GetMousePosRespectFromPlayer(Bullet bullet[], Vector2 mouse, int index);
 }

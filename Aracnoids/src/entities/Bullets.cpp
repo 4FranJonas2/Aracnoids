@@ -3,8 +3,9 @@
 
 namespace gameBullet
 {
-	Bullet CreateBullet(Bullet bullet, gamePlayer::Player player)
-	{	
+	Bullet CreateBullet(gamePlayer::Player player)
+	{
+		Bullet bullet;
 		//bullets
 		bullet.bulletPos.x = player.playerPos.x - player.radius;
 		bullet.bulletPos.y = player.playerPos.y - player.radius;
@@ -22,7 +23,6 @@ namespace gameBullet
 		bullet.pivot.y = player.pivot.y;
 		bullet.rotation = player.rotation;
 		bullet.radius = 10.0f;
-		bullet.velocity = 200.0f;
 		bullet.impulse = 0.2f;
 		bullet.aceleration = player.aceleration;
 
@@ -33,28 +33,71 @@ namespace gameBullet
 		return Bullet();
 	}
 
-	void InitBullets(Magazine& playerBullets, Bullet bullet, gamePlayer::Player player)
+	void InitBullets(Bullet bullet[], gamePlayer::Player player)
 	{
-		playerBullets.maxBullets = 100;
-
-		for (int i = 0; i < playerBullets.maxBullets; i++)
+		for (int i = 0; i < maxBullets; i++)
 		{
-			playerBullets.magazine[i] = CreateBullet(bullet, player);
+			bullet[i].bulletPos.x = player.playerPos.x;
+			bullet[i].bulletPos.y = player.playerPos.y;
+
+			bullet[i].bulletHitBox.circlePos.x = player.playerPos.x;
+			bullet[i].bulletHitBox.circlePos.y = player.playerPos.y;
+			bullet[i].bulletHitBox.radius = 20.0f;
+
+			bullet[i].bulletRec.x = player.playerPos.x;
+			bullet[i].bulletRec.y = player.playerPos.y;
+			bullet[i].bulletRec.width = 10.0f;
+			bullet[i].bulletRec.height = 5.0f;
+
+			bullet[i].pivot.x = player.pivot.x;
+			bullet[i].pivot.y = player.pivot.y;
+			bullet[i].rotation = player.rotation;
+			bullet[i].radius = 10.0f;
+			bullet[i].impulse = 0.2f;
+			bullet[i].aceleration = player.aceleration;
+
+			bullet[i].maxTimeAlive = 3.0;
+			bullet[i].bulletTimeAlive = 0;
+			bullet[i].isBulletAlive = false;
 		}
 	}
 
-	void UpdateBullet(Magazine& playerBullets, Bullet bullet, gamePlayer::Player player)
+	void InputBullets(Bullet bullet[], gamePlayer::Player player, mouse::Mouse gameMouse)
 	{
 		//disparo bala si se da la orden
 		if (IsMouseButtonPressed(MOUSE_BUTTON_RIGHT))
 		{
-			for (int i = 0; i < playerBullets.maxBullets; i++)
+			for (int i = 0; i < maxBullets; i++)
 			{
-				if (!playerBullets.magazine[i].isBulletAlive)
+				if (!bullet[i].isBulletAlive)
 				{
-					playerBullets.magazine[i] = CreateBullet(bullet,player);
-					playerBullets.magazine[i].isBulletAlive = true;
-					playerBullets.magazine[i].bulletTimeAlive = clock();
+					bullet[i].bulletPos.x = player.playerPos.x;
+					bullet[i].bulletPos.y = player.playerPos.y;
+
+					bullet[i].bulletHitBox.circlePos.x = bullet[i].bulletPos.x;
+					bullet[i].bulletHitBox.circlePos.y = bullet[i].bulletPos.y;
+					bullet[i].bulletHitBox.radius = 5.0f;
+
+					bullet[i].bulletRec.x = bullet[i].bulletPos.x;
+					bullet[i].bulletRec.y = bullet[i].bulletPos.y;
+					bullet[i].bulletRec.width = 10.0f;
+					bullet[i].bulletRec.height = 5.0f;
+
+					bullet[i].pivot.x = bullet[i].bulletRec.width / 2;
+					bullet[i].pivot.y = bullet[i].bulletRec.height / 2;
+					bullet[i].rotation = GetMousePosRespectFromPlayer(bullet, gameMouse.mousePos, i);
+					bullet[i].direction = player.direction;
+
+					Vector2 direction = Vector2Subtract(gameMouse.mousePos, player.playerPos);
+					bullet[i].direction = Vector2Normalize(direction);
+					bullet[i].velocity = Vector2Scale(bullet[i].direction, player.velocity);
+					bullet[i].impulse = player.impulse;
+
+					bullet[i].radius = 10.0f;
+					bullet[i].impulse = player.impulse;
+					bullet[i].maxTimeAlive = 3.0;
+					bullet[i].isBulletAlive = true;
+					bullet[i].bulletTimeAlive = clock();
 
 					break;
 				}
@@ -63,32 +106,63 @@ namespace gameBullet
 		//si no disparo reviso estado actual del cargador
 		else if (IsMouseButtonUp(MOUSE_BUTTON_RIGHT))
 		{
-			for (int i = 0; i < playerBullets.maxBullets; i++)
+			for (int i = 0; i < maxBullets; i++)
 			{
-				if (playerBullets.magazine[i].isBulletAlive)
+				if (bullet[i].isBulletAlive)
 				{
-					playerBullets.magazine[i].bulletTimeAlive = clock() - playerBullets.magazine[i].bulletTimeAlive;
-
-					if (playerBullets.magazine[i].bulletTimeAlive = clock() == playerBullets.magazine[i].maxTimeAlive)
+					float elapsedTime = (float)(clock() - bullet[i].bulletTimeAlive) / CLOCKS_PER_SEC;
+					if (elapsedTime >= bullet[i].maxTimeAlive)
 					{
-						playerBullets.magazine[i].isBulletAlive = false;
+						bullet[i].isBulletAlive = false;  // Desactivar la bala
 					}
 				}
 			}
 		}
 	}
 
-	void DrawBullet(Magazine playerBullets)
+	void UpdateBullet(Bullet bullet[])
 	{
-		for (int i = 0; i < playerBullets.maxBullets; i++)
+		for (int i = 0; i < maxBullets; i++)
 		{
-			if (playerBullets.magazine[i].isBulletAlive)
+			if (bullet[i].isBulletAlive == true)
 			{
-				DrawCircleLines(static_cast<int> (playerBullets.magazine[i].bulletHitBox.circlePos.x),
-					static_cast<int> (playerBullets.magazine[i].bulletHitBox.circlePos.y), playerBullets.magazine[i].bulletHitBox.radius, RED);
-				DrawRectanglePro(playerBullets.magazine[i].bulletRec, playerBullets.magazine[i].pivot, playerBullets.magazine[i].rotation, WHITE);
+				bullet[i].bulletPos = Vector2Add(bullet[i].bulletPos,
+					Vector2Scale(bullet[i].velocity, GetFrameTime()));
+
+				//future sprite updated pos
+				bullet[i].bulletRec.x = bullet[i].bulletPos.x;
+				bullet[i].bulletRec.y = bullet[i].bulletPos.y;
+
+				bullet[i].bulletHitBox.circlePos.x = bullet[i].bulletPos.x;
+				bullet[i].bulletHitBox.circlePos.y = bullet[i].bulletPos.y;
 			}
 		}
 	}
-}
 
+	void DrawBullet(Bullet bullet[])
+	{
+		for (int i = 0; i < maxBullets; i++)
+		{
+			if (bullet[i].isBulletAlive)
+			{
+				DrawCircleLines(static_cast<int> (bullet[i].bulletHitBox.circlePos.x),
+					static_cast<int> (bullet[i].bulletHitBox.circlePos.y), bullet[i].bulletHitBox.radius, RED);
+				DrawRectanglePro(bullet[i].bulletRec, bullet[i].pivot, bullet[i].rotation, WHITE);
+			}
+		}
+	}
+
+	float GetMousePosRespectFromPlayer(Bullet bullet[], Vector2 mouse, int index)
+	{
+		float dx = mouse.x - bullet[index].bulletPos.x;
+		float dy = mouse.y - bullet[index].bulletPos.y;
+
+		//angulo(?) en radianes
+		float theta = static_cast <float>(atan2(dy, dx));
+
+		//Convierto el ángulo a grados
+		float thetaGrados = theta * (180.0f / PI);
+
+		return thetaGrados;
+	}
+}
