@@ -8,7 +8,7 @@ const float midScreenHeight = screenHeight / 2;
 const float screenHeightDiv6 = screenHeight / 6;
 const float auxFloat = 100.0f;
 const float arenaMarkBoard = 100.0f;
-
+const int maxBullets = 100;
 struct Circle
 {
 	Vector2 circlePos;

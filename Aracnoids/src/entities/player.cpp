@@ -41,6 +41,7 @@ namespace gamePlayer
 		player.playerHitBox.circlePos.x = player.playerPos.x;
 		player.playerHitBox.circlePos.y = player.playerPos.y;
 		player.playerHitBox.radius = player.radius;
+
 		return player;
 	}
 
