@@ -1,7 +1,7 @@
 #include "Bullets.h"
 
 
-namespace playerBullet
+namespace gameBullet
 {
 	Bullet CreateBullet(Bullet bullet, gamePlayer::Player player)
 	{	
@@ -27,7 +27,7 @@ namespace playerBullet
 		bullet.aceleration = player.aceleration;
 
 		bullet.maxTimeAlive = 3.0;
-		bullet.bulletTimeAlive = 0.0;
+		bullet.bulletTimeAlive = 0;
 		bullet.isBulletAlive = false;
 
 		return Bullet();
@@ -43,7 +43,7 @@ namespace playerBullet
 		}
 	}
 
-	void UpdateBullet(Magazine& playerBullets, mouse::Mouse gameMouse, Bullet bullet, gamePlayer::Player player)
+	void UpdateBullet(Magazine& playerBullets, Bullet bullet, gamePlayer::Player player)
 	{
 		//disparo bala si se da la orden
 		if (IsMouseButtonPressed(MOUSE_BUTTON_RIGHT))

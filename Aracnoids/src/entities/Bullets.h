@@ -7,7 +7,7 @@
 #include "player.h"
 #include "game_settings/constants.h"
 
-namespace playerBullet
+namespace gameBullet
 {
 	struct Bullet
 	{
@@ -39,6 +39,6 @@ namespace playerBullet
 	Bullet CreateBullet(Bullet bullet, gamePlayer::Player player);
 
 	void InitBullets(Magazine& playerBullets, Bullet bullet, gamePlayer::Player player);
-	void UpdateBullet(Magazine& playerBullets, mouse::Mouse gameMouse, Bullet bullet, gamePlayer::Player player);
+	void UpdateBullet(Magazine& playerBullets, Bullet bullet, gamePlayer::Player player);
 	void DrawBullet(Magazine playerBullets);
 }
