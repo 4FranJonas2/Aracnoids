@@ -9,7 +9,6 @@
 
 namespace playerBullet
 {
-
 	struct Bullet
 	{
 		clock_t bulletTimeAlive;
@@ -39,8 +38,7 @@ namespace playerBullet
 
 	Bullet CreateBullet(Bullet bullet, gamePlayer::Player player);
 
-	//void UpdateBullet(Bullet& bullet, mouse::Mouse gameMouse);
-	void DrawBullet(Bullet bullet);
-
-	//float GetMousePosRespectFromBullet(Bullet bullet, Vector2 mouse);
+	void InitBullets(Magazine& playerBullets, Bullet bullet, gamePlayer::Player player);
+	void UpdateBullet(Magazine& playerBullets, mouse::Mouse gameMouse, Bullet bullet, gamePlayer::Player player);
+	void DrawBullet(Magazine playerBullets);
 }
