@@ -12,23 +12,22 @@ namespace Game
 		gameMenu::Menu credits;
 		gameMenu::Menu winLoseScreen;
 		gameMenu::Menu exitScreen;
-		gameBullet::Bullet bullet{};
-		gameBullet::Magazine playerMagazine{};
+		gameBullet::Bullet bullet[maxBullets];
 
-		Init(player, gameArena, gameMouse, scene, mainAndPauseMenu, winLoseScreen, exitScreen, bullet, playerMagazine);
+		Init(player, gameArena, gameMouse, scene, mainAndPauseMenu, winLoseScreen, exitScreen, bullet);
 
 		while (!WindowShouldClose())
 		{
-			Input(player, scene, gameMouse, mainAndPauseMenu, winLoseScreen, exitScreen);
-			Update(player, scene, gameMouse, bullet, playerMagazine);
-			Draw(player, gameArena, scene, mainAndPauseMenu, credits, winLoseScreen, exitScreen, gameMouse, playerMagazine);
+			Input(player, scene, gameMouse, mainAndPauseMenu, winLoseScreen, exitScreen,bullet);
+			Update(player, scene, gameMouse, bullet);
+			Draw(player, gameArena, scene, mainAndPauseMenu, credits, winLoseScreen, exitScreen, gameMouse, bullet);
 		}
 
 		Close();
 	}
 
 	void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMouse, SCENEMANAGMENT& scene, gameMenu::Menu& mainAndPauseMenu,
-		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen, gameBullet::Bullet bullet, gameBullet::Magazine playerMagazine)
+		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen, gameBullet::Bullet bullet[])
 	{
 		switch (scene)
 		{
@@ -40,8 +39,7 @@ namespace Game
 			mainAndPauseMenu = gameMenu::CreateMainMenu(mainAndPauseMenu);
 			winLoseScreen = gameMenu::CreateWinLoseScreen(winLoseScreen);
 			exitScreen = gameMenu::CreateExitScreen(exitScreen);
-			bullet = gameBullet::CreateBullet(bullet, player);
-			gameBullet::InitBullets(playerMagazine, bullet, player);
+			gameBullet::InitBullets(bullet, player);
 
 			scene = SCENEMANAGMENT::MAINMENU;
 		default:
@@ -49,7 +47,7 @@ namespace Game
 		}
 	}
 	void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse gameMouse, gameMenu::Menu& mainAndPauseMenu,
-		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen)
+		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen, gameBullet::Bullet bullet[])
 	{
 		switch (scene)
 		{
@@ -63,6 +61,7 @@ namespace Game
 
 		case SCENEMANAGMENT::GAME:
 			gamePlayer::InputPlayer(player);
+			gameBullet::InputBullets(bullet, player,gameMouse);
 			break;
 
 		case SCENEMANAGMENT::WINLOSESCRREN:
@@ -80,7 +79,7 @@ namespace Game
 			break;
 		}
 	}
-	void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse& gameMouse, gameBullet::Bullet bullet, gameBullet::Magazine playerMAgazine)
+	void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse& gameMouse, gameBullet::Bullet bullet[])
 	{
 		mouse::UpdateMousePos(gameMouse);
 
@@ -88,7 +87,7 @@ namespace Game
 		{
 		case SCENEMANAGMENT::GAME:
 			gamePlayer::UpdatePlayer(player, gameMouse);
-			gameBullet::UpdateBullet(playerMAgazine, bullet, player);
+			gameBullet::UpdateBullet(bullet);
 			break;
 		case SCENEMANAGMENT::RESETGAME:
 
@@ -102,7 +101,7 @@ namespace Game
 	}
 	void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, gameMenu::Menu mainAndPauseMenu,
 		gameMenu::Menu credits, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen, mouse::Mouse gameMouse,
-		gameBullet::Magazine playerMAgazine)
+		gameBullet::Bullet bullet[])
 	{
 		BeginDrawing();
 		ClearBackground(BLACK);
@@ -117,7 +116,7 @@ namespace Game
 		case SCENEMANAGMENT::GAME:
 			gamePlayer::DrawPlayer(player);
 			arena::drawArena(gameArena);
-			gameBullet::DrawBullet(playerMAgazine);
+			gameBullet::DrawBullet(bullet);
 			break;
 		case SCENEMANAGMENT::WINLOSESCRREN:
 			gameMenu::DrawWinLoseScreen(winLoseScreen);
