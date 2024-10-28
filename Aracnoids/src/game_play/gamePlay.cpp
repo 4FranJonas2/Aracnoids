@@ -12,26 +12,27 @@ namespace Game
 		gameMenu::Menu credits;
 		gameMenu::Menu winLoseScreen;
 		gameMenu::Menu exitScreen;
+		gameBullet::Bullet bullet{};
+		gameBullet::Magazine playerMagazine{};
 
-		Init(player, gameArena, gameMouse, scene, mainAndPauseMenu, winLoseScreen, exitScreen);
+		Init(player, gameArena, gameMouse, scene, mainAndPauseMenu, winLoseScreen, exitScreen, bullet, playerMagazine);
 
 		while (!WindowShouldClose())
 		{
 			Input(player, scene, gameMouse, mainAndPauseMenu, winLoseScreen, exitScreen);
-			Update(player, scene, gameMouse);
-			Draw(player, gameArena, scene, mainAndPauseMenu, credits, winLoseScreen, exitScreen, gameMouse);
+			Update(player, scene, gameMouse, bullet, playerMagazine);
+			Draw(player, gameArena, scene, mainAndPauseMenu, credits, winLoseScreen, exitScreen, gameMouse, playerMagazine);
 		}
 
 		Close();
 	}
 
 	void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMouse, SCENEMANAGMENT& scene, gameMenu::Menu& mainAndPauseMenu,
-		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen)
+		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen, gameBullet::Bullet bullet, gameBullet::Magazine playerMagazine)
 	{
 		switch (scene)
 		{
 		case SCENEMANAGMENT::NONE:
-			//srand(time(0));
 			InitWindow(static_cast<int>(screenWidth), static_cast<int>(screenHeight), " RunGame by Francisco Jonas ");
 			player = gamePlayer::CreatePlayer(player);
 			gameArena = arena::createGameArena(gameArena);
@@ -39,12 +40,13 @@ namespace Game
 			mainAndPauseMenu = gameMenu::CreateMainMenu(mainAndPauseMenu);
 			winLoseScreen = gameMenu::CreateWinLoseScreen(winLoseScreen);
 			exitScreen = gameMenu::CreateExitScreen(exitScreen);
+			bullet = gameBullet::CreateBullet(bullet, player);
+			gameBullet::InitBullets(playerMagazine, bullet, player);
 
 			scene = SCENEMANAGMENT::MAINMENU;
 		default:
 			break;
 		}
-
 	}
 	void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse gameMouse, gameMenu::Menu& mainAndPauseMenu,
 		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen)
@@ -78,7 +80,7 @@ namespace Game
 			break;
 		}
 	}
-	void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse& gameMouse)
+	void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse& gameMouse, gameBullet::Bullet bullet, gameBullet::Magazine playerMAgazine)
 	{
 		mouse::UpdateMousePos(gameMouse);
 
@@ -86,6 +88,7 @@ namespace Game
 		{
 		case SCENEMANAGMENT::GAME:
 			gamePlayer::UpdatePlayer(player, gameMouse);
+			gameBullet::UpdateBullet(playerMAgazine, bullet, player);
 			break;
 		case SCENEMANAGMENT::RESETGAME:
 
@@ -98,7 +101,8 @@ namespace Game
 		}
 	}
 	void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, gameMenu::Menu mainAndPauseMenu,
-		gameMenu::Menu credits, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen, mouse::Mouse gameMouse)
+		gameMenu::Menu credits, gameMenu::Menu winLoseScreen, gameMenu::Menu exitScreen, mouse::Mouse gameMouse,
+		gameBullet::Magazine playerMAgazine)
 	{
 		BeginDrawing();
 		ClearBackground(BLACK);
@@ -113,6 +117,7 @@ namespace Game
 		case SCENEMANAGMENT::GAME:
 			gamePlayer::DrawPlayer(player);
 			arena::drawArena(gameArena);
+			gameBullet::DrawBullet(playerMAgazine);
 			break;
 		case SCENEMANAGMENT::WINLOSESCRREN:
 			gameMenu::DrawWinLoseScreen(winLoseScreen);
