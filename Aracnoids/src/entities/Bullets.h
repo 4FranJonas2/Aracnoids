@@ -32,9 +32,9 @@ namespace gameBullet
 		bool isBulletAlive;
 	};
 
-	Bullet CreateBullet( gamePlayer::Player player);
+	//Bullet CreateBullet( gamePlayer::Player player);
 
-	void InitBullets(Bullet bullet[], gamePlayer::Player player);
+	//void InitBullets(Bullet bullet[], gamePlayer::Player player);
 	void InputBullets(Bullet bullet[], gamePlayer::Player player, mouse::Mouse gameMouse);
 	void UpdateBullet(Bullet bullet[]);
 	void DrawBullet(Bullet bullet[]);

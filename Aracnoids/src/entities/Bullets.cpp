@@ -1,67 +1,7 @@
 #include "Bullets.h"
 
-
 namespace gameBullet
 {
-	Bullet CreateBullet(gamePlayer::Player player)
-	{
-		Bullet bullet;
-		//bullets
-		bullet.bulletPos.x = player.playerPos.x - player.radius;
-		bullet.bulletPos.y = player.playerPos.y - player.radius;
-		//hitbox
-		bullet.bulletHitBox.circlePos.x = bullet.bulletPos.x;
-		bullet.bulletHitBox.circlePos.y = bullet.bulletPos.y;
-		bullet.bulletHitBox.radius = 5.0f;
-		//sprite
-		bullet.bulletRec.x = bullet.bulletPos.x;
-		bullet.bulletRec.y = bullet.bulletPos.y;
-		bullet.bulletRec.width = 10.0f;
-		bullet.bulletRec.height = 5.0f;
-
-		bullet.pivot.x = player.pivot.x;
-		bullet.pivot.y = player.pivot.y;
-		bullet.rotation = player.rotation;
-		bullet.radius = 10.0f;
-		bullet.impulse = 0.2f;
-		bullet.aceleration = player.aceleration;
-
-		bullet.maxTimeAlive = 3.0;
-		bullet.bulletTimeAlive = 0;
-		bullet.isBulletAlive = false;
-
-		return Bullet();
-	}
-
-	void InitBullets(Bullet bullet[], gamePlayer::Player player)
-	{
-		for (int i = 0; i < maxBullets; i++)
-		{
-			bullet[i].bulletPos.x = player.playerPos.x;
-			bullet[i].bulletPos.y = player.playerPos.y;
-
-			bullet[i].bulletHitBox.circlePos.x = player.playerPos.x;
-			bullet[i].bulletHitBox.circlePos.y = player.playerPos.y;
-			bullet[i].bulletHitBox.radius = 20.0f;
-
-			bullet[i].bulletRec.x = player.playerPos.x;
-			bullet[i].bulletRec.y = player.playerPos.y;
-			bullet[i].bulletRec.width = 10.0f;
-			bullet[i].bulletRec.height = 5.0f;
-
-			bullet[i].pivot.x = player.pivot.x;
-			bullet[i].pivot.y = player.pivot.y;
-			bullet[i].rotation = player.rotation;
-			bullet[i].radius = 10.0f;
-			bullet[i].impulse = 0.2f;
-			bullet[i].aceleration = player.aceleration;
-
-			bullet[i].maxTimeAlive = 3.0;
-			bullet[i].bulletTimeAlive = 0;
-			bullet[i].isBulletAlive = false;
-		}
-	}
-
 	void InputBullets(Bullet bullet[], gamePlayer::Player player, mouse::Mouse gameMouse)
 	{
 		//disparo bala si se da la orden
@@ -124,10 +64,9 @@ namespace gameBullet
 	{
 		for (int i = 0; i < maxBullets; i++)
 		{
-			if (bullet[i].isBulletAlive == true)
+			if (bullet[i].isBulletAlive)
 			{
-				bullet[i].bulletPos = Vector2Add(bullet[i].bulletPos,
-					Vector2Scale(bullet[i].velocity, GetFrameTime()));
+				bullet[i].bulletPos = Vector2Add(bullet[i].bulletPos,Vector2Scale(bullet[i].velocity, GetFrameTime()));
 
 				//future sprite updated pos
 				bullet[i].bulletRec.x = bullet[i].bulletPos.x;
