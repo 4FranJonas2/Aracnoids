@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ctime>
+
 #include "mouse.h"
 #include "game_settings/constants.h"
 
@@ -14,6 +16,8 @@ namespace gamePlayer
 
 	struct Player
 	{
+		double spawnTime;
+		double neufarTimeSpawn;
 		PLAYERDIRECTION playerDir;
 		Rectangle playerRec;
 		Circle playerHitBox;
@@ -30,6 +34,10 @@ namespace gamePlayer
 		float velocity;
 		float angle;
 		bool matchStart;
+		double elapsedTime;
+		double currentTime;
+		float countDown;
+		float resetCountDown;
 	};
 
 	Player CreatePlayer(Player player);

@@ -34,13 +34,19 @@ namespace gamePlayer
 		player.rotation = 0.0f;
 		player.rotationSpeed = 100.0f;
 		player.radius = 10.0f;
-		player.velocity = 200.0f;
+		player.velocity = 500.0f;
 		player.impulse = 0.2f;
 		player.aceleration = { 0.0f,0.0f };
 		player.matchStart = false;
 		player.playerHitBox.circlePos.x = player.playerPos.x;
 		player.playerHitBox.circlePos.y = player.playerPos.y;
 		player.playerHitBox.radius = player.radius;
+		player.spawnTime = GetTime();
+		player.neufarTimeSpawn = 4.0;
+		player.elapsedTime = 0.0f;
+		player.currentTime = 0.0f;
+		player.countDown = 0.0f;
+		player.resetCountDown = 10.0f;
 
 		return player;
 	}
@@ -63,8 +69,15 @@ namespace gamePlayer
 	void UpdatePlayer(Player& player, mouse::Mouse& gameMouse)
 	{
 
+		player.currentTime = static_cast<float> (GetTime());
+		player.elapsedTime = player.currentTime ;
+
+
+
+
 		if (player.matchStart == true)
 		{
+			
 			//get angle
 			player.rotation = GetMousePosRespectFromPlayer(player, gameMouse.mousePos);
 
@@ -91,10 +104,6 @@ namespace gamePlayer
 			//movemment
 			player.playerPos.x += player.aceleration.x * GetFrameTime();
 			player.playerPos.y += player.aceleration.y * GetFrameTime();
-
-#ifdef _DEBUG
-			std::cout << "aceleracion: " << player.aceleration.x << " / " << player.aceleration.y << std::endl;
-#endif // _DEBUG
 
 
 			//future sprite updated pos

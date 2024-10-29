@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\entities\Bullets.cpp" />
+    <ClCompile Include="src\entities\enemyObject.cpp" />
     <ClCompile Include="src\entities\gameField.cpp" />
     <ClCompile Include="src\entities\mouse.cpp" />
     <ClCompile Include="src\entities\player.cpp" />
@@ -29,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\entities\Bullets.h" />
+    <ClInclude Include="src\entities\enemyObject.h" />
     <ClInclude Include="src\entities\gameField.h" />
     <ClInclude Include="src\entities\mouse.h" />
     <ClInclude Include="src\entities\player.h" />
