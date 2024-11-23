@@ -14,10 +14,10 @@ namespace Game
 	void RunGame();
 
 	void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMouse, SCENEMANAGMENT& scene, gameMenu::Menu& mainAndPauseMenu,
-		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen);
+		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen, gameEnemy::Neufar neufar[]);
 
 	void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse gameMouse, gameMenu::Menu& mainAndPauseMenu,
-		 gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen, gameBullet::Bullet bullet[], gameEnemy::Neufar neufar[]);
+		 gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen, gameBullet::Bullet bullet[]);
 
 	void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse& gameMouse, 
 		gameBullet::Bullet bullet[], gameEnemy::Neufar neufar[]);

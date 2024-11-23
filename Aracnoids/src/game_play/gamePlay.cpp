@@ -16,11 +16,11 @@ namespace Game
 		gameBullet::Bullet bullet[maxBullets];
 		gameEnemy::Neufar neufar[maxNeufares];
 
-		Init(player, gameArena, gameMouse, scene, mainAndPauseMenu, winLoseScreen, exitScreen);
+		Init(player, gameArena, gameMouse, scene, mainAndPauseMenu, winLoseScreen, exitScreen,neufar);
 
 		while (!WindowShouldClose())
 		{
-			Input(player, scene, gameMouse, mainAndPauseMenu, winLoseScreen, exitScreen,bullet, neufar);
+			Input(player, scene, gameMouse, mainAndPauseMenu, winLoseScreen, exitScreen,bullet);
 			Update(player, scene, gameMouse, bullet,neufar);
 			Draw(player, gameArena, scene, mainAndPauseMenu, credits, winLoseScreen, exitScreen, gameMouse, bullet, neufar);
 		}
@@ -29,7 +29,7 @@ namespace Game
 	}
 
 	void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMouse, SCENEMANAGMENT& scene, gameMenu::Menu& mainAndPauseMenu,
-		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen)
+		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen, gameEnemy::Neufar neufar[])
 	{
 		switch (scene)
 		{
@@ -41,6 +41,7 @@ namespace Game
 			mainAndPauseMenu = gameMenu::CreateMainMenu(mainAndPauseMenu);
 			winLoseScreen = gameMenu::CreateWinLoseScreen(winLoseScreen);
 			exitScreen = gameMenu::CreateExitScreen(exitScreen);
+			gameEnemy::InitNeufar(neufar);
 			//gameBullet::InitBullets(bullet, player);
 		
 			scene = SCENEMANAGMENT::MAINMENU;
@@ -53,7 +54,7 @@ namespace Game
 		}
 	}
 	void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse gameMouse, gameMenu::Menu& mainAndPauseMenu,
-		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen, gameBullet::Bullet bullet[], gameEnemy::Neufar neufar[])
+		gameMenu::Menu& winLoseScreen, gameMenu::Menu& exitScreen, gameBullet::Bullet bullet[])
 	{
 		switch (scene)
 		{
@@ -68,7 +69,7 @@ namespace Game
 		case SCENEMANAGMENT::GAME:
 			gamePlayer::InputPlayer(player);
 			gameBullet::InputBullets(bullet, player,gameMouse);
-			gameEnemy::InitNeufar(neufar, player);
+			//gameEnemy::InitNeufar(neufar);
 			break;
 
 		case SCENEMANAGMENT::WINLOSESCRREN:

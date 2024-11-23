@@ -11,9 +11,10 @@ const float screenHeightDiv6 = screenHeight / 6;
 const float auxFloat = 100.0f;
 const float arenaMarkBoard = 100.0f;
 const int maxBullets = 20;
-const int maxNeufares = 40;
+const int maxNeufares = 50;
 const int maxBigNeufares = 10;
 const int maxSmallNeufares = 40;
+
 
 
 struct Circle
