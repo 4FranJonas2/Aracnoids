@@ -97,33 +97,29 @@ namespace gameBullet
 		{
 			if (bullet[i].isBulletAlive)
 			{
-				DrawCircleLines(static_cast<int> (bullet[i].bulletHitBox.circlePos.x),
-					static_cast<int> (bullet[i].bulletHitBox.circlePos.y), bullet[i].bulletHitBox.radius, RED);
 				DrawRectanglePro(bullet[i].bulletRec, bullet[i].pivot, bullet[i].rotation, WHITE);
+#ifdef _DEBUG
+				DrawCircleLines(static_cast<int> (bullet[i].bulletHitBox.circlePos.x),static_cast<int> (bullet[i].bulletHitBox.circlePos.y), bullet[i].bulletHitBox.radius, RED);
+#endif //_DEBUG
 								
 				if (bullet[i].bulletPos.x < bullet[i].radius)
 				{
 					bullet[i].bulletPos.x = bullet[i].bulletPos.x + screenWidth;
-
-					DrawCircleLines(static_cast<int> (bullet[i].bulletHitBox.circlePos.x), static_cast<int> (bullet[i].bulletHitBox.circlePos.y), bullet[i].bulletHitBox.radius, RED);
 					DrawRectanglePro(bullet[i].bulletRec, bullet[i].pivot, bullet[i].rotation, WHITE);
 				}
 				if (bullet[i].bulletPos.x > screenWidth)
 				{
 					bullet[i].bulletPos.x = bullet[i].bulletPos.x - screenWidth;
-					DrawCircleLines(static_cast<int> (bullet[i].bulletHitBox.circlePos.x), static_cast<int> (bullet[i].bulletHitBox.circlePos.y), bullet[i].bulletHitBox.radius, RED);
 					DrawRectanglePro(bullet[i].bulletRec, bullet[i].pivot, bullet[i].rotation, WHITE);
 				}
 				if (bullet[i].bulletPos.y < bullet[i].radius)
 				{
 					bullet[i].bulletPos.y = bullet[i].bulletPos.y + screenHeight;
-					DrawCircleLines(static_cast<int> (bullet[i].bulletHitBox.circlePos.x), static_cast<int> (bullet[i].bulletHitBox.circlePos.y), bullet[i].bulletHitBox.radius, RED);
 					DrawRectanglePro(bullet[i].bulletRec, bullet[i].pivot, bullet[i].rotation, WHITE);
 				}
 				if (bullet[i].bulletPos.y > screenHeight)
 				{
 					bullet[i].bulletPos.y = bullet[i].bulletPos.y - screenHeight;
-					DrawCircleLines(static_cast<int> (bullet[i].bulletHitBox.circlePos.x), static_cast<int> (bullet[i].bulletHitBox.circlePos.y), bullet[i].bulletHitBox.radius, RED);
 					DrawRectanglePro(bullet[i].bulletRec, bullet[i].pivot, bullet[i].rotation, WHITE);
 				}
 			}

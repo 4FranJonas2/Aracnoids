@@ -50,10 +50,6 @@ namespace gameEnemy
 		//	}
 		//}
 
-//#ifdef _DEBUG
-//		std::cout << "time: " << player.elapsedTime << std::endl;
-//#endif // _DEBUG
-
 		for (int i = 0; i < maxNeufares; i++)
 		{
 
@@ -93,8 +89,8 @@ namespace gameEnemy
 			}
 			else
 			{
-				neufar[i].neufarPos.x =screenWidth / 3;
-				neufar[i].neufarPos.y =screenHeight / 3;
+				neufar[i].neufarPos.x = screenWidth / 3;
+				neufar[i].neufarPos.y = screenHeight / 3;
 
 				neufar[i].neufarHitBox.circlePos.x = neufar[i].neufarPos.x;
 				neufar[i].neufarHitBox.circlePos.y = neufar[i].neufarPos.y;
@@ -138,7 +134,7 @@ namespace gameEnemy
 			{
 				if (!neufar[i].isNeufarAlive)
 				{
- 					neufar[i].isNeufarAlive = true;
+					neufar[i].isNeufarAlive = true;
 					timer = resetTimer;
 					break;
 				}
@@ -182,33 +178,29 @@ namespace gameEnemy
 		{
 			if (neufar[i].isNeufarAlive)
 			{
-				DrawCircleLines(static_cast<int> (neufar[i].neufarHitBox.circlePos.x),
-					static_cast<int> (neufar[i].neufarHitBox.circlePos.y), neufar[i].neufarHitBox.radius, RED);
 				DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
+#ifdef _DEBUG
+				DrawCircleLines(static_cast<int> (neufar[i].neufarHitBox.circlePos.x),static_cast<int> (neufar[i].neufarHitBox.circlePos.y), neufar[i].neufarHitBox.radius, RED);
+#endif //_DEBUG
 
 				if (neufar[i].neufarPos.x < neufar[i].neufarHitBox.radius)
 				{
 					neufar[i].neufarPos.x = neufar[i].neufarPos.x + screenWidth;
-
-					DrawCircleLines(static_cast<int> (neufar[i].neufarHitBox.circlePos.x), static_cast<int> (neufar[i].neufarHitBox.circlePos.y), neufar[i].neufarHitBox.radius, RED);
 					DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
 				}
 				if (neufar[i].neufarPos.x > screenWidth)
 				{
 					neufar[i].neufarPos.x = neufar[i].neufarPos.x - screenWidth;
-					DrawCircleLines(static_cast<int> (neufar[i].neufarHitBox.circlePos.x), static_cast<int> (neufar[i].neufarHitBox.circlePos.y), neufar[i].neufarHitBox.radius, RED);
 					DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
 				}
 				if (neufar[i].neufarPos.y < neufar[i].neufarHitBox.radius)
 				{
 					neufar[i].neufarPos.y = neufar[i].neufarPos.y + screenHeight;
-					DrawCircleLines(static_cast<int> (neufar[i].neufarHitBox.circlePos.x), static_cast<int> (neufar[i].neufarHitBox.circlePos.y), neufar[i].neufarHitBox.radius, RED);
 					DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
 				}
 				if (neufar[i].neufarPos.y > screenHeight)
 				{
 					neufar[i].neufarPos.y = neufar[i].neufarPos.y - screenHeight;
-					DrawCircleLines(static_cast<int> (neufar[i].neufarHitBox.circlePos.x), static_cast<int> (neufar[i].neufarHitBox.circlePos.y), neufar[i].neufarHitBox.radius, RED);
 					DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
 				}
 			}
