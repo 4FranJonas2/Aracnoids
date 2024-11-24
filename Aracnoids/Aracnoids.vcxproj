@@ -123,7 +123,7 @@
       <AdditionalDependencies>raylib.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)res\" "$(OutDir)res\" /i/y/s</Command>
+      <Command>"$(SolutionDir)scripts\copy_res.bat" "$(SolutionDir)" "$(TargetDir)" $(TargetName) raylib "-d" 0</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -148,7 +148,7 @@
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)res\" "$(OutDir)res\" /i/y/s</Command>
+      <Command>"$(SolutionDir)scripts\copy_res.bat" "$(SolutionDir)" "$(TargetDir)" $(TargetName) raylib "-d" 0</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

@@ -128,10 +128,10 @@ namespace gamePlayer
 
 	void DrawPlayer(Player player)
 	{
+		DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
 #ifdef _DEBUG
 		DrawCircleLines(static_cast<int> (player.playerHitBox.circlePos.x), static_cast<int> (player.playerHitBox.circlePos.y), player.playerHitBox.radius, RED);
 #endif // _DEBUG
-		DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
 
 		if (player.playerPos.x < player.radius)
 		{
