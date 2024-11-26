@@ -6,13 +6,14 @@
 
 #include "mouse.h"
 #include "player.h"
-#include "game_settings/constants.h"
+//#include "game_settings/constants.h"
 
 namespace gameEnemy
 {
 	struct Neufar
 	{
 		Rectangle neufarRec;
+
 		Circle neufarHitBox;
 
 		Vector2 neufarPos;
@@ -29,8 +30,6 @@ namespace gameEnemy
 		Vector2 aceleration;
 
 		bool isNeufarAlive = false;
-
-
 		bool isBigNeufar = false;
 		bool isSmallNeufar = false;
 

@@ -4,7 +4,7 @@
 
 #include "cmath"
 
-#include "game_settings/constants.h"
+//#include "game_settings/constants.h"
 #include "raymath.h"
 
 //para chequear coliciones ANOTACION
@@ -16,6 +16,7 @@
 namespace gamePlayer
 {
 	//PLAYER settings
+
 	const float playerSpeed = 450.0f;
 	const float playerPosX = screenWidth / 2.0f;
 	const float playerPosY = screenHeight / 2.0f;
@@ -37,7 +38,6 @@ namespace gamePlayer
 		player.velocity = 500.0f;
 		player.impulse = 0.2f;
 		player.aceleration = { 0.0f,0.0f };
-		player.matchStart = false;
 		player.playerHitBox.circlePos.x = player.playerPos.x;
 		player.playerHitBox.circlePos.y = player.playerPos.y;
 		player.playerHitBox.radius = player.radius;
@@ -56,7 +56,7 @@ namespace gamePlayer
 	{
 		if (IsMouseButtonPressed(MOUSE_BUTTON_MIDDLE))
 		{
-			player.matchStart = true;
+			matchStart = true;
 		}
 		if (IsMouseButtonDown(MOUSE_BUTTON_RIGHT))
 		{
@@ -75,7 +75,7 @@ namespace gamePlayer
 
 
 
-		if (player.matchStart == true)
+		if (matchStart == true)
 		{
 			
 			//get angle
@@ -159,7 +159,7 @@ namespace gamePlayer
 			DrawRectanglePro(player.playerRec, player.pivot, player.rotation, WHITE);
 		}
 
-		if (player.matchStart == false)
+		if (matchStart == false)
 		{
 			DrawText("PRess middle mouse button to start", 250, 500, 30, LIGHTGRAY);
 		}

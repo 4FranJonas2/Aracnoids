@@ -16,26 +16,30 @@ namespace gamePlayer
 
 	struct Player
 	{
-		double spawnTime;
-		double neufarTimeSpawn;
 		PLAYERDIRECTION playerDir;
+
 		Rectangle playerRec;
 		Circle playerHitBox;
+
 		Vector2 playerPos;
 		Vector2 pivot;
 		Vector2 direction;
 		Vector2 dirNormalizado;
 		Vector2 aceleration;
+
 		Color playerColor;
+
+		double spawnTime;
+		double neufarTimeSpawn;
+		double elapsedTime;
+		double currentTime;
+
 		float rotation;
 		float rotationSpeed;
 		float radius;
 		float impulse;
 		float velocity;
 		float angle;
-		bool matchStart;
-		double elapsedTime;
-		double currentTime;
 		float countDown;
 		float resetCountDown;
 	};

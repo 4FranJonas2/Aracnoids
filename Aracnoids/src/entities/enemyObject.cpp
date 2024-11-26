@@ -89,8 +89,8 @@ namespace gameEnemy
 			}
 			else
 			{
-				neufar[i].neufarPos.x = screenWidth / 3;
-				neufar[i].neufarPos.y = screenHeight / 3;
+				neufar[i].neufarPos.x = randSpawnPos.x;
+				neufar[i].neufarPos.y = randSpawnPos.y;
 
 				neufar[i].neufarHitBox.circlePos.x = neufar[i].neufarPos.x;
 				neufar[i].neufarHitBox.circlePos.y = neufar[i].neufarPos.y;
@@ -174,36 +174,40 @@ namespace gameEnemy
 
 	void DrawNeufar(Neufar neufar[])
 	{
-		for (int i = 0; i < maxNeufares; i++)
+		if (matchStart == true)
 		{
-			if (neufar[i].isNeufarAlive)
+			for (int i = 0; i < maxNeufares; i++)
 			{
-				DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
-#ifdef _DEBUG
-				DrawCircleLines(static_cast<int> (neufar[i].neufarHitBox.circlePos.x),static_cast<int> (neufar[i].neufarHitBox.circlePos.y), neufar[i].neufarHitBox.radius, RED);
-#endif //_DEBUG
+				if (neufar[i].isNeufarAlive)
+				{
+					DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
+	#ifdef _DEBUG
+					DrawCircleLines(static_cast<int> (neufar[i].neufarHitBox.circlePos.x), static_cast<int> (neufar[i].neufarHitBox.circlePos.y), neufar[i].neufarHitBox.radius, RED);
+	#endif //_DEBUG
 
-				if (neufar[i].neufarPos.x < neufar[i].neufarHitBox.radius)
-				{
-					neufar[i].neufarPos.x = neufar[i].neufarPos.x + screenWidth;
-					DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
-				}
-				if (neufar[i].neufarPos.x > screenWidth)
-				{
-					neufar[i].neufarPos.x = neufar[i].neufarPos.x - screenWidth;
-					DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
-				}
-				if (neufar[i].neufarPos.y < neufar[i].neufarHitBox.radius)
-				{
-					neufar[i].neufarPos.y = neufar[i].neufarPos.y + screenHeight;
-					DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
-				}
-				if (neufar[i].neufarPos.y > screenHeight)
-				{
-					neufar[i].neufarPos.y = neufar[i].neufarPos.y - screenHeight;
-					DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
+					if (neufar[i].neufarPos.x < neufar[i].neufarHitBox.radius)
+					{
+						neufar[i].neufarPos.x = neufar[i].neufarPos.x + screenWidth;
+						DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
+					}
+					if (neufar[i].neufarPos.x > screenWidth)
+					{
+						neufar[i].neufarPos.x = neufar[i].neufarPos.x - screenWidth;
+						DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
+					}
+					if (neufar[i].neufarPos.y < neufar[i].neufarHitBox.radius)
+					{
+						neufar[i].neufarPos.y = neufar[i].neufarPos.y + screenHeight;
+						DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
+					}
+					if (neufar[i].neufarPos.y > screenHeight)
+					{
+						neufar[i].neufarPos.y = neufar[i].neufarPos.y - screenHeight;
+						DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
+					}
 				}
 			}
+
 		}
 	}
 }

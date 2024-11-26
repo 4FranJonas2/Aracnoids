@@ -27,6 +27,7 @@
     <ClCompile Include="src\game_play\gameMenus.cpp" />
     <ClCompile Include="src\game_play\gamePlay.cpp" />
     <ClCompile Include="src\game_play\main.cpp" />
+    <ClCompile Include="src\game_settings\constants.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\entities\Bullets.h" />
