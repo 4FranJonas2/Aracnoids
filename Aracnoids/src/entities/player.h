@@ -2,8 +2,8 @@
 
 #include <ctime>
 
-#include "mouse.h"
-#include "game_settings/constants.h"
+#include "Mouse.h"
+#include "Game_settings/Constants.h"
 
 namespace gamePlayer
 {

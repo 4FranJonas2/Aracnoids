@@ -1,6 +1,6 @@
-#include "enemyObject.h"
-#include <iostream>
+#include "EnemyObject.h"
 
+#include <iostream>
 
 namespace gameEnemy
 {

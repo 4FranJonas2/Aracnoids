@@ -1,13 +1,13 @@
 #pragma once
 
-#include "entities/player.h"
-#include "entities/gameField.h"
-#include "gameMenus.h"
-#include "entities/mouse.h"
-#include "game_settings/scene_manage.h"
-#include "game_settings/constants.h"
+#include "entities/Player.h"
+#include "entities/GameField.h"
+#include "GameMenus.h"
+#include "entities/Mouse.h"
+#include "game_settings/SceneManage.h"
+#include "game_settings/Constants.h"
 #include "entities/Bullets.h"
-#include "entities/enemyObject.h"
+#include "entities/EnemyObject.h"
 
 namespace Game
 {

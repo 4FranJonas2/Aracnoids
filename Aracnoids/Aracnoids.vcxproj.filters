@@ -15,58 +15,64 @@
     <ClCompile Include="src\game_play\main.cpp">
       <Filter>game_play</Filter>
     </ClCompile>
-    <ClCompile Include="src\game_play\gamePlay.cpp">
+    <ClCompile Include="src\game_play\GamePlay.cpp">
       <Filter>game_play</Filter>
     </ClCompile>
-    <ClCompile Include="src\entities\player.cpp">
+    <ClCompile Include="src\entities\Player.cpp">
       <Filter>entities</Filter>
     </ClCompile>
-    <ClCompile Include="src\entities\gameField.cpp">
+    <ClCompile Include="src\entities\GameField.cpp">
       <Filter>entities</Filter>
     </ClCompile>
-    <ClCompile Include="src\entities\mouse.cpp">
+    <ClCompile Include="src\entities\Mouse.cpp">
       <Filter>entities</Filter>
     </ClCompile>
-    <ClCompile Include="src\game_play\gameMenus.cpp">
+    <ClCompile Include="src\game_play\GameMenus.cpp">
       <Filter>game_play</Filter>
     </ClCompile>
     <ClCompile Include="src\entities\Bullets.cpp">
       <Filter>entities</Filter>
     </ClCompile>
-    <ClCompile Include="src\entities\enemyObject.cpp">
+    <ClCompile Include="src\entities\EnemyObject.cpp">
       <Filter>entities</Filter>
     </ClCompile>
-    <ClCompile Include="src\game_settings\constants.cpp">
+    <ClCompile Include="src\game_settings\Constants.cpp">
       <Filter>game_settings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game_play\ColisionManager.cpp">
+      <Filter>game_play</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\game_play\gamePlay.h">
+    <ClInclude Include="src\game_play\GamePlay.h">
       <Filter>game_play</Filter>
     </ClInclude>
-    <ClInclude Include="src\game_settings\constants.h">
+    <ClInclude Include="src\game_settings\Constants.h">
       <Filter>game_settings</Filter>
     </ClInclude>
-    <ClInclude Include="src\entities\player.h">
+    <ClInclude Include="src\entities\Player.h">
       <Filter>entities</Filter>
     </ClInclude>
-    <ClInclude Include="src\game_settings\scene_manage.h">
+    <ClInclude Include="src\game_settings\SceneManage.h">
       <Filter>game_settings</Filter>
     </ClInclude>
-    <ClInclude Include="src\entities\gameField.h">
+    <ClInclude Include="src\entities\GameField.h">
       <Filter>entities</Filter>
     </ClInclude>
-    <ClInclude Include="src\entities\mouse.h">
+    <ClInclude Include="src\entities\Mouse.h">
       <Filter>entities</Filter>
     </ClInclude>
-    <ClInclude Include="src\game_play\gameMenus.h">
+    <ClInclude Include="src\game_play\GameMenus.h">
       <Filter>game_play</Filter>
     </ClInclude>
     <ClInclude Include="src\entities\Bullets.h">
       <Filter>entities</Filter>
     </ClInclude>
-    <ClInclude Include="src\entities\enemyObject.h">
+    <ClInclude Include="src\entities\EnemyObject.h">
       <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game_play\ColisionManager.h">
+      <Filter>game_play</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

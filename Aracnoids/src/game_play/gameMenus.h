@@ -3,9 +3,9 @@
 
 #include "raylib.h"
 
-#include "game_settings/constants.h"
-#include "game_settings/scene_manage.h"
-#include "entities/mouse.h"
+#include "game_settings/Constants.h"
+#include "game_settings/SceneManage.h"
+#include "entities/Mouse.h"
 
 namespace gameMenu
 {

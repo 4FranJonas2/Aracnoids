@@ -1,22 +1,13 @@
-#include "player.h"
+#include "Player.h"
 
 #include <iostream>
 
 #include "cmath"
 
-//#include "game_settings/constants.h"
 #include "raymath.h"
-
-//para chequear coliciones ANOTACION
-//saco la distancia entre ambos objetos
-//comparo la distancia entre la suma del radio de objeto 1 y objeto 2 
-//si es igual estan a punto de colisionar(colisionaron)
-//si la distancis es menor a la suma de los radios entonces ya colisionaron
 
 namespace gamePlayer
 {
-	//PLAYER settings
-
 	const float playerSpeed = 450.0f;
 	const float playerPosX = screenWidth / 2.0f;
 	const float playerPosY = screenHeight / 2.0f;
@@ -58,11 +49,7 @@ namespace gamePlayer
 		{
 			matchStart = true;
 		}
-		if (IsMouseButtonDown(MOUSE_BUTTON_RIGHT))
-		{
-			///trusterON
-		}
-
+		
 		StopMovement(player);
 	}
 
