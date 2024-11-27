@@ -2,6 +2,11 @@
 
 namespace gameMenu
 {
+	Menu mainAndPauseMenu;
+	Menu credits;
+	Menu winLoseScreen;
+	Menu exitScreen;
+
 	//BUTTON SIZE
 	const float buttonWidth = 150.0f;
 	const float buttonHeiht = 40.0f;
@@ -69,7 +74,7 @@ namespace gameMenu
 	const float restartButtonPosY_3 = screenHeightDiv6 * 4;
 	const float toMenuButtonPosY_4 = screenHeightDiv6 * 5;
 
-	Menu CreateMainMenu(Menu mainAndPauseMenu)
+	Menu CreateMainMenu()
 	{
 		//PLAY BUTTON
 		mainAndPauseMenu.secondButton.buttonPos.x = auxButtonPosX;
@@ -103,16 +108,16 @@ namespace gameMenu
 
 		return mainAndPauseMenu;
 	}
-	Menu CreateWinLoseScreen(Menu winScreen)
+	Menu CreateWinLoseScreen()
 	{
-		return winScreen;
+		return winLoseScreen;
 	}
-	Menu CreateExitScreen(Menu exitScreen)
+	Menu CreateExitScreen()
 	{
 		return exitScreen;
 	}
 
-	void InputMainMenu(Menu mainAndPauseMenu, mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
+	void InputMainMenu(mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
 	{
 		// PLAY BUTTON
 		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, 
@@ -144,7 +149,7 @@ namespace gameMenu
 			}
 		}
 	}
-	void InputPauseMenu(Menu mainAndPauseMenu, mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
+	void InputPauseMenu( mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
 	{
 		// RESUME BUTTON
 		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, mainAndPauseMenu.firstButton.buttonPos, mainAndPauseMenu.firstButton.buttonSize))
@@ -169,7 +174,7 @@ namespace gameMenu
 			scene = SCENEMANAGMENT::EXIT;
 		}
 	}
-	void InputWinLoseScreen(Menu winLoseScreen, mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
+	void InputWinLoseScreen( mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
 	{
 		// RESUME BUTTON
 		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, winLoseScreen.firstButton.buttonPos, winLoseScreen.firstButton.buttonSize))
@@ -182,7 +187,7 @@ namespace gameMenu
 			scene = SCENEMANAGMENT::MAINMENU;
 		}
 	}
-	void InputExitScreen(Menu exitScreen, mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
+	void InputExitScreen( mouse::Mouse gameMouse, SCENEMANAGMENT& scene)
 	{
 		// EXIT BUTTON
 		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && isOverButon(gameMouse, exitScreen.firstButton.buttonPos, exitScreen.firstButton.buttonSize))
@@ -196,7 +201,7 @@ namespace gameMenu
 		}
 	}
 
-	void DrawMainMenuorPause(Menu mainAndPauseMenu, SCENEMANAGMENT scene, mouse::Mouse gameMouse)
+	void DrawMainMenuorPause(SCENEMANAGMENT scene, mouse::Mouse gameMouse)
 	{
 		if (isOverButon(gameMouse,mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize))
 			DrawButton(mainAndPauseMenu.secondButton.buttonPos, mainAndPauseMenu.secondButton.buttonSize, LIGHTGRAY);
@@ -230,15 +235,15 @@ namespace gameMenu
 		}
 
 	}
-	void DrawCredits(Menu credits)
+	void DrawCredits()
 	{
 		PrintText("CREdits here", credits.firstButton.buttonPos.x, credits.firstButton.buttonPos.y, textFontSize, RED);
 	}
-	void DrawExitMenu(Menu exitScreen)
+	void DrawExitMenu()
 	{
 		PrintText("EXIT here", exitScreen.firstButton.buttonPos.x, exitScreen.firstButton.buttonPos.y, textFontSize, RED);
 	}
-	void DrawWinLoseScreen(Menu winLoseScreen)
+	void DrawWinLoseScreen()
 	{
 		winLoseScreen.firstButton.buttonPos.x = 0.0f;
 	}

@@ -31,20 +31,20 @@ namespace gameMenu
 		Text buttonText{ 0.0f,0.0f,5 };
 	};
 
-	Menu CreateMainMenu(Menu mainAndPauseMenu);
-	Menu CreateWinLoseScreen(Menu winScreen);
-	Menu CreateExitScreen(Menu exitScreen);
+	Menu CreateMainMenu();
+	Menu CreateWinLoseScreen();
+	Menu CreateExitScreen();
 	
-	void InputMainMenu(Menu mainAndPauseMenu, mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
+	void InputMainMenu( mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
 	void InputCredits( SCENEMANAGMENT& scene);
-	void InputPauseMenu(Menu mainAndPauseMenu, mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
-	void InputWinLoseScreen(Menu winLoseScreen, mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
-	void InputExitScreen(Menu exitScreen, mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
+	void InputPauseMenu( mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
+	void InputWinLoseScreen( mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
+	void InputExitScreen( mouse::Mouse gameMouse, SCENEMANAGMENT& scene);
 
-	void DrawMainMenuorPause(Menu mainAndPauseMenu, SCENEMANAGMENT scene, mouse::Mouse gameMouse);
-	void DrawCredits(Menu credits);
-	void DrawExitMenu(Menu exitScreen);
-	void DrawWinLoseScreen(Menu winLoseScreen);
+	void DrawMainMenuorPause( SCENEMANAGMENT scene, mouse::Mouse gameMouse);
+	void DrawCredits();
+	void DrawExitMenu();
+	void DrawWinLoseScreen();
 
 	void PrintText(const char* text, float posX, float posY, int fontSize, Color color);
 	void DrawButton(Vector2 buttonPos, Vector2 buttonSize, Color color);
