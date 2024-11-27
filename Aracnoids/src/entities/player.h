@@ -50,7 +50,7 @@ namespace gamePlayer
 	Player CreatePlayer(Player player);
 
 	void InputPlayer(Player& player);
-	void UpdatePlayer(Player& player, mouse::Mouse& gameMouse);
+	void UpdatePlayer(Player& player, mouse::Mouse gameMouse);
 	void DrawPlayer(Player player);
 
 	void StopMovement(Player& player);

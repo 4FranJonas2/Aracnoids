@@ -54,7 +54,7 @@ namespace gamePlayer
 		StopMovement(player);
 	}
 
-	void UpdatePlayer(Player& player, mouse::Mouse& gameMouse)
+	void UpdatePlayer(Player& player, mouse::Mouse gameMouse)
 	{
 		player.currentTime = static_cast<float> (GetTime());
 		player.elapsedTime = player.currentTime ;
