@@ -3,11 +3,14 @@
 
 namespace mouse
 {
+
 	struct Mouse
 	{
 		Vector2 mousePos;
 	};
 
-	Mouse CreateMouse(Mouse gameMouse);
-	void UpdateMousePos(Mouse& gameMouse);
+	Mouse CreateMouse();
+	Vector2 UpdateMousePos();
+	float GetMouseXPos();
+	float GetMouseYPos();
 }
