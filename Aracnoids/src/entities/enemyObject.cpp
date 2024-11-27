@@ -4,12 +4,14 @@
 
 namespace gameEnemy
 {
+	Neufar neufar[maxNeufares];
+
 	float countDown = 0.0f;
 	float spawnRate = 5.0f;
 	float timer = 0.0f;
 	float resetTimer = 4.0f;
 
-	void InitNeufar(Neufar neufar[])
+	void InitNeufar()
 	{
 		int bigNeufarCounter = 0;
 		int smallNeufarCounter = 0;
@@ -36,19 +38,6 @@ namespace gameEnemy
 			neufarSpawnPosTop_Left.y = static_cast<float>(GetRandomValue(0, 0 - neufarSpawnRangeOnY));
 			randSpawnPos = neufarSpawnPosTop_Left;
 		}
-
-		////neufar type counter
-		//for (int i = 0; i < maxNeufares; i++)
-		//{
-		//	if (neufar[i].isBigNeufar)
-		//	{
-		//		bigNeufarCounter++;
-		//	}
-		//	if (neufar[i].isSmallNeufar)
-		//	{
-		//		smallNeufarCounter++;
-		//	}
-		//}
 
 		for (int i = 0; i < maxNeufares; i++)
 		{
@@ -124,7 +113,8 @@ namespace gameEnemy
 		}
 
 	}
-	void UpdateNeufar(Neufar neufar[])
+
+	void UpdateNeufar()
 	{
 		int maxSmallNeufarDeploy = 4;
 		int smallNeufarDeploy = 0;
@@ -147,19 +137,26 @@ namespace gameEnemy
 			}
 
 			//miro si hay colision de bullet con neufar, si pasa salen 4 neufar chiquitos
-			if (ColisionManager::BulletNeufarColision())
+			for (int i = 0; i < maxNeufares; i++)
 			{
-				for (int i = 0; i < maxNeufares; i++)
+				if (ColisionManager::BulletNeufarColision())
 				{
-					if (smallNeufarDeploy < maxSmallNeufarDeploy && !neufar->isNeufarAlive && neufar->isSmallNeufar)
+					neufar[i].isNeufarAlive = false;
+
+					for (int j = 0; j < maxNeufares; j++)
 					{
-						neufar[i].isNeufarAlive = true;
-						smallNeufarDeploy++;
-					}
-					else if(smallNeufarDeploy == maxSmallNeufarDeploy)
-					{
-						smallNeufarDeploy = 0;
-						break;
+						if (smallNeufarDeploy < maxSmallNeufarDeploy && !neufar->isNeufarAlive && neufar->isSmallNeufar)
+						{
+							neufar[j].isNeufarAlive = true;
+							neufar[j].neufarPos = neufar[i].neufarPos;
+							smallNeufarDeploy++;
+
+						}
+						else if (smallNeufarDeploy == maxSmallNeufarDeploy)
+						{
+							smallNeufarDeploy = 0;
+							break;
+						}
 					}
 				}
 			}
@@ -197,7 +194,7 @@ namespace gameEnemy
 		}
 	}
 
-	void DrawNeufar(Neufar neufar[])
+	void DrawNeufar()
 	{
 		if (matchStart == true)
 		{
@@ -206,9 +203,9 @@ namespace gameEnemy
 				if (neufar[i].isNeufarAlive)
 				{
 					DrawRectanglePro(neufar[i].neufarRec, neufar[i].pivot, neufar[i].rotation, WHITE);
-	#ifdef _DEBUG
+#ifdef _DEBUG
 					DrawCircleLines(static_cast<int> (neufar[i].neufarHitBox.circlePos.x), static_cast<int> (neufar[i].neufarHitBox.circlePos.y), neufar[i].neufarHitBox.radius, RED);
-	#endif //_DEBUG
+#endif //_DEBUG
 
 					if (neufar[i].neufarPos.x < neufar[i].neufarHitBox.radius)
 					{

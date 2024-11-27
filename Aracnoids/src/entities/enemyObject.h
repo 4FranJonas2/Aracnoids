@@ -37,11 +37,9 @@ namespace gameEnemy
 		int smallNeufarCounter;
 	};
 
-	//Neufar CreateNeufar(gamePlayer::Player player);
-
-	void InitNeufar(Neufar neufar[]);
-	void UpdateNeufar(Neufar neufar[]);
+	void InitNeufar();
+	void UpdateNeufar();
 	//Vector2 GetRandSpawnPos();
-	void DrawNeufar(Neufar neufar[]);
+	void DrawNeufar();
 	//float GetMousePosRespectFromPlayer(Neufar neufar[], Vector2 mouse, int index);
 }
