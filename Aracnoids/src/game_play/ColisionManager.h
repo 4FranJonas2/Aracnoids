@@ -4,4 +4,10 @@
 
 #include "game_settings/Constants.h"
 
-bool circleCircle(Circle circle1, Circle cricle2);
+namespace ColisionManager
+{
+	bool CircleCircle(Circle circle1, Circle cricle2);
+	bool PlayerNeufarColision();
+	bool NeufarNeufarColision();
+	bool BulletNeufarColision();
+}

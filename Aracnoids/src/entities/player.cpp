@@ -38,6 +38,7 @@ namespace gamePlayer
 		player.currentTime = 0.0f;
 		player.countDown = 0.0f;
 		player.resetCountDown = 10.0f;
+		player.playerLives = 3;
 
 		return player;
 	}
@@ -55,61 +56,64 @@ namespace gamePlayer
 
 	void UpdatePlayer(Player& player, mouse::Mouse& gameMouse)
 	{
-
 		player.currentTime = static_cast<float> (GetTime());
 		player.elapsedTime = player.currentTime ;
 
-
-
-
 		if (matchStart == true)
 		{
-			
-			//get angle
-			player.rotation = GetMousePosRespectFromPlayer(player, gameMouse.mousePos);
-
-			//player set to thrust in direction to te mouse pos and normalize the vector
-			player.direction = Vector2Subtract(GetMousePosition(), player.playerPos);
-
-			player.direction.x = gameMouse.mousePos.x - player.playerPos.x;
-			player.direction.y = gameMouse.mousePos.y - player.playerPos.y;
-
-			if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+			if (ColisionManager::PlayerNeufarColision())
 			{
-				player.dirNormalizado = Vector2Normalize(player.direction);
-
-				Vector2 impulse = Vector2Scale(player.dirNormalizado, player.impulse);
-				player.aceleration = Vector2Add(player.aceleration, impulse);
-
-				// Limitar la aceleración máxima
-				Vector2 minVel = { -player.velocity,-player.velocity };
-				Vector2 maxVel = { player.velocity,player.velocity };
-
-				player.aceleration = Vector2Clamp(player.aceleration, minVel, maxVel);
+				player.playerLives--;
 			}
+			
+			else if (player.playerLives > 0)
+			{
+				//get angle
+				player.rotation = GetMousePosRespectFromPlayer(player, gameMouse.mousePos);
 
-			//movemment
-			player.playerPos.x += player.aceleration.x * GetFrameTime();
-			player.playerPos.y += player.aceleration.y * GetFrameTime();
+				//player set to thrust in direction to te mouse pos and normalize the vector
+				player.direction = Vector2Subtract(GetMousePosition(), player.playerPos);
+
+				player.direction.x = gameMouse.mousePos.x - player.playerPos.x;
+				player.direction.y = gameMouse.mousePos.y - player.playerPos.y;
+
+				if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+				{
+					player.dirNormalizado = Vector2Normalize(player.direction);
+
+					Vector2 impulse = Vector2Scale(player.dirNormalizado, player.impulse);
+					player.aceleration = Vector2Add(player.aceleration, impulse);
+
+					// Limitar la aceleración máxima
+					Vector2 minVel = { -player.velocity,-player.velocity };
+					Vector2 maxVel = { player.velocity,player.velocity };
+
+					player.aceleration = Vector2Clamp(player.aceleration, minVel, maxVel);
+				}
+
+				//movemment
+				player.playerPos.x += player.aceleration.x * GetFrameTime();
+				player.playerPos.y += player.aceleration.y * GetFrameTime();
 
 
-			//future sprite updated pos
-			player.playerRec.x = player.playerPos.x;
-			player.playerRec.y = player.playerPos.y;
+				//future sprite updated pos
+				player.playerRec.x = player.playerPos.x;
+				player.playerRec.y = player.playerPos.y;
 
-			player.playerHitBox.circlePos.x = player.playerPos.x;
-			player.playerHitBox.circlePos.y = player.playerPos.y;
+				player.playerHitBox.circlePos.x = player.playerPos.x;
+				player.playerHitBox.circlePos.y = player.playerPos.y;
 
-			//chekeo de limites horizontales
-			if (player.playerPos.x < -player.radius)
-				player.playerPos.x = screenWidth + player.radius;
-			if (player.playerPos.x > screenWidth + player.radius)
-				player.playerPos.x = -player.radius;
-			//chekeo de limites verticales
-			if (player.playerPos.y < -player.radius)
-				player.playerPos.y = screenHeight + player.radius;
-			if (player.playerPos.y > screenHeight + player.radius)
-				player.playerPos.y = -player.radius;
+				//chekeo de limites horizontales
+				if (player.playerPos.x < -player.radius)
+					player.playerPos.x = screenWidth + player.radius;
+				if (player.playerPos.x > screenWidth + player.radius)
+					player.playerPos.x = -player.radius;
+				//chekeo de limites verticales
+				if (player.playerPos.y < -player.radius)
+					player.playerPos.y = screenHeight + player.radius;
+				if (player.playerPos.y > screenHeight + player.radius)
+					player.playerPos.y = -player.radius;
+			}
 		}		
 	}
 

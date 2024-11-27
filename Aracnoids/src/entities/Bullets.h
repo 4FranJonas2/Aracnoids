@@ -6,6 +6,7 @@
 
 #include "Mouse.h"
 #include "Player.h"
+#include "game_play/ColisionManager.h"
 
 namespace gameBullet
 {

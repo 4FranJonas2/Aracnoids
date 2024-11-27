@@ -117,7 +117,7 @@ namespace gameEnemy
 				neufar[i].impulse = 0.2f;
 				neufar[i].aceleration = { 100.0f,100.0f };
 				neufar[i].isNeufarAlive = false;
-				neufar[i].isBigNeufar = false;
+				neufar[i].isSmallNeufar = true;
 
 				smallNeufarCounter++;
 			}
@@ -126,47 +126,72 @@ namespace gameEnemy
 	}
 	void UpdateNeufar(Neufar neufar[])
 	{
-		timer -= GetFrameTime();
+		int maxSmallNeufarDeploy = 4;
+		int smallNeufarDeploy = 0;
 
-		if (timer <= 0)
+		if (matchStart == true)
 		{
-			for (int i = 0; i < maxNeufares; i++)
+			timer -= GetFrameTime();
+
+			if (timer <= 0)
 			{
-				if (!neufar[i].isNeufarAlive)
+				for (int i = 0; i < maxNeufares; i++)
 				{
-					neufar[i].isNeufarAlive = true;
-					timer = resetTimer;
-					break;
+					if (!neufar[i].isNeufarAlive)
+					{
+						neufar[i].isNeufarAlive = true;
+						timer = resetTimer;
+						break;
+					}
 				}
 			}
-		}
 
-		for (int i = 0; i < maxNeufares; i++)
-		{
-			if (neufar[i].isNeufarAlive && neufar[i].isBigNeufar)
+			//miro si hay colision de bullet con neufar, si pasa salen 4 neufar chiquitos
+			if (ColisionManager::BulletNeufarColision())
 			{
-				neufar[i].neufarPos = Vector2Add(neufar[i].neufarPos, Vector2Scale(neufar[i].velocity, GetFrameTime()));
+				for (int i = 0; i < maxNeufares; i++)
+				{
+					if (smallNeufarDeploy < maxSmallNeufarDeploy && !neufar->isNeufarAlive && neufar->isSmallNeufar)
+					{
+						neufar[i].isNeufarAlive = true;
+						smallNeufarDeploy++;
+					}
+					else if(smallNeufarDeploy == maxSmallNeufarDeploy)
+					{
+						smallNeufarDeploy = 0;
+						break;
+					}
+				}
+			}
 
-				//future sprite updated pos
-				neufar[i].neufarRec.x = neufar[i].neufarPos.x;
-				neufar[i].neufarRec.y = neufar[i].neufarPos.y;
+			for (int i = 0; i < maxNeufares; i++)
+			{
+				if (neufar[i].isNeufarAlive)
+				{
+					neufar[i].neufarPos = Vector2Add(neufar[i].neufarPos, Vector2Scale(neufar[i].velocity, GetFrameTime()));
 
-				neufar[i].neufarHitBox.circlePos.x = neufar[i].neufarPos.x;
-				neufar[i].neufarHitBox.circlePos.y = neufar[i].neufarPos.y;
+					//future sprite updated pos
+					neufar[i].neufarRec.x = neufar[i].neufarPos.x;
+					neufar[i].neufarRec.y = neufar[i].neufarPos.y;
+
+					neufar[i].neufarHitBox.circlePos.x = neufar[i].neufarPos.x;
+					neufar[i].neufarHitBox.circlePos.y = neufar[i].neufarPos.y;
 
 
-				neufar[i].neufarPos = Vector2Add(neufar[i].neufarPos, Vector2Scale(neufar[i].velocity, GetFrameTime()));
+					neufar[i].neufarPos = Vector2Add(neufar[i].neufarPos, Vector2Scale(neufar[i].velocity, GetFrameTime()));
 
-				//chekeo de limites horizontales
-				if (neufar[i].neufarPos.x < -neufar[i].neufarHitBox.radius)
-					neufar[i].neufarPos.x = screenWidth + neufar[i].neufarHitBox.radius;
-				if (neufar[i].neufarPos.x > screenWidth + neufar[i].neufarHitBox.radius)
-					neufar[i].neufarPos.x = -neufar[i].neufarHitBox.radius;
-				//chekeo de limites verticales
-				if (neufar[i].neufarPos.y < -neufar[i].neufarHitBox.radius)
-					neufar[i].neufarPos.y = screenWidth + neufar[i].neufarHitBox.radius;
-				if (neufar[i].neufarPos.y > screenHeight + neufar[i].neufarHitBox.radius)
-					neufar[i].neufarPos.y = -neufar[i].neufarHitBox.radius;
+					//chekeo de limites horizontales
+					if (neufar[i].neufarPos.x < -neufar[i].neufarHitBox.radius)
+						neufar[i].neufarPos.x = screenWidth + neufar[i].neufarHitBox.radius;
+					if (neufar[i].neufarPos.x > screenWidth + neufar[i].neufarHitBox.radius)
+						neufar[i].neufarPos.x = -neufar[i].neufarHitBox.radius;
+					//chekeo de limites verticales
+					if (neufar[i].neufarPos.y < -neufar[i].neufarHitBox.radius)
+						neufar[i].neufarPos.y = screenWidth + neufar[i].neufarHitBox.radius;
+					if (neufar[i].neufarPos.y > screenHeight + neufar[i].neufarHitBox.radius)
+						neufar[i].neufarPos.y = -neufar[i].neufarHitBox.radius;
+				}
+
 			}
 
 		}

@@ -4,6 +4,7 @@
 
 #include "Mouse.h"
 #include "Game_settings/Constants.h"
+#include "game_play/ColisionManager.h"
 
 namespace gamePlayer
 {
@@ -42,6 +43,8 @@ namespace gamePlayer
 		float angle;
 		float countDown;
 		float resetCountDown;
+
+		int playerLives;
 	};
 
 	Player CreatePlayer(Player player);
