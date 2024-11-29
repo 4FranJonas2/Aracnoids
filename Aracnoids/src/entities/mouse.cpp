@@ -2,8 +2,6 @@
 
 namespace mouse
 {
-	Mouse gameMouse;
-
 	Mouse CreateMouse(Mouse& gameMouse)
 	{
 		gameMouse.mousePos = GetMousePosition();
@@ -11,22 +9,22 @@ namespace mouse
 		return gameMouse;
 	}
 
-	Vector2 UpdateMousePos(Vector2& mousePos)
+	Vector2 UpdateMousePos(Vector2& gameMouse)
 	{
-		gameMouse.mousePos = GetMousePosition();
+		gameMouse = GetMousePosition();
 
-		return gameMouse.mousePos;
+		return gameMouse;
 	}
 
 	float GetMouseXPos(float& mousePosX)
 	{
-		float mouseXPos = gameMouse.mousePos.x;
+		float mouseXPos = mousePosX;
 		return mouseXPos;
 	}
 
 	float GetMouseYPos(float& mousePosY)
 	{
-		float mouseYPos = gameMouse.mousePos.y;
+		float mouseYPos = mousePosY;
 		return mouseYPos;
 	}
 }
