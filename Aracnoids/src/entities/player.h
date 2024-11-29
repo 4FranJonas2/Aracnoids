@@ -47,7 +47,7 @@ namespace gamePlayer
 		int playerLives;
 	};
 
-	Player CreatePlayer(Player player);
+	Player CreatePlayer(Player& player);
 
 	void InputPlayer(Player& player);
 	void UpdatePlayer(Player& player, mouse::Mouse gameMouse);

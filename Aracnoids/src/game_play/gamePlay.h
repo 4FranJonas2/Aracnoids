@@ -13,15 +13,13 @@ namespace Game
 {
 	void RunGame();
 
-	void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMouse, SCENEMANAGMENT& scene);
+	void Init();
 
-	void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse gameMouse, gameBullet::Bullet bullet[]);
+	void Input();
 
-	void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse& gameMouse, 
-		gameBullet::Bullet bullet[]);
+	void Update();
 
-	void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, mouse::Mouse gameMouse,
-		gameBullet::Bullet bullet[]);
+	void Draw();
 
 	void Close();
 }

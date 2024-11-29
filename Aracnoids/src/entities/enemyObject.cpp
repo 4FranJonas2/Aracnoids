@@ -4,14 +4,14 @@
 
 namespace gameEnemy
 {
-	Neufar neufar[maxNeufares];
+	
 
 	float countDown = 0.0f;
 	float spawnRate = 5.0f;
 	float timer = 0.0f;
 	float resetTimer = 4.0f;
 
-	void InitNeufar()
+	void InitNeufar(Neufar neufar[maxNeufares])
 	{
 		int bigNeufarCounter = 0;
 		int smallNeufarCounter = 0;
@@ -114,7 +114,7 @@ namespace gameEnemy
 
 	}
 
-	void UpdateNeufar()
+	void UpdateNeufar(Neufar neufar[maxNeufares])
 	{
 		int maxSmallNeufarDeploy = 4;
 		int smallNeufarDeploy = 0;
@@ -194,7 +194,7 @@ namespace gameEnemy
 		}
 	}
 
-	void DrawNeufar()
+	void DrawNeufar(Neufar neufar[maxNeufares])
 	{
 		if (matchStart == true)
 		{

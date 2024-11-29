@@ -2,39 +2,42 @@
 
 namespace Game
 {
+	SCENEMANAGMENT scene = SCENEMANAGMENT::NONE;
+	Rectangle gameArena;
+
+	gamePlayer::Player player;
+	mouse::Mouse gameMouse;
+	gameEnemy::Neufar neufar[maxNeufares];
+	gameBullet::Bullet bullet[maxBullets];
+
 	void RunGame()
 	{
-		SCENEMANAGMENT scene = SCENEMANAGMENT::NONE;
-		Rectangle gameArena;
-		gamePlayer::Player player;
-		mouse::Mouse gameMouse;
-		gameBullet::Bullet bullet[maxBullets];
 
-		Init(player, gameArena, gameMouse, scene);
+		Init();
 
 		while (!WindowShouldClose())
 		{
-			Input(player, scene, gameMouse, bullet);
-			Update(player, scene, gameMouse, bullet);
-			Draw(player, gameArena, scene, gameMouse, bullet);
+			Input();
+			Update();
+			Draw();
 		}
 
 		Close();
 	}
 
-	void Init(gamePlayer::Player& player, Rectangle& gameArena, mouse::Mouse& gameMouse, SCENEMANAGMENT& scene)
+	void Init()
 	{
 		switch (scene)
 		{
 		case SCENEMANAGMENT::NONE:
 			InitWindow(static_cast<int>(screenWidth), static_cast<int>(screenHeight), " RunGame by Francisco Jonas ");
-			player = gamePlayer::CreatePlayer(player);
+			gamePlayer::CreatePlayer(player);
 			gameArena = arena::createGameArena(gameArena);
-			gameMouse = mouse::CreateMouse();
+			gameEnemy::InitNeufar(neufar);
+			mouse::CreateMouse(gameMouse);
 			gameMenu::CreateMainMenu();
 			gameMenu::CreateWinLoseScreen();
 			gameMenu::CreateExitScreen();
-			gameEnemy::InitNeufar();
 			//gameBullet::InitBullets(bullet, player);
 		
 			scene = SCENEMANAGMENT::MAINMENU;
@@ -46,7 +49,7 @@ namespace Game
 			break;
 		}
 	}
-	void Input(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse gameMouse, gameBullet::Bullet bullet[])
+	void Input()
 	{
 		switch (scene)
 		{
@@ -79,16 +82,16 @@ namespace Game
 			break;
 		}
 	}
-	void Update(gamePlayer::Player& player, SCENEMANAGMENT& scene, mouse::Mouse& gameMouse, gameBullet::Bullet bullet[])
+	void Update()
 	{
-		gameMouse.mousePos = mouse::UpdateMousePos();
+		mouse::UpdateMousePos(gameMouse.mousePos);
 
 		switch (scene)
 		{
 		case SCENEMANAGMENT::GAME:
 			gamePlayer::UpdatePlayer(player, gameMouse);
 			gameBullet::UpdateBullet(bullet);
-			gameEnemy::UpdateNeufar();
+			gameEnemy::UpdateNeufar(neufar);
 			break;
 		case SCENEMANAGMENT::RESETGAME:
 
@@ -100,8 +103,7 @@ namespace Game
 			break;
 		}
 	}
-	void Draw(gamePlayer::Player& player, Rectangle& gameArena, SCENEMANAGMENT scene, mouse::Mouse gameMouse,
-		gameBullet::Bullet bullet[])
+	void Draw()
 	{
 		BeginDrawing();
 		ClearBackground(BLACK);
@@ -117,7 +119,7 @@ namespace Game
 			arena::drawArena(gameArena);
 			gamePlayer::DrawPlayer(player);
 			gameBullet::DrawBullet(bullet);
-			gameEnemy::DrawNeufar();
+			gameEnemy::DrawNeufar(neufar);
 			break;
 		case SCENEMANAGMENT::WINLOSESCRREN:
 			gameMenu::DrawWinLoseScreen();

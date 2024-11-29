@@ -12,7 +12,7 @@ namespace gamePlayer
 	const float playerPosX = screenWidth / 2.0f;
 	const float playerPosY = screenHeight / 2.0f;
 
-	Player CreatePlayer(Player player)
+	Player CreatePlayer(Player& player)
 	{
 		player.playerDir = PLAYERDIRECTION::STOP;
 		player.playerPos.x = playerPosX;
