@@ -16,9 +16,9 @@ namespace arena
 
 	void drawArena(Rectangle gameArena)
 	{
-		//DrawRectangle(gameArena.pos.x, gameArena.pos.y, gameArena.size.x, gameArena.size.y, RED);
-		//DrawRectangleLines(gameArena.pos.x, gameArena.pos.y, gameArena.size.x, gameArena.size.y, RED);
 		Rectangle draw = { gameArena.x,gameArena.y,gameArena.width,gameArena.height};
+#ifdef _DEBUG
 		DrawRectangleLinesEx(draw, 2.0, RED);
+#endif // _DEBUG
 	}
 }
