@@ -3,7 +3,6 @@
 #include <iostream>
 
 #include "cmath"
-
 #include "raymath.h"
 
 namespace gamePlayer
@@ -61,12 +60,7 @@ namespace gamePlayer
 
 		if (matchStart == true)
 		{
-			if (ColisionManager::PlayerNeufarColision())
-			{
-				player.playerLives--;
-			}
-			
-			else if (player.playerLives > 0)
+			if (player.playerLives > 0)
 			{
 				//get angle
 				player.rotation = GetMousePosRespectFromPlayer(player, gameMouse.mousePos);

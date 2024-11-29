@@ -4,9 +4,7 @@
 #include "raymath.h"
 #include "ctime"
 
-#include "Mouse.h"
-#include "Player.h"
-#include "game_play/ColisionManager.h"
+#include "game_settings/Constants.h"
 
 namespace gameEnemy
 {
@@ -37,9 +35,9 @@ namespace gameEnemy
 		int smallNeufarCounter;
 	};
 
-	void InitNeufar(Neufar neufar[maxNeufares]);
-	void UpdateNeufar(Neufar neufar[maxNeufares]);
+	void InitNeufar(Neufar neufar[]);
+	void UpdateNeufar(Neufar neufar[]);
 	//Vector2 GetRandSpawnPos();
-	void DrawNeufar(Neufar neufar[maxNeufares]);
+	void DrawNeufar(Neufar neufar[]);
 	//float GetMousePosRespectFromPlayer(Neufar neufar[], Vector2 mouse, int index);
 }

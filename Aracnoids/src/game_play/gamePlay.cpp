@@ -1,5 +1,13 @@
 #include "GamePlay.h"
 
+#include "entities/GameField.h"
+#include "GameMenus.h"
+#include "entities/Mouse.h"
+#include "game_settings/SceneManage.h"
+#include "game_settings/Constants.h"
+#include "game_play/ColisionManager.h"
+
+
 namespace Game
 {
 	SCENEMANAGMENT scene = SCENEMANAGMENT::NONE;

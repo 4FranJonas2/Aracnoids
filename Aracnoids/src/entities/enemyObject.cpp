@@ -4,14 +4,12 @@
 
 namespace gameEnemy
 {
-	
-
 	float countDown = 0.0f;
 	float spawnRate = 5.0f;
 	float timer = 0.0f;
 	float resetTimer = 4.0f;
 
-	void InitNeufar(Neufar neufar[maxNeufares])
+	void InitNeufar(Neufar neufar[])
 	{
 		int bigNeufarCounter = 0;
 		int smallNeufarCounter = 0;
@@ -42,7 +40,7 @@ namespace gameEnemy
 		for (int i = 0; i < maxNeufares; i++)
 		{
 
-			if (bigNeufarCounter < maxBigNeufares)
+			if (bigNeufarCounter <= maxBigNeufares)
 			{
 				neufar[i].neufarPos.x = randSpawnPos.x;
 				neufar[i].neufarPos.y = randSpawnPos.y;
@@ -114,15 +112,14 @@ namespace gameEnemy
 
 	}
 
-	void UpdateNeufar(Neufar neufar[maxNeufares])
+	void UpdateNeufar(Neufar neufar[])
 	{
-		int maxSmallNeufarDeploy = 4;
-		int smallNeufarDeploy = 0;
+
 
 		if (matchStart == true)
 		{
 			timer -= GetFrameTime();
-
+			//spawn neufar grandes 
 			if (timer <= 0)
 			{
 				for (int i = 0; i < maxNeufares; i++)
@@ -132,31 +129,6 @@ namespace gameEnemy
 						neufar[i].isNeufarAlive = true;
 						timer = resetTimer;
 						break;
-					}
-				}
-			}
-
-			//miro si hay colision de bullet con neufar, si pasa salen 4 neufar chiquitos
-			for (int i = 0; i < maxNeufares; i++)
-			{
-				if (ColisionManager::BulletNeufarColision())
-				{
-					neufar[i].isNeufarAlive = false;
-
-					for (int j = 0; j < maxNeufares; j++)
-					{
-						if (smallNeufarDeploy < maxSmallNeufarDeploy && !neufar->isNeufarAlive && neufar->isSmallNeufar)
-						{
-							neufar[j].isNeufarAlive = true;
-							neufar[j].neufarPos = neufar[i].neufarPos;
-							smallNeufarDeploy++;
-
-						}
-						else if (smallNeufarDeploy == maxSmallNeufarDeploy)
-						{
-							smallNeufarDeploy = 0;
-							break;
-						}
 					}
 				}
 			}
@@ -194,7 +166,7 @@ namespace gameEnemy
 		}
 	}
 
-	void DrawNeufar(Neufar neufar[maxNeufares])
+	void DrawNeufar(Neufar neufar[])
 	{
 		if (matchStart == true)
 		{

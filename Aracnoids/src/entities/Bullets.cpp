@@ -64,12 +64,7 @@ namespace gameBullet
 	{
 		for (int i = 0; i < maxBullets; i++)
 		{
-			if (ColisionManager::BulletNeufarColision())
-			{
-				bullet[i].isBulletAlive = false;
-			}
-			
-			else if (bullet[i].isBulletAlive)
+			if (bullet[i].isBulletAlive)
 			{
 				bullet[i].bulletPos = Vector2Add(bullet[i].bulletPos,Vector2Scale(bullet[i].velocity, GetFrameTime()));
 

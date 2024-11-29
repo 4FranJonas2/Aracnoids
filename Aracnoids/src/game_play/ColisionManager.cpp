@@ -1,17 +1,7 @@
 #include "ColisionManager.h"
 
-#include"entities/Player.h"
-#include"entities/Bullets.h"
-#include"entities/EnemyObject.h"
-
 namespace ColisionManager
 {
-	gamePlayer::Player player{};
-	gameEnemy::Neufar neufar[maxNeufares];
-	gameEnemy::Neufar neufar2[maxNeufares];
-	gameBullet::Bullet bullet[maxBullets];
-
-
 	bool CircleCircle(Circle circle1, Circle circle2)
 	{
 		float distX = circle1.circlePos.x - circle2.circlePos.x;
@@ -25,47 +15,11 @@ namespace ColisionManager
 		return false;
 	}
 
-	bool PlayerNeufarColision()
+	void BulletNeufarColision(gameBullet::Bullet bullet[],gameEnemy::Neufar neufar[])
 	{
-		for (int i = 0; i < maxNeufares; i++)
-		{
-			if (neufar[i].isNeufarAlive)
-			{
-				if (CircleCircle(player.playerHitBox, neufar[i].neufarHitBox))
-				{
-					return true;
-				}
-				
-			}
-		}
-		return false;
-	}
+		int maxSmallNeufarDeploy = 4;
+		int smallNeufarDeploy = 0;
 
-	bool NeufarNeufarColision()
-	{
-		for (int i = 0; i < maxNeufares; i++)
-		{
-			if (neufar[i].isNeufarAlive)
-			{
-				for (int j = 0; j < maxNeufares; j++)
-				{
-					if (neufar2[j].isNeufarAlive)
-					{
-						if (CircleCircle(neufar[j].neufarHitBox, neufar2[j].neufarHitBox))
-						{
-							return true;
-						}
-						
-					}
-				}
-			}
-		}
-		return false;
-
-	}
-
-	bool BulletNeufarColision()
-	{
 		for (int i = 0; i < maxBullets; i++)
 		{
 			if (bullet[i].isBulletAlive)
@@ -74,14 +28,70 @@ namespace ColisionManager
 				{
 					if (neufar[j].isNeufarAlive)
 					{
-						if (CircleCircle(bullet[j].bulletHitBox, neufar[j].neufarHitBox))
+						if (CircleCircle(bullet[i].bulletHitBox, neufar[j].neufarHitBox))
 						{
-							return true;
+							bullet[i].isBulletAlive = false;
+						}
+					}
+				}
+			}
+		}	
+
+		for (int i = 0; i < maxNeufares; i++)
+		{
+			neufar[i].isNeufarAlive = false;
+
+			for (int j = 0; j < maxNeufares; j++)
+			{
+				if (smallNeufarDeploy < maxSmallNeufarDeploy && !neufar->isNeufarAlive && neufar->isSmallNeufar)
+				{
+					neufar[j].isNeufarAlive = true;
+					neufar[j].neufarPos = neufar[i].neufarPos;
+					smallNeufarDeploy++;
+
+				}
+				else if (smallNeufarDeploy == maxSmallNeufarDeploy)
+				{
+					smallNeufarDeploy = 0;
+					break;
+				}
+			}
+		}
+	}
+
+	void PlayerNeufarColision(gamePlayer::Player& player, gameEnemy::Neufar neufar[])
+	{
+		for (int i = 0; i < maxNeufares; i++)
+		{
+			if (neufar[i].isNeufarAlive)
+			{
+				if (CircleCircle(player.playerHitBox, neufar[i].neufarHitBox))
+				{
+					player.playerLives--;
+				}
+			}
+		}
+		
+	}
+
+	void NeufarNeufarColision(gameEnemy::Neufar neufar[])
+	{
+		for (int i = 0; i < maxNeufares; i++)
+		{
+			if (neufar[i].isNeufarAlive)
+			{
+				for (int j = 0; j < maxNeufares; j++)
+				{
+					if (neufar[j].isNeufarAlive)
+					{
+						if (CircleCircle(neufar[i].neufarHitBox, neufar[j].neufarHitBox))
+						{
+							
 						}
 					}
 				}
 			}
 		}
-		return false;
+		
 	}
 }

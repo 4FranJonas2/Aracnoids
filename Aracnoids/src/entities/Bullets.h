@@ -5,8 +5,8 @@
 #include "ctime"
 
 #include "Mouse.h"
-#include "Player.h"
-#include "game_play/ColisionManager.h"
+#include "game_settings/Constants.h"
+#include "entities/Player.h"
 
 namespace gameBullet
 {
@@ -35,6 +35,7 @@ namespace gameBullet
 		double maxTimeAlive;
 		bool isBulletAlive;
 	};
+
 	//Bullet CreateBullet( gamePlayer::Player player);
 	//void InitBullets(Bullet bullet[], gamePlayer::Player player);
 

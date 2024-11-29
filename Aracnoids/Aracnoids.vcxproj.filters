@@ -36,7 +36,7 @@
     <ClCompile Include="src\game_settings\Constants.cpp">
       <Filter>game_settings</Filter>
     </ClCompile>
-    <ClCompile Include="src\game_play\ColisionDetector.cpp">
+    <ClCompile Include="src\game_play\ColisionManager.cpp">
       <Filter>game_play</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
@@ -71,7 +71,7 @@
     <ClInclude Include="src\entities\EnemyObject.h">
       <Filter>entities</Filter>
     </ClInclude>
-    <ClInclude Include="src\game_play\ColisionDetector.h">
+    <ClInclude Include="src\game_play\ColisionManager.h">
       <Filter>game_play</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,8 +3,7 @@
 #include <ctime>
 
 #include "Mouse.h"
-#include "Game_settings/Constants.h"
-#include "game_play/ColisionManager.h"
+#include "game_settings/Constants.h"
 
 namespace gamePlayer
 {
