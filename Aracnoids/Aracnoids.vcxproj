@@ -24,11 +24,11 @@
     <ClCompile Include="src\entities\GameField.cpp" />
     <ClCompile Include="src\entities\Mouse.cpp" />
     <ClCompile Include="src\entities\Player.cpp" />
-    <ClCompile Include="src\game_play\ColisionManager.cpp" />
+    <ClCompile Include="src\game_play\ColisionDetector.cpp" />
     <ClCompile Include="src\game_play\GameMenus.cpp" />
     <ClCompile Include="src\game_play\GamePlay.cpp" />
-    <ClCompile Include="src\game_play\main.cpp" />
     <ClCompile Include="src\game_settings\Constants.cpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\entities\Bullets.h" />
@@ -36,7 +36,7 @@
     <ClInclude Include="src\entities\GameField.h" />
     <ClInclude Include="src\entities\Mouse.h" />
     <ClInclude Include="src\entities\Player.h" />
-    <ClInclude Include="src\game_play\ColisionManager.h" />
+    <ClInclude Include="src\game_play\ColisionDetector.h" />
     <ClInclude Include="src\game_play\GameMenus.h" />
     <ClInclude Include="src\game_play\GamePlay.h" />
     <ClInclude Include="src\game_settings\Constants.h" />
