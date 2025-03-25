@@ -15,33 +15,44 @@ namespace gameEnemy
 		int smallNeufarCounter = 0;
 		int maxRangeNeufarRotation = 360;
 
+		//rango maximo en Y e X (porfuera de pantalla) 
 		int neufarSpawnRangeOnY = static_cast<int>(screenWidth + (screenWidth / 3));
 		int neufarSpawnRangeOnX = static_cast<int>(screenHeight + (screenHeight / 3));
 
-		int randSpawnZone = GetRandomValue(1, 2);
-
-		Vector2 randSpawnPos = { 0.0f,0.0f };
-
-		if (randSpawnZone == 1)
-		{
-			Vector2 neufarSpawnPosRight_Down;
-			neufarSpawnPosRight_Down.x = static_cast<float>(GetRandomValue(static_cast<int>(screenWidth), neufarSpawnRangeOnX));
-			neufarSpawnPosRight_Down.y = static_cast<float>(GetRandomValue(static_cast<int>(screenHeight), neufarSpawnRangeOnY));
-			randSpawnPos = neufarSpawnPosRight_Down;
-		}
-		else
-		{
-			Vector2 neufarSpawnPosTop_Left;
-			neufarSpawnPosTop_Left.x = static_cast<float>(GetRandomValue(0, 0 - neufarSpawnRangeOnX));
-			neufarSpawnPosTop_Left.y = static_cast<float>(GetRandomValue(0, 0 - neufarSpawnRangeOnY));
-			randSpawnPos = neufarSpawnPosTop_Left;
-		}
+		//elije a lo random que zona usar, si superior derecha o inferior izquierda
+		
 
 		for (int i = 0; i < maxNeufares; i++)
 		{
+			int randSpawnZone = GetRandomValue(1, 2);
+
+			Vector2 randSpawnPos = { 0.0f,0.0f };
+
+			if (randSpawnZone == 1)
+			{
+				//si da 1 spawnea un neufar sobre la zona inferior izquierda 
+				//sacando valor random entre los maximos de la pantalla y los topes del rango de spawn
+				Vector2 neufarSpawnPosRight_Down;
+				neufarSpawnPosRight_Down.x = static_cast<float>(GetRandomValue(static_cast<int>(screenWidth), neufarSpawnRangeOnX));
+				neufarSpawnPosRight_Down.y = static_cast<float>(GetRandomValue(static_cast<int>(screenHeight), neufarSpawnRangeOnY));
+				randSpawnPos = neufarSpawnPosRight_Down;
+
+				randSpawnZone = 0;
+			}
+			else
+			{
+				// sino spawnea un neufar en la zona superior derecha
+				Vector2 neufarSpawnPosTop_Left;
+				neufarSpawnPosTop_Left.x = static_cast<float>(GetRandomValue(0, 0 - neufarSpawnRangeOnX));
+				neufarSpawnPosTop_Left.y = static_cast<float>(GetRandomValue(0, 0 - neufarSpawnRangeOnY));
+				randSpawnPos = neufarSpawnPosTop_Left;
+
+				randSpawnZone = 0;
+			}
 
 			if (bigNeufarCounter <= maxBigNeufares)
 			{
+				//se setea los datos de un neufar grande
 				neufar[i].neufarPos.x = randSpawnPos.x;
 				neufar[i].neufarPos.y = randSpawnPos.y;
 
@@ -71,6 +82,9 @@ namespace gameEnemy
 				neufar[i].aceleration = { 100.0f,100.0f };
 				neufar[i].isNeufarAlive = false;
 				neufar[i].isBigNeufar = true;
+
+				/*randDirectionNeufar.x = 0;
+				randDirectionNeufar.y = 0;*/
 
 				bigNeufarCounter++;
 			}
