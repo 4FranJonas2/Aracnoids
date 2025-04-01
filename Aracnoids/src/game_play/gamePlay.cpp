@@ -100,6 +100,8 @@ namespace Game
 			gamePlayer::UpdatePlayer(player, gameMouse);
 			gameBullet::UpdateBullet(bullet);
 			gameEnemy::UpdateNeufar(neufar);
+			colisionManager::BulletNeufarColision(bullet, neufar);
+
 			break;
 		case SCENEMANAGMENT::RESETGAME:
 

@@ -1,7 +1,8 @@
 #include "ColisionManager.h"
 
-namespace ColisionManager
+namespace colisionManager
 {
+
 	bool CircleCircle(Circle circle1, Circle circle2)
 	{
 		float distX = circle1.circlePos.x - circle2.circlePos.x;
@@ -17,8 +18,8 @@ namespace ColisionManager
 
 	void BulletNeufarColision(gameBullet::Bullet bullet[],gameEnemy::Neufar neufar[])
 	{
-		int maxSmallNeufarDeploy = 4;
-		int smallNeufarDeploy = 0;
+		/*int maxSmallNeufarDeploy = 4;
+		int smallNeufarDeploy = 0;*/
 
 		for (int i = 0; i < maxBullets; i++)
 		{
@@ -37,7 +38,7 @@ namespace ColisionManager
 			}
 		}	
 
-		for (int i = 0; i < maxNeufares; i++)
+		/*for (int i = 0; i < maxNeufares; i++)
 		{
 			neufar[i].isNeufarAlive = false;
 
@@ -56,7 +57,7 @@ namespace ColisionManager
 					break;
 				}
 			}
-		}
+		}*/
 	}
 
 	void PlayerNeufarColision(gamePlayer::Player& player, gameEnemy::Neufar neufar[])

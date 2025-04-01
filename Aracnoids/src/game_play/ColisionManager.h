@@ -7,7 +7,7 @@
 #include "entities/Bullets.h"
 #include "entities/EnemyObject.h"
 
-namespace ColisionManager
+namespace colisionManager
 {
 	bool CircleCircle(Circle circle1, Circle cricle2);
 	void BulletNeufarColision(gameBullet::Bullet bullet[], gameEnemy::Neufar neufar[]);
