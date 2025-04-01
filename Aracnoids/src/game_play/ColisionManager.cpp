@@ -18,8 +18,8 @@ namespace colisionManager
 
 	void BulletNeufarColision(gameBullet::Bullet bullet[],gameEnemy::Neufar neufar[])
 	{
-		/*int maxSmallNeufarDeploy = 4;
-		int smallNeufarDeploy = 0;*/
+		int maxSmallNeufarDeploy = 4;
+		int smallNeufarDeploy = 0;
 
 		for (int i = 0; i < maxBullets; i++)
 		{
@@ -32,6 +32,24 @@ namespace colisionManager
 						if (CircleCircle(bullet[i].bulletHitBox, neufar[j].neufarHitBox))
 						{
 							bullet[i].isBulletAlive = false;
+
+							neufar[j].isNeufarAlive = false;
+
+							for (int l = 0; l < maxNeufares; l++)
+							{
+								if (smallNeufarDeploy < maxSmallNeufarDeploy && !neufar->isNeufarAlive && neufar->isSmallNeufar)
+								{
+									neufar[l].isNeufarAlive = true;
+									neufar[l].neufarPos = neufar[i].neufarPos;
+									smallNeufarDeploy++;
+
+								}
+								else if (smallNeufarDeploy == maxSmallNeufarDeploy)
+								{
+									smallNeufarDeploy = 0;
+									break;
+								}
+							}
 						}
 					}
 				}
@@ -40,23 +58,9 @@ namespace colisionManager
 
 		/*for (int i = 0; i < maxNeufares; i++)
 		{
-			neufar[i].isNeufarAlive = false;
+			
 
-			for (int j = 0; j < maxNeufares; j++)
-			{
-				if (smallNeufarDeploy < maxSmallNeufarDeploy && !neufar->isNeufarAlive && neufar->isSmallNeufar)
-				{
-					neufar[j].isNeufarAlive = true;
-					neufar[j].neufarPos = neufar[i].neufarPos;
-					smallNeufarDeploy++;
-
-				}
-				else if (smallNeufarDeploy == maxSmallNeufarDeploy)
-				{
-					smallNeufarDeploy = 0;
-					break;
-				}
-			}
+			
 		}*/
 	}
 

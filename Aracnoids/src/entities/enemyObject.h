@@ -25,7 +25,7 @@ namespace gameEnemy
 		float angle;
 
 		Vector2 velocity;
-		Vector2 aceleration;
+		Vector2 aceleration{0,0};
 
 		bool isNeufarAlive = false;
 		bool isBigNeufar = false;
