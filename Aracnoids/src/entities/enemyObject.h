@@ -30,6 +30,7 @@ namespace gameEnemy
 		bool isNeufarAlive = false;
 		bool isBigNeufar = false;
 		bool isSmallNeufar = false;
+		bool isInitSet = false;
 
 		int bigNeufarCounter;
 		int smallNeufarCounter;

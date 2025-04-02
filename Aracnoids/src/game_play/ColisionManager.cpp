@@ -35,21 +35,20 @@ namespace colisionManager
 
 							neufar[j].isNeufarAlive = false;
 
-							for (int l = 0; l < maxNeufares; l++)
-							{
-								if (smallNeufarDeploy < maxSmallNeufarDeploy && !neufar->isNeufarAlive && neufar->isSmallNeufar)
-								{
-									neufar[l].isNeufarAlive = true;
-									neufar[l].neufarPos = neufar[i].neufarPos;
-									smallNeufarDeploy++;
+							
+						}
 
-								}
-								else if (smallNeufarDeploy == maxSmallNeufarDeploy)
-								{
-									smallNeufarDeploy = 0;
-									break;
-								}
-							}
+						if (smallNeufarDeploy < maxSmallNeufarDeploy && !neufar->isNeufarAlive && neufar->isSmallNeufar)
+						{
+							neufar[i].isNeufarAlive = true;
+							neufar[i].neufarPos = neufar[j].neufarPos;
+							smallNeufarDeploy++;
+
+						}
+						else if (smallNeufarDeploy == maxSmallNeufarDeploy)
+						{
+							smallNeufarDeploy = 0;
+							break;
 						}
 					}
 				}

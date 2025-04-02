@@ -11,17 +11,22 @@ namespace gameEnemy
 
 	void InitNeufar(Neufar neufar[])
 	{
-		int bigNeufarCounter = 0;
-		int smallNeufarCounter = 0;
+		/*int bigNeufarCounter ;
+		int smallNeufarCounter;*/
 		int maxRangeNeufarRotation = 360;
 
-		//rango maximo en Y e X (porfuera de pantalla) 
-		int neufarSpawnRangeOnY = static_cast<int>(screenWidth + (screenWidth / 3));
-		int neufarSpawnRangeOnX = static_cast<int>(screenHeight + (screenHeight / 3));
+		if (!neufar->isInitSet)
+		{
+			neufar->bigNeufarCounter = 0;
+			neufar->smallNeufarCounter = 0;
+			//rango maximo en Y e X (porfuera de pantalla) 
+
+		}
 
 		//elije a lo random que zona usar, si superior derecha o inferior izquierda
+		int neufarSpawnRangeOnY = static_cast<int>(screenWidth + (screenWidth / 3));
+		int neufarSpawnRangeOnX = static_cast<int>(screenHeight + (screenHeight / 3));
 		
-
 		for (int i = 0; i < maxNeufares; i++)
 		{
 			int randSpawnZone = GetRandomValue(1, 2);
@@ -50,7 +55,7 @@ namespace gameEnemy
 				randSpawnZone = 0;
 			}
 
-			if (bigNeufarCounter <= maxBigNeufares)
+			if (neufar->bigNeufarCounter <= maxBigNeufares)
 			{
 				//se setea los datos de un neufar grande
 				neufar[i].neufarPos.x = randSpawnPos.x;
@@ -86,7 +91,7 @@ namespace gameEnemy
 				/*randDirectionNeufar.x = 0;
 				randDirectionNeufar.y = 0;*/
 
-				bigNeufarCounter++;
+				neufar->bigNeufarCounter++;
 			}
 			else
 			{
@@ -120,7 +125,7 @@ namespace gameEnemy
 				neufar[i].isNeufarAlive = false;
 				neufar[i].isSmallNeufar = true;
 
-				smallNeufarCounter++;
+				neufar->smallNeufarCounter++;
 			}
 		}
 
