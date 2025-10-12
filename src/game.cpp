@@ -3,56 +3,61 @@
 #include <iostream>
 
 #include "utilities.h"
+#include "entities/player.h"
 
 using namespace std;
 
 namespace aracnoids
 {
-	void Init();
-	void Input();
-	void Update();
-	void Draw();
+	Player player;
+
+	void Init(GameStats gameVars, Player& player);
+	void Input(Player& player);
+	void Update(Player& player);
+	void Draw(Player player);
 
 	void RunGame()
 	{
-
 		srand(time(nullptr));
 
-		Init();
+		GameStats gameVars;
+
+		Init(gameVars,player);
 
 		while (!WindowShouldClose())
 		{
-			Input();
-			Update();
-
-			BeginDrawing();
-
-			ClearBackground(BLACK);
-			Draw();
-
-			EndDrawing();
+			Input(player);
+			Update(player);
+			Draw(player);
 		}
-
 		CloseWindow();
 	}
 
-	void Init()
+	void Init(GameStats gameVars, Player& player)
 	{
-		InitWindow(200, 200, "Aracnoids");
+		InitWindow(gameVars.screenWidth, gameVars.screenHeight, "Aracnoids");
+
+		InitPlayer(player);
 	}
 
-	void Input()
+	void Input(Player& player)
 	{
-
+		InputPlayer(player);
 	}
 
-	void Update()
+	void Update(Player& player)
 	{
-
+		UpdatePlayer(player);
 	}
 
-	void Draw()
+	void Draw(Player player)
 	{
+		BeginDrawing();
 
+		ClearBackground(BLACK);
+
+		DrawPlayer(player);
+
+		EndDrawing();
 	}
 }
