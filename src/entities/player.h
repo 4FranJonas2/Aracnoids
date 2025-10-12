@@ -16,24 +16,27 @@ namespace aracnoids
 		PLAYERMOVSTAT movStatus;
 
 		Circle playerCir;
-		Vector2 pivot;
-		Vector2 direction;
-		Vector2 dirNormalizado;
-		Vector2 aceleration;
-		Vector2 size; //para sprite
+		Vector2 vecDir;
+		Vector2 velocity;
+		Vector2 acceleration;
 		
 		bool isAlive;
-		bool isShotting;
 		bool isAcelerating;
+		bool isShotting;
 		int lives;
 
 		float speed;
+		float maxSpeed;
 		float rotation;
 		float rotationSpeed;
-		float impulse;
-		float angle;
+		float friction;
 
 		float countDown;
 		float resetCountDown;
 	};
+
+	void InitPlayer(Player& player);
+	void InputPlayer(Player& player);
+	void UpdatePlayer(Player& player);
+	void DrawPlayer(Player player);
 }
