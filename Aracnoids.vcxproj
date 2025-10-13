@@ -153,11 +153,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\entities\Bullets.cpp" />
     <ClCompile Include="src\entities\player.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\entities\Bullets.h" />
     <ClInclude Include="src\entities\player.h" />
     <ClInclude Include="src\game.h" />
     <ClInclude Include="src\utilities.h" />
