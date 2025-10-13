@@ -24,7 +24,7 @@
     <ClCompile Include="src\entities\player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\entities\Bullets.cpp">
+    <ClCompile Include="src\entities\bullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +38,7 @@
     <ClInclude Include="src\entities\player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\entities\Bullets.h">
+    <ClInclude Include="src\entities\bullet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
