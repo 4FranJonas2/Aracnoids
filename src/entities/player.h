@@ -29,7 +29,6 @@ namespace aracnoids
 		float maxSpeed;
 		float rotation;
 		float rotationSpeed;
-		float friction;
 
 		float countDown;
 		float resetCountDown;

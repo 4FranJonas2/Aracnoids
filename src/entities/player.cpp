@@ -18,7 +18,6 @@ namespace aracnoids
 		player.maxSpeed = 400.0f;
 		player.rotation = 0.0f;
 		player.rotationSpeed = 5.0f;
-		player.friction = 0.98f;
 		player.isAcelerating = false;
 		player.movStatus = PLAYERMOVSTAT::STOP;
 
@@ -55,13 +54,6 @@ namespace aracnoids
 
 			player.movStatus = PLAYERMOVSTAT::MOVING;
 		}
-
-		//else
-		//{
-		//	
-		//	player.velocity = Vector2Scale(player.velocity, player.friction);
-		//	player.movStatus = (Vector2Length(player.velocity) > 5.0f) ? PLAYERMOVSTAT::DERIVA : PLAYERMOVSTAT::STOP;
-		//}
 
 		//chekeo de limites horizontales
 		if (player.playerCir.pos.x < -player.playerCir.rad)
