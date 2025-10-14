@@ -4,17 +4,22 @@
 
 #include "utilities.h"
 #include "entities/player.h"
+#include "entities/bullet.h"
 
 using namespace std;
 
 namespace aracnoids
 {
+	bool isShoot = false;
+	const int maxBullets = 20;
+
 	Player player;
+	Bullet bullets[maxBullets];
 
 	void Init(GameStats gameVars, Player& player);
-	void Input(Player& player);
-	void Update(Player& player);
-	void Draw(Player player);
+	void Input(Player& player, Bullet bullets[]);
+	void Update(Player& player, Bullet bullets[]);
+	void Draw(Player player, Bullet bullets[]);
 
 	void RunGame()
 	{
@@ -26,9 +31,9 @@ namespace aracnoids
 
 		while (!WindowShouldClose())
 		{
-			Input(player);
-			Update(player);
-			Draw(player);
+			Input(player, bullets);
+			Update(player, bullets);
+			Draw(player, bullets);
 		}
 		CloseWindow();
 	}
@@ -40,23 +45,27 @@ namespace aracnoids
 		InitPlayer(player);
 	}
 
-	void Input(Player& player)
+	void Input(Player& player, Bullet bullets[])
 	{
 		InputPlayer(player);
+		InputBullet(isShoot);
 	}
 
-	void Update(Player& player)
+	void Update(Player& player, Bullet bullets[])
 	{
 		UpdatePlayer(player);
+		CreateBullet(bullets, player, isShoot);
+		UpdateBullet(bullets);
 	}
 
-	void Draw(Player player)
+	void Draw(Player player, Bullet bullets[])
 	{
 		BeginDrawing();
 
 		ClearBackground(BLACK);
 
 		DrawPlayer(player);
+		DrawBullet(bullets);
 
 		EndDrawing();
 	}

@@ -27,7 +27,7 @@ namespace aracnoids
 
 	struct GameStats
 	{
-		SceneStatus gameStatus;
+		SceneStatus gameStatus = SceneStatus::INITGAME;
 
 		const int screenWidth = 750;
 		const int screenHeight = 650;
