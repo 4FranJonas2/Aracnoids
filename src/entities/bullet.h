@@ -28,9 +28,9 @@ namespace aracnoids
 
 	//Bullet CreateBullet( gamePlayer::Player player);
 	//void InitBullets(Bullet bullet[], gamePlayer::Player player);
-
-	void InputBullets(Bullet bullet[], Player player);
+	
+	void InputBullet(bool& shoot);
+	void CreateBullet(Bullet bullet[], Player player, bool& shoot);
 	void UpdateBullet(Bullet bullet[]);
 	void DrawBullet(Bullet bullet[]);
-	
 }

@@ -2,14 +2,23 @@
 
 namespace aracnoids
 {
-	int maxBullets = 15;
+	int bullets = 15;
 
-	void InputBullets(Bullet bullet[], Player player)
+	void InputBullet(bool& shoot)
 	{
 		//disparo bala si se da la orden
 		if (IsMouseButtonPressed(MOUSE_BUTTON_RIGHT))
 		{
-			for (int i = 0; i < maxBullets; i++)
+			shoot = true;
+		}
+	}
+
+	void CreateBullet(Bullet bullet[], Player player, bool& shoot)
+	{
+		//disparo bala si se da la orden
+		if (shoot)
+		{
+			for (int i = 0; i < bullets; i++)
 			{
 				if (!bullet[i].isBulletAlive)
 				{
@@ -23,29 +32,19 @@ namespace aracnoids
 					bullet[i].bulletRec.height = 5.0f;
 					bullet[i].rotation = player.rotation;
 
-					//bullet[i].velocity = Vector2Scale(bullet[i].direction, player.velocity);
-					bullet[i].impulse = player.speed;
+
+					Vector2 direction = Vector2Subtract(GetMousePosition(), player.playerCir.pos);
+					bullet[i].vecDir = Vector2Normalize(direction);
+					bullet[i].impulse = 500.0;
+					bullet[i].velocity = Vector2Scale(bullet[i].vecDir, bullet[i].impulse);
 
 					bullet[i].maxTimeAlive = 2.0;
 					bullet[i].isBulletAlive = true;
 					bullet[i].bulletTimeAlive = clock();
 
+					shoot = false;
+
 					break;
-				}
-			}
-		}
-		//si no disparo reviso estado actual del cargador
-		else if (IsMouseButtonUp(MOUSE_BUTTON_RIGHT))
-		{
-			for (int i = 0; i < maxBullets; i++)
-			{
-				if (bullet[i].isBulletAlive)
-				{
-					float elapsedTime = (float)(clock() - bullet[i].bulletTimeAlive) / CLOCKS_PER_SEC;
-					if (elapsedTime >= bullet[i].maxTimeAlive)
-					{
-						bullet[i].isBulletAlive = false;  // Desactivar la bala
-					}
 				}
 			}
 		}
@@ -53,9 +52,7 @@ namespace aracnoids
 
 	void UpdateBullet(Bullet bullet[])
 	{
-
-
-		for (int i = 0; i < maxBullets; i++)
+		for (int i = 0; i < bullets; i++)
 		{
 			if (bullet[i].isBulletAlive)
 			{
@@ -78,12 +75,27 @@ namespace aracnoids
 				bullet[i].bulletHitBox.pos.y = GetScreenWidth() + bullet[i].bulletHitBox.rad;
 			if (bullet[i].bulletHitBox.pos.y > GetScreenHeight() + bullet[i].bulletHitBox.rad)
 				bullet[i].bulletHitBox.pos.y = -bullet[i].bulletHitBox.rad;
+
+			if (IsMouseButtonUp(MOUSE_BUTTON_RIGHT))
+			{
+				for (int i = 0; i < bullets; i++)
+				{
+					if (bullet[i].isBulletAlive)
+					{
+						float elapsedTime = (float)(clock() - bullet[i].bulletTimeAlive) / CLOCKS_PER_SEC;
+						if (elapsedTime >= bullet[i].maxTimeAlive)
+						{
+							bullet[i].isBulletAlive = false;  // Desactivar la bala
+						}
+					}
+				}
+			}
 		}
 	}
 
 	void DrawBullet(Bullet bullet[])
 	{
-		for (int i = 0; i < maxBullets; i++)
+		for (int i = 0; i < bullets; i++)
 		{
 			if (bullet[i].isBulletAlive)
 			{
