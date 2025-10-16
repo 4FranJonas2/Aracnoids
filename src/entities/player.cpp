@@ -27,8 +27,6 @@ namespace aracnoids
 	void InputPlayer(Player& player)
 	{
 		player.isAcelerating = IsMouseButtonDown(MOUSE_BUTTON_LEFT);
-
-
 	}
 
 	void UpdatePlayer(Player& player)
@@ -56,7 +54,7 @@ namespace aracnoids
 		}
 
 		//chekeo de limites horizontales
-		if (player.playerCir.pos.x < -player.playerCir.rad)
+		if (player.playerCir.pos.x < player.playerCir.rad)
 			player.playerCir.pos.x = GetScreenWidth() + player.playerCir.rad;
 
 		if (player.playerCir.pos.x > GetScreenWidth() + player.playerCir.rad)
