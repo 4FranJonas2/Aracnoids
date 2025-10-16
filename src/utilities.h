@@ -36,4 +36,6 @@ namespace aracnoids
 		bool isResetMatch = false;
 		bool goMenu = false;
 	};
+
+
 }
