@@ -116,28 +116,16 @@ namespace aracnoids
 	void DrawEnemyObject()
 	{
 		for (int i = 0; i < maxBigEnemy; i++)
-		{
 			if (bigEnemy[i].isAlive)
-			{
 				DrawCircleLines(bigEnemy[i].pos.x, bigEnemy[i].pos.y, bigEnemy[i].radius, RED);
-			}
-		}
 
 		for (int i = 0; i < maxMidEnemy; i++)
-		{
 			if (midEnemy[i].isAlive)
-			{
 				DrawCircleLines(midEnemy[i].pos.x, midEnemy[i].pos.y, midEnemy[i].radius, ORANGE);
-			}
-		}
 
 		for (int i = 0; i < maxSmallEnemy; i++)
-		{
 			if (smallEnemy[i].isAlive)
-			{
 				DrawCircleLines(smallEnemy[i].pos.x, smallEnemy[i].pos.y, smallEnemy[i].radius, YELLOW);
-			}
-		}
 	}
 
 
