@@ -5,6 +5,11 @@ namespace aracnoids
 	int bullets = 15;
 	bool isShoot = false;
 
+	static void PrintBullet(Bullet bullet[], int i);
+#ifdef _DEBUG
+	static void DrawHitBox(Bullet bullet[], int i);
+#endif // _DEBUG
+
 	void InputBullet()
 	{
 		//disparo bala si se da la orden
@@ -78,41 +83,53 @@ namespace aracnoids
 						if (elapsedTime >= bullet[j].maxTimeAlive)
 							bullet[j].isBulletAlive = false;  // Desactivar la bala
 					}
+			bullet[i].bulletRec.x = bullet[i].bulletHitBox.pos.x;
+			bullet[i].bulletRec.y = bullet[i].bulletHitBox.pos.y;
 		}
 	}
 
 	void DrawBullet(Bullet bullet[])
 	{
-		for (int i = 0; i < bullets; i++)	
+		for (int i = 0; i < bullets; i++)
 			if (bullet[i].isBulletAlive)
 			{
-
-				DrawRectanglePro({ bullet[i].bulletHitBox.pos.x,bullet[i].bulletHitBox.pos.y }, { bullet[i].bulletRec.width,bullet[i].bulletRec.height }, bullet[i].rotation, WHITE);
-#ifdef _DEBUG
-				DrawCircleLines(static_cast<int>(bullet[i].bulletHitBox.pos.x), static_cast<int>(bullet[i].bulletHitBox.pos.y), bullet[i].bulletHitBox.rad, RED);
-#endif 
+				PrintBullet(bullet, i);
 
 				if (bullet[i].bulletHitBox.pos.x < bullet[i].bulletHitBox.rad)
 				{
 					bullet[i].bulletHitBox.pos.x = bullet[i].bulletHitBox.pos.x + GetScreenWidth();
-					DrawRectanglePro({ bullet[i].bulletHitBox.pos.x,bullet[i].bulletHitBox.pos.y }, { bullet[i].bulletRec.width,bullet[i].bulletRec.height }, bullet[i].rotation, WHITE);
+					PrintBullet(bullet, i);
 				}
 				if (bullet[i].bulletHitBox.pos.x > GetScreenWidth())
 				{
 					bullet[i].bulletHitBox.pos.x = bullet[i].bulletHitBox.pos.x - GetScreenWidth();
-					DrawRectanglePro({ bullet[i].bulletHitBox.pos.x,bullet[i].bulletHitBox.pos.y }, { bullet[i].bulletRec.width,bullet[i].bulletRec.height }, bullet[i].rotation, WHITE);
+					PrintBullet(bullet, i);
 				}
 				if (bullet[i].bulletHitBox.pos.y < bullet[i].bulletHitBox.rad)
 				{
 					bullet[i].bulletHitBox.pos.y = bullet[i].bulletHitBox.pos.y + GetScreenHeight();
-					DrawRectanglePro({ bullet[i].bulletHitBox.pos.x,bullet[i].bulletHitBox.pos.y }, { bullet[i].bulletRec.width,bullet[i].bulletRec.height }, bullet[i].rotation, WHITE);
+					PrintBullet(bullet, i);
 				}
 				if (bullet[i].bulletHitBox.pos.y > GetScreenHeight())
 				{
 					bullet[i].bulletHitBox.pos.y = bullet[i].bulletHitBox.pos.y - GetScreenHeight();
-					DrawRectanglePro({ bullet[i].bulletHitBox.pos.x,bullet[i].bulletHitBox.pos.y }, { bullet[i].bulletRec.width,bullet[i].bulletRec.height }, bullet[i].rotation, WHITE);
+					PrintBullet(bullet, i);
 				}
-
 			}
 	}
+
+	static void PrintBullet(Bullet bullet[], int i)
+	{
+		DrawRectanglePro(bullet[i].bulletRec, { bullet[i].bulletRec.width,bullet[i].bulletRec.height }, bullet[i].rotation, RED);
+#ifdef _DEBUG
+		DrawHitBox(bullet, i);
+#endif // _DEBUG
+	}
+
+#ifdef _DEBUG
+	static void DrawHitBox(Bullet bullet[], int i)
+	{
+		DrawCircleLines(static_cast<int>(bullet[i].bulletHitBox.pos.x), static_cast<int>(bullet[i].bulletHitBox.pos.y), bullet[i].bulletHitBox.rad, RED);
+	}
+#endif
 }
