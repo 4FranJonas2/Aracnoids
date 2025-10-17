@@ -29,8 +29,6 @@ namespace aracnoids
 	{
 		SceneStatus gameStatus = SceneStatus::INITGAME;
 
-		const int screenWidth = 750;
-		const int screenHeight = 750;
 		int fontSize = 25;
 
 		bool isResetMatch = false;
