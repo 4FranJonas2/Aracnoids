@@ -3,23 +3,20 @@
 namespace aracnoids
 {
 	int bullets = 15;
+	bool isShoot = false;
 
-	void InputBullet(bool& shoot)
+	void InputBullet()
 	{
 		//disparo bala si se da la orden
-		if (IsMouseButtonPressed(MOUSE_BUTTON_RIGHT))
-		{
-			shoot = true;
-		}
+		if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+			isShoot = true;
 	}
 
-	void CreateBullet(Bullet bullet[], Player player, bool& shoot)
+	void CreateBullet(Bullet bullet[], Player player)
 	{
 		//disparo bala si se da la orden
-		if (shoot)
-		{
+		if (isShoot)
 			for (int i = 0; i < bullets; i++)
-			{
 				if (!bullet[i].isBulletAlive)
 				{
 					bullet[i].bulletHitBox.pos.x = player.playerCir.pos.x;
@@ -32,7 +29,6 @@ namespace aracnoids
 					bullet[i].bulletRec.height = 5.0f;
 					bullet[i].rotation = player.rotation;
 
-
 					Vector2 direction = Vector2Subtract(GetMousePosition(), player.playerCir.pos);
 					bullet[i].vecDir = Vector2Normalize(direction);
 					bullet[i].impulse = 500.0;
@@ -42,12 +38,10 @@ namespace aracnoids
 					bullet[i].isBulletAlive = true;
 					bullet[i].bulletTimeAlive = clock();
 
-					shoot = false;
+					isShoot = false;
 
 					break;
 				}
-			}
-		}
 	}
 
 	void UpdateBullet(Bullet bullet[])
@@ -77,33 +71,26 @@ namespace aracnoids
 				bullet[i].bulletHitBox.pos.y = -bullet[i].bulletHitBox.rad;
 
 			if (IsMouseButtonUp(MOUSE_BUTTON_RIGHT))
-			{
-				for (int i = 0; i < bullets; i++)
-				{
-					if (bullet[i].isBulletAlive)
+				for (int j = 0; j < bullets; j++)
+					if (bullet[j].isBulletAlive)
 					{
-						float elapsedTime = (float)(clock() - bullet[i].bulletTimeAlive) / CLOCKS_PER_SEC;
-						if (elapsedTime >= bullet[i].maxTimeAlive)
-						{
-							bullet[i].isBulletAlive = false;  // Desactivar la bala
-						}
+						float elapsedTime = (float)(clock() - bullet[j].bulletTimeAlive) / CLOCKS_PER_SEC;
+						if (elapsedTime >= bullet[j].maxTimeAlive)
+							bullet[j].isBulletAlive = false;  // Desactivar la bala
 					}
-				}
-			}
 		}
 	}
 
 	void DrawBullet(Bullet bullet[])
 	{
-		for (int i = 0; i < bullets; i++)
-		{
+		for (int i = 0; i < bullets; i++)	
 			if (bullet[i].isBulletAlive)
 			{
 
 				DrawRectanglePro({ bullet[i].bulletHitBox.pos.x,bullet[i].bulletHitBox.pos.y }, { bullet[i].bulletRec.width,bullet[i].bulletRec.height }, bullet[i].rotation, WHITE);
 #ifdef _DEBUG
 				DrawCircleLines(static_cast<int>(bullet[i].bulletHitBox.pos.x), static_cast<int>(bullet[i].bulletHitBox.pos.y), bullet[i].bulletHitBox.rad, RED);
-#endif //_DEBUG
+#endif 
 
 				if (bullet[i].bulletHitBox.pos.x < bullet[i].bulletHitBox.rad)
 				{
@@ -127,6 +114,5 @@ namespace aracnoids
 				}
 
 			}
-		}
 	}
 }
