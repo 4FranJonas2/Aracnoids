@@ -11,59 +11,57 @@ using namespace std;
 
 namespace aracnoids
 {
-	bool isShoot = false;
 	const int maxBullets = 20;
+	
+	static Player player;
+	static GameStats gameStats;
+	static Bullet bullets[maxBullets];
 
-	Player player;
-	Bullet bullets[maxBullets];
-	GameStats gameStats;
-
-	void Init(GameStats gameVars, Player& player);
-	void Input(Player& player, Bullet bullets[]);
-	void Update(Player& player, Bullet bullets[]);
-	void Draw(Player player, Bullet bullets[]);
+	void Init();
+	void Input();
+	void Update();
+	void Draw();
 
 	void RunGame()
 	{
-		srand(time(nullptr));
-
-		GameStats gameVars;
-
-		Init(gameVars,player);
+		Init();
 
 		while (!WindowShouldClose())
 		{
-			Input(player, bullets);
-			Update(player, bullets);
-			Draw(player, bullets);
+			Input();
+			Update();
+			Draw();
 		}
 		CloseWindow();
 	}
 
-	void Init(GameStats gameVars, Player& player)
+	void Init()
 	{
-		InitWindow(gameVars.screenWidth, gameVars.screenHeight, "Aracnoids");
+		const int screenWidth = 1024;
+		const int screenHeight = 768;
+
+		InitWindow(screenWidth, screenHeight, "Aracnoids");
 
 		InitPlayer(player);
 
 		CreateBigEnemy();
 	}
 
-	void Input(Player& player, Bullet bullets[])
+	void Input()
 	{
 		InputPlayer(player);
-		InputBullet(isShoot);
+		InputBullet();
 	}
 
-	void Update(Player& player, Bullet bullets[])
+	void Update()
 	{
 		UpdatePlayer(player);
-		CreateBullet(bullets, player, isShoot);
+		CreateBullet(bullets, player);
 		UpdateBullet(bullets);
 		UpdateEnemyObject(bullets);
 	}
 
-	void Draw(Player player, Bullet bullets[])
+	void Draw()
 	{
 		BeginDrawing();
 
