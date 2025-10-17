@@ -3,7 +3,10 @@
 namespace aracnoids
 {
 	Rectangle auxRec;
+
 	bool playerIsMoving = IsMouseButtonDown(MOUSE_BUTTON_LEFT);
+
+	void PrintPlayer(Player player);
 
 	void InitPlayer(Player& player)
 	{
@@ -21,12 +24,12 @@ namespace aracnoids
 		player.isAcelerating = false;
 		player.movStatus = PLAYERMOVSTAT::STOP;
 
-		auxRec = { 0, 0, 60, 20 };
+		auxRec = { 0, 0, 40, 20 };
 	}
 
 	void InputPlayer(Player& player)
 	{
-		player.isAcelerating = IsMouseButtonDown(MOUSE_BUTTON_LEFT);
+		player.isAcelerating = IsMouseButtonDown(MOUSE_RIGHT_BUTTON);
 	}
 
 	void UpdatePlayer(Player& player)
@@ -46,9 +49,7 @@ namespace aracnoids
 
 			// limitar velocidad máxima
 			if (Vector2Length(player.velocity) > player.maxSpeed)
-			{
 				player.velocity = Vector2Scale(Vector2Normalize(player.velocity), player.maxSpeed);
-			}
 
 			player.movStatus = PLAYERMOVSTAT::MOVING;
 		}
@@ -73,41 +74,36 @@ namespace aracnoids
 
 	void DrawPlayer(Player player)
 	{
-		DrawRectanglePro({ player.playerCir.pos.x, player.playerCir.pos.y, auxRec.width, auxRec.height },
-			{ auxRec.width / 2, auxRec.height / 2 }, player.rotation, RED);
+		PrintPlayer(player);
 
 		if (player.playerCir.pos.x < player.playerCir.rad)
 		{
 			player.playerCir.pos.x = player.playerCir.pos.x + GetScreenWidth();
-			//DrawCircleLines(static_cast<int>(player.playerHitBox.circlePos.x), static_cast<int>(player.playerHitBox.circlePos.y), player.playerHitBox.radius, RED);
-			DrawRectanglePro({ player.playerCir.pos.x, player.playerCir.pos.y, auxRec.width, auxRec.height },
-				{ auxRec.width / 2, auxRec.height / 2 }, player.rotation, RED);
+			PrintPlayer(player);
 		}
 		if (player.playerCir.pos.x > GetScreenWidth())
 		{
 			player.playerCir.pos.x = player.playerCir.pos.x - GetScreenWidth();
-			//DrawCircleLines(static_cast<int> (player.playerHitBox.circlePos.x), static_cast<int> (player.playerHitBox.circlePos.y), player.playerHitBox.radius, RED);
-			DrawRectanglePro({ player.playerCir.pos.x, player.playerCir.pos.y, auxRec.width, auxRec.height },
-				{ auxRec.width / 2, auxRec.height / 2 }, player.rotation, RED);
+			PrintPlayer(player);
 		}
 		if (player.playerCir.pos.y < player.playerCir.rad)
 		{
 			player.playerCir.pos.y = player.playerCir.pos.y + GetScreenHeight() + player.playerCir.rad;
-			//DrawCircleLines(static_cast<int>(player.playerHitBox.circlePos.x), static_cast<int>(player.playerHitBox.circlePos.y), player.playerHitBox.radius, RED);
-			DrawRectanglePro({ player.playerCir.pos.x, player.playerCir.pos.y, auxRec.width, auxRec.height },
-				{ auxRec.width / 2, auxRec.height / 2 }, player.rotation, RED);
+			PrintPlayer(player);
 		}
 		if (player.playerCir.pos.y > GetScreenHeight() + player.playerCir.rad)
 		{
 			player.playerCir.pos.y = player.playerCir.pos.y - GetScreenHeight();
-			//DrawCircleLines(static_cast<int> (player.playerHitBox.circlePos.x), static_cast<int> (player.playerHitBox.circlePos.y), player.playerHitBox.radius, RED);
-			DrawRectanglePro({ player.playerCir.pos.x, player.playerCir.pos.y, auxRec.width, auxRec.height },
-				{ auxRec.width / 2, auxRec.height / 2 }, player.rotation, RED);
+			PrintPlayer(player);
 		}
+	}
 
-		/*if (matchStart == false)
-		{
-			DrawText("PRess middle mouse button to start", 250, 500, 30, LIGHTGRAY);
-		}*/
+	void PrintPlayer(Player player)
+	{
+#ifdef _DEBUG
+		DrawCircleLines(static_cast<int>(player.playerCir.pos.x), static_cast<int>(player.playerCir.pos.y), player.playerCir.rad, RED);
+#endif // DEBUG
+		DrawRectanglePro({ player.playerCir.pos.x, player.playerCir.pos.y, auxRec.width, auxRec.height },
+			{ auxRec.width / 2, auxRec.height / 2 }, player.rotation, RED);
 	}
 }
