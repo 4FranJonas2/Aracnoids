@@ -117,15 +117,15 @@ namespace aracnoids
 	{
 		for (int i = 0; i < maxBigEnemy; i++)
 			if (bigEnemy[i].isAlive)
-				DrawCircleLines(bigEnemy[i].pos.x, bigEnemy[i].pos.y, bigEnemy[i].radius, RED);
+				DrawCircleLines(static_cast <int>(bigEnemy[i].pos.x), static_cast <int>(bigEnemy[i].pos.y), bigEnemy[i].radius, RED);
 
 		for (int i = 0; i < maxMidEnemy; i++)
 			if (midEnemy[i].isAlive)
-				DrawCircleLines(midEnemy[i].pos.x, midEnemy[i].pos.y, midEnemy[i].radius, ORANGE);
+				DrawCircleLines(static_cast <int>(midEnemy[i].pos.x), static_cast <int>(midEnemy[i].pos.y), midEnemy[i].radius, ORANGE);
 
 		for (int i = 0; i < maxSmallEnemy; i++)
 			if (smallEnemy[i].isAlive)
-				DrawCircleLines(smallEnemy[i].pos.x, smallEnemy[i].pos.y, smallEnemy[i].radius, YELLOW);
+				DrawCircleLines(static_cast <int>(smallEnemy[i].pos.x), static_cast <int>(smallEnemy[i].pos.y), smallEnemy[i].radius, YELLOW);
 	}
 
 
@@ -135,7 +135,7 @@ namespace aracnoids
 	}
 	float RandomSpeed(float minSpeed, float maxSpeed)
 	{
-		return GetRandomValue((minSpeed * 100), (maxSpeed * 100)) / 100.0f;
+		return GetRandomValue(static_cast <int>((minSpeed * 100.0f)), static_cast <int>((maxSpeed * 100.0f))) / 100.0f;
 	}
 	Vector2 RandomPos()
 	{
@@ -152,13 +152,13 @@ namespace aracnoids
 			neufar.speed = 200;
 
 		if (neufar.pos.x < 0)
-			neufar.pos.x = GetScreenWidth();
+			neufar.pos.x = static_cast <float>(GetScreenWidth());
 
 		if (neufar.pos.x > GetScreenWidth())
 			neufar.pos.x = 0;
 
 		if (neufar.pos.y < 0)
-			neufar.pos.y = GetScreenHeight();
+			neufar.pos.y = static_cast <float>(GetScreenHeight());
 
 		if (neufar.pos.y > GetScreenHeight())
 			neufar.pos.y = 0;
@@ -200,7 +200,6 @@ namespace aracnoids
 			neufarB.angle = atan2f(velB.y, velB.x);
 		}
 	}
-
 
 	void DeleteBigEnemy(int i)
 	{
