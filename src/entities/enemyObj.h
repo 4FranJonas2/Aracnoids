@@ -19,7 +19,7 @@ namespace aracnoids
 
 	//Bullet CreateBullet( gamePlayer::Player player);
 	//void InitBullets(Bullet bullet[], gamePlayer::Player player);
-
+    void InitEnemys();
     void CreateBigEnemy();
     void CreateMediumEnemy( int idBigEnemy, Vector2 pos, float baseAngle);
     void CreateSmallEnemy( int idBigEnemy, Vector2 pos, float baseAngle);

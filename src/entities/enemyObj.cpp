@@ -28,6 +28,29 @@ namespace aracnoids
 	void CheckCollisionEnemys();
 	void CheckCollisionEnemysBullet(Bullet bullet[]);
 
+	void InitEnemys()
+	{
+		for (int i = 0; i < maxBigEnemy; i++)
+		{
+			bigEnemyDecendant[i] = 0;
+			bigEnemy[i].isAlive = false;
+		}
+
+		for (int i = 0; i < maxMidEnemy; i++)
+		{
+			midEnemy[i].isAlive = false;
+		}
+		for (int i = 0; i < maxSmallEnemy; i++)
+		{
+			smallEnemy[i].isAlive = false;
+		}
+
+		nextId = 0;
+		spawnTimer = 0.0f;
+		spawnDelay = 1.5f;
+		bigCounter = 0;
+	}
+
 	void CreateBigEnemy()
 	{
 		for (int i = 0; i < maxBigEnemy; i++)
@@ -234,7 +257,7 @@ namespace aracnoids
 		/*if (idGrande >= 0 && idGrande < maxBigEnemy)*/
 		if (bigEnemyDecendant[idGrande] <= 0)
 			bigEnemyDecendant[idGrande] = 0;
-			bigCounter--;
+		bigCounter--;
 	}
 
 	void CheckCollisionEnemys()
