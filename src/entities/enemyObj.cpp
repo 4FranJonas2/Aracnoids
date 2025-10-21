@@ -9,7 +9,7 @@ namespace aracnoids
 	EnemyObject midEnemy[maxMidEnemy];
 	EnemyObject smallEnemy[maxSmallEnemy];
 
-	int bigEnemyDecendant[maxBigEnemy];
+	int bigEnemyDecendant[maxBigEnemy] = { 0 };
 	int nextId = 0;
 
 	float spawnTimer = 0.0f;
@@ -30,8 +30,8 @@ namespace aracnoids
 
 	void CreateBigEnemy()
 	{
-		for (int i = 0; i < maxBigEnemy; i++)		
-			if (!bigEnemy[i].isAlive)
+		for (int i = 0; i < maxBigEnemy; i++)
+			if (!bigEnemy[i].isAlive && bigEnemyDecendant[i] == 0)
 			{
 				bigEnemy[i].isAlive = true;
 				bigEnemy[i].pos = RandomPos();
@@ -39,18 +39,19 @@ namespace aracnoids
 				bigEnemy[i].speed = RandomSpeed(80, 150);
 				bigEnemy[i].radius = 40;
 				bigEnemy[i].type = 0;
-				bigEnemy[i].parentId = -1;
+				bigEnemy[i].parentId = 1;
 				bigEnemy[i].id = nextId++;
 
 				bigEnemyDecendant[i] = 0;
 				bigCounter++;
 				break;
-			}		
+			}
 	}
 
 	void CreateMediumEnemy(int idBigEnemy, Vector2 pos, float baseAngle)
 	{
-		for (int i = 0; i < maxMidEnemy; i++)		
+		int auxCount = 0;
+		for (int i = 0; i < maxMidEnemy; i++)
 			if (!midEnemy[i].isAlive)
 			{
 				midEnemy[i].isAlive = true;
@@ -61,16 +62,16 @@ namespace aracnoids
 				midEnemy[i].type = 1;
 				midEnemy[i].parentId = idBigEnemy;
 				midEnemy[i].id = nextId++;
-
 				bigEnemyDecendant[idBigEnemy] += 1;
-				if (bigEnemyDecendant[idBigEnemy] >= 2)
+				auxCount++;
+				if (auxCount >= 2)
 					break; // Solo dos medianos
-			}	
+			}
 	}
 	void CreateSmallEnemy(int idBigEnemy, Vector2 pos, float baseAngle)
 	{
-		int smallCounter = 0;
-		for (int i = 0; i < maxSmallEnemy; i++)		
+		int auxCounter = 0;
+		for (int i = 0; i < maxSmallEnemy; i++)
 			if (!smallEnemy[i].isAlive)
 			{
 				smallEnemy[i].isAlive = true;
@@ -82,10 +83,11 @@ namespace aracnoids
 				smallEnemy[i].parentId = idBigEnemy;
 				smallEnemy[i].id = nextId++;
 				bigEnemyDecendant[idBigEnemy] += 1;
-				smallCounter++;
-				if (smallCounter == 4)
+				auxCounter++;
+
+				if (auxCounter == 4)
 					break;
-			}	
+			}
 	}
 	void UpdateEnemyObject(Bullet gameBullet[])
 	{
@@ -218,6 +220,7 @@ namespace aracnoids
 		Vector2 pos = midEnemy[i].pos;
 		float angle = midEnemy[i].angle;
 		midEnemy[i].isAlive = false;
+		bigEnemyDecendant[idGrande]--;
 
 		CreateSmallEnemy(idGrande, pos, angle);
 	}
@@ -226,9 +229,12 @@ namespace aracnoids
 		if (!smallEnemy[i].isAlive) return;
 		int idGrande = smallEnemy[i].parentId;
 		smallEnemy[i].isAlive = false;
+		bigEnemyDecendant[idGrande]--;
 
-		if (idGrande >= 0 && idGrande < maxBigEnemy)		
-			bigEnemyDecendant[idGrande]--;
+		/*if (idGrande >= 0 && idGrande < maxBigEnemy)*/
+		if (bigEnemyDecendant[idGrande] <= 0)
+			bigEnemyDecendant[idGrande] = 0;
+			bigCounter--;
 	}
 
 	void CheckCollisionEnemys()
@@ -248,9 +254,9 @@ namespace aracnoids
 		{
 			if (!midEnemy[i].isAlive)
 				continue;
-			for (int j = 0; j < maxMidEnemy; j++)			
+			for (int j = 0; j < maxMidEnemy; j++)
 				if (midEnemy[j].isAlive)
-					Bounce(midEnemy[i], midEnemy[j]);			
+					Bounce(midEnemy[i], midEnemy[j]);
 		}
 
 
@@ -259,9 +265,9 @@ namespace aracnoids
 		{
 			if (!smallEnemy[i].isAlive)
 				continue;
-			for (int j = 0; j < maxSmallEnemy; j++)			
+			for (int j = 0; j < maxSmallEnemy; j++)
 				if (smallEnemy[j].isAlive)
-					Bounce(smallEnemy[i], smallEnemy[j]);			
+					Bounce(smallEnemy[i], smallEnemy[j]);
 		}
 
 		//grandes con medianos y chicos
@@ -269,13 +275,13 @@ namespace aracnoids
 		{
 			if (!bigEnemy[i].isAlive)
 				continue;
-			for (int j = 0; j < maxMidEnemy; j++)			
+			for (int j = 0; j < maxMidEnemy; j++)
 				if (midEnemy[j].isAlive)
 					Bounce(bigEnemy[i], midEnemy[j]);
-			
-			for (int k = 0; k < maxSmallEnemy; k++)			
+
+			for (int k = 0; k < maxSmallEnemy; k++)
 				if (smallEnemy[k].isAlive)
-					Bounce(bigEnemy[i], smallEnemy[k]);			
+					Bounce(bigEnemy[i], smallEnemy[k]);
 		}
 
 		//medianos con chicos
@@ -283,7 +289,7 @@ namespace aracnoids
 		{
 			if (!midEnemy[i].isAlive)
 				continue;
-			for (int j = 0; j < maxSmallEnemy; j++)			
+			for (int j = 0; j < maxSmallEnemy; j++)
 				if (smallEnemy[j].isAlive)
 					Bounce(midEnemy[i], smallEnemy[j]);
 		}
@@ -296,7 +302,7 @@ namespace aracnoids
 		{
 			if (!bullet[i].isBulletAlive) continue;
 			//grande 
-			for (int j = 0; j < maxBigEnemy; j++)			
+			for (int j = 0; j < maxBigEnemy; j++)
 				if (bigEnemy[j].isAlive && Vector2Distance(bullet[i].bulletHitBox.pos, bigEnemy[j].pos) < bullet[i].bulletHitBox.rad + bigEnemy[j].radius)
 				{
 					bullet[i].isBulletAlive = false;
@@ -305,22 +311,22 @@ namespace aracnoids
 				}
 
 			//mediano 
-			for (int j = 0; j < maxMidEnemy; j++)			
+			for (int j = 0; j < maxMidEnemy; j++)
 				if (midEnemy[j].isAlive && Vector2Distance(bullet[i].bulletHitBox.pos, midEnemy[j].pos) < bullet[i].bulletHitBox.rad + midEnemy[j].radius)
 				{
 					bullet[i].isBulletAlive = false;
 					DeleteMidEnemy(j);
 					break;
-				}			
+				}
 
 			//chicos 
-			for (int j = 0; j < maxSmallEnemy; j++)			
+			for (int j = 0; j < maxSmallEnemy; j++)
 				if (smallEnemy[j].isAlive && Vector2Distance(bullet[i].bulletHitBox.pos, smallEnemy[j].pos) < bullet[i].bulletHitBox.rad + smallEnemy[j].radius)
 				{
 					bullet[i].isBulletAlive = false;
 					DeleteSmallEnemy(j);
 					break;
-				}		
+				}
 		}
 	}
 }
