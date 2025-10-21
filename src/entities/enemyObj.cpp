@@ -27,6 +27,7 @@ namespace aracnoids
 	void DeleteSmallEnemy(int i);
 	void CheckCollisionEnemys();
 	void CheckCollisionEnemysBullet(Bullet bullet[]);
+	void PrintEnemy(bool isAlive, EnemyObject enemy[], int i);
 
 	void InitEnemys()
 	{
@@ -141,18 +142,23 @@ namespace aracnoids
 	void DrawEnemyObject()
 	{
 		for (int i = 0; i < maxBigEnemy; i++)
-			if (bigEnemy[i].isAlive)
-				DrawCircleLines(static_cast <int>(bigEnemy[i].pos.x), static_cast <int>(bigEnemy[i].pos.y), bigEnemy[i].radius, RED);
+			PrintEnemy(bigEnemy[i].isAlive, bigEnemy, i);
 
 		for (int i = 0; i < maxMidEnemy; i++)
-			if (midEnemy[i].isAlive)
-				DrawCircleLines(static_cast <int>(midEnemy[i].pos.x), static_cast <int>(midEnemy[i].pos.y), midEnemy[i].radius, ORANGE);
+			PrintEnemy(midEnemy[i].isAlive, midEnemy, i);
 
 		for (int i = 0; i < maxSmallEnemy; i++)
-			if (smallEnemy[i].isAlive)
-				DrawCircleLines(static_cast <int>(smallEnemy[i].pos.x), static_cast <int>(smallEnemy[i].pos.y), smallEnemy[i].radius, YELLOW);
+			PrintEnemy(smallEnemy[i].isAlive, smallEnemy, i);
 	}
 
+	void PrintEnemy(bool Alive, EnemyObject enemy[], int i)
+	{
+		if (Alive)
+		{
+			DrawCircleLines(static_cast <int>(enemy[i].pos.x), static_cast <int>(enemy[i].pos.y), enemy[i].radius, RED);
+			//DrawRectanglePro({ static_cast <float>(enemy[i].pos.x), static_cast <float>(enemy[i].pos.y), 20,20 }, enemy[i].pos, enemy[i].angle, RED);
+		}
+	}
 
 	float RandomAngle()
 	{
