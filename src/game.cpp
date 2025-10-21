@@ -43,6 +43,7 @@ namespace aracnoids
 		InitWindow(screenWidth, screenHeight, "Aracnoids");
 
 		InitPlayer(player);
+		InitEnemys();
 
 		CreateBigEnemy();
 	}
@@ -55,6 +56,12 @@ namespace aracnoids
 
 	void Update()
 	{
+		if (IsKeyPressed(KEY_R))
+		{
+			InitPlayer(player);
+			InitEnemys();
+		}
+
 		UpdatePlayer(player);
 		CreateBullet(bullets, player);
 		UpdateBullet(bullets);
