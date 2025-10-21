@@ -120,7 +120,7 @@ namespace aracnoids
 
 	static void PrintBullet(Bullet bullet[], int i)
 	{
-		DrawRectanglePro(bullet[i].bulletRec, { bullet[i].bulletRec.width,bullet[i].bulletRec.height }, bullet[i].rotation, RED);
+		DrawRectanglePro(bullet[i].bulletRec, { bullet[i].bulletRec.width/2,bullet[i].bulletRec.height/2 }, bullet[i].rotation, RED);
 #ifdef _DEBUG
 		DrawHitBox(bullet, i);
 #endif // _DEBUG
