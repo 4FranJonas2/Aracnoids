@@ -9,7 +9,7 @@ namespace aracnoids
 	EnemyObject midEnemy[maxMidEnemy];
 	EnemyObject smallEnemy[maxSmallEnemy];
 
-	int bigEnemyDecendant[maxBigEnemy] = { 0 };
+	int bigEnemyDecendant[maxBigEnemy];
 	int nextId = 0;
 
 	float spawnTimer = 0.0f;
@@ -63,7 +63,7 @@ namespace aracnoids
 				midEnemy[i].id = nextId++;
 
 				bigEnemyDecendant[idBigEnemy] += 1;
-				if (bigEnemyDecendant[idBigEnemy] == 2)
+				if (bigEnemyDecendant[idBigEnemy] >= 2)
 					break; // Solo dos medianos
 			}	
 	}
