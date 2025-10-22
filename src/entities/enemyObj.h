@@ -24,6 +24,6 @@ namespace aracnoids
     void CreateBigEnemy();
     void CreateMediumEnemy( int idBigEnemy, Vector2 pos, float baseAngle);
     void CreateSmallEnemy( int idBigEnemy, Vector2 pos, float baseAngle);
-    void UpdateEnemyObject( Bullet gameBullet[]);
+    void UpdateEnemyObject( Bullet gameBullet[], Player& player);
     void DrawEnemyObject();
 }

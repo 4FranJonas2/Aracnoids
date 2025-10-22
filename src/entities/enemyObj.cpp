@@ -27,6 +27,7 @@ namespace aracnoids
 	void DeleteSmallEnemy(int i);
 	void CheckCollisionEnemys();
 	void CheckCollisionEnemysBullet(Bullet bullet[]);
+	void CheckCollisionEnemysPlayer(Player& player);
 	void PrintEnemy(bool isAlive, EnemyObject enemy[], int i);
 
 	void InitEnemys()
@@ -113,7 +114,7 @@ namespace aracnoids
 					break;
 			}
 	}
-	void UpdateEnemyObject(Bullet gameBullet[])
+	void UpdateEnemyObject(Bullet gameBullet[],Player& player)
 	{
 		spawnTimer += GetFrameTime();
 
@@ -138,6 +139,8 @@ namespace aracnoids
 		CheckCollisionEnemys();
 
 		CheckCollisionEnemysBullet(gameBullet);
+
+		CheckCollisionEnemysPlayer(player);
 	}
 	void DrawEnemyObject()
 	{
@@ -353,6 +356,61 @@ namespace aracnoids
 				if (smallEnemy[j].isAlive && Vector2Distance(bullet[i].bulletHitBox.pos, smallEnemy[j].pos) < bullet[i].bulletHitBox.rad + smallEnemy[j].radius)
 				{
 					bullet[i].isBulletAlive = false;
+					DeleteSmallEnemy(j);
+					break;
+				}
+		}
+	}
+	void CheckCollisionEnemysPlayer(Player& player)
+	{
+		player.immunityTimer += GetFrameTime();
+
+		if (player.immunityTimer >= player.inmmunityDelay && player.playerHit)
+		{
+			player.playerHit = false;
+		}
+
+		if (!player.isAlive && !player.playerHit)
+		{
+			//grande 
+			for (int j = 0; j < maxBigEnemy; j++)
+				if (bigEnemy[j].isAlive && Vector2Distance(player.playerCir.pos, bigEnemy[j].pos) < player.playerCir.rad + bigEnemy[j].radius)
+				{
+					if (player.lives > 0)
+					{
+						player.lives--;
+						player.playerHit = true;
+						player.immunityTimer = 0;
+					}
+
+					DeleteBigEnemy(j);
+					break;
+				}
+
+			//mediano 
+			for (int j = 0; j < maxMidEnemy; j++)
+				if (midEnemy[j].isAlive && Vector2Distance(player.playerCir.pos, midEnemy[j].pos) < player.playerCir.rad + midEnemy[j].radius)
+				{
+					if (player.lives > 0)
+					{
+						player.lives--;
+						player.playerHit = true;
+						player.immunityTimer = 0;
+					}
+					DeleteMidEnemy(j);
+					break;
+				}
+
+			//chicos 
+			for (int j = 0; j < maxSmallEnemy; j++)
+				if (smallEnemy[j].isAlive && Vector2Distance(player.playerCir.pos, smallEnemy[j].pos) < player.playerCir.rad + smallEnemy[j].radius)
+				{
+					if (player.lives > 0)
+					{
+						player.lives--;
+						player.playerHit = true;
+						player.immunityTimer = 0;
+					}
 					DeleteSmallEnemy(j);
 					break;
 				}
