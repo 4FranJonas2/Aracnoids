@@ -25,6 +25,10 @@ namespace aracnoids
 		player.movStatus = PLAYERMOVSTAT::STOP;
 		player.lives = 3;
 
+		player.playerHit = false;
+		player.immunityTimer = 0.0f;
+		player.inmmunityDelay = 4.0f;
+
 		auxRec = { 0, 0, 40, 20 };
 	}
 
@@ -102,6 +106,7 @@ namespace aracnoids
 	{
 #ifdef _DEBUG
 		DrawCircleLines(static_cast<int>(player.playerCir.pos.x), static_cast<int>(player.playerCir.pos.y), player.playerCir.rad, RED);
+		DrawText(TextFormat("%i", player.lives), 50, 50, 60, GRAY);
 #endif // DEBUG
 		DrawRectanglePro({ player.playerCir.pos.x, player.playerCir.pos.y, auxRec.width, auxRec.height },
 			{ auxRec.width / 2, auxRec.height / 2 }, player.rotation, RED);

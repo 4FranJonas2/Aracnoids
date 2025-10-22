@@ -23,11 +23,15 @@ namespace aracnoids
 		bool isAlive;
 		bool isAcelerating;
 		int lives;
+		bool playerHit;
+		float immunityTimer;
+		float inmmunityDelay;
 
 		float speed;
 		float maxSpeed;
 		float rotation;
 		float rotationSpeed;
+
 	};
 
 	void InitPlayer(Player& player);
