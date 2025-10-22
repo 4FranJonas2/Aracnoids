@@ -13,9 +13,7 @@ namespace aracnoids
 
 	enum class SceneStatus
 	{
-		INITGAME = 1,
-		FIRSTGAME,
-		GAMEMENU,
+		GAMEMENU = 1,
 		GAMERULES,
 		GAMECREDITS,
 		GAMEPLAY,
@@ -34,6 +32,4 @@ namespace aracnoids
 		bool isResetMatch = false;
 		bool goMenu = false;
 	};
-
-
 }
