@@ -22,16 +22,12 @@ namespace aracnoids
 		
 		bool isAlive;
 		bool isAcelerating;
-		bool isShotting;
 		int lives;
 
 		float speed;
 		float maxSpeed;
 		float rotation;
 		float rotationSpeed;
-
-		float countDown;
-		float resetCountDown;
 	};
 
 	void InitPlayer(Player& player);
