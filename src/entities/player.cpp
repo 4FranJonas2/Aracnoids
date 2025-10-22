@@ -10,7 +10,7 @@ namespace aracnoids
 
 	void InitPlayer(Player& player)
 	{
-		player.playerCir.pos = { 500, 500 };
+		player.playerCir.pos = { static_cast <float> (GetScreenWidth()/2), static_cast <float> (GetScreenHeight() / 2) };
 		player.playerCir.rad = 20;
 
 		player.vecDir = { 0, 0 };
