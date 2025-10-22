@@ -44,40 +44,108 @@ namespace aracnoids
 
 		InitPlayer(player);
 		InitEnemys();
-
-		CreateBigEnemy();
+		
+		gameStats.gameStatus = SceneStatus::GAMEPLAY;
 	}
 
 	void Input()
 	{
-		InputPlayer(player);
-		InputBullet();
+		switch ((SceneStatus)gameStats.gameStatus)
+		{
+		case SceneStatus::GAMEPLAY:
+
+			InputPlayer(player);
+			InputBullet();
+			if (IsKeyPressed(KEY_R))
+				gameStats.gameStatus = SceneStatus::RESETGAME;		
+			break;
+
+		case SceneStatus::GAMEPAUSE:
+
+			
+			break;
+
+		case SceneStatus::GAMEEND:
+
+			
+			break;
+
+		default:
+			break;
+		}
 	}
 
 	void Update()
 	{
-		if (IsKeyPressed(KEY_R))
+		switch ((SceneStatus)gameStats.gameStatus)
 		{
+		case SceneStatus::GAMEPLAY:
+
+			UpdatePlayer(player);
+			CreateBullet(bullets, player);
+			UpdateBullet(bullets);
+			UpdateEnemyObject(bullets, player);
+			break;
+
+		case SceneStatus::GAMEPAUSE:
+
+
+			break;
+
+		case SceneStatus::RESETGAME:
+
 			InitPlayer(player);
 			InitEnemys();
-		}
+			gameStats.gameStatus = SceneStatus::GAMEPLAY;
+			break;
 
-		UpdatePlayer(player);
-		CreateBullet(bullets, player);
-		UpdateBullet(bullets);
-		UpdateEnemyObject(bullets,player);
+		case SceneStatus::GAMEEND:
+
+
+			break;
+
+		default:
+			break;
+		}
 	}
 
 	void Draw()
 	{
 		BeginDrawing();
-
 		ClearBackground(BLACK);
 
-		DrawPlayer(player);
-		DrawBullet(bullets);
-		DrawEnemyObject();
+		switch ((SceneStatus)gameStats.gameStatus)
+		{
+		case SceneStatus::GAMEMENU:
 
+			break;
+
+		case SceneStatus::GAMERULES:
+
+			break;
+
+		case SceneStatus::GAMECREDITS:
+
+			break;
+
+		case SceneStatus::GAMEPLAY:
+
+			DrawPlayer(player);
+			DrawBullet(bullets);
+			DrawEnemyObject();		
+			break;
+
+		case SceneStatus::GAMEPAUSE:
+
+			break;
+
+		case SceneStatus::GAMEEND:
+
+			break;
+
+		default:
+			break;
+		}
 		EndDrawing();
 	}
 }
