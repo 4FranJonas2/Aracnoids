@@ -65,7 +65,7 @@ namespace aracnoids
 		UpdatePlayer(player);
 		CreateBullet(bullets, player);
 		UpdateBullet(bullets);
-		UpdateEnemyObject(bullets);
+		UpdateEnemyObject(bullets,player);
 	}
 
 	void Draw()
