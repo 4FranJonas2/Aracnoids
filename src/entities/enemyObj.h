@@ -6,7 +6,8 @@
 
 namespace aracnoids
 {
-    struct EnemyObject {
+    struct EnemyObject
+    {
         Vector2 pos;
         float angle;
         float speed;
