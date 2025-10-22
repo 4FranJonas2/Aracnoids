@@ -23,6 +23,7 @@ namespace aracnoids
 		player.rotationSpeed = 5.0f;
 		player.isAcelerating = false;
 		player.movStatus = PLAYERMOVSTAT::STOP;
+		player.lives = 3;
 
 		auxRec = { 0, 0, 40, 20 };
 	}
@@ -42,7 +43,6 @@ namespace aracnoids
 		if (player.isAcelerating)
 		{
 			player.vecDir = Vector2Normalize(player.vecDir);
-
 
 			Vector2 impulse = Vector2Scale(player.vecDir, 200.0f * GetFrameTime());
 			player.velocity = Vector2Add(player.velocity, impulse);
