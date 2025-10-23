@@ -85,6 +85,10 @@ namespace aracnoids
 			CreateBullet(bullets, player);
 			UpdateBullet(bullets);
 			UpdateEnemyObject(bullets, player);
+			if (player.lives == 0)
+			{
+				gameStats.gameStatus = SceneStatus::RESETGAME;
+			}
 			break;
 
 		case SceneStatus::GAMEPAUSE:
