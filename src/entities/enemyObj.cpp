@@ -114,7 +114,7 @@ namespace aracnoids
 					break;
 			}
 	}
-	void UpdateEnemyObject(Bullet gameBullet[],Player& player)
+	void UpdateEnemyObject(Bullet gameBullet[], Player& player)
 	{
 		spawnTimer += GetFrameTime();
 
@@ -173,8 +173,36 @@ namespace aracnoids
 	}
 	Vector2 RandomPos()
 	{
-		return { static_cast <float> (GetRandomValue(0, GetScreenWidth())),
-			static_cast <float> (GetRandomValue(0, GetScreenHeight())) };
+		int limit = GetRandomValue(0, 3);
+		float xPos = 0;
+		float yPos = 0;
+
+		switch (limit)
+		{
+		case 0: // izquierda
+			xPos = -100.0f;
+			yPos = static_cast <float>(GetRandomValue(0, GetScreenHeight()));
+			break;
+
+		case 1: // derecha
+			xPos = GetScreenWidth() + 100.0f;
+			yPos = static_cast <float>(GetRandomValue(0, GetScreenHeight()));
+			break;
+
+		case 2: // arriba
+			xPos = static_cast <float>(GetRandomValue(0, GetScreenWidth()));
+			yPos = -100.0f;
+			break;
+
+		case 3: // abajo
+			xPos = static_cast <float>(GetRandomValue(0, GetScreenWidth()));
+			yPos = GetScreenHeight() + 100.0f;
+			break;
+
+		default:
+			break;
+		}
+		return { xPos, yPos };
 	}
 
 	void MoveEnemyObj(EnemyObject& neufar)
