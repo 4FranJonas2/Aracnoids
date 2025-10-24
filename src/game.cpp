@@ -6,6 +6,7 @@
 #include "entities/player.h"
 #include "entities/bullet.h"
 #include "entities/enemyObj.h"
+#include "entities/menu.h"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ namespace aracnoids
 	static Player player;
 	static GameStats gameStats;
 	static Bullet bullets[maxBullets];
+	static MenuButtons menu;
 
 	void Init();
 	void Input();
@@ -44,8 +46,9 @@ namespace aracnoids
 
 		InitPlayer(player);
 		InitEnemys();
-		
-		gameStats.gameStatus = SceneStatus::GAMEPLAY;
+		InitButtons(menu);
+
+		gameStats.gameStatus = SceneStatus::GAMEMENU;
 	}
 
 	void Input()
@@ -79,6 +82,21 @@ namespace aracnoids
 	{
 		switch ((SceneStatus)gameStats.gameStatus)
 		{
+		case SceneStatus::GAMEMENU:
+
+			UpdateSceneMenus(gameStats, menu);
+			break;
+
+		case SceneStatus::GAMERULES:
+
+			UpdateSceneMenus(gameStats, menu);
+			break;
+
+		case SceneStatus::GAMECREDITS:
+
+			UpdateSceneMenus(gameStats, menu);
+			break;
+
 		case SceneStatus::GAMEPLAY:
 
 			UpdatePlayer(player);
@@ -122,6 +140,7 @@ namespace aracnoids
 		{
 		case SceneStatus::GAMEMENU:
 
+			DrawMainMenu(gameStats);
 			break;
 
 		case SceneStatus::GAMERULES:
