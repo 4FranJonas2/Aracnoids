@@ -16,6 +16,7 @@ namespace aracnoids
 		GAMEMENU = 1,
 		GAMERULES,
 		GAMECREDITS,
+		FIRSTGAME,
 		GAMEPLAY,
 		GAMEPAUSE,
 		RESETGAME,
