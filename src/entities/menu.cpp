@@ -52,13 +52,15 @@ namespace aracnoids
 		buttons.creditsButton.width = 150.0;
 		buttons.creditsButton.height = 40.0;
 
-		
+
 	}
 
 	void UpdateSceneMenus(GameStats& gameStats, MenuButtons buttons)
 	{
-		if (gameStats.gameStatus == SceneStatus::GAMEMENU)
+		switch ((SceneStatus)gameStats.gameStatus)
 		{
+		case SceneStatus::GAMEMENU:
+
 			if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonUp(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.playButton))
 			{
 				gameStats.gameStatus = SceneStatus::GAMEPLAY;
@@ -71,27 +73,56 @@ namespace aracnoids
 			{
 				gameStats.gameStatus = SceneStatus::GAMECREDITS;
 			}
-		}
+			break;
 
-		else if (gameStats.gameStatus == SceneStatus::GAMERULES)
-		{
+		case SceneStatus::GAMERULES:
+			
 			if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonUp(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backButton))
 			{
 				gameStats.gameStatus = SceneStatus::GAMEMENU;
 			}
-		}
+			break;
 
-		else if (gameStats.gameStatus == SceneStatus::GAMECREDITS)
-		{
-			if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonUp(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.linkButton))
+		case SceneStatus::GAMECREDITS:
+
+			/*if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonUp(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.linkButton))
 			{
 				system("start https://4franjonas2.itch.io/");
-			}
+			}*/
 
-			else if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonUp(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backButton))
+			if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonUp(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backButton))
 			{
 				gameStats.gameStatus = SceneStatus::GAMEMENU;
 			}
+			break;
+
+		case SceneStatus::FIRSTGAME:
+			
+			if (!IsKeyPressed(KEY_SPACE)&& IsKeyReleased(KEY_SPACE))
+			{
+				gameStats.gameStatus = SceneStatus::GAMEPLAY;
+			}
+
+			break;
+
+		case SceneStatus::GAMEPLAY:
+
+			if (!IsKeyPressed(KEY_SPACE) && IsKeyReleased(KEY_SPACE))
+			{
+				gameStats.gameStatus = SceneStatus::GAMEPAUSE;
+			}
+			break;
+
+		case SceneStatus::GAMEPAUSE:
+
+			if (!IsKeyPressed(KEY_SPACE) && IsKeyReleased(KEY_SPACE))
+			{
+				gameStats.gameStatus = SceneStatus::GAMEPLAY;
+			}
+			break;
+
+		default:
+			break;
 		}
 	}
 
@@ -101,16 +132,16 @@ namespace aracnoids
 		{
 			int lineText1PosX = GetScreenWidth() / 2 - 140;
 			int LineText1PosY = 150;
-		
+
 			int LineText2PosX = GetScreenWidth() / 2 - 25;
 			int LineText2PosY = 280;
-	
+
 			int LineText3PosX = GetScreenWidth() / 2 - 35;
 			int LineText3PosY = 340;
-		
+
 			int LineText4PosX = GetScreenWidth() / 2 - 45;
 			int LineText4PosY = 400;
-		
+
 			int LineText5PosX = 360;
 			int LineText5PosY = 750;
 
@@ -134,189 +165,195 @@ namespace aracnoids
 		}
 	}
 
-	//void DrawRulesMenu(GameStats gameStats, MenuButtons buttons)
-	//{
-	//	float lineText1PosX = GetScreenWidth() / 2 - 50.0;
-	//	float LineText1PosY = 600.0;
+	void DrawRulesMenu(GameStats gameStats)
+	{
+		if (gameStats.gameStatus == SceneStatus::GAMERULES)
+		{
+			int titleFontSize = 50;
+			int defaultFontSize = 20;
+			int exitFontSize = 20;
 
-	//	float LineText2PosX = 100.0;
-	//	float LineText2PosY = 480.0;
+			int LineText1PosX = GetScreenWidth() / 2 - 100;
+			int LineText1PosY = 100;
 
-	//	float LineText3PosX = GetScreenWidth() / 2 - 150.0;
-	//	float LineText3PosY = 410.0;
+			int LineText2PosX = 100;
+			int LineText2PosY = 230;
 
-	//	float LineText4PosX = 100.0;
-	//	float LineText4PosY = 330.0;
+			int LineText3PosX = 100;
+			int LineText3PosY = 280;
 
-	//	float LineText5PosX = 170.0;
-	//	float LineText5PosY = 300.0;
+			int LineText4PosX = 100;
+			int LineText4PosY = 310;
 
-	//	float LineText6PosX = 50.0;
-	//	float LineText6PosY = 35.0;
+			int LineText5PosX = 100;
+			int LineText5PosY = 380;
 
-	//	float LineText7PosX = 170.0;
-	//	float LineText7PosY = 240.0;
+			int LineText6PosX = 100;
+			int LineText6PosY = 450;
 
-	//	float LineText8PosX = 170.0;
-	//	float LineText8PosY = 210.0;
+			int LineText7PosX = 100;
+			int LineText7PosY = 480;
 
-	//	float LineText9PosX = 170.0;
-	//	float LineText9PosY = 180.0;
+			int LineText8PosX = 100;
+			int LineText8PosY = 510;
 
-	//	if (gameStats.gameStatus == SceneStatus::GAMERULES)
-	//	{
-	//		int auxXPos = 15.0;
-	//		int auxFontSize = 15;
-	//		string titleText = "RULES";
-	//		string howToMoveText = "-To move use A and D keys to move player horizontal.";
-	//		string winConditionText = "-Break all the blocks to win";
-	//		string loseConditionText1 = "-You will have 3 Lives, if the ball touch the bottom you ";
-	//		string loseConditionText2 = "lose 1 live, lose them all and its game over.";
-	//		string redCocoText = "RED coconut (PowerDown) slows you down.";
-	//		string yellowCocoText = "YELLOW coconut (PowerDown) makes you smaller.";
-	//		string greenCocoText = "GREEN coconut (PowerUp) makes you bigger.";
-	//		string exitText = "Back";
+			int LineText9PosX = 100;
+			int LineText9PosY = 650;
 
-	//		PrintMenuText(lineText1PosX, LineText1PosY, titleText);
+			int LineText0PosX = 100;
+			int LineText0PosY = 720;
 
-	//		slSetFontSize(15);
-	//		PrintMenuText(LineText2PosX, LineText2PosY, howToMoveText);
-	//		PrintMenuText(LineText3PosX, LineText3PosY, winConditionText);
-	//		PrintMenuText(LineText4PosX - auxXPos, LineText4PosY, loseConditionText1);
-	//		PrintMenuText(LineText5PosX - auxXPos, LineText5PosY, loseConditionText2);
+			string titleText = "RULES";
+			string howToMoveText = "-To MOVE use LEFT Mouse Button and to SHOT use RIGHT mouse buton";
+			string winConditionText = "-In normal mode Destroy all Neufars to win.";
+			string winConditionText2 = "-In endless mode survive as long as you can.";
+			string loseConditionText2 = "-You will have 3 lives. If you get touch by a neufar, you lose 1 life.";
+			string turtleText = "Take care of the TURTLE, they can change neufar direction !!";
+			string frogText = "FROGS loves water but we cant explain why their smell slows you down if they touch you.";
+			string petalsText = "The PINK PETALS can reestore 1 life, if you are not full healt.";
+			string pauseText = "-Use spacebar to pause game at any moment.";
+			string exitText = "Back";
 
-	//		PrintMenuText(LineText7PosX - auxXPos, LineText7PosY, redCocoText);
-	//		PrintMenuText(LineText8PosX - auxXPos, LineText8PosY, yellowCocoText);
-	//		PrintMenuText(LineText9PosX - auxXPos, LineText9PosY, greenCocoText);
+			DrawText("RULES", LineText1PosX, LineText1PosY, titleFontSize, WHITE);
 
-	//		slSetForeColor(1.0, 1.0, 1.0, 1.0);
-	//		slSprite(gameStats.redCoconut, 120.0, 245.0, 16, 16);
-	//		slSprite(gameStats.yellowCoconut, 120.0, 215.0, 16, 16);
-	//		slSprite(gameStats.greenCoconut, 120.0, 185.0, 16, 16);
+			DrawText("-To MOVE use LEFT Mouse Button and to SHOT use RIGHT mouse buton",
+				LineText2PosX, LineText2PosY, defaultFontSize, WHITE);
+			DrawText("-In normal mode Destroy all Neufars to win.",
+				LineText3PosX, LineText3PosY, defaultFontSize, WHITE);
+			DrawText("-In endless mode survive as long as you can.",
+				LineText4PosX, LineText4PosY, defaultFontSize, WHITE);
+			DrawText("-You will have 3 lives. If you get touch by a neufar, you lose 1 life.",
+				LineText5PosX, LineText5PosY, defaultFontSize, WHITE);
+			DrawText("TURTLE dont care about anything. But take care, they can change neufar direction !!",
+				LineText6PosX, LineText6PosY, defaultFontSize, WHITE);
+			DrawText("FROGS loves water but we cant explain why their smell slows you down if they touch you.",
+				LineText7PosX, LineText7PosY, defaultFontSize, WHITE);
+			DrawText("The PINK PETALS can reestore 1 life, if you are not full healt.",
+				LineText8PosX, LineText8PosY, defaultFontSize, WHITE);
+			DrawText("-Use spacebar to pause game at any moment.",
+				LineText9PosX, LineText9PosY, defaultFontSize, WHITE);
+			DrawText("Back", LineText0PosX, LineText0PosY, exitFontSize, WHITE);
 
-	//		slSetFontSize(gameStats.fontSize);
+			/*slSprite(gameStats.redCoconut, 120.0, 245.0, 16, 16);
+			slSprite(gameStats.yellowCoconut, 120.0, 215.0, 16, 16);
+			slSprite(gameStats.greenCoconut, 120.0, 185.0, 16, 16);*/
 
-	//		slSprite(gameStats.backButton, buttons.backButton.recPos.x, buttons.backButton.recPos.y,
-	//			buttons.backButton.recSize.x, buttons.backButton.recSize.y);
-	//		PrintMenuText(LineText6PosX - auxXPos, LineText6PosY, exitText);
-	//		slSetForeColor(1.0, 1.0, 1.0, 1.0);
 
-	//		//DrawButtonRec(buttons.backButton);
-	//	}
+			/*slSprite(gameStats.backButton, buttons.backButton.recPos.x, buttons.backButton.recPos.y,
+				buttons.backButton.recSize.x, buttons.backButton.recSize.y);
+			PrintMenuText(LineText6PosX - auxXPos, LineText6PosY, exitText);*/
+		}
+	}
 
-	//}
+	void DrawCreditsMenu(GameStats gameStats)
+	{
+		if (gameStats.gameStatus == SceneStatus::GAMECREDITS)
+		{
+			int titleFontSize = 50;
+			int defaultFontSize = 20;
+			int exitFontSize = 20;
 
-	//void DrawCreditsMenu(GameStats gameStats, MenuButtons buttons)
-	//{
-	//	float lineText1PosX = gameStats.screenWidth / 2 - 50.0;
-	//	float LineText1PosY = 600.0;
+			int LineText1PosX = GetScreenWidth() / 2 - 100;
+			int LineText1PosY = 100;
 
-	//	float LineText2PosX = 10.0;
-	//	float LineText2PosY = 480.0;
+			int LineText2PosX = 100;
+			int LineText2PosY = 230;
 
-	//	float LineText3PosX = 10.0;
-	//	float LineText3PosY = 440.0;
+			int LineText3PosX = 100;
+			int LineText3PosY = 280;
 
-	//	float LineText6PosX = 50.0;
-	//	float LineText6PosY = 35.0;
+			int LineText4PosX = 100;
+			int LineText4PosY = 330;
 
-	//	if (gameStats.gameStatus == SceneStatus::GAMECREDITS)
-	//	{
-	//		int auxXPos = 15.0;
-	//		int auxFontSize = 15;
-	//		string titleText = "CREDITS";
+			int LineText0PosX = 100;
+			int LineText0PosY = 720;
 
-	//		string howToMoveText = "-Game made by me Francisco Jonas: https://4franjonas2.itch.io/.";
-	//		string creditText1 = "-Game assests made by Francisco Jonas";
-	//		string exitText = "Back";
+			string titleText = "CREDITS";
 
-	//		PrintMenuText(lineText1PosX, LineText1PosY, titleText);
+			string howToMoveText = "-Game made by me Francisco Jonas: https://4franjonas2.itch.io/.";
+			string creditText1 = "-Game assests made by Guadalupe Ferreira Le Roi";
+			string creditText2 = "-Special thanks to, Stefano Juan Cvitanich and Sergio Baretto";
+			string exitText = "Back";
 
-	//		slSetFontSize(15);
-	//		PrintMenuText(LineText2PosX, LineText2PosY, howToMoveText);
-	//		PrintMenuText(LineText3PosX, LineText3PosY, creditText1);
+			DrawText("CREDITS", LineText1PosX, LineText1PosY, titleFontSize, WHITE);
 
-	//		slSetFontSize(gameStats.fontSize);
-	//		PrintMenuText(LineText6PosX - auxXPos, LineText6PosY, exitText);
+			DrawText("-Game made by me Francisco Jonas: https://4franjonas2.itch.io/.",
+				LineText2PosX, LineText2PosY, defaultFontSize, WHITE);
+			DrawText("-Game assests made by Guadalupe Ferreira Le Roi",
+				LineText3PosX, LineText3PosY, defaultFontSize, WHITE);
+			DrawText("-Special thanks to, Stefano Juan Cvitanich and Sergio Baretto",
+				LineText4PosX, LineText4PosY, defaultFontSize, WHITE);
 
-	//		DrawButtonRec(buttons.linkButton);
+			DrawText("Back", LineText0PosX, LineText0PosY, exitFontSize, WHITE);
 
-	//		slSetForeColor(1.0, 1.0, 1.0, 1.0);
-	//		slSprite(gameStats.backButton, buttons.backButton.recPos.x, buttons.backButton.recPos.y,
-	//			buttons.backButton.recSize.x, buttons.backButton.recSize.y);
-	//		PrintMenuText(LineText6PosX - auxXPos, LineText6PosY, exitText);
-	//		slSetForeColor(1.0, 1.0, 1.0, 1.0);
+			/*slSprite(gameStats.redCoconut, 120.0, 245.0, 16, 16);
+			slSprite(gameStats.yellowCoconut, 120.0, 215.0, 16, 16);
+			slSprite(gameStats.greenCoconut, 120.0, 185.0, 16, 16);*/
 
-	//	}
-	//	slSetForeColor(1.0, 1.0, 1.0, 1.0);
 
-	//}
+			/*slSprite(gameStats.backButton, buttons.backButton.recPos.x, buttons.backButton.recPos.y,
+				buttons.backButton.recSize.x, buttons.backButton.recSize.y);
+			PrintMenuText(LineText6PosX - auxXPos, LineText6PosY, exitText);*/
+		}
+	}
 
-	//void DrawPause(GameStats gameStats)
-	//{
-	//	if (gameStats.gameStatus == SceneStatus::GAMEPAUSE || gameStats.gameStatus == SceneStatus::FIRSTGAME)
-	//	{
-	//		float lineText1PosX = gameStats.screenWidth / 2 - 90.0;
-	//		float LineText1PosY = 580.0;
+	void DrawPause(GameStats gameStats)
+	{
+		if (gameStats.gameStatus == SceneStatus::GAMEPAUSE || gameStats.gameStatus == SceneStatus::FIRSTGAME)
+		{
+			int titleFontSize = 50;
+			int defaultFontSize = 20;
+			//int exitFontSize = 20;
 
-	//		float LineText2PosX = gameStats.screenWidth / 2 - 135.0;
-	//		float LineText2PosY = 310.0;
+			int LineText1PosX = GetScreenWidth() / 2 - 100;
+			int LineText1PosY = 100;
 
-	//		float LineText3PosX = gameStats.screenWidth / 2 - 100.0;
-	//		float LineText3PosY = 270.0;
+			int LineText2PosX = 100;
+			int LineText2PosY = 230;
 
-	//		float LineText4PosX = 190;
-	//		float LineText4PosY = 220.0;
+			int LineText3PosX = 100;
+			int LineText3PosY = 280;
 
-	//		float LineText5PosX = 160;
-	//		float LineText5PosY = 170.0;
+			int LineText4PosX = 100;
+			int LineText4PosY = 310;
 
-	//		string pauseText = "GAME PAUSE";
-	//		string keyInstructionText = "Press ENTER key";
-	//		string continueText = "To Continue";
-	//		string startText = "To Start Game";
-	//		string resetText = "Press R to reset game";
-	//		string menuText = "Press M to go to the MENU";
+			int LineText5PosX = 100;
+			int LineText5PosY = 380;
 
-	//		PrintMenuText(lineText1PosX, LineText1PosY, pauseText);
-	//		PrintMenuText(LineText2PosX, LineText2PosY, keyInstructionText);
+			string pauseText = "GAME PAUSE";
+			string keyInstructionText = "Press SPACEBAR key";
+			string continueText = "To RESUME";
+			string startText = "To START Game";
+			string resetText = "RESET game";
+			string menuText = "Go to MENU";
+			string endText = "GAME OVER";
 
-	//		if (gameStats.gameStatus == SceneStatus::GAMEPAUSE)
-	//		{
-	//			PrintMenuText(LineText3PosX, LineText3PosY, continueText);
-	//			PrintMenuText(LineText4PosX, LineText4PosY, resetText);
-	//			PrintMenuText(LineText5PosX, LineText5PosY, menuText);
-	//		}
-	//		if (gameStats.gameStatus == SceneStatus::FIRSTGAME)
-	//		{
-	//			int auxXPos = 15.0;
-	//			PrintMenuText(LineText3PosX - auxXPos, LineText3PosY, startText);
-	//			PrintMenuText(LineText5PosX, LineText5PosY, menuText);
-	//		}
-	//	}
+			DrawText("Press SPACEBAR key", LineText2PosX, LineText2PosY, defaultFontSize, WHITE);
 
-	//	if (gameStats.gameStatus == SceneStatus::GAMEEND)
-	//	{
-	//		float lineText1PosX = gameStats.screenWidth / 2 - 90.0;
-	//		float LineText1PosY = 580.0;
+			if (gameStats.gameStatus == SceneStatus::GAMEPAUSE)
+			{
+				DrawText("GAME PAUSE", LineText1PosX, LineText1PosY, titleFontSize, WHITE);
+				DrawText("To RESUME", LineText3PosX, LineText3PosY, defaultFontSize, WHITE);
+				DrawText("RESET game", LineText4PosX, LineText4PosY, defaultFontSize, WHITE);
+				DrawText("Go to MENU", LineText5PosX, LineText5PosY, defaultFontSize, WHITE);
+			}
 
-	//		float LineText2PosX = gameStats.screenWidth / 2 - 225.0;
-	//		float LineText2PosY = 310.0;
+			if (gameStats.gameStatus == SceneStatus::FIRSTGAME)
+			{
+				DrawText("GAME PAUSE", LineText1PosX, LineText1PosY, titleFontSize, WHITE);
 
-	//		float LineText3PosX = gameStats.screenWidth / 2 - 210.0;
-	//		float LineText3PosY = 270.0;
+				DrawText("To START Game", LineText3PosX, LineText3PosY, defaultFontSize, WHITE);
+				DrawText("Go to MENU", LineText5PosX, LineText5PosY, defaultFontSize, WHITE);
+			}
 
-	//		string endText = "GAME ENDED";
-	//		string keyInstructionText = "Press ENTER to RESTART";
-	//		string restartText = "or M to go to the MENU";
-
-	//		PrintMenuText(lineText1PosX, LineText1PosY, endText);
-	//		PrintMenuText(LineText2PosX, LineText2PosY, keyInstructionText);
-	//		PrintMenuText(LineText3PosX, LineText3PosY, restartText);
-	//	}
-	//	slSetForeColor(1.0, 1.0, 1.0, 1.0);
-
-	//}
+			if (gameStats.gameStatus == SceneStatus::GAMEEND)
+			{
+				DrawText("GAME OVER", LineText1PosX, LineText1PosY, titleFontSize, WHITE);
+				DrawText("RESET game", LineText3PosX, LineText3PosY, defaultFontSize, WHITE);
+				DrawText("Go to MENU", LineText5PosX, LineText5PosY, defaultFontSize, WHITE);
+			}
+		}
+	}
 
 	//void DrawButtonRec(Rectangle button)
 	//{
