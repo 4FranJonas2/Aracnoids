@@ -48,7 +48,7 @@ namespace aracnoids
 		InitEnemys();
 		InitButtons(menu);
 
-		gameStats.gameStatus = SceneStatus::GAMEMENU;
+		gameStats.gameStatus = SceneStatus::FIRSTGAME;
 	}
 
 	void Input()
@@ -97,6 +97,11 @@ namespace aracnoids
 			UpdateSceneMenus(gameStats, menu);
 			break;
 
+		case SceneStatus::FIRSTGAME:
+
+			UpdateSceneMenus(gameStats, menu);
+			break;
+
 		case SceneStatus::GAMEPLAY:
 
 			UpdatePlayer(player);
@@ -107,11 +112,12 @@ namespace aracnoids
 			{
 				gameStats.gameStatus = SceneStatus::RESETGAME;
 			}
+			UpdateSceneMenus(gameStats, menu);
 			break;
 
 		case SceneStatus::GAMEPAUSE:
 
-
+			UpdateSceneMenus(gameStats, menu);
 			break;
 
 		case SceneStatus::RESETGAME:
@@ -145,10 +151,19 @@ namespace aracnoids
 
 		case SceneStatus::GAMERULES:
 
+			DrawRulesMenu(gameStats);
 			break;
 
 		case SceneStatus::GAMECREDITS:
 
+			DrawCreditsMenu(gameStats);
+			break;
+
+		case SceneStatus::FIRSTGAME:
+
+			DrawPlayer(player);
+			
+			DrawPause(gameStats);
 			break;
 
 		case SceneStatus::GAMEPLAY:
@@ -159,7 +174,11 @@ namespace aracnoids
 			break;
 
 		case SceneStatus::GAMEPAUSE:
-
+			
+			DrawPlayer(player);
+			DrawBullet(bullets);
+			DrawEnemyObject();
+			DrawPause(gameStats);
 			break;
 
 		case SceneStatus::GAMEEND:
