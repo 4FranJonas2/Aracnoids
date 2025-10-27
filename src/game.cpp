@@ -34,6 +34,9 @@ namespace aracnoids
 			Update();
 			Draw();
 		}
+
+		UnloadTexture(menu.buttonSprite);
+
 		CloseWindow();
 	}
 
@@ -48,7 +51,7 @@ namespace aracnoids
 		InitEnemys();
 		InitButtons(menu);
 
-		gameStats.gameStatus = SceneStatus::FIRSTGAME;
+		gameStats.gameStatus = SceneStatus::GAMEMENU;
 	}
 
 	void Input()
@@ -63,7 +66,7 @@ namespace aracnoids
 				gameStats.gameStatus = SceneStatus::RESETGAME;		
 			break;
 
-		case SceneStatus::GAMEPAUSE:
+		/*case SceneStatus::GAMEPAUSE:
 
 			
 			break;
@@ -71,7 +74,7 @@ namespace aracnoids
 		case SceneStatus::GAMEEND:
 
 			
-			break;
+			break;*/
 
 		default:
 			break;
@@ -110,7 +113,7 @@ namespace aracnoids
 			UpdateEnemyObject(bullets, player);
 			if (player.lives == 0)
 			{
-				gameStats.gameStatus = SceneStatus::RESETGAME;
+				gameStats.gameStatus = SceneStatus::GAMEEND;
 			}
 			UpdateSceneMenus(gameStats, menu);
 			break;
@@ -124,12 +127,12 @@ namespace aracnoids
 
 			InitPlayer(player);
 			InitEnemys();
-			gameStats.gameStatus = SceneStatus::GAMEPLAY;
+			gameStats.gameStatus = SceneStatus::FIRSTGAME;
 			break;
 
 		case SceneStatus::GAMEEND:
 
-
+			UpdateSceneMenus(gameStats, menu);
 			break;
 
 		default:
@@ -146,24 +149,24 @@ namespace aracnoids
 		{
 		case SceneStatus::GAMEMENU:
 
-			DrawMainMenu(gameStats);
+			DrawMainMenu(gameStats,menu);
 			break;
 
 		case SceneStatus::GAMERULES:
 
-			DrawRulesMenu(gameStats);
+			DrawRulesMenu(gameStats, menu);
 			break;
 
 		case SceneStatus::GAMECREDITS:
 
-			DrawCreditsMenu(gameStats);
+			DrawCreditsMenu(gameStats, menu);
 			break;
 
 		case SceneStatus::FIRSTGAME:
 
 			DrawPlayer(player);
 			
-			DrawPause(gameStats);
+			DrawPause(gameStats,menu);
 			break;
 
 		case SceneStatus::GAMEPLAY:
@@ -178,11 +181,15 @@ namespace aracnoids
 			DrawPlayer(player);
 			DrawBullet(bullets);
 			DrawEnemyObject();
-			DrawPause(gameStats);
+			DrawPause(gameStats,menu);
 			break;
 
 		case SceneStatus::GAMEEND:
 
+			DrawPlayer(player);
+			DrawBullet(bullets);
+			DrawEnemyObject();
+			DrawPause(gameStats,menu);
 			break;
 
 		default:
