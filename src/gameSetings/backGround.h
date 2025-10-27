@@ -17,4 +17,5 @@ namespace aracnoids
 	void UpdateParallaxMenu(Parallax backGround[]);
 	void UpdateParallaxGameplay(Parallax backGrOund[], Vector2 playerVel);
 	void DrawParallax(Parallax backGround[]);
+	void UnloadParallax(Parallax backGrOund[]);
 }

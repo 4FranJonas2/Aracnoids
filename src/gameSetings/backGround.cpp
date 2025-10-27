@@ -78,4 +78,12 @@ namespace aracnoids
 			}
 		}
 	}
+
+	void UnloadParallax(Parallax backGrOund[])
+	{
+		for (int i = 0; i < maxLayers; i++)
+		{
+			UnloadTexture(backGrOund[i].texture);
+		}
+	}
 }
