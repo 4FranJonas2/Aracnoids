@@ -8,6 +8,7 @@ namespace aracnoids
 {
     struct EnemyObject
     {
+        Texture2D neufarTexture;
         Vector2 pos;
         float angle;
         float speed;
@@ -26,4 +27,5 @@ namespace aracnoids
     void CreateSmallEnemy( int idBigEnemy, Vector2 pos, float baseAngle);
     void UpdateEnemyObject( Bullet gameBullet[], Player& player);
     void DrawEnemyObject();
+    void UnloadNeufars();
 }

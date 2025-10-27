@@ -9,6 +9,10 @@ namespace aracnoids
 	EnemyObject midEnemy[maxMidEnemy];
 	EnemyObject smallEnemy[maxSmallEnemy];
 
+	Texture2D bigNeufarText;
+	Texture2D midNeufarText ;
+	Texture2D smallNeufarText;
+
 	int bigEnemyDecendant[maxBigEnemy] = { 0 };
 	int nextId = 0;
 
@@ -30,8 +34,13 @@ namespace aracnoids
 	void CheckCollisionEnemysPlayer(Player& player);
 	void PrintEnemy(bool isAlive, EnemyObject enemy[], int i);
 
+
 	void InitEnemys()
 	{
+		bigNeufarText = LoadTexture("res/Neufares/WaterLily_Big.png");
+		midNeufarText = LoadTexture("res/Neufares/WaterLily.png");
+		smallNeufarText = LoadTexture("res/Neufares/WaterLily_small.png");
+
 		for (int i = 0; i < maxBigEnemy; i++)
 		{
 			bigEnemyDecendant[i] = 0;
@@ -52,17 +61,17 @@ namespace aracnoids
 		spawnDelay = 1.5f;
 		bigCounter = 0;
 	}
-
 	void CreateBigEnemy()
 	{
 		for (int i = 0; i < maxBigEnemy; i++)
 			if (!bigEnemy[i].isAlive && bigEnemyDecendant[i] == 0)
 			{
+				bigEnemy[i].neufarTexture = bigNeufarText;
 				bigEnemy[i].isAlive = true;
 				bigEnemy[i].pos = RandomPos();
 				bigEnemy[i].angle = RandomAngle();
 				bigEnemy[i].speed = RandomSpeed(80, 150);
-				bigEnemy[i].radius = 40;
+				bigEnemy[i].radius = 116;
 				bigEnemy[i].type = 0;
 				bigEnemy[i].parentId = 1;
 				bigEnemy[i].id = nextId++;
@@ -72,18 +81,18 @@ namespace aracnoids
 				break;
 			}
 	}
-
 	void CreateMediumEnemy(int idBigEnemy, Vector2 pos, float baseAngle)
 	{
 		int auxCount = 0;
 		for (int i = 0; i < maxMidEnemy; i++)
 			if (!midEnemy[i].isAlive)
 			{
+				midEnemy[i].neufarTexture = midNeufarText;
 				midEnemy[i].isAlive = true;
 				midEnemy[i].pos = pos;
 				midEnemy[i].angle = baseAngle + DEG2RAD * GetRandomValue(-20, 20);
 				midEnemy[i].speed = RandomSpeed(80, 150);
-				midEnemy[i].radius = 25;
+				midEnemy[i].radius = 78;
 				midEnemy[i].type = 1;
 				midEnemy[i].parentId = idBigEnemy;
 				midEnemy[i].id = nextId++;
@@ -99,11 +108,12 @@ namespace aracnoids
 		for (int i = 0; i < maxSmallEnemy; i++)
 			if (!smallEnemy[i].isAlive)
 			{
+				smallEnemy[i].neufarTexture = smallNeufarText;
 				smallEnemy[i].isAlive = true;
 				smallEnemy[i].pos = pos;
 				smallEnemy[i].angle = baseAngle + DEG2RAD * GetRandomValue(-45, 45);
 				smallEnemy[i].speed = RandomSpeed(80, 150);
-				smallEnemy[i].radius = 10;
+				smallEnemy[i].radius = 44;
 				smallEnemy[i].type = 2;
 				smallEnemy[i].parentId = idBigEnemy;
 				smallEnemy[i].id = nextId++;
@@ -153,13 +163,22 @@ namespace aracnoids
 		for (int i = 0; i < maxSmallEnemy; i++)
 			PrintEnemy(smallEnemy[i].isAlive, smallEnemy, i);
 	}
-
 	void PrintEnemy(bool Alive, EnemyObject enemy[], int i)
 	{
 		if (Alive)
 		{
-			DrawCircleLines(static_cast <int>(enemy[i].pos.x), static_cast <int>(enemy[i].pos.y), enemy[i].radius, RED);
-			//DrawRectanglePro({ static_cast <float>(enemy[i].pos.x), static_cast <float>(enemy[i].pos.y), 20,20 }, enemy[i].pos, enemy[i].angle, RED);
+			float textureWidth = static_cast<float>(enemy[i].neufarTexture.width);
+			float textureHeight = static_cast<float>(enemy[i].neufarTexture.height);
+
+			Vector2 drawPos = {
+				enemy[i].pos.x - textureWidth / 2.0f,
+				enemy[i].pos.y - textureHeight / 2.0f
+			};
+			DrawTextureEx(enemy[i].neufarTexture, drawPos, 0.0f, 1.0f, WHITE);
+
+#ifdef _DEBUG
+			DrawCircleLines(static_cast<int>(enemy[i].pos.x), static_cast<int>(enemy[i].pos.y), enemy[i].radius, RED);
+#endif // _DEBUG
 		}
 	}
 
@@ -443,5 +462,12 @@ namespace aracnoids
 					break;
 				}
 		}
+	}
+
+	void UnloadNeufars()
+	{
+		UnloadTexture(bigNeufarText);
+		UnloadTexture(midNeufarText);
+		UnloadTexture(smallNeufarText);
 	}
 }
