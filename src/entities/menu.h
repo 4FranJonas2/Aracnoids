@@ -36,5 +36,4 @@ namespace aracnoids
 	void DrawRulesMenu(GameStats gameStats, MenuButtons buttons);
 	void DrawCreditsMenu(GameStats gameStats, MenuButtons buttons);
 	void DrawPause(GameStats gameStats, MenuButtons buttons);
-	//void DrawButtonRec(Rectangle button);
 }
