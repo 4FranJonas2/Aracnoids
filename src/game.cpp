@@ -7,17 +7,20 @@
 #include "entities/bullet.h"
 #include "entities/enemyObj.h"
 #include "entities/menu.h"
+#include "gameSetings/backGround.h"
 
 using namespace std;
 
 namespace aracnoids
 {
 	const int maxBullets = 20;
-	
+	const int maxLayers = 3;
+
 	static Player player;
 	static GameStats gameStats;
 	static Bullet bullets[maxBullets];
 	static MenuButtons menu;
+	static Parallax backGRound[maxLayers];
 
 	void Init();
 	void Input();
@@ -50,6 +53,7 @@ namespace aracnoids
 		InitPlayer(player);
 		InitEnemys();
 		InitButtons(menu);
+		InitParallax(backGRound);
 
 		gameStats.gameStatus = SceneStatus::GAMEMENU;
 	}
@@ -88,16 +92,21 @@ namespace aracnoids
 		case SceneStatus::GAMEMENU:
 
 			UpdateSceneMenus(gameStats, menu);
+			UpdateParallaxMenu(backGRound);
 			break;
 
 		case SceneStatus::GAMERULES:
 
 			UpdateSceneMenus(gameStats, menu);
+			UpdateParallaxMenu(backGRound);
+
 			break;
 
 		case SceneStatus::GAMECREDITS:
 
 			UpdateSceneMenus(gameStats, menu);
+			UpdateParallaxMenu(backGRound);
+
 			break;
 
 		case SceneStatus::FIRSTGAME:
@@ -131,7 +140,7 @@ namespace aracnoids
 			break;
 
 		case SceneStatus::GAMEEND:
-
+ 
 			UpdateSceneMenus(gameStats, menu);
 			break;
 
@@ -148,24 +157,26 @@ namespace aracnoids
 		switch ((SceneStatus)gameStats.gameStatus)
 		{
 		case SceneStatus::GAMEMENU:
-
+			
+			DrawParallax(backGRound);
 			DrawMainMenu(gameStats,menu);
 			break;
 
 		case SceneStatus::GAMERULES:
-
+			
+			DrawParallax(backGRound);
 			DrawRulesMenu(gameStats, menu);
 			break;
 
 		case SceneStatus::GAMECREDITS:
-
+			
+			DrawParallax(backGRound);
 			DrawCreditsMenu(gameStats, menu);
 			break;
 
 		case SceneStatus::FIRSTGAME:
 
 			DrawPlayer(player);
-			
 			DrawPause(gameStats,menu);
 			break;
 
@@ -190,6 +201,7 @@ namespace aracnoids
 			DrawBullet(bullets);
 			DrawEnemyObject();
 			DrawPause(gameStats,menu);
+			DrawParallax(backGRound);
 			break;
 
 		default:
