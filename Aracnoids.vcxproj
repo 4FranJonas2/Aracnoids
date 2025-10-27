@@ -167,22 +167,22 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="backGround.cpp" />
     <ClCompile Include="src\entities\bullet.cpp" />
     <ClCompile Include="src\entities\enemyObj.cpp" />
     <ClCompile Include="src\entities\menu.cpp" />
     <ClCompile Include="src\entities\player.cpp" />
     <ClCompile Include="src\game.cpp" />
+    <ClCompile Include="src\gameSetings\backGround.cpp" />
     <ClCompile Include="src\gameSetings\spriteManager.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="backGround.h" />
     <ClInclude Include="src\entities\bullet.h" />
     <ClInclude Include="src\entities\enemyObj.h" />
     <ClInclude Include="src\entities\menu.h" />
     <ClInclude Include="src\entities\player.h" />
     <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\gameSetings\backGround.h" />
     <ClInclude Include="src\gameSetings\spriteManager.h" />
     <ClInclude Include="src\utilities.h" />
   </ItemGroup>
