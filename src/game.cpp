@@ -70,16 +70,6 @@ namespace aracnoids
 				gameStats.gameStatus = SceneStatus::RESETGAME;		
 			break;
 
-		/*case SceneStatus::GAMEPAUSE:
-
-			
-			break;
-
-		case SceneStatus::GAMEEND:
-
-			
-			break;*/
-
 		default:
 			break;
 		}
@@ -120,6 +110,8 @@ namespace aracnoids
 			CreateBullet(bullets, player);
 			UpdateBullet(bullets);
 			UpdateEnemyObject(bullets, player);
+			UpdateParallaxGameplay(backGRound, player.velocity);
+
 			if (player.lives == 0)
 			{
 				gameStats.gameStatus = SceneStatus::GAMEEND;
@@ -176,12 +168,14 @@ namespace aracnoids
 
 		case SceneStatus::FIRSTGAME:
 
+			DrawParallax(backGRound);
 			DrawPlayer(player);
 			DrawPause(gameStats,menu);
 			break;
 
 		case SceneStatus::GAMEPLAY:
-
+			
+			DrawParallax(backGRound);
 			DrawPlayer(player);
 			DrawBullet(bullets);
 			DrawEnemyObject();		
@@ -189,6 +183,7 @@ namespace aracnoids
 
 		case SceneStatus::GAMEPAUSE:
 			
+			DrawParallax(backGRound);
 			DrawPlayer(player);
 			DrawBullet(bullets);
 			DrawEnemyObject();
@@ -196,12 +191,12 @@ namespace aracnoids
 			break;
 
 		case SceneStatus::GAMEEND:
-
+			
+			DrawParallax(backGRound);
 			DrawPlayer(player);
 			DrawBullet(bullets);
 			DrawEnemyObject();
 			DrawPause(gameStats,menu);
-			DrawParallax(backGRound);
 			break;
 
 		default:
