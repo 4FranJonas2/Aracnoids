@@ -40,6 +40,7 @@ namespace aracnoids
 
 		UnloadTexture(menu.buttonSprite);
 		UnloadParallax(backGRound);
+		UnloadNeufars();
 
 		CloseWindow();
 	}
