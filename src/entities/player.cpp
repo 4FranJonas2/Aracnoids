@@ -51,7 +51,6 @@ namespace aracnoids
 		player.idleAnim.frameTime = 0.2f;
 		player.idleAnim.time = 0.0f;
 		player.idleAnim.currentFrame = 0;
-		player.idleAnim.frameCounter = 0;
 
 		player.runAnim.frameCounter = 4;
 		player.runAnim.frameWidth = player.runAnim.texture.width / static_cast <int>(player.runAnim.frameCounter);
@@ -59,7 +58,6 @@ namespace aracnoids
 		player.runAnim.frameTime = 0.12f;
 		player.runAnim.time = 0.0f;
 		player.runAnim.currentFrame = 0;
-		player.runAnim.frameCounter = 0;
 
 		player.shotAnim.frameCounter = 5;
 		player.shotAnim.frameWidth = player.shotAnim.texture.width / static_cast <int>(player.shotAnim.frameCounter);
@@ -67,7 +65,6 @@ namespace aracnoids
 		player.shotAnim.frameTime = 0.08f;
 		player.shotAnim.time = 0.0f;
 		player.shotAnim.currentFrame = 0;
-		player.shotAnim.frameCounter = 0;
 
 	}
 
@@ -106,18 +103,14 @@ namespace aracnoids
 		else 
 			UpdateAnim(player.idleAnim);
 
-		//chekeo de limites horizontales
-		if (player.playerCir.pos.x < player.playerCir.rad)
-			player.playerCir.pos.x = GetScreenWidth() + player.playerCir.rad;
-		if (player.playerCir.pos.x > GetScreenWidth() + player.playerCir.rad)
-			player.playerCir.pos.x = -player.playerCir.rad;
-		//chekeo de limites verticales
-		if (player.playerCir.pos.y < -player.playerCir.rad)
-			player.playerCir.pos.y = GetScreenHeight() + player.playerCir.rad;
-		if (player.playerCir.pos.y > GetScreenHeight() + player.playerCir.rad)
-			player.playerCir.pos.y = -player.playerCir.rad;
-
 		player.playerCir.pos = Vector2Add(player.playerCir.pos, Vector2Scale(player.velocity, GetFrameTime()));
+		//chekeo de limites horizontales
+		if (player.playerCir.pos.x < -player.playerCir.rad)  player.playerCir.pos.x = GetScreenWidth() + player.playerCir.rad;
+		if (player.playerCir.pos.x > GetScreenWidth() + player.playerCir.rad)  player.playerCir.pos.x = -player.playerCir.rad;
+		//chekeo de limites verticales
+		if (player.playerCir.pos.y < -player.playerCir.rad)  player.playerCir.pos.y = GetScreenHeight() + player.playerCir.rad;
+		if (player.playerCir.pos.y > GetScreenHeight() + player.playerCir.rad)  player.playerCir.pos.y = -player.playerCir.rad;
+
 	}
 
 
