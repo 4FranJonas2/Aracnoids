@@ -17,10 +17,12 @@ namespace aracnoids
 			isShoot = true;
 	}
 
-	void CreateBullet(Bullet bullet[], Player player)
+	void CreateBullet(Bullet bullet[], Player player, AudioManager audio)
 	{
 		//disparo bala si se da la orden
 		if (isShoot)
+		{
+			PlaySFX(audio.shootSound);
 			for (int i = 0; i < bullets; i++)
 				if (!bullet[i].isBulletAlive)
 				{
@@ -47,6 +49,7 @@ namespace aracnoids
 
 					break;
 				}
+		}
 	}
 
 	void UpdateBullet(Bullet bullet[])
@@ -120,7 +123,7 @@ namespace aracnoids
 
 	static void PrintBullet(Bullet bullet[], int i)
 	{
-		DrawRectanglePro(bullet[i].bulletRec, { bullet[i].bulletRec.width/2,bullet[i].bulletRec.height/2 }, bullet[i].rotation, RED);
+		DrawRectanglePro(bullet[i].bulletRec, { bullet[i].bulletRec.width / 2,bullet[i].bulletRec.height / 2 }, bullet[i].rotation, RED);
 #ifdef _DEBUG
 		DrawHitBox(bullet, i);
 #endif // _DEBUG

@@ -3,6 +3,7 @@
 #include "../utilities.h"
 #include "player.h"
 #include "ctime"
+#include "../gameSetings/audioManager.h"
 
 namespace aracnoids
 {
@@ -30,7 +31,7 @@ namespace aracnoids
 	//void InitBullets(Bullet bullet[], gamePlayer::Player player);
 	
 	void InputBullet();
-	void CreateBullet(Bullet bullet[], Player player);
+	void CreateBullet(Bullet bullet[], Player player, AudioManager audio);
 	void UpdateBullet(Bullet bullet[]);
 	void DrawBullet(Bullet bullet[]);
 }
