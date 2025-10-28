@@ -11,31 +11,50 @@ namespace aracnoids
 		DERIVA
 	};
 
+	struct Animation
+	{
+		Texture2D texture;
+
+		int frameWidth;
+		int frameHeight;
+		int currentFrame;
+		float frameTime;
+		float time;
+		float frameCounter;
+	};
+
 	struct Player
 	{
-		PLAYERMOVSTAT movStatus;
-
 		Circle playerCir;
 		Vector2 vecDir;
 		Vector2 velocity;
 		Vector2 acceleration;
-		
-		bool isAlive;
-		bool isAcelerating;
-		int lives;
-		bool playerHit;
-		float immunityTimer;
-		float inmmunityDelay;
 
 		float speed;
 		float maxSpeed;
 		float rotation;
 		float rotationSpeed;
+		bool isAlive;
+		bool isAcelerating;
+		int lives;
+		int points;
 
+		bool playerHit;
+		bool isShooting;
+		float immunityTimer;
+		float inmmunityDelay;
+
+		PLAYERMOVSTAT movStatus;
+
+		Animation idleAnim;
+		Animation runAnim;
+		Animation shotAnim;
 	};
+
 
 	void InitPlayer(Player& player);
 	void InputPlayer(Player& player);
 	void UpdatePlayer(Player& player);
 	void DrawPlayer(Player player);
+	void UnloadPlayer(Player& player);
 }
