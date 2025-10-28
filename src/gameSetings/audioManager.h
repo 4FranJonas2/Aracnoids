@@ -1,6 +1,7 @@
 #pragma once
 
 #include "raylib.h"
+
 #include "../utilities.h"
 
 namespace aracnoids

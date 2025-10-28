@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../utilities.h"
-#include "player.h"
 #include "ctime"
+
+#include "player.h"
+#include "../utilities.h"
 #include "../gameSetings/audioManager.h"
 
 namespace aracnoids
@@ -26,9 +27,6 @@ namespace aracnoids
 		double maxTimeAlive;
 		bool isBulletAlive;
 	};
-
-	//Bullet CreateBullet( gamePlayer::Player player);
-	//void InitBullets(Bullet bullet[], gamePlayer::Player player);
 	
 	void InputBullet();
 	void CreateBullet(Bullet bullet[], Player player, AudioManager audio);

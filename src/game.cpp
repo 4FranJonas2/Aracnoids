@@ -114,7 +114,6 @@ namespace aracnoids
 			UpdateSceneMenus(gameStats, menu, audio);
 			UpdateParallaxMenu(backGRound);
 			UpdateAudio(audio);
-
 			break;
 
 		case SceneStatus::GAMECREDITS:
@@ -122,14 +121,12 @@ namespace aracnoids
 			UpdateSceneMenus(gameStats, menu, audio);
 			UpdateParallaxMenu(backGRound);
 			UpdateAudio(audio);
-
 			break;
 
 		case SceneStatus::FIRSTGAME:
 
 			UpdateSceneMenus(gameStats, menu, audio);
 			UpdateAudio(audio);
-
 			break;
 
 		case SceneStatus::GAMEPLAY:
@@ -152,7 +149,6 @@ namespace aracnoids
 
 			UpdateSceneMenus(gameStats, menu, audio);
 			UpdateAudio(audio);
-
 			break;
 
 		case SceneStatus::RESETGAME:
@@ -161,14 +157,12 @@ namespace aracnoids
 			InitEnemys();
 			gameStats.gameStatus = SceneStatus::FIRSTGAME;
 			UpdateAudio(audio);
-
 			break;
 
 		case SceneStatus::GAMEEND:
  
 			UpdateSceneMenus(gameStats, menu, audio);
 			UpdateAudio(audio);
-
 			break;
 
 		default:
@@ -213,7 +207,7 @@ namespace aracnoids
 			DrawParallax(backGRound);
 			DrawBullet(bullets);
 			DrawEnemyObject();		
-			DrawPlayer(player);
+			DrawPlayer(player); 
 			break;
 
 		case SceneStatus::GAMEPAUSE:

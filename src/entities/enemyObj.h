@@ -1,8 +1,9 @@
+#include "ctime"
+
 #include "raylib.h"
 
-#include "../utilities.h"
-#include "ctime"
 #include "bullet.h"
+#include "../utilities.h"
 #include "../gameSetings/audioManager.h"
 
 namespace aracnoids
@@ -20,8 +21,6 @@ namespace aracnoids
         int id;         // identificador único
     };
 
-	//Bullet CreateBullet( gamePlayer::Player player);
-	//void InitBullets(Bullet bullet[], gamePlayer::Player player);
     void InitEnemys();
     void CreateBigEnemy();
     void CreateMediumEnemy( int idBigEnemy, Vector2 pos, float baseAngle);

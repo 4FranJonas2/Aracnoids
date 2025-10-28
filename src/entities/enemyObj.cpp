@@ -13,10 +13,8 @@ namespace aracnoids
 	Texture2D midNeufarText;
 	Texture2D smallNeufarText;
 
-
 	int bigEnemyDecendant[maxBigEnemy] = { 0 };
 	int nextId = 0;
-
 	float spawnTimer = 0.0f;
 	float spawnDelay = 1.5f;
 	int bigCounter = 0;
@@ -27,14 +25,16 @@ namespace aracnoids
 
 	void MoveEnemyObj(EnemyObject& neufar);
 	void Bounce(EnemyObject& neufarA, EnemyObject& neufarB);
+
 	void DeleteBigEnemy(int i, AudioManager auxAudio);
 	void DeleteMidEnemy(int i, AudioManager auxAudio);
 	void DeleteSmallEnemy(int i, AudioManager auxAudio);
+
 	void CheckCollisionEnemys();
 	void CheckCollisionEnemysBullet(Bullet bullet[], AudioManager auxAudio, Player& player);
 	void CheckCollisionEnemysPlayer(Player& player, AudioManager auxAudio);
-	void PrintEnemy(bool isAlive, EnemyObject enemy[], int i);
 
+	void PrintEnemy(bool isAlive, EnemyObject enemy[], int i);
 
 	void InitEnemys()
 	{
@@ -49,13 +49,10 @@ namespace aracnoids
 		}
 
 		for (int i = 0; i < maxMidEnemy; i++)
-		{
 			midEnemy[i].isAlive = false;
-		}
-		for (int i = 0; i < maxSmallEnemy; i++)
-		{
-			smallEnemy[i].isAlive = false;
-		}
+		
+		for (int i = 0; i < maxSmallEnemy; i++)		
+			smallEnemy[i].isAlive = false;		
 
 		nextId = 0;
 		spawnTimer = 0.0f;
@@ -175,6 +172,7 @@ namespace aracnoids
 				enemy[i].pos.x - textureWidth / 2.0f,
 				enemy[i].pos.y - textureHeight / 2.0f
 			};
+
 			DrawTextureEx(enemy[i].neufarTexture, drawPos, 0.0f, 1.0f, WHITE);
 
 #ifdef _DEBUG
@@ -199,22 +197,22 @@ namespace aracnoids
 
 		switch (limit)
 		{
-		case 0: // izquierda
+		case 0: 
 			xPos = -100.0f;
 			yPos = static_cast <float>(GetRandomValue(0, GetScreenHeight()));
 			break;
 
-		case 1: // derecha
+		case 1: 
 			xPos = GetScreenWidth() + 100.0f;
 			yPos = static_cast <float>(GetRandomValue(0, GetScreenHeight()));
 			break;
 
-		case 2: // arriba
+		case 2: 
 			xPos = static_cast <float>(GetRandomValue(0, GetScreenWidth()));
 			yPos = -100.0f;
 			break;
 
-		case 3: // abajo
+		case 3:
 			xPos = static_cast <float>(GetRandomValue(0, GetScreenWidth()));
 			yPos = GetScreenHeight() + 100.0f;
 			break;
@@ -307,7 +305,6 @@ namespace aracnoids
 		bigEnemyDecendant[idGrande]--;
 		PlaySFX(auxAudio.enemyDestroySound);
 
-		/*if (idGrande >= 0 && idGrande < maxBigEnemy)*/
 		if (bigEnemyDecendant[idGrande] <= 0)
 			bigEnemyDecendant[idGrande] = 0;
 		bigCounter--;
@@ -334,7 +331,6 @@ namespace aracnoids
 				if (midEnemy[j].isAlive)
 					Bounce(midEnemy[i], midEnemy[j]);
 		}
-
 
 		//chicos chicos
 		for (int i = 0; i < maxSmallEnemy; i++)
@@ -447,7 +443,6 @@ namespace aracnoids
 						player.playerHit = true;
 						player.immunityTimer = 0;
 						PlaySFX(auxAudio.loseLifeSound);
-
 					}
 					DeleteMidEnemy(j, auxAudio);
 					break;
@@ -463,7 +458,6 @@ namespace aracnoids
 						player.playerHit = true;
 						player.immunityTimer = 0;
 						PlaySFX(auxAudio.loseLifeSound);
-
 					}
 					DeleteSmallEnemy(j, auxAudio);
 					break;

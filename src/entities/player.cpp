@@ -3,7 +3,6 @@
 namespace aracnoids
 {
 	static Rectangle auxRec;
-	//static Animation playerAnims;
 	int loadTextures = 0;
 
 	bool playerIsMoving = IsMouseButtonDown(MOUSE_BUTTON_LEFT);
@@ -65,15 +64,12 @@ namespace aracnoids
 		player.shotAnim.frameTime = 0.08f;
 		player.shotAnim.time = 0.0f;
 		player.shotAnim.currentFrame = 0;
-
 	}
-
 	void InputPlayer(Player& player)
 	{
 		player.isAcelerating = IsMouseButtonDown(MOUSE_RIGHT_BUTTON);
 		player.isShooting = IsMouseButtonDown(MOUSE_BUTTON_LEFT);
 	}
-
 	void UpdatePlayer(Player& player)
 	{
 		Vector2 posMouse = GetMousePosition();
@@ -144,8 +140,9 @@ namespace aracnoids
 		DrawRectanglePro({ player.playerCir.pos.x, player.playerCir.pos.y, auxRec.width, auxRec.height },
 			{ auxRec.width / 2, auxRec.height / 2 }, player.rotation, RED);
 #endif // DEBUG
-		DrawText(TextFormat("LIVES: %i", player.lives), 50, 30, 20, BLACK);
-		DrawText(TextFormat("POINTS: %i", player.points), 450, 30, 20, RED);
+
+		DrawText(TextFormat("LIVES: %i", player.lives), 50, 30, 20, WHITE);
+		DrawText(TextFormat("POINTS: %i", player.points), 50, 60, 20, WHITE);
 		
 		Animation& actualAnim = player.idleAnim;
 
@@ -174,8 +171,6 @@ namespace aracnoids
 	}
 	void UpdateAnim(Animation& anim)
 	{
-		TraceLog(LOG_INFO, "Entró a UpdateAnim()");
-
 		anim.time += GetFrameTime();
 
 		if (anim.time >= anim.frameTime)

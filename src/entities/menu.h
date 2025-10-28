@@ -1,11 +1,11 @@
 #pragma once
 
+#include <string>
+
 #include "raylib.h"
 
 #include "../utilities.h"
 #include "../gameSetings/audioManager.h"
-
-#include <string>
 
 using namespace std;
 
@@ -16,7 +16,6 @@ namespace aracnoids
 		Texture2D buttonSprite;
 
 		Rectangle backButton;
-		Rectangle linkButton;
 		Rectangle playButton;
 		Rectangle rulesButton;
 		Rectangle creditsButton;

@@ -6,20 +6,18 @@ namespace aracnoids
 	bool isShoot = false;
 
 	static void PrintBullet(Bullet bullet[], int i);
+
 #ifdef _DEBUG
 	static void DrawHitBox(Bullet bullet[], int i);
 #endif // _DEBUG
 
 	void InputBullet()
 	{
-		//disparo bala si se da la orden
 		if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 			isShoot = true;
 	}
-
 	void CreateBullet(Bullet bullet[], Player player, AudioManager audio)
 	{
-		//disparo bala si se da la orden
 		if (isShoot)
 		{
 			PlaySFX(audio.shootSound);
@@ -60,7 +58,6 @@ namespace aracnoids
 			{
 				bullet[i].bulletHitBox.pos = Vector2Add(bullet[i].bulletHitBox.pos, Vector2Scale(bullet[i].velocity, GetFrameTime()));
 
-				//future sprite updated pos
 				bullet[i].bulletRec.x = bullet[i].bulletHitBox.pos.x;
 				bullet[i].bulletRec.y = bullet[i].bulletHitBox.pos.y;
 			}
@@ -90,7 +87,6 @@ namespace aracnoids
 			bullet[i].bulletRec.y = bullet[i].bulletHitBox.pos.y;
 		}
 	}
-
 	void DrawBullet(Bullet bullet[])
 	{
 		for (int i = 0; i < bullets; i++)

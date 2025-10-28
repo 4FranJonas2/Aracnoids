@@ -2,7 +2,7 @@
 
 namespace aracnoids
 {
-	Vector2 recSize = { 90.0, 50.0 };
+	Vector2 recSize = { 90.0f, 50.0f };
 	bool isOnButton = false;
 
 	bool IsMouseOverButton(Rectangle buttonRec);
@@ -19,23 +19,22 @@ namespace aracnoids
 		float bottom = buttonRec.y - buttonRec.height / 2;
 
 		if (mousePos.x >= left && mousePos.x <= right && mousePos.y <= top && mousePos.y >= bottom)
-		{
 			return true;
-		}
+
 		return false;
 	}
 	void InitButtons(MenuButtons& buttons)
 	{
 		buttons.buttonSprite = LoadTexture("res/Botones/DefaultButtonSprite.png");
 
-		float menuButtonsPosX = 505.0;
-		float backButtonPosX = 100.0;
-		float backButtonPosY = 720.0;
+		float menuButtonsPosX = 505.0f;
+		float backButtonPosX = 100.0f;
+		float backButtonPosY = 720.0f;
 
-		float resetButtonPosX = 335.0;
-		float resetButtonPosY = 660.0;
-		float goMenuButtonPosX = 697.0;
-		float goMenuButtonPosY = 660.0;
+		float resetButtonPosX = 335.0f;
+		float resetButtonPosY = 660.0f;
+		float goMenuButtonPosX = 697.0f;
+		float goMenuButtonPosY = 660.0f;
 
 		buttons.playButtState = 0;
 		buttons.rulesButtState = 0;
@@ -44,16 +43,19 @@ namespace aracnoids
 		buttons.backToMenuButtState = 0;
 		buttons.resetButtState = 0;
 
-		float buttonWidth = 110.0;
-		float buttonHeight = 72.0;
+		float buttonWidth = 110.0f;
+		float buttonHeight = 72.0f;
+
+		float playButtonPosy = 290.0f;
+		float rulesButtonPosy = 370.0f;
+		float creditButtonPosy = 450.0f;
 
 		//posiciones de botones y tamanio de hitbox
-		buttons.playButton = { menuButtonsPosX,290.0,buttonWidth,buttonHeight };
-		buttons.rulesButton = { menuButtonsPosX,370.0,buttonWidth,buttonHeight };
-		buttons.creditsButton = { menuButtonsPosX,450.0,buttonWidth,buttonHeight };
+		buttons.playButton = { menuButtonsPosX,playButtonPosy,buttonWidth,buttonHeight };
+		buttons.rulesButton = { menuButtonsPosX,rulesButtonPosy,buttonWidth,buttonHeight };
+		buttons.creditsButton = { menuButtonsPosX,creditButtonPosy,buttonWidth,buttonHeight };
 
 		buttons.backButton = { backButtonPosX,backButtonPosY,buttonWidth,buttonHeight };
-		buttons.linkButton = { menuButtonsPosX,29,200,50 };
 
 		buttons.resetButton = { resetButtonPosX,resetButtonPosY,buttonWidth,buttonHeight };
 		buttons.backMenuButton = { goMenuButtonPosX,goMenuButtonPosY,buttonWidth,buttonHeight };
@@ -68,7 +70,7 @@ namespace aracnoids
 			buttons.rulesButtState = GetButtonState(buttons.rulesButton, audio);
 			buttons.creditsButtState = GetButtonState(buttons.creditsButton, audio);
 
-			if (!IsMouseOverButton(buttons.playButton)&& !IsMouseOverButton(buttons.rulesButton) && !IsMouseOverButton(buttons.creditsButton))
+			if (!IsMouseOverButton(buttons.playButton) && !IsMouseOverButton(buttons.rulesButton) && !IsMouseOverButton(buttons.creditsButton))
 			{
 				isOnButton = false;
 			}
@@ -92,14 +94,13 @@ namespace aracnoids
 		case SceneStatus::GAMERULES:
 
 			buttons.backButtState = GetButtonState(buttons.backButton, audio);
+
 			if (!IsMouseOverButton(buttons.backButton))
-			{
 				isOnButton = false;
-			}
+
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backButton))
 			{
 				PlaySFX(audio.clickSound);
-
 				gameStats.gameStatus = SceneStatus::GAMEMENU;
 			}
 			break;
@@ -107,30 +108,24 @@ namespace aracnoids
 		case SceneStatus::GAMECREDITS:
 
 			buttons.backButtState = GetButtonState(buttons.backButton, audio);
-			
+
 			if (!IsMouseOverButton(buttons.backButton))
-			{
 				isOnButton = false;
-			}
+
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backButton))
 			{
 				PlaySFX(audio.clickSound);
-
 				gameStats.gameStatus = SceneStatus::GAMEMENU;
 			}
-			/*if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonUp(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.linkButton))
-			{
-				system("start https://4franjonas2.itch.io/");
-			}*/
 			break;
 
 		case SceneStatus::FIRSTGAME:
 
 			buttons.backToMenuButtState = GetButtonState(buttons.backMenuButton, audio);
+
 			if (!IsMouseOverButton(buttons.backMenuButton))
-			{
 				isOnButton = false;
-			}
+
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backMenuButton))
 			{
 				PlaySFX(audio.clickSound);
@@ -141,7 +136,6 @@ namespace aracnoids
 				PlaySFX(audio.clickSound);
 				gameStats.gameStatus = SceneStatus::GAMEPLAY;
 			}
-
 			break;
 
 		case SceneStatus::GAMEPLAY:
@@ -159,25 +153,21 @@ namespace aracnoids
 			buttons.resetButtState = GetButtonState(buttons.resetButton, audio);
 
 			if (!IsMouseOverButton(buttons.backMenuButton) && !IsMouseOverButton(buttons.resetButton))
-			{
 				isOnButton = false;
-			}
+
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backMenuButton))
 			{
 				PlaySFX(audio.clickSound);
-
 				gameStats.gameStatus = SceneStatus::GAMEMENU;
 			}
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.resetButton))
 			{
 				PlaySFX(audio.clickSound);
-
 				gameStats.gameStatus = SceneStatus::RESETGAME;
 			}
 			if (!IsKeyPressed(KEY_SPACE) && IsKeyReleased(KEY_SPACE))
 			{
 				PlaySFX(audio.clickSound);
-
 				gameStats.gameStatus = SceneStatus::GAMEPLAY;
 			}
 			break;
@@ -188,22 +178,19 @@ namespace aracnoids
 			buttons.resetButtState = GetButtonState(buttons.resetButton, audio);
 
 			if (!IsMouseOverButton(buttons.backMenuButton) && !IsMouseOverButton(buttons.resetButton))
-			{
 				isOnButton = false;
-			}
+
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backMenuButton))
 			{
 				PlaySFX(audio.clickSound);
 				isOnButton = false;
 				gameStats.gameStatus = SceneStatus::GAMEMENU;
 			}
-
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.resetButton))
 			{
 				PlaySFX(audio.clickSound);
 				gameStats.gameStatus = SceneStatus::RESETGAME;
 			}
-
 			if (!IsKeyPressed(KEY_SPACE) && IsKeyReleased(KEY_SPACE))
 			{
 				PlaySFX(audio.clickSound);
@@ -234,7 +221,6 @@ namespace aracnoids
 			int LineText5PosX = 360;
 			int LineText5PosY = 750;
 
-			//int auxXPos = 15;
 			int titleFontSize = 50;
 			int defaultFontSize = 20;
 			int exitFontSize = 15;
@@ -327,8 +313,6 @@ namespace aracnoids
 			DrawText("-Use spacebar to pause game at any moment.",
 				LineText9PosX, LineText9PosY, defaultFontSize, WHITE);
 			DrawText("Back", LineText0PosX, LineText0PosY, exitFontSize, WHITE);
-
-
 		}
 	}
 	void DrawCreditsMenu(GameStats gameStats, MenuButtons buttons)
@@ -373,15 +357,6 @@ namespace aracnoids
 				LineText4PosX, LineText4PosY, defaultFontSize, WHITE);
 
 			DrawText("Back", LineText0PosX, LineText0PosY, exitFontSize, WHITE);
-
-			/*slSprite(gameStats.redCoconut, 120.0, 245.0, 16, 16);
-			slSprite(gameStats.yellowCoconut, 120.0, 215.0, 16, 16);
-			slSprite(gameStats.greenCoconut, 120.0, 185.0, 16, 16);*/
-
-
-			/*slSprite(gameStats.backButton, buttons.backButton.recPos.x, buttons.backButton.recPos.y,
-				buttons.backButton.recSize.x, buttons.backButton.recSize.y);
-			PrintMenuText(LineText6PosX - auxXPos, LineText6PosY, exitText);*/
 		}
 	}
 	void DrawPause(GameStats gameStats, MenuButtons buttons)
@@ -392,7 +367,6 @@ namespace aracnoids
 		{
 			int titleFontSize = 50;
 			int defaultFontSize = 20;
-			//int exitFontSize = 20;
 
 			int LineText1PosX = 350;
 			int LineText1PosY = 100;
@@ -411,9 +385,6 @@ namespace aracnoids
 
 			int LineText6PosX = 430;
 			int LineText6PosY = 280;
-
-			/*int LineText7PosX = 480;
-			int LineText7PosY = 650;*/
 
 			string pauseText = "GAME PAUSE";
 			string keyInstructionText = "Press SPACEBAR key";
@@ -477,8 +448,7 @@ namespace aracnoids
 				}
 				return 1;
 			}
-		} 
-		
+		}
 		return 0;
 	}
 	void DrawButton(Texture2D sprite, Rectangle button, int state)
@@ -491,13 +461,7 @@ namespace aracnoids
 		Rectangle spriteRec = { state * frameWidth, 0, frameWidth,frameHeight };
 		Vector2 position = { button.x,button.y };
 
-		Rectangle destRec =
-		{
-		button.x,
-		button.y,
-		frameWidth * scale,
-		frameHeight * scale
-		};
+		Rectangle destRec = { button.x,button.y,frameWidth * scale,frameHeight * scale };
 		Vector2 origin = { destRec.width / 2, destRec.height / 2 };
 
 		DrawTexturePro(sprite, spriteRec, destRec, origin, 0.0, WHITE);

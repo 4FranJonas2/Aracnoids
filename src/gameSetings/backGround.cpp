@@ -8,17 +8,17 @@ namespace aracnoids
 	void InitParallax(Parallax backGrOund[])
 	{
 		backGrOund[0].texture = LoadTexture("res/Agua/Water_Base.png");
-		backGrOund[0].speed = 0.0;
+		backGrOund[0].speed = 0.0f;
 
 		backGrOund[1].texture = LoadTexture("res/Agua/Water_Shadows.png");
-		backGrOund[1].speed = 10.0;
-		
+		backGrOund[1].speed = 10.0f;
+
 		backGrOund[2].texture = LoadTexture("res/Agua/Water_Sparkles.png");
-		backGrOund[2].speed = 20.0;
+		backGrOund[2].speed = 20.0f;
 
 		for (int i = 0; i < maxLayers; i++)
 		{
-			backGrOund[i].position = { 0.0, 0.0 };
+			backGrOund[i].position = { 0.0f, 0.0f };
 		}
 	}
 
@@ -47,33 +47,19 @@ namespace aracnoids
 		}
 	}
 
-	/*void DrawParallax(Parallax backGrOund[])
-	{
-		for (int i = 0; i < maxLayers; i++)
-		{
-			Texture2D auxTex = backGrOund[i].texture;
-			Vector2 pos = backGrOund[i].position;
-
-			DrawTexture(auxTex, (int)pos.x, (int)pos.y, WHITE);
-			DrawTexture(auxTex, (int)pos.x + auxTex.width, (int)pos.y, WHITE);
-			DrawTexture(auxTex, (int)pos.x, (int)pos.y + auxTex.height, WHITE);
-			DrawTexture(auxTex, (int)pos.x + auxTex.width, (int)pos.y + auxTex.height, WHITE);
-		}
-	}*/
-
 	void DrawParallax(Parallax backGrOund[])
 	{
 		for (int i = 0; i < maxLayers; i++)
 		{
 			Texture2D auxTex = backGrOund[i].texture;
 			Vector2 pos = backGrOund[i].position;
-			
+
 			for (int y = -1; y < 1; y++)
 			{
 				for (int x = -1; x < 1; x++)
 				{
 					DrawTexture(auxTex, static_cast<int>(pos.x + auxTex.width * x),
-										static_cast<int>(pos.y + auxTex.height * y), WHITE);
+						static_cast<int>(pos.y + auxTex.height * y), WHITE);
 				}
 			}
 		}

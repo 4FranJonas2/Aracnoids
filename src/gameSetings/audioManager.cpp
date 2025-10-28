@@ -2,8 +2,6 @@
 
 namespace aracnoids
 {
-
-
 	void InitAudio(AudioManager& audio)
 	{
 		audio.menuMusic = LoadMusicStream("res/Audio/Nighttime-Escape_LoFi.mp3");
