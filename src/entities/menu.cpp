@@ -3,9 +3,10 @@
 namespace aracnoids
 {
 	Vector2 recSize = { 90.0, 50.0 };
+	bool isOnButton = false;
 
 	bool IsMouseOverButton(Rectangle buttonRec);
-	int GetButtonState(Rectangle button);
+	int GetButtonState(Rectangle button, AudioManager audio);
 	void DrawButton(Texture2D sprite, Rectangle button, int state);
 
 	bool IsMouseOverButton(Rectangle buttonRec)
@@ -57,46 +58,64 @@ namespace aracnoids
 		buttons.resetButton = { resetButtonPosX,resetButtonPosY,buttonWidth,buttonHeight };
 		buttons.backMenuButton = { goMenuButtonPosX,goMenuButtonPosY,buttonWidth,buttonHeight };
 	}
-	void UpdateSceneMenus(GameStats& gameStats, MenuButtons& buttons)
+	void UpdateSceneMenus(GameStats& gameStats, MenuButtons& buttons, AudioManager audio)
 	{
 		switch ((SceneStatus)gameStats.gameStatus)
 		{
 		case SceneStatus::GAMEMENU:
 
-			buttons.playButtState = GetButtonState(buttons.playButton);
-			buttons.rulesButtState = GetButtonState(buttons.rulesButton);
-			buttons.creditsButtState = GetButtonState(buttons.creditsButton);
+			buttons.playButtState = GetButtonState(buttons.playButton, audio);
+			buttons.rulesButtState = GetButtonState(buttons.rulesButton, audio);
+			buttons.creditsButtState = GetButtonState(buttons.creditsButton, audio);
 
+			if (!IsMouseOverButton(buttons.playButton)&& !IsMouseOverButton(buttons.rulesButton) && !IsMouseOverButton(buttons.creditsButton))
+			{
+				isOnButton = false;
+			}
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.playButton))
 			{
+				PlaySFX(audio.clickSound);
 				gameStats.gameStatus = SceneStatus::RESETGAME;
 			}
 			else if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.rulesButton))
 			{
+				PlaySFX(audio.clickSound);
 				gameStats.gameStatus = SceneStatus::GAMERULES;
 			}
 			else if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.creditsButton))
 			{
+				PlaySFX(audio.clickSound);
 				gameStats.gameStatus = SceneStatus::GAMECREDITS;
 			}
 			break;
 
 		case SceneStatus::GAMERULES:
 
-			buttons.backButtState = GetButtonState(buttons.backButton);
-
+			buttons.backButtState = GetButtonState(buttons.backButton, audio);
+			if (!IsMouseOverButton(buttons.backButton))
+			{
+				isOnButton = false;
+			}
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backButton))
 			{
+				PlaySFX(audio.clickSound);
+
 				gameStats.gameStatus = SceneStatus::GAMEMENU;
 			}
 			break;
 
 		case SceneStatus::GAMECREDITS:
 
-			buttons.backButtState = GetButtonState(buttons.backButton);
-
+			buttons.backButtState = GetButtonState(buttons.backButton, audio);
+			
+			if (!IsMouseOverButton(buttons.backButton))
+			{
+				isOnButton = false;
+			}
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backButton))
 			{
+				PlaySFX(audio.clickSound);
+
 				gameStats.gameStatus = SceneStatus::GAMEMENU;
 			}
 			/*if (!IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && IsMouseButtonUp(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.linkButton))
@@ -107,15 +126,19 @@ namespace aracnoids
 
 		case SceneStatus::FIRSTGAME:
 
-			buttons.backToMenuButtState = GetButtonState(buttons.backMenuButton);
-
+			buttons.backToMenuButtState = GetButtonState(buttons.backMenuButton, audio);
+			if (!IsMouseOverButton(buttons.backMenuButton))
+			{
+				isOnButton = false;
+			}
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backMenuButton))
 			{
+				PlaySFX(audio.clickSound);
 				gameStats.gameStatus = SceneStatus::GAMEMENU;
 			}
-
 			if (!IsKeyPressed(KEY_SPACE) && IsKeyReleased(KEY_SPACE))
 			{
+				PlaySFX(audio.clickSound);
 				gameStats.gameStatus = SceneStatus::GAMEPLAY;
 			}
 
@@ -125,48 +148,65 @@ namespace aracnoids
 
 			if (!IsKeyPressed(KEY_SPACE) && IsKeyReleased(KEY_SPACE))
 			{
+				PlaySFX(audio.clickSound);
 				gameStats.gameStatus = SceneStatus::GAMEPAUSE;
 			}
 			break;
 
 		case SceneStatus::GAMEPAUSE:
 
-			buttons.backToMenuButtState = GetButtonState(buttons.backMenuButton);
-			buttons.resetButtState = GetButtonState(buttons.resetButton);
+			buttons.backToMenuButtState = GetButtonState(buttons.backMenuButton, audio);
+			buttons.resetButtState = GetButtonState(buttons.resetButton, audio);
 
+			if (!IsMouseOverButton(buttons.backMenuButton) && !IsMouseOverButton(buttons.resetButton))
+			{
+				isOnButton = false;
+			}
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backMenuButton))
 			{
+				PlaySFX(audio.clickSound);
+
 				gameStats.gameStatus = SceneStatus::GAMEMENU;
 			}
-
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.resetButton))
 			{
+				PlaySFX(audio.clickSound);
+
 				gameStats.gameStatus = SceneStatus::RESETGAME;
 			}
-
 			if (!IsKeyPressed(KEY_SPACE) && IsKeyReleased(KEY_SPACE))
 			{
+				PlaySFX(audio.clickSound);
+
 				gameStats.gameStatus = SceneStatus::GAMEPLAY;
 			}
 			break;
 
 		case SceneStatus::GAMEEND:
 
-			buttons.backToMenuButtState = GetButtonState(buttons.backMenuButton);
-			buttons.resetButtState = GetButtonState(buttons.resetButton);
+			buttons.backToMenuButtState = GetButtonState(buttons.backMenuButton, audio);
+			buttons.resetButtState = GetButtonState(buttons.resetButton, audio);
 
+			if (!IsMouseOverButton(buttons.backMenuButton) && !IsMouseOverButton(buttons.resetButton))
+			{
+				isOnButton = false;
+			}
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.backMenuButton))
 			{
+				PlaySFX(audio.clickSound);
+				isOnButton = false;
 				gameStats.gameStatus = SceneStatus::GAMEMENU;
 			}
 
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && IsMouseOverButton(buttons.resetButton))
 			{
+				PlaySFX(audio.clickSound);
 				gameStats.gameStatus = SceneStatus::RESETGAME;
 			}
 
 			if (!IsKeyPressed(KEY_SPACE) && IsKeyReleased(KEY_SPACE))
 			{
+				PlaySFX(audio.clickSound);
 				gameStats.gameStatus = SceneStatus::GAMEPLAY;
 			}
 			break;
@@ -418,7 +458,7 @@ namespace aracnoids
 		}
 	}
 
-	int GetButtonState(Rectangle button)
+	int GetButtonState(Rectangle button, AudioManager audio)
 	{
 		Vector2 mouse = GetMousePosition();
 
@@ -429,8 +469,16 @@ namespace aracnoids
 				return 2;
 			}
 			else
+			{
+				if (!isOnButton)
+				{
+					PlaySFX(audio.overSound);
+					isOnButton = true;
+				}
 				return 1;
-		}
+			}
+		} 
+		
 		return 0;
 	}
 	void DrawButton(Texture2D sprite, Rectangle button, int state)

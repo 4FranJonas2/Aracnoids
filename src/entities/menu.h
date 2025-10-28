@@ -3,6 +3,7 @@
 #include "raylib.h"
 
 #include "../utilities.h"
+#include "../gameSetings/audioManager.h"
 
 #include <string>
 
@@ -31,7 +32,7 @@ namespace aracnoids
 	};
 
 	void InitButtons(MenuButtons& buttons);
-	void UpdateSceneMenus(GameStats& gamestats, MenuButtons& buttons);
+	void UpdateSceneMenus(GameStats& gamestats, MenuButtons& buttons, AudioManager audio);
 	void DrawMainMenu(GameStats gameStats, MenuButtons buttons);
 	void DrawRulesMenu(GameStats gameStats, MenuButtons buttons);
 	void DrawCreditsMenu(GameStats gameStats, MenuButtons buttons);
