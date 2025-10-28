@@ -41,6 +41,7 @@ namespace aracnoids
 		UnloadTexture(menu.buttonSprite);
 		UnloadParallax(backGRound);
 		UnloadNeufars();
+		UnloadPlayer(player);
 
 		CloseWindow();
 	}
@@ -53,6 +54,8 @@ namespace aracnoids
 		InitWindow(screenWidth, screenHeight, "Aracnoids");
 
 		InitPlayer(player);
+
+		
 		InitEnemys();
 		InitButtons(menu);
 		InitParallax(backGRound);
