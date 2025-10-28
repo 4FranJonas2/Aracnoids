@@ -8,6 +8,7 @@
 #include "entities/enemyObj.h"
 #include "entities/menu.h"
 #include "gameSetings/backGround.h"
+#include "gameSetings/audioManager.h"
 
 using namespace std;
 
@@ -21,6 +22,8 @@ namespace aracnoids
 	static Bullet bullets[maxBullets];
 	static MenuButtons menu;
 	static Parallax backGRound[maxLayers];
+	static AudioManager audio;
+	static MusicType music;
 
 	void Init();
 	void Input();
@@ -42,7 +45,8 @@ namespace aracnoids
 		UnloadParallax(backGRound);
 		UnloadNeufars();
 		UnloadPlayer(player);
-
+		UnloadAudio(audio);
+		
 		CloseWindow();
 	}
 
@@ -52,13 +56,16 @@ namespace aracnoids
 		const int screenHeight = 768;
 
 		InitWindow(screenWidth, screenHeight, "Aracnoids");
+		InitAudioDevice();
 
 		InitPlayer(player);
 
-		
 		InitEnemys();
 		InitButtons(menu);
 		InitParallax(backGRound);
+		InitAudio(audio);
+		SetMusicVolume(audio.menuMusic, 0.5f);
+		SetMusicVolume(audio.gameplayMusic, 0.5f);
 
 		gameStats.gameStatus = SceneStatus::GAMEMENU;
 	}
@@ -71,8 +78,10 @@ namespace aracnoids
 
 			InputPlayer(player);
 			InputBullet();
+#ifdef _DEBUG
 			if (IsKeyPressed(KEY_R))
 				gameStats.gameStatus = SceneStatus::RESETGAME;		
+#endif // _DEBUG
 			break;
 
 		default:
@@ -82,31 +91,43 @@ namespace aracnoids
 
 	void Update()
 	{
+		if (gameStats.gameStatus == SceneStatus::GAMEPLAY)
+		{
+			SwitchMusic(audio, MusicType::GAMPLAY);
+		}
+		else
+			SwitchMusic(audio, MusicType::MENU);
+
 		switch ((SceneStatus)gameStats.gameStatus)
 		{
 		case SceneStatus::GAMEMENU:
 
-			UpdateSceneMenus(gameStats, menu);
+			UpdateSceneMenus(gameStats, menu, audio);
 			UpdateParallaxMenu(backGRound);
+			UpdateAudio(audio);
 			break;
 
 		case SceneStatus::GAMERULES:
 
-			UpdateSceneMenus(gameStats, menu);
+			UpdateSceneMenus(gameStats, menu, audio);
 			UpdateParallaxMenu(backGRound);
+			UpdateAudio(audio);
 
 			break;
 
 		case SceneStatus::GAMECREDITS:
 
-			UpdateSceneMenus(gameStats, menu);
+			UpdateSceneMenus(gameStats, menu, audio);
 			UpdateParallaxMenu(backGRound);
+			UpdateAudio(audio);
 
 			break;
 
 		case SceneStatus::FIRSTGAME:
 
-			UpdateSceneMenus(gameStats, menu);
+			UpdateSceneMenus(gameStats, menu, audio);
+			UpdateAudio(audio);
+
 			break;
 
 		case SceneStatus::GAMEPLAY:
@@ -116,17 +137,20 @@ namespace aracnoids
 			UpdateBullet(bullets);
 			UpdateEnemyObject(bullets, player);
 			UpdateParallaxGameplay(backGRound, player.velocity);
+			UpdateAudio(audio);
 
 			if (player.lives == 0)
 			{
 				gameStats.gameStatus = SceneStatus::GAMEEND;
 			}
-			UpdateSceneMenus(gameStats, menu);
+			UpdateSceneMenus(gameStats, menu, audio);
 			break;
 
 		case SceneStatus::GAMEPAUSE:
 
-			UpdateSceneMenus(gameStats, menu);
+			UpdateSceneMenus(gameStats, menu, audio);
+			UpdateAudio(audio);
+
 			break;
 
 		case SceneStatus::RESETGAME:
@@ -134,11 +158,15 @@ namespace aracnoids
 			InitPlayer(player);
 			InitEnemys();
 			gameStats.gameStatus = SceneStatus::FIRSTGAME;
+			UpdateAudio(audio);
+
 			break;
 
 		case SceneStatus::GAMEEND:
  
-			UpdateSceneMenus(gameStats, menu);
+			UpdateSceneMenus(gameStats, menu, audio);
+			UpdateAudio(audio);
+
 			break;
 
 		default:
