@@ -174,7 +174,6 @@
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\gameSetings\audioManager.cpp" />
     <ClCompile Include="src\gameSetings\backGround.cpp" />
-    <ClCompile Include="src\gameSetings\spriteManager.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -185,7 +184,6 @@
     <ClInclude Include="src\game.h" />
     <ClInclude Include="src\gameSetings\audioManager.h" />
     <ClInclude Include="src\gameSetings\backGround.h" />
-    <ClInclude Include="src\gameSetings\spriteManager.h" />
     <ClInclude Include="src\utilities.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
