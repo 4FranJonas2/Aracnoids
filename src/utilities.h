@@ -26,7 +26,7 @@ namespace aracnoids
 
 	struct GameStats
 	{
-		SceneStatus gameStatus;
+		SceneStatus gameStatus = SceneStatus::GAMEMENU;
 
 		int fontSize = 25;
 
