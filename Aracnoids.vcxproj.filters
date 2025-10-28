@@ -39,6 +39,9 @@
     <ClCompile Include="src\gameSetings\backGround.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\gameSetings\audioManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\game.h">
@@ -63,6 +66,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\gameSetings\backGround.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameSetings\audioManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
