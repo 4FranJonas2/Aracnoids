@@ -66,6 +66,8 @@ namespace aracnoids
 		InitAudio(audio);
 		SetMusicVolume(audio.menuMusic, 0.5f);
 		SetMusicVolume(audio.gameplayMusic, 0.5f);
+		SetSoundVolume(audio.enemyDestroySound, 0.3f);
+		SetSoundVolume(audio.shootSound, 0.2f);
 
 		gameStats.gameStatus = SceneStatus::GAMEMENU;
 	}
@@ -133,9 +135,9 @@ namespace aracnoids
 		case SceneStatus::GAMEPLAY:
 
 			UpdatePlayer(player);
-			CreateBullet(bullets, player);
+			CreateBullet(bullets, player, audio);
 			UpdateBullet(bullets);
-			UpdateEnemyObject(bullets, player);
+			UpdateEnemyObject(bullets, player, audio);
 			UpdateParallaxGameplay(backGRound, player.velocity);
 			UpdateAudio(audio);
 
@@ -209,26 +211,26 @@ namespace aracnoids
 		case SceneStatus::GAMEPLAY:
 			
 			DrawParallax(backGRound);
-			DrawPlayer(player);
 			DrawBullet(bullets);
 			DrawEnemyObject();		
+			DrawPlayer(player);
 			break;
 
 		case SceneStatus::GAMEPAUSE:
 			
 			DrawParallax(backGRound);
-			DrawPlayer(player);
 			DrawBullet(bullets);
 			DrawEnemyObject();
+			DrawPlayer(player);
 			DrawPause(gameStats,menu);
 			break;
 
 		case SceneStatus::GAMEEND:
 			
 			DrawParallax(backGRound);
-			DrawPlayer(player);
 			DrawBullet(bullets);
 			DrawEnemyObject();
+			DrawPlayer(player);
 			DrawPause(gameStats,menu);
 			break;
 
