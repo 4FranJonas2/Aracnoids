@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../utilities.h"
+#include "../gameSetings/audioManager.h"
 
 namespace aracnoids
 {

@@ -110,10 +110,7 @@ namespace aracnoids
 		//chekeo de limites verticales
 		if (player.playerCir.pos.y < -player.playerCir.rad)  player.playerCir.pos.y = GetScreenHeight() + player.playerCir.rad;
 		if (player.playerCir.pos.y > GetScreenHeight() + player.playerCir.rad)  player.playerCir.pos.y = -player.playerCir.rad;
-
 	}
-
-
 	void DrawPlayer(Player player)
 	{
 		PrintPlayer(player);
@@ -139,17 +136,17 @@ namespace aracnoids
 			PrintPlayer(player);
 		}
 	}
-
 	void PrintPlayer(Player& player)
 	{
 #ifdef _DEBUG
 		DrawCircleLines(static_cast<int>(player.playerCir.pos.x), static_cast<int>(player.playerCir.pos.y), player.playerCir.rad, RED);
-		DrawText(TextFormat("%i", player.lives), 50, 50, 60, GRAY);
 
 		DrawRectanglePro({ player.playerCir.pos.x, player.playerCir.pos.y, auxRec.width, auxRec.height },
 			{ auxRec.width / 2, auxRec.height / 2 }, player.rotation, RED);
 #endif // DEBUG
-
+		DrawText(TextFormat("LIVES: %i", player.lives), 50, 30, 20, BLACK);
+		DrawText(TextFormat("POINTS: %i", player.points), 450, 30, 20, RED);
+		
 		Animation& actualAnim = player.idleAnim;
 
 		if (player.isShooting)
@@ -170,7 +167,10 @@ namespace aracnoids
 
 		Vector2 origin = { (actualAnim.frameWidth * 0.5f) / 2.0f,(actualAnim.frameHeight*0.5f) / 2.0f };
 
-		DrawTexturePro(actualAnim.texture, frame, dest, origin, player.rotation +90.0f, WHITE);
+		if (player.playerHit)
+			DrawTexturePro(actualAnim.texture, frame, dest, origin, player.rotation +90.0f, GRAY);
+		else
+			DrawTexturePro(actualAnim.texture, frame, dest, origin, player.rotation +90.0f, WHITE);
 	}
 	void UpdateAnim(Animation& anim)
 	{
@@ -188,7 +188,6 @@ namespace aracnoids
 			}
 		}
 	}
-
 	void UnloadPlayer(Player& player)
 	{
 		UnloadTexture(player.idleAnim.texture);
