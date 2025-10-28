@@ -10,8 +10,9 @@ namespace aracnoids
 	EnemyObject smallEnemy[maxSmallEnemy];
 
 	Texture2D bigNeufarText;
-	Texture2D midNeufarText ;
+	Texture2D midNeufarText;
 	Texture2D smallNeufarText;
+
 
 	int bigEnemyDecendant[maxBigEnemy] = { 0 };
 	int nextId = 0;
@@ -26,12 +27,12 @@ namespace aracnoids
 
 	void MoveEnemyObj(EnemyObject& neufar);
 	void Bounce(EnemyObject& neufarA, EnemyObject& neufarB);
-	void DeleteBigEnemy(int i);
-	void DeleteMidEnemy(int i);
-	void DeleteSmallEnemy(int i);
+	void DeleteBigEnemy(int i, AudioManager auxAudio);
+	void DeleteMidEnemy(int i, AudioManager auxAudio);
+	void DeleteSmallEnemy(int i, AudioManager auxAudio);
 	void CheckCollisionEnemys();
-	void CheckCollisionEnemysBullet(Bullet bullet[]);
-	void CheckCollisionEnemysPlayer(Player& player);
+	void CheckCollisionEnemysBullet(Bullet bullet[], AudioManager auxAudio, Player& player);
+	void CheckCollisionEnemysPlayer(Player& player, AudioManager auxAudio);
 	void PrintEnemy(bool isAlive, EnemyObject enemy[], int i);
 
 
@@ -124,7 +125,7 @@ namespace aracnoids
 					break;
 			}
 	}
-	void UpdateEnemyObject(Bullet gameBullet[], Player& player)
+	void UpdateEnemyObject(Bullet gameBullet[], Player& player, AudioManager auxAudio)
 	{
 		spawnTimer += GetFrameTime();
 
@@ -148,9 +149,9 @@ namespace aracnoids
 
 		CheckCollisionEnemys();
 
-		CheckCollisionEnemysBullet(gameBullet);
+		CheckCollisionEnemysBullet(gameBullet, auxAudio, player);
 
-		CheckCollisionEnemysPlayer(player);
+		CheckCollisionEnemysPlayer(player, auxAudio);
 	}
 	void DrawEnemyObject()
 	{
@@ -275,17 +276,18 @@ namespace aracnoids
 		}
 	}
 
-	void DeleteBigEnemy(int i)
+	void DeleteBigEnemy(int i, AudioManager auxAudio)
 	{
 		if (!bigEnemy[i].isAlive) return;
 		Vector2 pos = bigEnemy[i].pos;
 		float angle = bigEnemy[i].angle;
 		bigEnemy[i].isAlive = false;
 
+		PlaySFX(auxAudio.enemyDestroySound);
 		// 2 medianos
 		CreateMediumEnemy(i, pos, angle);
 	}
-	void DeleteMidEnemy(int i)
+	void DeleteMidEnemy(int i, AudioManager auxAudio)
 	{
 		if (!midEnemy[i].isAlive) return;
 		int idGrande = midEnemy[i].parentId;
@@ -293,15 +295,17 @@ namespace aracnoids
 		float angle = midEnemy[i].angle;
 		midEnemy[i].isAlive = false;
 		bigEnemyDecendant[idGrande]--;
+		PlaySFX(auxAudio.enemyDestroySound);
 
 		CreateSmallEnemy(idGrande, pos, angle);
 	}
-	void DeleteSmallEnemy(int i)
+	void DeleteSmallEnemy(int i, AudioManager auxAudio)
 	{
 		if (!smallEnemy[i].isAlive) return;
 		int idGrande = smallEnemy[i].parentId;
 		smallEnemy[i].isAlive = false;
 		bigEnemyDecendant[idGrande]--;
+		PlaySFX(auxAudio.enemyDestroySound);
 
 		/*if (idGrande >= 0 && idGrande < maxBigEnemy)*/
 		if (bigEnemyDecendant[idGrande] <= 0)
@@ -366,7 +370,7 @@ namespace aracnoids
 					Bounce(midEnemy[i], smallEnemy[j]);
 		}
 	}
-	void CheckCollisionEnemysBullet(Bullet bullet[])
+	void CheckCollisionEnemysBullet(Bullet bullet[], AudioManager auxAudio, Player& player)
 	{
 		const int maxBullets = 20;
 
@@ -378,7 +382,9 @@ namespace aracnoids
 				if (bigEnemy[j].isAlive && Vector2Distance(bullet[i].bulletHitBox.pos, bigEnemy[j].pos) < bullet[i].bulletHitBox.rad + bigEnemy[j].radius)
 				{
 					bullet[i].isBulletAlive = false;
-					DeleteBigEnemy(j);
+					player.points += 100;
+
+					DeleteBigEnemy(j, auxAudio);
 					break;
 				}
 
@@ -387,7 +393,9 @@ namespace aracnoids
 				if (midEnemy[j].isAlive && Vector2Distance(bullet[i].bulletHitBox.pos, midEnemy[j].pos) < bullet[i].bulletHitBox.rad + midEnemy[j].radius)
 				{
 					bullet[i].isBulletAlive = false;
-					DeleteMidEnemy(j);
+					player.points += 100;
+
+					DeleteMidEnemy(j, auxAudio);
 					break;
 				}
 
@@ -396,12 +404,14 @@ namespace aracnoids
 				if (smallEnemy[j].isAlive && Vector2Distance(bullet[i].bulletHitBox.pos, smallEnemy[j].pos) < bullet[i].bulletHitBox.rad + smallEnemy[j].radius)
 				{
 					bullet[i].isBulletAlive = false;
-					DeleteSmallEnemy(j);
+					player.points += 100;
+
+					DeleteSmallEnemy(j, auxAudio);
 					break;
 				}
 		}
 	}
-	void CheckCollisionEnemysPlayer(Player& player)
+	void CheckCollisionEnemysPlayer(Player& player, AudioManager auxAudio)
 	{
 		player.immunityTimer += GetFrameTime();
 
@@ -421,9 +431,9 @@ namespace aracnoids
 						player.lives--;
 						player.playerHit = true;
 						player.immunityTimer = 0;
+						PlaySFX(auxAudio.loseLifeSound);
 					}
-
-					DeleteBigEnemy(j);
+					DeleteBigEnemy(j, auxAudio);
 					break;
 				}
 
@@ -436,8 +446,10 @@ namespace aracnoids
 						player.lives--;
 						player.playerHit = true;
 						player.immunityTimer = 0;
+						PlaySFX(auxAudio.loseLifeSound);
+
 					}
-					DeleteMidEnemy(j);
+					DeleteMidEnemy(j, auxAudio);
 					break;
 				}
 
@@ -450,8 +462,10 @@ namespace aracnoids
 						player.lives--;
 						player.playerHit = true;
 						player.immunityTimer = 0;
+						PlaySFX(auxAudio.loseLifeSound);
+
 					}
-					DeleteSmallEnemy(j);
+					DeleteSmallEnemy(j, auxAudio);
 					break;
 				}
 		}

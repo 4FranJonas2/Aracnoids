@@ -3,6 +3,7 @@
 #include "../utilities.h"
 #include "ctime"
 #include "bullet.h"
+#include "../gameSetings/audioManager.h"
 
 namespace aracnoids
 {
@@ -25,7 +26,7 @@ namespace aracnoids
     void CreateBigEnemy();
     void CreateMediumEnemy( int idBigEnemy, Vector2 pos, float baseAngle);
     void CreateSmallEnemy( int idBigEnemy, Vector2 pos, float baseAngle);
-    void UpdateEnemyObject( Bullet gameBullet[], Player& player);
+    void UpdateEnemyObject( Bullet gameBullet[], Player& player, AudioManager auxAudio);
     void DrawEnemyObject();
     void UnloadNeufars();
 }
