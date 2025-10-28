@@ -232,17 +232,11 @@ namespace aracnoids
 		if (neufar.speed > 200)
 			neufar.speed = 200;
 
-		if (neufar.pos.x < 0)
-			neufar.pos.x = static_cast <float>(GetScreenWidth());
-
-		if (neufar.pos.x > GetScreenWidth())
-			neufar.pos.x = 0;
-
-		if (neufar.pos.y < 0)
-			neufar.pos.y = static_cast <float>(GetScreenHeight());
-
-		if (neufar.pos.y > GetScreenHeight())
-			neufar.pos.y = 0;
+		if (neufar.pos.x < -neufar.radius)  neufar.pos.x = GetScreenWidth() + neufar.radius;
+		if (neufar.pos.x > GetScreenWidth() + neufar.radius)  neufar.pos.x = -neufar.radius;
+		//chekeo de limites verticales
+		if (neufar.pos.y < -neufar.radius)  neufar.pos.y = GetScreenHeight() + neufar.radius;
+		if (neufar.pos.y > GetScreenHeight() + neufar.radius)  neufar.pos.y = -neufar.radius;
 	}
 	void Bounce(EnemyObject& neufarA, EnemyObject& neufarB)
 	{
@@ -263,7 +257,6 @@ namespace aracnoids
 
 			float velANorm = Vector2DotProduct(velA, normal);
 			float velBNorm = Vector2DotProduct(velB, normal);
-
 
 			float aux = velANorm;
 			velANorm = velBNorm;
