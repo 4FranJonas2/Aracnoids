@@ -282,7 +282,7 @@ namespace aracnoids
 			int LineText0PosY = 705;
 
 			string titleText = "RULES";
-			string howToMoveText = "-To MOVE use LEFT Mouse Button and to SHOT use RIGHT mouse buton";
+			string howToMoveText = "-To MOVE use RIGHT Mouse Button and to SHOT use LEFT mouse buton";
 			string winConditionText = "-In normal mode Destroy all Neufars to win.";
 			string winConditionText2 = "-In endless mode survive as long as you can.";
 			string loseConditionText2 = "-You will have 3 lives. If you get touch by a neufar, you lose 1 life.";
